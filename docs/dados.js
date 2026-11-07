@@ -2,130 +2,137 @@ window.DADOS = {
   "exemplo": false,
   "atualizado_em": "2026-11-07",
   "modelo": "gemini-3.1-flash-lite",
-  "total_comentarios": 15007,
+  "total_comentarios": 13369,
   "episodios": [
     {
       "numero": 1,
       "video_id": "C2PHb9TwaF4",
-      "comentarios": 7219,
-      "comentarios_com_citacao": 2684,
+      "comentarios": 5888,
+      "janela": {
+        "horas": 48,
+        "inicio": "2026-10-27T21:32:55Z",
+        "fim": "2026-10-29T21:32:55Z",
+        "aberta": false,
+        "fora_da_janela": 1331
+      },
+      "comentarios_com_citacao": 2127,
       "cenas": {
         "por_minuto": [
           7,
           2,
-          4,
-          2,
-          5,
           3,
-          3,
-          4,
-          2,
-          9,
-          4,
           1,
-          8,
-          0,
           5,
-          8,
-          7,
-          0,
-          0,
-          6,
-          16,
-          12,
+          3,
+          3,
+          3,
           2,
           7,
-          3,
-          4,
           2,
-          0,
           1,
+          5,
           0,
-          4,
-          0,
-          1,
-          0,
-          1,
-          2,
+          5,
+          6,
+          5,
           0,
           0,
-          2,
-          3,
-          3,
-          4,
-          0,
-          1,
-          2,
-          2,
-          0,
-          4,
+          5,
+          11,
           9,
+          1,
+          7,
+          3,
+          4,
+          2,
+          0,
+          0,
           0,
           3,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          0,
+          3,
+          8,
+          0,
+          3,
+          3,
+          1,
+          2,
+          0,
+          0,
+          0,
+          4,
+          2,
+          4,
+          1,
+          3,
+          0,
+          1,
+          3,
+          1,
+          1,
+          3,
+          3,
+          2,
+          10,
+          4,
+          3,
+          0,
+          1,
           5,
-          1,
-          2,
-          0,
-          0,
-          1,
-          4,
-          4,
-          6,
-          1,
           5,
           0,
-          1,
-          3,
-          2,
-          1,
-          3,
+          0,
           4,
-          4,
-          14,
-          4,
-          3,
           0,
           2,
-          6,
-          11,
-          0,
-          1,
           4,
-          1,
-          3,
-          6,
           0,
-          2,
           1,
+          0,
           3,
           11,
-          4,
+          3,
           1
         ],
         "picos": [
           {
             "minuto": 20,
             "segundos": 1257,
-            "citacoes": 34,
+            "citacoes": 25,
             "descricao": "Na chegada do elenco, Jheny diz que nunca vai chamar o Rodolfo de Paizinho, e a rivalidade entre os dois começa.",
             "comentario": "\"não chamo o Rodolfo de Paizinho nunca!\" corta pra segundos depois chamando ele de Paizinho kkkkk (20:25 e 20:44)",
             "curtidas": 3560
           },
           {
+            "minuto": 87,
+            "segundos": 5257,
+            "citacoes": 17,
+            "descricao": "Peter é eliminado, e a prévia do próximo episódio mostra uma fala dura do Edu para alguém do elenco, que deixa a torcida curiosa para saber quem é.",
+            "comentario": "1:27:37 eu acho que essa foi a fala mais pesada que o edu já disse no corrida",
+            "curtidas": 116
+          },
+          {
             "minuto": 70,
             "segundos": 4236,
-            "citacoes": 22,
+            "citacoes": 16,
             "descricao": "Formação do primeiro flop: a líder Talitah escolhe Peter e Aysha, e o grupo de Matthel vota na Breia.",
             "comentario": "1:11:40 concordo com o Peter só nisso, a Thalita ter escolhido a Aisha pro flop mesmo a maquiagem sendo a única coisa elogiada foi uma bola fora, o paizinho deveria ter ido já que não fez nada além de desfilar",
             "curtidas": 1606
-          },
-          {
-            "minuto": 76,
-            "segundos": 4566,
-            "citacoes": 17,
-            "descricao": "Prova do flop: cada participante grava um vídeo ensinando regras de etiqueta, e Talitah convida o público a ser uma \"Sampaio Girl\".",
-            "comentario": "1:16:06 KKKKKKKKKKKKKKKKKK acho que ninguém quer, eu amo os comentários do edu",
-            "curtidas": 15
           }
         ]
       },
@@ -133,11 +140,11 @@ window.DADOS = {
         {
           "nome": "Peter Poc",
           "resultado": "Eliminado",
-          "mencoes": 941,
-          "positivo": 76,
-          "negativo": 808,
-          "neutro": 57,
-          "saldo": -77.7896,
+          "mencoes": 752,
+          "positivo": 63,
+          "negativo": 642,
+          "neutro": 47,
+          "saldo": -76.9947,
           "elogio": {
             "texto": "unico posicionamento verdadeiro do peter poc",
             "curtidas": 118
@@ -150,11 +157,11 @@ window.DADOS = {
         {
           "nome": "Breia",
           "resultado": "Flop",
-          "mencoes": 857,
-          "positivo": 626,
-          "negativo": 95,
-          "neutro": 136,
-          "saldo": 61.9603,
+          "mencoes": 666,
+          "positivo": 496,
+          "negativo": 68,
+          "neutro": 102,
+          "saldo": 64.2643,
           "elogio": {
             "texto": "Eu ADOREI a Breia!!! Concordo plenamente! Geral fantasiado, performando! Eu amei a simplicidade delaaaaaa",
             "curtidas": 4304
@@ -167,11 +174,11 @@ window.DADOS = {
         {
           "nome": "Talitah Sampaio",
           "resultado": "Flop",
-          "mencoes": 348,
-          "positivo": 99,
-          "negativo": 191,
-          "neutro": 58,
-          "saldo": -26.4368,
+          "mencoes": 269,
+          "positivo": 78,
+          "negativo": 152,
+          "neutro": 39,
+          "saldo": -27.5093,
           "elogio": {
             "texto": "uma das primeiras coisas que a Thalita fez foi se dispor a ouvir o resto do time, e todo mundo ouviu e concordou, se não queria fazer cabelo, tinha dito “galera dscp mas prefiro fazer outra coisa”",
             "curtidas": 21
@@ -182,47 +189,13 @@ window.DADOS = {
           }
         },
         {
-          "nome": "Aysha Pink",
-          "resultado": "Flop",
-          "mencoes": 298,
-          "positivo": 225,
-          "negativo": 30,
-          "neutro": 43,
-          "saldo": 65.4362,
-          "elogio": {
-            "texto": "uma sacanagem não terem salvo a Aysha QUE FEZ A ÚNICA ENTREGA MINIMAMENTE BOA DAQUELE GRUPO.",
-            "curtidas": 1783
-          },
-          "critica": {
-            "texto": "1:11:40 concordo com o Peter só nisso, a Thalita ter escolhido a Aisha pro flop mesmo a maquiagem sendo a única coisa elogiada foi uma bola fora, o paizinho deveria ter ido já que não fez nada além de desfilar",
-            "curtidas": 1606
-          }
-        },
-        {
-          "nome": "Bárbara Freitas",
-          "resultado": "Salvo",
-          "mencoes": 281,
-          "positivo": 55,
-          "negativo": 152,
-          "neutro": 74,
-          "saldo": -34.5196,
-          "elogio": {
-            "texto": "Bárbara sinto q n vai entregar mas me representa muito KKKKKKK amei a diva",
-            "curtidas": 166
-          },
-          "critica": {
-            "texto": "O grupo da Breia indicou ela pro flop, sendo que quem não entregou foi a Bárbara... Ai gente",
-            "curtidas": 633
-          }
-        },
-        {
           "nome": "Matthel",
           "resultado": "Salvo",
-          "mencoes": 276,
-          "positivo": 185,
-          "negativo": 49,
-          "neutro": 42,
-          "saldo": 49.2754,
+          "mencoes": 221,
+          "positivo": 152,
+          "negativo": 34,
+          "neutro": 35,
+          "saldo": 53.3937,
           "elogio": {
             "texto": "Ver o Matthel é como se eu tivesse vendo a Lorelay jovem",
             "curtidas": 3615
@@ -233,16 +206,50 @@ window.DADOS = {
           }
         },
         {
+          "nome": "Bárbara Freitas",
+          "resultado": "Salvo",
+          "mencoes": 220,
+          "positivo": 46,
+          "negativo": 114,
+          "neutro": 60,
+          "saldo": -30.9091,
+          "elogio": {
+            "texto": "Bárbara sinto q n vai entregar mas me representa muito KKKKKKK amei a diva",
+            "curtidas": 166
+          },
+          "critica": {
+            "texto": "O grupo da Breia indicou ela pro flop, sendo que quem não entregou foi a Bárbara... Ai gente",
+            "curtidas": 633
+          }
+        },
+        {
+          "nome": "Aysha Pink",
+          "resultado": "Flop",
+          "mencoes": 218,
+          "positivo": 162,
+          "negativo": 22,
+          "neutro": 34,
+          "saldo": 64.2202,
+          "elogio": {
+            "texto": "uma sacanagem não terem salvo a Aysha QUE FEZ A ÚNICA ENTREGA MINIMAMENTE BOA DAQUELE GRUPO.",
+            "curtidas": 1783
+          },
+          "critica": {
+            "texto": "1:11:40 concordo com o Peter só nisso, a Thalita ter escolhido a Aisha pro flop mesmo a maquiagem sendo a única coisa elogiada foi uma bola fora, o paizinho deveria ter ido já que não fez nada além de desfilar",
+            "curtidas": 1606
+          }
+        },
+        {
           "nome": "Paizinho dos Looks",
           "resultado": "Salvo",
-          "mencoes": 172,
-          "positivo": 27,
-          "negativo": 83,
-          "neutro": 62,
-          "saldo": -32.5581,
+          "mencoes": 133,
+          "positivo": 17,
+          "negativo": 63,
+          "neutro": 53,
+          "saldo": -34.5865,
           "elogio": {
-            "texto": "A aysha foi boa, mas entre ela e o Rodrigo eu também escolheria a Aysha, até pq ela deu “biti” com a Thalita, enquanto o paizinho tava fazendo de tudo pra acalmar as pessoas",
-            "curtidas": 49
+            "texto": "Bárbara e Paizinho roubados do bottom. Talita deveria ter indicado o Paizinho, a Aysha fez a unica coisa que foi elogiado no grupo",
+            "curtidas": 2
           },
           "critica": {
             "texto": "1:11:40 concordo com o Peter só nisso, a Thalita ter escolhido a Aisha pro flop mesmo a maquiagem sendo a única coisa elogiada foi uma bola fora, o paizinho deveria ter ido já que não fez nada além de desfilar",
@@ -252,11 +259,11 @@ window.DADOS = {
         {
           "nome": "Sttefone",
           "resultado": "Salvo",
-          "mencoes": 103,
-          "positivo": 33,
-          "negativo": 59,
-          "neutro": 11,
-          "saldo": -25.2427,
+          "mencoes": 85,
+          "positivo": 27,
+          "negativo": 50,
+          "neutro": 8,
+          "saldo": -27.0588,
           "elogio": {
             "texto": "Gente a Sttefone e muito mulher PQP, o close que ela deu com esse cabelo tipo eu nao to conseguindo me reistruturar. O cast entrega muitoooo e vem ai galera com certeza.",
             "curtidas": 299
@@ -269,11 +276,11 @@ window.DADOS = {
         {
           "nome": "Gabriel Queiroz",
           "resultado": "Salvo",
-          "mencoes": 82,
-          "positivo": 71,
+          "mencoes": 56,
+          "positivo": 46,
           "negativo": 3,
-          "neutro": 8,
-          "saldo": 82.9268,
+          "neutro": 7,
+          "saldo": 76.7857,
           "elogio": {
             "texto": "gente tadinho do gabriel! foi o ultimo a ser escolhido, nao ouviram ele e ele quietinho foi la e entregou uma pintura LINDA no rosto, arrasou!!",
             "curtidas": 6956
@@ -286,11 +293,11 @@ window.DADOS = {
         {
           "nome": "Latyffa Romayale",
           "resultado": "Salvo",
-          "mencoes": 66,
-          "positivo": 62,
+          "mencoes": 51,
+          "positivo": 48,
           "negativo": 1,
-          "neutro": 3,
-          "saldo": 92.4242,
+          "neutro": 2,
+          "saldo": 92.1569,
           "elogio": {
             "texto": "meu deus a Lattyfa é um POÇO de simpatia!!!!! Que pessoa alto astral, divertida, contagiante!!! É o tipo de pessoa que eu adoria ser amiga!",
             "curtidas": 1991
@@ -303,11 +310,11 @@ window.DADOS = {
         {
           "nome": "Jheny Albano",
           "resultado": "Salvo",
-          "mencoes": 48,
-          "positivo": 23,
+          "mencoes": 41,
+          "positivo": 18,
           "negativo": 12,
-          "neutro": 13,
-          "saldo": 22.9167,
+          "neutro": 11,
+          "saldo": 14.6341,
           "elogio": {
             "texto": "26:21 a Jheny é muito cascavelense véi representando demais",
             "curtidas": 6
@@ -320,17 +327,17 @@ window.DADOS = {
         {
           "nome": "Rhanyane Garcia",
           "resultado": "Venceu",
-          "mencoes": 39,
-          "positivo": 23,
-          "negativo": 14,
+          "mencoes": 30,
+          "positivo": 19,
+          "negativo": 9,
           "neutro": 2,
-          "saldo": 23.0769,
+          "saldo": 33.3333,
           "elogio": {
             "texto": "Rhany veio da minha cidade, cidade pequena do interior. É muito bonito ver onde está chegando a cada dia. Ela batalhou demais pra chegar onde está. E merece cada conquista. Nunca foi arrogante e nunca esqueceu de onde…",
             "curtidas": 8
           },
           "critica": {
-            "texto": "Barbara e Rhayane i n s u p o r t a v e i s",
+            "texto": "ja to com ranço dessa talita, desse peter, dessa ray",
             "curtidas": 3
           }
         }
@@ -339,31 +346,38 @@ window.DADOS = {
     {
       "numero": 2,
       "video_id": "6QDGPDd4wWw",
-      "comentarios": 7788,
-      "comentarios_com_citacao": 2737,
+      "comentarios": 7481,
+      "janela": {
+        "horas": 48,
+        "inicio": "2026-11-03T21:22:00Z",
+        "fim": "2026-11-05T21:22:00Z",
+        "aberta": false,
+        "fora_da_janela": 307
+      },
+      "comentarios_com_citacao": 2617,
       "cenas": {
         "por_minuto": [
           0,
           1,
           3,
           2,
-          10,
+          9,
           4,
-          41,
+          40,
           8,
           5,
-          7,
+          5,
           9,
           2,
           6,
           0,
-          25,
-          20,
+          21,
+          19,
           19,
           0,
           3,
-          3,
-          3,
+          2,
+          2,
           5,
           0,
           5,
@@ -384,31 +398,31 @@ window.DADOS = {
           3,
           5,
           1,
-          7,
+          6,
           3,
           8,
           9,
           4,
           4,
-          9,
+          8,
           7,
           3,
           1,
           6,
           3,
-          7,
+          6,
           10,
           6,
-          8,
+          5,
           9,
           8,
-          7,
+          6,
           5,
           3,
           2,
           6,
           9,
-          6,
+          5,
           0,
           0,
           0,
@@ -422,18 +436,18 @@ window.DADOS = {
           1,
           0,
           2,
-          9,
-          9,
-          7,
-          10,
-          13,
-          7,
           8,
+          9,
+          7,
+          10,
+          12,
+          7,
+          7,
           2,
           3,
-          7,
-          9,
-          10,
+          6,
+          8,
+          8,
           5,
           3
         ],
@@ -441,15 +455,15 @@ window.DADOS = {
           {
             "minuto": 6,
             "segundos": 379,
-            "citacoes": 53,
+            "citacoes": 52,
             "descricao": "Abertura do episódio: a torcida percebe um erro de edição, que mostra quem voltou do flop já sentado no QG antes de a volta ser exibida.",
             "comentario": "6:18 a edição mostrando os três que voltaram do flop já sentados antes de mostrarem a volta deles. alguém foi demitido! 😂",
             "curtidas": 5
           },
           {
             "minuto": 14,
-            "segundos": 890,
-            "citacoes": 45,
+            "segundos": 899,
+            "citacoes": 40,
             "descricao": "Talitah confronta Matthel por ele ter dito que, na idade dela, ela já devia ter aprendido, e chama a fala de etarismo.",
             "comentario": "14:38 eu achei que é etarismo mesmo. Ter 45 anos não significa que ela saiba tudo da vida. E os jovens falam isso com empáfia, como se eles jamais fossem envelhecer.",
             "curtidas": 22
@@ -457,8 +471,8 @@ window.DADOS = {
           {
             "minuto": 83,
             "segundos": 5000,
-            "citacoes": 30,
-            "descricao": "Prova do flop: recriar a maquiagem da Ana, que acompanha tudo do estúdio. Participantes raspam a sobrancelha, e Paizinho desiste no meio da prova.",
+            "citacoes": 29,
+            "descricao": "Prova do flop: recriar a maquiagem da artista Ana Mary B, que estava no estúdio. Participantes raspam a sobrancelha, e Paizinho desiste no meio da prova.",
             "comentario": "1:22:43 a ana rindo igual vilã de novela vendo o povo raspar a sobrancelha 😂😂😂😂😂😂😂 eu amo",
             "curtidas": 17
           }
@@ -468,11 +482,11 @@ window.DADOS = {
         {
           "nome": "Paizinho dos Looks",
           "resultado": "Desistiu",
-          "mencoes": 892,
-          "positivo": 121,
-          "negativo": 622,
-          "neutro": 149,
-          "saldo": -56.1659,
+          "mencoes": 847,
+          "positivo": 115,
+          "negativo": 586,
+          "neutro": 146,
+          "saldo": -55.608,
           "elogio": {
             "texto": "hora que o paizinho e o outro menino q esqueci o nome começaram a falar, senti que ele já tava detestando… acho que pra ele o paizinho não era favorito pra entrar não",
             "curtidas": 151
@@ -485,11 +499,11 @@ window.DADOS = {
         {
           "nome": "Talitah Sampaio",
           "resultado": "Venceu",
-          "mencoes": 665,
-          "positivo": 453,
-          "negativo": 104,
-          "neutro": 108,
-          "saldo": 52.4812,
+          "mencoes": 640,
+          "positivo": 435,
+          "negativo": 98,
+          "neutro": 107,
+          "saldo": 52.6563,
           "elogio": {
             "texto": "Meu Deus a ideia da Barbara, que mente preciosa KKKKKKKKKKKKKKKKKKKK. Deitei pra Thalita, ela entrega nas provas, winner material total.",
             "curtidas": 7591
@@ -502,11 +516,11 @@ window.DADOS = {
         {
           "nome": "Breia",
           "resultado": "Salvo",
-          "mencoes": 389,
-          "positivo": 252,
-          "negativo": 63,
-          "neutro": 74,
-          "saldo": 48.5861,
+          "mencoes": 372,
+          "positivo": 247,
+          "negativo": 54,
+          "neutro": 71,
+          "saldo": 51.8817,
           "elogio": {
             "texto": "A Lattyfa é MUITO carismática fico chocada, pra mim é um dos diamantes da temporada junto com a Breia",
             "curtidas": 5144
@@ -519,11 +533,11 @@ window.DADOS = {
         {
           "nome": "Aysha Pink",
           "resultado": "Salvo",
-          "mencoes": 279,
-          "positivo": 80,
-          "negativo": 107,
-          "neutro": 92,
-          "saldo": -9.6774,
+          "mencoes": 273,
+          "positivo": 78,
+          "negativo": 104,
+          "neutro": 91,
+          "saldo": -9.5238,
           "elogio": {
             "texto": "Que wig linda a Aysha está usando!",
             "curtidas": 17
@@ -536,11 +550,11 @@ window.DADOS = {
         {
           "nome": "Bárbara Freitas",
           "resultado": "Venceu",
-          "mencoes": 260,
-          "positivo": 218,
+          "mencoes": 248,
+          "positivo": 209,
           "negativo": 12,
-          "neutro": 30,
-          "saldo": 79.2308,
+          "neutro": 27,
+          "saldo": 79.4355,
           "elogio": {
             "texto": "Meu Deus a ideia da Barbara, que mente preciosa KKKKKKKKKKKKKKKKKKKK. Deitei pra Thalita, ela entrega nas provas, winner material total.",
             "curtidas": 7591
@@ -553,11 +567,11 @@ window.DADOS = {
         {
           "nome": "Latyffa Romayale",
           "resultado": "Salvo",
-          "mencoes": 237,
-          "positivo": 207,
+          "mencoes": 230,
+          "positivo": 201,
           "negativo": 6,
-          "neutro": 24,
-          "saldo": 84.8101,
+          "neutro": 23,
+          "saldo": 84.7826,
           "elogio": {
             "texto": "\"Mainha sem look\", pois amores, já tragam a faixa de Miss Simpatia pra Latyfa",
             "curtidas": 12448
@@ -570,11 +584,11 @@ window.DADOS = {
         {
           "nome": "Matthel",
           "resultado": "Salvo",
-          "mencoes": 234,
-          "positivo": 43,
-          "negativo": 161,
-          "neutro": 30,
-          "saldo": -50.4274,
+          "mencoes": 228,
+          "positivo": 41,
+          "negativo": 158,
+          "neutro": 29,
+          "saldo": -51.3158,
           "elogio": {
             "texto": "Só eu que acho que o Matthel tem cara de futuro estilista famoso? ❤",
             "curtidas": 55
@@ -585,30 +599,13 @@ window.DADOS = {
           }
         },
         {
-          "nome": "Gabriel Queiroz",
-          "resultado": "Flop",
-          "mencoes": 187,
-          "positivo": 101,
-          "negativo": 24,
-          "neutro": 62,
-          "saldo": 41.1765,
-          "elogio": {
-            "texto": "ninguem pontuou mas a make do gabriel do flop tava PERFEITA",
-            "curtidas": 3195
-          },
-          "critica": {
-            "texto": "Gente o paizinho falando em 0.25 e o grabriel toma mt tempo !!",
-            "curtidas": 151
-          }
-        },
-        {
           "nome": "Peter Poc",
           "resultado": null,
-          "mencoes": 185,
-          "positivo": 77,
-          "negativo": 82,
+          "mencoes": 179,
+          "positivo": 75,
+          "negativo": 78,
           "neutro": 26,
-          "saldo": -2.7027,
+          "saldo": -1.676,
           "elogio": {
             "texto": "Em alguma linha temporal o paizinho dos looks nem entrou no CDB e nós poderíamos ter visto Peter Poc fazendo mais uma rima pra vender seu gloss sabor saladinha 😂",
             "curtidas": 4400
@@ -619,13 +616,30 @@ window.DADOS = {
           }
         },
         {
+          "nome": "Gabriel Queiroz",
+          "resultado": "Flop",
+          "mencoes": 178,
+          "positivo": 95,
+          "negativo": 24,
+          "neutro": 59,
+          "saldo": 39.8876,
+          "elogio": {
+            "texto": "ninguem pontuou mas a make do gabriel do flop tava PERFEITA",
+            "curtidas": 3195
+          },
+          "critica": {
+            "texto": "Gente o paizinho falando em 0.25 e o grabriel toma mt tempo !!",
+            "curtidas": 151
+          }
+        },
+        {
           "nome": "Rhanyane Garcia",
           "resultado": "Flop",
-          "mencoes": 75,
+          "mencoes": 71,
           "positivo": 16,
-          "negativo": 35,
+          "negativo": 31,
           "neutro": 24,
-          "saldo": -25.3333,
+          "saldo": -21.1268,
           "elogio": {
             "texto": "A Rhanyane parecia que estava chapada, kkkkk eu ri muito, foi a mais engraçada do multiverso! Haha",
             "curtidas": 206
@@ -638,11 +652,11 @@ window.DADOS = {
         {
           "nome": "Jheny Albano",
           "resultado": "Flop",
-          "mencoes": 55,
-          "positivo": 8,
-          "negativo": 19,
-          "neutro": 28,
-          "saldo": -20.0,
+          "mencoes": 51,
+          "positivo": 7,
+          "negativo": 18,
+          "neutro": 26,
+          "saldo": -21.5686,
           "elogio": {
             "texto": "A Jenni tava certa! Paizinho não consegue entregar nada. Não entregou roupa, não entregou make, não entregou apresentação, não entregou carisma...",
             "curtidas": 3
@@ -655,11 +669,11 @@ window.DADOS = {
         {
           "nome": "Sttefone",
           "resultado": "Salvo",
-          "mencoes": 40,
+          "mencoes": 39,
           "positivo": 33,
           "negativo": 3,
-          "neutro": 4,
-          "saldo": 75.0,
+          "neutro": 3,
+          "saldo": 76.9231,
           "elogio": {
             "texto": "A Ste salvou a dupla, o Matthel falando besteira!",
             "curtidas": 150
@@ -695,22 +709,22 @@ window.DADOS = {
     }
   },
   "resumos": {
-    "Aysha Pink": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +65 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para -10, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior.",
-    "Breia": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +62 para +49. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia.",
-    "Bárbara Freitas": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −35 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +79. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas.",
-    "Gabriel Queiroz": "A torcida destacou o talento de Gabriel Queiroz na maquiagem, com o saldo passando de +83 para +41 ao longo dos episódios. Enquanto os comentários elogiaram a qualidade técnica e a postura de Gabriel, a audiência ficou dividida quanto ao desempenho em provas de grupo e à comunicação durante as apresentações. As críticas focaram na dificuldade de Gabriel em sustentar o papel e na gestão do tempo durante os desafios.",
-    "Jheny Albano": "A torcida iniciou a trajetória de Jheny Albano com um saldo de +23, elogiando sua participação, embora já dividida sobre a autenticidade de suas interações. No episódio seguinte, o saldo caiu para -20, com comentários criticando a postura e a tentativa de criar cenas para o programa. A percepção geral oscilou entre o reconhecimento de seu carisma e o descontentamento com o comportamento adotado ao longo dos episódios.",
+    "Aysha Pink": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +64 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para −10, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior.",
+    "Breia": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +64 para +52. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia.",
+    "Bárbara Freitas": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −31 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +79. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas.",
+    "Gabriel Queiroz": "A torcida destacou o talento de Gabriel Queiroz na maquiagem, com o saldo passando de +77 para +40 ao longo dos episódios. Enquanto os comentários elogiaram a qualidade técnica e a postura de Gabriel, a audiência ficou dividida quanto ao desempenho em provas de grupo e à comunicação durante as apresentações. As críticas focaram na dificuldade de Gabriel em sustentar o papel e na gestão do tempo durante os desafios.",
+    "Jheny Albano": "A torcida iniciou a trajetória de Jheny Albano com um saldo de +15, elogiando sua participação, embora já dividida sobre a autenticidade de suas interações. No episódio seguinte, o saldo caiu para −22, com comentários criticando a postura e a tentativa de criar cenas para o programa. A percepção geral oscilou entre o reconhecimento de seu carisma e o descontentamento com o comportamento adotado ao longo dos episódios.",
     "Latyffa Romayale": "Latyffa conquistou a torcida desde o início pelo seu carisma contagiante, mantendo um saldo de +92 no primeiro episódio. No segundo episódio, a torcida reforçou os elogios à sua simpatia e humor, resultando em um saldo de +85. Embora alguns comentários tenham apontado críticas pontuais sobre o desempenho em provas e escolhas estéticas, a percepção geral permaneceu amplamente positiva, com o público destacando Latyffa como um dos principais destaques da temporada.",
-    "Matthel": "A torcida iniciou a trajetória de Matthel com saldo +49, elogiando o carisma e a postura observadora, embora tenha criticado a qualidade de sua maquiagem. No segundo episódio, o saldo caiu para −50, com comentários divididos sobre suas falas e escolhas, enquanto críticas sobre sua postura e atitudes em relação aos outros participantes ganharam força. A percepção geral tornou-se negativa devido ao comportamento de Matthel durante as dinâmicas de grupo.",
-    "Paizinho dos Looks": "A torcida recebeu Paizinho dos Looks com saldo de −33 no primeiro episódio, com mais críticas do que elogios, principalmente pela falta de participação nas provas. No segundo episódio, o saldo caiu para −56, com os comentários criticando a desistência do participante e a transferência de responsabilidade para outros colegas. A audiência demonstrou descontentamento com a postura apresentada, culminando em uma recepção negativa após sua saída precoce da competição.",
-    "Peter Poc": "No primeiro episódio, a torcida criticou a atitude de Peter Poc no trabalho em grupo, resultando em um saldo de −78. Após a eliminação, a audiência ficou dividida no segundo episódio, com saldo de −3, oscilando entre o desejo pelo retorno de Peter Poc para gerar entretenimento e a rejeição à sua postura durante a competição.",
-    "Rhanyane Garcia": "No primeiro episódio, a torcida elogiou o carisma e a sagacidade de Rhanyane, resultando em um saldo de +23, apesar de críticas divididas sobre suas escolhas de moda. No segundo episódio, a percepção mudou para um saldo de -25, com os comentários criticando a atitude e o desempenho de Rhanyane na apresentação, embora parte do público tenha se divertido com o humor da participante.",
-    "Sttefone": "A torcida criticou a incoerência de Sttefone no voto durante o primeiro episódio, resultando em um saldo de −25. No episódio seguinte, a percepção mudou positivamente com elogios à agilidade e capacidade de salvar a dupla, elevando o saldo para +75. Ao longo da trajetória, os comentários destacaram a habilidade de Sttefone em momentos de execução, embora a postura estratégica tenha gerado opiniões divididas entre o público.",
-    "Talitah Sampaio": "A torcida criticou a liderança de Talitah no primeiro episódio, resultando em um saldo de −26, devido a decisões estratégicas na indicação ao flop. No segundo episódio, a percepção mudou positivamente com o desempenho em prova, elevando o saldo para +52. Apesar da virada, a torcida permaneceu dividida sobre a postura de Talitah, oscilando entre elogios ao seu protagonismo e críticas ao seu comportamento no jogo."
+    "Matthel": "A torcida iniciou a trajetória de Matthel com saldo +53, elogiando o carisma e a postura observadora, embora tenha criticado a qualidade de sua maquiagem. No segundo episódio, o saldo caiu para −51, com comentários divididos sobre suas falas e escolhas, enquanto críticas sobre sua postura e atitudes em relação aos outros participantes ganharam força. A percepção geral tornou-se negativa devido ao comportamento de Matthel durante as dinâmicas de grupo.",
+    "Paizinho dos Looks": "A torcida recebeu Paizinho dos Looks com saldo de −35 no primeiro episódio, com mais críticas do que elogios, principalmente pela falta de participação nas provas. No segundo episódio, o saldo caiu para −56, com os comentários criticando a desistência do participante e a transferência de responsabilidade para outros colegas. A audiência demonstrou descontentamento com a postura apresentada, culminando em uma recepção negativa após sua saída precoce da competição.",
+    "Peter Poc": "No primeiro episódio, a torcida criticou a atitude de Peter Poc no trabalho em grupo, resultando em um saldo de −77. Após a eliminação, a audiência ficou dividida no segundo episódio, com saldo de −2, oscilando entre o desejo pelo retorno de Peter Poc para gerar entretenimento e a rejeição à sua postura durante a competição.",
+    "Rhanyane Garcia": "No primeiro episódio, a torcida elogiou o carisma e a sagacidade de Rhanyane, resultando em um saldo de +33, apesar de críticas divididas sobre suas escolhas de moda. No segundo episódio, a percepção mudou para um saldo de −21, com os comentários criticando a atitude e o desempenho de Rhanyane na apresentação, embora parte do público tenha se divertido com o humor da participante.",
+    "Sttefone": "A torcida criticou a incoerência de Sttefone no voto durante o primeiro episódio, resultando em um saldo de −27. No episódio seguinte, a percepção mudou positivamente com elogios à agilidade e capacidade de salvar a dupla, elevando o saldo para +77. Ao longo da trajetória, os comentários destacaram a habilidade de Sttefone em momentos de execução, embora a postura estratégica tenha gerado opiniões divididas entre o público.",
+    "Talitah Sampaio": "A torcida criticou a liderança de Talitah no primeiro episódio, resultando em um saldo de −28, devido a decisões estratégicas na indicação ao flop. No segundo episódio, a percepção mudou positivamente com o desempenho em prova, elevando o saldo para +53. Apesar da virada, a torcida permaneceu dividida sobre a postura de Talitah, oscilando entre elogios ao seu protagonismo e críticas ao seu comportamento no jogo."
   },
   "resumos_episodios": {
-    "1": "Peter Poc concentrou a conversa da estreia, com 941 menções e saldo −78: a torcida criticou a postura dele no trabalho em grupo, e ele acabou eliminado. Breia foi a mais elogiada, pela simplicidade, e Gabriel Queiroz ganhou carinho por ter sido o último escolhido e entregado uma maquiagem elogiada. Muita gente achou injusto a Aysha Pink ir para o flop, a rivalidade entre Jheny Albano e Paizinho dos Looks rendeu piadas, e o público comemorou a volta do programa e os novos patrocinadores.",
-    "2": "A desistência de Paizinho dos Looks no meio da prova do flop dominou a conversa, com 892 menções e saldo −56, e o fecho do apresentador Edu sobre o assunto foi muito elogiado. Talitah Sampaio e Bárbara Freitas, que venceram juntas, e Latyffa Romayale receberam elogios pelo desempenho e pelo carisma. A discussão sobre etarismo entre Talitah e Matthel também movimentou os comentários, e Matthel terminou com saldo −50. O público ainda se divertiu com a impaciência do Edu nas avaliações e com um erro de edição na abertura."
+    "1": "Peter Poc concentrou a conversa da estreia, com 752 menções e saldo −77: a torcida criticou a postura dele no trabalho em grupo, e ele acabou eliminado. Breia foi a mais elogiada, pela simplicidade, e Gabriel Queiroz ganhou carinho por ter sido o último escolhido e entregado uma maquiagem elogiada. Muita gente achou injusto a Aysha Pink ir para o flop, a rivalidade entre Jheny Albano e Paizinho dos Looks rendeu piadas, e o público comemorou a volta do programa e os novos patrocinadores.",
+    "2": "A desistência de Paizinho dos Looks no meio da prova do flop dominou a conversa, com 847 menções e saldo −56, e o fecho do apresentador Edu sobre o assunto foi muito elogiado. Talitah Sampaio e Bárbara Freitas, que venceram juntas, e Latyffa Romayale receberam elogios pelo desempenho e pelo carisma. A discussão sobre etarismo entre Talitah e Matthel também movimentou os comentários, e Matthel terminou com saldo −51. O público ainda se divertiu com a impaciência do Edu nas avaliações e com um erro de edição na abertura."
   },
   "fotos": {
     "Aysha Pink": "fotos/aysha-pink.jpg",

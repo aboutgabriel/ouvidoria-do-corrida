@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
+from janela import JANELA_HORAS, janelas, na_janela
 from verificar_apelidos import BANCO, PASTA
 
 RESULTADOS = os.path.join(PASTA, "dados", "resultados.csv")
@@ -122,11 +123,15 @@ def cenas_do_episodio(comentarios, revisao=None):
 
 def main():
     with sqlite3.connect(BANCO) as conexao:
-        comentarios = pd.read_sql("SELECT id, episodio, video_id, texto, curtidas FROM comentarios", conexao)
+        todos = pd.read_sql("SELECT id, episodio, video_id, texto, curtidas, publicado_em, coletado_em FROM comentarios", conexao)
         processados = pd.read_sql("SELECT comentario_id, modelo FROM processados", conexao)
         classificacoes = pd.read_sql("SELECT * FROM classificacoes", conexao)
 
     resultados = pd.read_csv(RESULTADOS)
+
+    # Só entram os comentários das primeiras 48 horas de cada episódio (ver janela.py).
+    tabela_janelas = janelas(todos)
+    comentarios = na_janela(todos, tabela_janelas)
 
     revisao_cenas = {}
     if os.path.exists(CENAS):
@@ -167,6 +172,13 @@ def main():
             "numero": int(ep),
             "video_id": do_episodio["video_id"].iat[0],
             "comentarios": int(len(do_episodio)),
+            "janela": {
+                "horas": JANELA_HORAS,
+                "inicio": tabela_janelas.at[ep, "inicio"].strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "fim": tabela_janelas.at[ep, "fim"].strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "aberta": bool(tabela_janelas.at[ep, "aberta"]),
+                "fora_da_janela": int((todos["episodio"] == ep).sum() - len(do_episodio)),
+            },
             "comentarios_com_citacao": com_citacao,
             "cenas": cenas_do_episodio(zip(do_episodio["id"], do_episodio["texto"], do_episodio["curtidas"]),
                                        revisao_cenas.get(str(int(ep)))),
@@ -222,7 +234,10 @@ def main():
     print(f"Painel atualizado com {len(episodios)} episódio(s): {SAIDA}")
     print(f"  Fotos encontradas: {len(dados['fotos'])} de {tabela['participante'].nunique()} participantes")
     for ep in episodios:
-        print(f"  Episódio {ep['numero']}: {ep['comentarios_com_citacao']} comentários citam participantes")
+        j = ep["janela"]
+        aviso = " (janela ainda aberta: colete de novo depois de " + j["fim"][:16].replace("T", " ") + " UTC)" if j["aberta"] else ""
+        print(f"  Episódio {ep['numero']}: {ep['comentarios']} comentários nas primeiras {j['horas']}h, "
+              f"{ep['comentarios_com_citacao']} citam participantes{aviso}")
 
 
 if __name__ == "__main__":

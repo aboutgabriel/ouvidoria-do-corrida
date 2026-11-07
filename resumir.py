@@ -31,6 +31,7 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
+from janela import janelas, na_janela
 from verificar_apelidos import BANCO, PASTA
 
 RESULTADOS = os.path.join(PASTA, "dados", "resultados.csv")
@@ -151,10 +152,15 @@ def main():
     cliente = genai.Client(api_key=chave)
 
     with sqlite3.connect(BANCO) as conexao:
+        todos = pd.read_sql("SELECT episodio, texto, curtidas, publicado_em, coletado_em FROM comentarios", conexao)
         comentarios = pd.read_sql("""
-            SELECT k.participante, k.sentimento, c.episodio, c.texto, c.curtidas
+            SELECT k.participante, k.sentimento, c.episodio, c.texto, c.curtidas, c.publicado_em
             FROM classificacoes k JOIN comentarios c ON c.id = k.comentario_id
         """, conexao)
+    # Só as primeiras 48 horas de cada episódio, como no painel (ver janela.py).
+    tabela_janelas = janelas(todos)
+    todos = na_janela(todos, tabela_janelas)
+    comentarios = na_janela(comentarios, tabela_janelas)
 
     tabela = (
         comentarios.pivot_table(index=["participante", "episodio"], columns="sentimento",
@@ -185,8 +191,6 @@ def main():
     print(f"{len(resumos)} resumos de participantes em {SAIDA}.")
 
     # ---------- resumos por episódio ----------
-    with sqlite3.connect(BANCO) as conexao:
-        todos = pd.read_sql("SELECT episodio, texto, curtidas FROM comentarios", conexao)
     cenas = {}
     if os.path.exists(CENAS):
         with open(CENAS, encoding="utf-8") as arquivo:

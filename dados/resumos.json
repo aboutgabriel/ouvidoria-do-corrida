@@ -5,7 +5,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +65 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para -10, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior."
+    "texto": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +64 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para −10, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior."
   },
   "Breia": {
     "episodios": [
@@ -13,7 +13,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +62 para +49. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia."
+    "texto": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +64 para +52. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia."
   },
   "Bárbara Freitas": {
     "episodios": [
@@ -21,7 +21,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −35 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +79. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas."
+    "texto": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −31 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +79. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas."
   },
   "Gabriel Queiroz": {
     "episodios": [
@@ -29,7 +29,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida destacou o talento de Gabriel Queiroz na maquiagem, com o saldo passando de +83 para +41 ao longo dos episódios. Enquanto os comentários elogiaram a qualidade técnica e a postura de Gabriel, a audiência ficou dividida quanto ao desempenho em provas de grupo e à comunicação durante as apresentações. As críticas focaram na dificuldade de Gabriel em sustentar o papel e na gestão do tempo durante os desafios."
+    "texto": "A torcida destacou o talento de Gabriel Queiroz na maquiagem, com o saldo passando de +77 para +40 ao longo dos episódios. Enquanto os comentários elogiaram a qualidade técnica e a postura de Gabriel, a audiência ficou dividida quanto ao desempenho em provas de grupo e à comunicação durante as apresentações. As críticas focaram na dificuldade de Gabriel em sustentar o papel e na gestão do tempo durante os desafios."
   },
   "Jheny Albano": {
     "episodios": [
@@ -37,7 +37,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida iniciou a trajetória de Jheny Albano com um saldo de +23, elogiando sua participação, embora já dividida sobre a autenticidade de suas interações. No episódio seguinte, o saldo caiu para -20, com comentários criticando a postura e a tentativa de criar cenas para o programa. A percepção geral oscilou entre o reconhecimento de seu carisma e o descontentamento com o comportamento adotado ao longo dos episódios."
+    "texto": "A torcida iniciou a trajetória de Jheny Albano com um saldo de +15, elogiando sua participação, embora já dividida sobre a autenticidade de suas interações. No episódio seguinte, o saldo caiu para −22, com comentários criticando a postura e a tentativa de criar cenas para o programa. A percepção geral oscilou entre o reconhecimento de seu carisma e o descontentamento com o comportamento adotado ao longo dos episódios."
   },
   "Latyffa Romayale": {
     "episodios": [
@@ -53,7 +53,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida iniciou a trajetória de Matthel com saldo +49, elogiando o carisma e a postura observadora, embora tenha criticado a qualidade de sua maquiagem. No segundo episódio, o saldo caiu para −50, com comentários divididos sobre suas falas e escolhas, enquanto críticas sobre sua postura e atitudes em relação aos outros participantes ganharam força. A percepção geral tornou-se negativa devido ao comportamento de Matthel durante as dinâmicas de grupo."
+    "texto": "A torcida iniciou a trajetória de Matthel com saldo +53, elogiando o carisma e a postura observadora, embora tenha criticado a qualidade de sua maquiagem. No segundo episódio, o saldo caiu para −51, com comentários divididos sobre suas falas e escolhas, enquanto críticas sobre sua postura e atitudes em relação aos outros participantes ganharam força. A percepção geral tornou-se negativa devido ao comportamento de Matthel durante as dinâmicas de grupo."
   },
   "Paizinho dos Looks": {
     "episodios": [
@@ -61,7 +61,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida recebeu Paizinho dos Looks com saldo de −33 no primeiro episódio, com mais críticas do que elogios, principalmente pela falta de participação nas provas. No segundo episódio, o saldo caiu para −56, com os comentários criticando a desistência do participante e a transferência de responsabilidade para outros colegas. A audiência demonstrou descontentamento com a postura apresentada, culminando em uma recepção negativa após sua saída precoce da competição."
+    "texto": "A torcida recebeu Paizinho dos Looks com saldo de −35 no primeiro episódio, com mais críticas do que elogios, principalmente pela falta de participação nas provas. No segundo episódio, o saldo caiu para −56, com os comentários criticando a desistência do participante e a transferência de responsabilidade para outros colegas. A audiência demonstrou descontentamento com a postura apresentada, culminando em uma recepção negativa após sua saída precoce da competição."
   },
   "Peter Poc": {
     "episodios": [
@@ -69,7 +69,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "No primeiro episódio, a torcida criticou a atitude de Peter Poc no trabalho em grupo, resultando em um saldo de −78. Após a eliminação, a audiência ficou dividida no segundo episódio, com saldo de −3, oscilando entre o desejo pelo retorno de Peter Poc para gerar entretenimento e a rejeição à sua postura durante a competição."
+    "texto": "No primeiro episódio, a torcida criticou a atitude de Peter Poc no trabalho em grupo, resultando em um saldo de −77. Após a eliminação, a audiência ficou dividida no segundo episódio, com saldo de −2, oscilando entre o desejo pelo retorno de Peter Poc para gerar entretenimento e a rejeição à sua postura durante a competição."
   },
   "Rhanyane Garcia": {
     "episodios": [
@@ -77,7 +77,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "No primeiro episódio, a torcida elogiou o carisma e a sagacidade de Rhanyane, resultando em um saldo de +23, apesar de críticas divididas sobre suas escolhas de moda. No segundo episódio, a percepção mudou para um saldo de -25, com os comentários criticando a atitude e o desempenho de Rhanyane na apresentação, embora parte do público tenha se divertido com o humor da participante."
+    "texto": "No primeiro episódio, a torcida elogiou o carisma e a sagacidade de Rhanyane, resultando em um saldo de +33, apesar de críticas divididas sobre suas escolhas de moda. No segundo episódio, a percepção mudou para um saldo de −21, com os comentários criticando a atitude e o desempenho de Rhanyane na apresentação, embora parte do público tenha se divertido com o humor da participante."
   },
   "Sttefone": {
     "episodios": [
@@ -85,7 +85,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida criticou a incoerência de Sttefone no voto durante o primeiro episódio, resultando em um saldo de −25. No episódio seguinte, a percepção mudou positivamente com elogios à agilidade e capacidade de salvar a dupla, elevando o saldo para +75. Ao longo da trajetória, os comentários destacaram a habilidade de Sttefone em momentos de execução, embora a postura estratégica tenha gerado opiniões divididas entre o público."
+    "texto": "A torcida criticou a incoerência de Sttefone no voto durante o primeiro episódio, resultando em um saldo de −27. No episódio seguinte, a percepção mudou positivamente com elogios à agilidade e capacidade de salvar a dupla, elevando o saldo para +77. Ao longo da trajetória, os comentários destacaram a habilidade de Sttefone em momentos de execução, embora a postura estratégica tenha gerado opiniões divididas entre o público."
   },
   "Talitah Sampaio": {
     "episodios": [
@@ -93,6 +93,6 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida criticou a liderança de Talitah no primeiro episódio, resultando em um saldo de −26, devido a decisões estratégicas na indicação ao flop. No segundo episódio, a percepção mudou positivamente com o desempenho em prova, elevando o saldo para +52. Apesar da virada, a torcida permaneceu dividida sobre a postura de Talitah, oscilando entre elogios ao seu protagonismo e críticas ao seu comportamento no jogo."
+    "texto": "A torcida criticou a liderança de Talitah no primeiro episódio, resultando em um saldo de −28, devido a decisões estratégicas na indicação ao flop. No segundo episódio, a percepção mudou positivamente com o desempenho em prova, elevando o saldo para +53. Apesar da virada, a torcida permaneceu dividida sobre a postura de Talitah, oscilando entre elogios ao seu protagonismo e críticas ao seu comportamento no jogo."
   }
 }

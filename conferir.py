@@ -3,7 +3,7 @@ Ouvidoria do Corrida | Conferência dos números
 
 Recalcula as métricas do painel direto em SQL, por um caminho diferente
 do gerar_dados.py (que usa pandas). Se os dois chegarem ao mesmo resultado,
-os números do painel estão certos.
+os números do painel estão certos. Usa a mesma janela de 48 horas do painel.
 
 Uso:
     python conferir.py 1     (episódio 1)
@@ -17,7 +17,12 @@ from verificar_apelidos import BANCO
 
 episodio = int(sys.argv[1]) if len(sys.argv) > 1 else 1
 
-CONSULTA = """
+# Fim da janela: 48 horas (2 dias) depois do primeiro comentário do episódio.
+JANELA = """
+    julianday(c.publicado_em) <= (SELECT julianday(MIN(publicado_em)) + 2 FROM comentarios WHERE episodio = c.episodio)
+"""
+
+CONSULTA = f"""
 SELECT
     k.participante,
     COUNT(*)                                        AS mencoes,
@@ -27,17 +32,17 @@ SELECT
     ROUND(100.0 * (SUM(k.sentimento = 'positivo') - SUM(k.sentimento = 'negativo')) / COUNT(*), 1) AS saldo
 FROM classificacoes k
 JOIN comentarios c ON c.id = k.comentario_id
-WHERE c.episodio = ?
+WHERE c.episodio = ? AND {JANELA}
 GROUP BY k.participante
 ORDER BY mencoes DESC
 """
 
 with sqlite3.connect(BANCO) as conexao:
     linhas = conexao.execute(CONSULTA, (episodio,)).fetchall()
-    citam = conexao.execute("""
+    citam = conexao.execute(f"""
         SELECT COUNT(DISTINCT k.comentario_id)
         FROM classificacoes k JOIN comentarios c ON c.id = k.comentario_id
-        WHERE c.episodio = ?
+        WHERE c.episodio = ? AND {JANELA}
     """, (episodio,)).fetchone()[0]
 
 print(f"Episódio {episodio}: {citam} comentários citam participantes\n")

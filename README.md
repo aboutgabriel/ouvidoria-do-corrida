@@ -14,12 +14,14 @@ A pergunta central: **a torcida consegue prever quem sai?**
 
 ## O que os dados mostram até agora
 
-Depois de 2 episódios e 15.007 comentários lidos:
+Depois de 2 episódios e 13.369 comentários lidos (as primeiras 48 horas de cada episódio):
 
-- **A torcida acertou a primeira eliminação.** Peter Poc saiu no episódio 1 com o pior saldo da torcida (−78).
-- **A maior virada foi de Bárbara Freitas**, que saiu de −35 no episódio 1 para +79 no episódio 2, depois de vencer a prova.
-- **Paizinho dos Looks liderou a conversa do episódio 2** (892 menções), e 70% dos comentários foram críticas, principalmente pela desistência no meio da prova do flop.
-- **Latyffa Romayale é quase unanimidade:** 207 elogios e só 6 críticas no episódio 2.
+- **A torcida acertou a primeira eliminação.** Peter Poc saiu no episódio 1 com o pior saldo da torcida (−77).
+- **A maior virada foi de Bárbara Freitas**, que saiu de −31 no episódio 1 para +79 no episódio 2, depois de vencer a prova.
+- **Paizinho dos Looks liderou a conversa do episódio 2** (847 menções), e 69% dos comentários foram críticas, principalmente pela desistência no meio da prova do flop.
+- **Latyffa Romayale é quase unanimidade:** 201 elogios e só 6 críticas no episódio 2.
+
+**Janela de 48 horas:** cada episódio conta só os comentários publicados nas primeiras 48 horas depois que o vídeo sai. Assim todos os episódios são comparados com a mesma régua, e o painel sai dois dias depois do episódio. No episódio 1, que tem 11 dias de comentários, o saldo de cada participante com mais de 100 menções nas primeiras 48 horas ficou a no máximo 5 pontos do saldo final (`janela.py`).
 
 O **saldo da torcida** vai de −100 (só críticas) a +100 (só elogios) e é calculado como (elogios − críticas) ÷ menções × 100.
 
@@ -79,11 +81,13 @@ python gerar_dados.py               # atualiza o painel em docs/
 
 ## A cada episódio novo
 
-1. Coletar e classificar os comentários do episódio.
+1. Dois dias depois do episódio sair, coletar e classificar os comentários.
 2. Atualizar `dados/resultados.csv` com o resultado oficial.
 3. Ler a transcrição em volta das cenas mais comentadas e descrever cada uma em `dados/cenas.json`.
 4. Rodar `resumir.py` (ele usa as descrições das cenas) e revisar os resumos novos antes de publicar.
 5. Rodar `gerar_dados.py` e publicar.
+
+A coleta deve ser feita depois que as 48 horas fecharem. Se for antes, o `gerar_dados.py` avisa que a janela ainda está aberta e o painel mostra os números como parciais.
 
 ## Limitações conhecidas
 
