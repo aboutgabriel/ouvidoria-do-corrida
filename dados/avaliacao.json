@@ -1,0 +1,22 @@
+{
+  "amostra": 100,
+  "identificacao": 100.0,
+  "acerto": 82.0,
+  "confusao": {
+    "negativo": {
+      "negativo": 33,
+      "neutro": 2,
+      "positivo": 4
+    },
+    "neutro": {
+      "negativo": 1,
+      "neutro": 6,
+      "positivo": 2
+    },
+    "positivo": {
+      "negativo": 2,
+      "neutro": 7,
+      "positivo": 43
+    }
+  }
+}

@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ouvidoria do Corrida</title>
+<meta name="description" content="O que a torcida do Corrida das Blogueiras 8 diz nos comentários do YouTube, episódio a episódio. Projeto de dados e IA de Gabriel Ramiro Martins.">
+<meta property="og:title" content="Ouvidoria do Corrida">
+<meta property="og:description" content="O que a torcida do Corrida das Blogueiras 8 diz quando ninguém está perguntando.">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --porcelana: #F6EDF0;
+    --porcelana-funda: #EFE2E7;
+    --tinta: #34182A;
+    --tinta-2: #6A5060;
+    --ouro: #A47F38;
+    --ouro-claro: #D9C291;
+    --sevres: #3D6EA6;
+    --pompadour: #B8466F;
+    --neutro: #CDBFC6;
+    --display: "Bodoni Moda", "Didot", Georgia, serif;
+    --texto: "Instrument Sans", system-ui, sans-serif;
+    --coluna: 44rem;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--porcelana);
+    color: var(--tinta);
+    font: 400 1rem/1.6 var(--texto);
+  }
+  a { color: inherit; text-decoration-color: var(--ouro); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--ouro); outline-offset: 3px; border-radius: 2px; }
+
+  .aviso {
+    background: var(--tinta);
+    color: var(--porcelana);
+    text-align: center;
+    font-size: .875rem;
+    padding: .6rem 1rem;
+  }
+
+  main { max-width: var(--coluna); margin: 0 auto; padding: 0 1rem 4rem; }
+
+  /* ---------- capa ---------- */
+  .capa { text-align: center; padding: 3.5rem 0 2.5rem; }
+  .cartucho { position: relative; max-width: 30rem; margin: 0 -.25rem; padding: 4.6rem 2.6rem 4.4rem; }
+  @media (min-width: 520px) { .cartucho { max-width: 38rem; margin: 0 auto; padding: 5.2rem 4.5rem 5rem; } }
+  .cartucho svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .cartucho h1 {
+    position: relative;
+    margin: 0;
+    font: 400 clamp(2.5rem, 10.5vw, 4.6rem)/.95 var(--display);
+    font-variation-settings: "opsz" 96;
+    letter-spacing: -.01em;
+  }
+  .cartucho h1 span { display: block; font-style: italic; white-space: nowrap; }
+  .temporada { margin: 1.4rem auto 0; max-width: 22rem; color: var(--tinta-2); font-size: .95rem; }
+  .manchete {
+    margin: 2.6rem auto 0;
+    max-width: 34rem;
+    font: 400 clamp(1.45rem, 4.6vw, 2rem)/1.25 var(--display);
+    font-variation-settings: "opsz" 36;
+    text-wrap: balance;
+  }
+  .edicao { margin-top: 1rem; color: var(--tinta-2); font-size: .9rem; }
+
+  /* ---------- seletor de episódio ---------- */
+  .episodios { display: flex; justify-content: center; gap: .5rem; margin: 2rem 0 0; flex-wrap: wrap; }
+  .episodios button {
+    font: 500 .95rem var(--texto);
+    color: var(--tinta);
+    background: transparent;
+    border: 1px solid var(--ouro-claro);
+    border-radius: 999px;
+    padding: .45rem 1.1rem;
+    cursor: pointer;
+  }
+  .episodios button[aria-selected="true"] { background: var(--tinta); color: var(--porcelana); border-color: var(--tinta); }
+
+  /* ---------- seções ---------- */
+  section { margin-top: 4rem; }
+  .ornamento { display: block; width: 7rem; height: auto; margin: 0 auto 2.2rem; }
+  h2 {
+    margin: 0;
+    font: 400 clamp(1.8rem, 6vw, 2.5rem)/1.1 var(--display);
+    font-variation-settings: "opsz" 72;
+  }
+  .lede { margin: .7rem 0 0; color: var(--tinta-2); max-width: 36rem; }
+
+  .legenda { display: flex; gap: 1.2rem; flex-wrap: wrap; margin: 1.6rem 0 .4rem; font-size: .875rem; color: var(--tinta-2); }
+  .legenda span { display: inline-flex; align-items: center; gap: .45rem; }
+  .amostra { width: .9rem; height: .9rem; border-radius: 2px; display: inline-block; }
+
+  /* ranking */
+  .ranking { list-style: none; margin: 0; padding: 0; }
+  .ranking li { padding: 1.05rem 0 1.1rem; border-bottom: 1px solid var(--porcelana-funda); }
+  .linha-nome { display: grid; grid-template-columns: 1.6rem 1fr auto; align-items: baseline; gap: .6rem; }
+  .posicao { font: italic 400 1rem var(--display); color: var(--ouro); }
+  .nome { font: 400 1.3rem/1.2 var(--display); font-variation-settings: "opsz" 28; }
+  .resultado { font-size: .8rem; color: var(--tinta-2); margin-left: .5rem; font-family: var(--texto); white-space: nowrap; }
+  .resultado.venceu { color: var(--ouro); font-weight: 600; }
+  .resultado.saiu { color: var(--pompadour); font-weight: 600; }
+  .mencoes { font-size: .875rem; color: var(--tinta-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .mencoes strong { color: var(--tinta); font-weight: 600; font-size: 1rem; }
+
+  .humor { display: grid; grid-template-columns: 2.4rem 1fr 2.4rem; align-items: center; gap: .55rem; margin: .7rem 0 0 2.2rem; }
+  .humor .pct { font-size: .8rem; color: var(--tinta-2); font-variant-numeric: tabular-nums; }
+  .humor .pct.esq { text-align: right; }
+  .barra { position: relative; height: 12px; display: flex; cursor: default; }
+  .barra::after { content: ""; position: absolute; left: 50%; top: -4px; bottom: -4px; width: 1px; background: var(--tinta-2); opacity: .5; }
+  .metade { flex: 1; display: flex; }
+  .metade.neg { justify-content: flex-end; padding-right: 1px; }
+  .metade.pos { padding-left: 1px; }
+  .metade i { display: block; height: 100%; }
+  .metade.neg i { background: var(--pompadour); border-radius: 4px 0 0 4px; }
+  .metade.pos i { background: var(--sevres); border-radius: 0 4px 4px 0; }
+
+  /* torcida x resultado */
+  .faixas { margin-top: 1.8rem; }
+  .faixa { margin-bottom: 2.4rem; }
+  .faixa h3 { margin: 0 0 .2rem; font: 500 1rem var(--texto); }
+  .faixa p { margin: 0 0 .8rem; color: var(--tinta-2); font-size: .95rem; max-width: 36rem; }
+  .faixa svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .faixa text { font-family: var(--texto); }
+
+  /* método */
+  .metodo p { max-width: 36rem; }
+  .metodo .numero { font: 400 1.15em var(--display); }
+  details { margin-top: 1.2rem; font-size: .9rem; }
+  summary { cursor: pointer; color: var(--tinta-2); }
+  table { width: 100%; border-collapse: collapse; margin-top: .8rem; font-variant-numeric: tabular-nums; }
+  th, td { text-align: right; padding: .35rem .4rem; border-bottom: 1px solid var(--porcelana-funda); }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-weight: 600; color: var(--tinta-2); }
+
+  footer { max-width: var(--coluna); margin: 0 auto; padding: 2rem 1rem 3rem; border-top: 1px solid var(--ouro-claro); font-size: .875rem; color: var(--tinta-2); }
+  footer p { margin: .3rem 0; }
+
+  .dica {
+    position: fixed; pointer-events: none; z-index: 10;
+    background: var(--tinta); color: var(--porcelana);
+    font-size: .8rem; line-height: 1.4; padding: .5rem .7rem; border-radius: 4px;
+    opacity: 0; transition: opacity .12s; max-width: 15rem;
+  }
+  .dica.ativa { opacity: 1; }
+
+  @media (min-width: 640px) {
+    .capa { padding-top: 5rem; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .cartucho svg path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: desenhar 1.8s ease-out .15s forwards; }
+    @keyframes desenhar { to { stroke-dashoffset: 0; } }
+  }
+</style>
+</head>
+<body>
+<div class="aviso" id="aviso" hidden>Prévia com dados de exemplo. Os números ainda não são reais.</div>
+
+<main>
+  <header class="capa">
+    <div class="cartucho">
+      <svg viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.2" stroke-linecap="round">
+        <!-- concha no topo -->
+        <path pathLength="1" d="M168 34 Q200 -6 232 34"/>
+        <path pathLength="1" d="M200 30 L200 8 M200 30 L186 11 M200 30 L214 11 M200 30 L174 19 M200 30 L226 19"/>
+        <!-- moldura com volutas -->
+        <path pathLength="1" d="M168 34 C120 34 92 40 74 58 C60 72 70 92 86 86 C98 81 92 66 80 70"/>
+        <path pathLength="1" d="M232 34 C280 34 308 40 326 58 C340 72 330 92 314 86 C302 81 308 66 320 70"/>
+        <path pathLength="1" d="M74 58 C40 92 30 128 34 150 C30 172 40 208 74 242"/>
+        <path pathLength="1" d="M326 58 C360 92 370 128 366 150 C370 172 360 208 326 242"/>
+        <path pathLength="1" d="M34 150 C18 146 14 132 24 126 C32 122 38 132 30 136"/>
+        <path pathLength="1" d="M366 150 C382 146 386 132 376 126 C368 122 362 132 370 136"/>
+        <path pathLength="1" d="M74 242 C60 228 70 208 86 214 C98 219 92 234 80 230"/>
+        <path pathLength="1" d="M326 242 C340 228 330 208 314 214 C302 219 308 234 320 230"/>
+        <path pathLength="1" d="M74 242 C110 268 160 270 200 270 C240 270 290 268 326 242"/>
+        <!-- pingente -->
+        <path pathLength="1" d="M186 270 C192 284 208 284 214 270 M200 284 L200 294"/>
+      </svg>
+      <h1>Ouvidoria <span>do Corrida</span></h1>
+    </div>
+    <p class="temporada">O que a torcida do Corrida das Blogueiras 8 diz quando ninguém está perguntando.</p>
+    <p class="manchete" id="manchete"></p>
+    <p class="edicao" id="edicao"></p>
+    <div class="episodios" role="tablist" aria-label="Escolha o episódio" id="seletor"></div>
+  </header>
+
+  <section aria-labelledby="t-conversa">
+    <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
+    <h2 id="t-conversa">Quem a torcida comentou</h2>
+    <p class="lede" id="lede-conversa">Em ordem de menções. A barra mostra, entre os comentários sobre cada participante, a parcela de críticas e de elogios.</p>
+    <div class="legenda" aria-hidden="true">
+      <span><i class="amostra" style="background:var(--pompadour)"></i>Críticas</span>
+      <span><i class="amostra" style="background:var(--sevres)"></i>Elogios</span>
+      <span>O restante são comentários neutros</span>
+    </div>
+    <ol class="ranking" id="ranking"></ol>
+    <details>
+      <summary>Ver os números em tabela</summary>
+      <div id="tabela-conversa"></div>
+    </details>
+  </section>
+
+  <section aria-labelledby="t-resultado">
+    <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
+    <h2 id="t-resultado">A torcida adivinha quem sai?</h2>
+    <p class="lede">Cada ponto é uma participante, posicionada pelo saldo da torcida: elogios menos críticas, de −100 a +100. Quanto mais à direita, mais a torcida estava a favor.</p>
+    <div class="legenda" aria-hidden="true">
+      <span><svg width="14" height="14"><circle cx="7" cy="7" r="5.5" fill="#A47F38"/></svg>Venceu</span>
+      <span><svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="#CDBFC6"/></svg>Seguiu na disputa</span>
+      <span><svg width="14" height="14"><circle cx="7" cy="7" r="4.6" fill="#F6EDF0" stroke="#B8466F" stroke-width="2"/></svg>Flop</span>
+      <span><svg width="14" height="14"><path d="M3 3 L11 11 M11 3 L3 11" stroke="#34182A" stroke-width="2"/></svg>Saiu</span>
+    </div>
+    <div class="faixas" id="faixas"></div>
+  </section>
+
+  <section class="metodo" aria-labelledby="t-metodo">
+    <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
+    <h2 id="t-metodo">Como a Ouvidoria escuta a torcida</h2>
+    <div id="metodo"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Projeto independente de fã, sem vínculo com a DiaTV ou com a produção do programa.</p>
+  <p>Feito por Gabriel Ramiro Martins. <a href="https://github.com/aboutgabriel/ouvidoria-do-corrida">Código no GitHub</a> e <a href="https://linkedin.com/in/gabriel-ramiro-martins">LinkedIn</a>.</p>
+</footer>
+
+<div class="dica" id="dica" role="status"></div>
+
+<script src="dados.js"></script>
+<script>
+(function () {
+  const D = window.DADOS;
+  const fmt = n => n.toLocaleString("pt-BR");
+  const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+  // Arredonda ",5" para longe do zero também nos negativos (−34,5 vira −35), como no Python.
+  const arred = v => Math.sign(v) * Math.round(Math.abs(v));
+  const sinal = v => (arred(v) > 0 ? "+" : "") + arred(v);
+  const ROTULO = { Venceu: "venceu", Salvo: "seguiu na disputa", Flop: "flop", Eliminado: "saiu", Desistiu: "desistiu" };
+  const ETIQUETA = { Venceu: "venceu", Flop: "flop", Eliminado: "saiu", Desistiu: "desistiu" };
+  const SAIU = r => r === "Eliminado" || r === "Desistiu";
+  const primeiroNome = n => n.split(" ")[0];
+
+  if (D.exemplo) document.getElementById("aviso").hidden = false;
+
+  const eps = D.episodios.slice().sort((a, b) => a.numero - b.numero);
+  let atual = eps[eps.length - 1].numero;
+
+  // quem ainda participa ou saiu naquele episódio (ignora quem já tinha saído antes)
+  const emJogo = ep => ep.participantes.filter(p => p.resultado);
+
+  // ---------- dica (tooltip) ----------
+  const dica = document.getElementById("dica");
+  function mostrar(e, html) {
+    dica.innerHTML = html;
+    dica.classList.add("ativa");
+    const r = (e.currentTarget || e.target).getBoundingClientRect();
+    const x = e.clientX ?? (r.left + r.width / 2);
+    const y = e.clientY ?? r.top;
+    const w = dica.offsetWidth;
+    dica.style.left = Math.min(Math.max(8, x - w / 2), innerWidth - w - 8) + "px";
+    dica.style.top = (y - dica.offsetHeight - 14) + "px";
+  }
+  const esconder = () => dica.classList.remove("ativa");
+  function ligarDica(el, html) {
+    el.addEventListener("pointermove", e => mostrar(e, html));
+    el.addEventListener("pointerleave", esconder);
+    el.addEventListener("focus", e => mostrar(e, html));
+    el.addEventListener("blur", esconder);
+  }
+
+  // ---------- seletor ----------
+  const seletor = document.getElementById("seletor");
+  eps.forEach(ep => {
+    const b = document.createElement("button");
+    b.role = "tab";
+    b.textContent = "Episódio " + ep.numero;
+    b.addEventListener("click", () => { atual = ep.numero; render(); });
+    seletor.appendChild(b);
+  });
+
+  function manchete(ep) {
+    const lista = emJogo(ep);
+    const topo = lista.slice().sort((a, b) => b.mencoes - a.mencoes)[0];
+    const relevantes = lista.filter(p => p.mencoes >= 30);
+    const fav = relevantes.slice().sort((a, b) => b.saldo - a.saldo)[0];
+    let t = `${primeiroNome(topo.nome)} liderou as menções do episódio ${ep.numero}`;
+    if (fav && fav.nome !== topo.nome) t += `, e ${primeiroNome(fav.nome)} terminou com a torcida mais a favor.`;
+    else t += " e ainda terminou com a torcida mais a favor.";
+    return t;
+  }
+
+  function renderRanking(ep) {
+    const lista = emJogo(ep).slice().sort((a, b) => b.mencoes - a.mencoes);
+    const ol = document.getElementById("ranking");
+    ol.innerHTML = "";
+    lista.forEach((p, i) => {
+      const neg = pct(p.negativo, p.mencoes), pos = pct(p.positivo, p.mencoes);
+      const r = p.resultado;
+      const classe = r === "Venceu" ? "venceu" : SAIU(r) ? "saiu" : "";
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <div class="linha-nome">
+          <span class="posicao">${i + 1}</span>
+          <span><span class="nome">${p.nome}</span><span class="resultado ${classe}">${ETIQUETA[r] || ""}</span></span>
+          <span class="mencoes"><strong>${fmt(p.mencoes)}</strong> menções</span>
+        </div>
+        <div class="humor">
+          <span class="pct esq">${neg}%</span>
+          <div class="barra" tabindex="0" aria-label="${p.nome}: ${neg}% críticas, ${pos}% elogios">
+            <div class="metade neg"><i style="width:${neg}%"></i></div>
+            <div class="metade pos"><i style="width:${pos}%"></i></div>
+          </div>
+          <span class="pct">${pos}%</span>
+        </div>`;
+      ligarDica(li.querySelector(".barra"),
+        `<strong>${p.nome}</strong><br>${fmt(p.positivo)} elogios, ${fmt(p.negativo)} críticas, ${fmt(p.neutro)} neutros<br>Saldo da torcida: ${sinal(p.saldo)}`);
+      ol.appendChild(li);
+    });
+
+    document.getElementById("tabela-conversa").innerHTML = `<table>
+      <thead><tr><th>Participante</th><th>Menções</th><th>Elogios</th><th>Críticas</th><th>Neutros</th><th>Saldo</th></tr></thead>
+      <tbody>${lista.map(p => `<tr><td>${p.nome}</td><td>${fmt(p.mencoes)}</td><td>${fmt(p.positivo)}</td><td>${fmt(p.negativo)}</td><td>${fmt(p.neutro)}</td><td>${arred(p.saldo)}</td></tr>`).join("")}</tbody></table>`;
+  }
+
+  function frase(ep, lista) {
+    const ordem = lista.slice().sort((a, b) => a.saldo - b.saldo);
+    const saiu = lista.find(p => p.resultado === "Eliminado");
+    const desistiu = lista.find(p => p.resultado === "Desistiu");
+    const partes = [];
+    if (saiu) {
+      const pos = ordem.indexOf(saiu) + 1;
+      partes.push(pos === 1
+        ? `${primeiroNome(saiu.nome)} tinha o pior saldo da torcida e saiu do programa. Desta vez, a torcida acertou.`
+        : `${primeiroNome(saiu.nome)} saiu com o ${pos}º pior saldo entre ${lista.length}. O pior era de ${primeiroNome(ordem[0].nome)}.`);
+    } else {
+      partes.push("Não houve eliminação pelo júri neste episódio.");
+    }
+    if (desistiu) partes.push(`${primeiroNome(desistiu.nome)} desistiu, então fica fora da comparação.`);
+    return partes.join(" ");
+  }
+
+  function renderFaixas() {
+    const box = document.getElementById("faixas");
+    box.innerHTML = "";
+    eps.slice().reverse().forEach(ep => {
+      const lista = emJogo(ep);
+      const W = Math.max(300, box.clientWidth), H = 120, M = 18, eixo = 66;
+      const x = s => M + (s + 100) / 200 * (W - 2 * M);
+      const div = document.createElement("div");
+      div.className = "faixa";
+      div.innerHTML = `<h3>Episódio ${ep.numero}</h3><p>${frase(ep, lista.filter(p => p.resultado !== "Desistiu"))}</p>`;
+      const ns = "http://www.w3.org/2000/svg";
+      const svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+      svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", `Saldo da torcida no episódio ${ep.numero}: ` + lista.map(p => `${p.nome} ${arred(p.saldo)}`).join(", "));
+      let g = `<line x1="${M}" x2="${W - M}" y1="${eixo}" y2="${eixo}" stroke="#D9C291"/>`;
+      [-100, -50, 0, 50, 100].forEach(t => {
+        g += `<line x1="${x(t)}" x2="${x(t)}" y1="${eixo - (t === 0 ? 30 : 4)}" y2="${eixo + 4}" stroke="${t === 0 ? "#6A5060" : "#D9C291"}" ${t === 0 ? 'stroke-dasharray="2 3"' : ""}/>`;
+        g += `<text x="${x(t)}" y="${eixo + 22}" text-anchor="middle" font-size="12" fill="#6A5060">${t > 0 ? "+" + t : t === 0 ? "0" : "−" + Math.abs(t)}</text>`;
+      });
+      g += `<text x="${M}" y="${eixo + 44}" font-size="12" fill="#6A5060">mais críticas</text><text x="${W - M}" y="${eixo + 44}" text-anchor="end" font-size="12" fill="#6A5060">mais elogios</text>`;
+      if (W < 420) g = g.replace(/<text[^>]*>[−+]50<\/text>/g, "");
+      svg.innerHTML = g;
+
+      // pontos: salvas primeiro, destaques por cima
+      const peso = r => r === "Salvo" ? 0 : 1;
+      const rotulos = [];
+      lista.slice().sort((a, b) => peso(a.resultado) - peso(b.resultado)).forEach(p => {
+        const cx = x(p.saldo), r = p.resultado;
+        const el = document.createElementNS(ns, "g");
+        el.setAttribute("tabindex", "0");
+        el.setAttribute("aria-label", `${p.nome}, ${ROTULO[r]}, saldo ${arred(p.saldo)}`);
+        let m = `<circle cx="${cx}" cy="${eixo}" r="14" fill="transparent"/>`;
+        if (r === "Venceu") m += `<circle cx="${cx}" cy="${eixo}" r="7" fill="#A47F38" stroke="#F6EDF0" stroke-width="2"/>`;
+        else if (r === "Flop") m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#F6EDF0" stroke="#B8466F" stroke-width="2.5"/>`;
+        else if (SAIU(r)) m += `<path d="M${cx - 6} ${eixo - 6} L${cx + 6} ${eixo + 6} M${cx + 6} ${eixo - 6} L${cx - 6} ${eixo + 6}" stroke="#34182A" stroke-width="2.5" stroke-linecap="round"/>`;
+        else m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#CDBFC6" stroke="#F6EDF0" stroke-width="2"/>`;
+        el.innerHTML = m;
+        ligarDica(el, `<strong>${p.nome}</strong><br>${ROTULO[r]}<br>Saldo da torcida: ${sinal(p.saldo)}`);
+        svg.appendChild(el);
+        if (r !== "Salvo") rotulos.push({ cx, nome: primeiroNome(p.nome) });
+      });
+
+      // rótulos diretos só para destaques, em níveis para não colidir
+      rotulos.sort((a, b) => a.cx - b.cx);
+      const niveis = [];
+      rotulos.forEach(l => {
+        const larg = l.nome.length * 7 + 8;
+        let n = 0;
+        while (niveis[n] !== undefined && niveis[n] > l.cx - larg / 2) n++;
+        niveis[n] = l.cx + larg / 2;
+        const y = eixo - 16 - n * 15;
+        const t = document.createElementNS(ns, "text");
+        t.setAttribute("x", l.cx); t.setAttribute("y", y);
+        t.setAttribute("text-anchor", "middle"); t.setAttribute("font-size", "12.5"); t.setAttribute("fill", "#34182A");
+        t.textContent = l.nome;
+        svg.appendChild(t);
+      });
+      div.appendChild(svg);
+      box.appendChild(div);
+    });
+  }
+
+  function renderMetodo() {
+    const citam = eps.reduce((s, e) => s + e.comentarios_com_citacao, 0);
+    const av = D.avaliacao;
+    const acerto = av
+      ? `<p>Para saber se dá para confiar nos números, ${fmt(av.amostra)} menções sorteadas foram revisadas à mão, sem ver a resposta do modelo, e depois comparadas com ela. O modelo identificou a participante certa em <span class="numero">${String(av.identificacao).replace(".", ",")}%</span> dos casos e concordou com o sentimento da revisão humana em <span class="numero">${String(av.acerto).replace(".", ",")}%</span>. As divergências se concentram em ironia e em elogios indiretos, como defender uma participante criticando outra.</p>`
+      : `<p>A taxa de acerto do modelo está sendo medida: uma amostra sorteada de comentários está sendo classificada à mão para comparação.</p>`;
+    document.getElementById("metodo").innerHTML = `
+      <p class="lede">Os dados vêm dos comentários públicos de cada episódio no canal da DiaTV no YouTube, coletados pela API oficial.</p>
+      <p>Foram lidos <span class="numero">${fmt(D.total_comentarios)}</span> comentários. Destes, <span class="numero">${fmt(citam)}</span> citam pelo menos uma participante pelo nome ou por um apelido da torcida, como Talita para Talitah ou Poc para Peter Poc.</p>
+      <p>Um modelo de linguagem (${D.modelo}) lê cada um e decide o sentimento para cada participante citada. Um mesmo comentário pode elogiar uma e criticar outra, e as duas opiniões são contadas separadamente.</p>
+      ${acerto}
+      <p>Nenhum nome de quem comentou é guardado ou publicado. Última atualização em ${D.atualizado_em.split("-").reverse().join("/")}.</p>`;
+  }
+
+  function render() {
+    const ep = eps.find(e => e.numero === atual);
+    seletor.querySelectorAll("button").forEach((b, i) => b.setAttribute("aria-selected", eps[i].numero === atual));
+    document.getElementById("manchete").textContent = manchete(ep);
+    document.getElementById("edicao").textContent = `${fmt(ep.comentarios)} comentários lidos no episódio ${ep.numero}.`;
+    renderRanking(ep);
+  }
+
+  render();
+  renderFaixas();
+  renderMetodo();
+  let larguraAnterior = innerWidth;
+  addEventListener("resize", () => { if (innerWidth !== larguraAnterior) { larguraAnterior = innerWidth; renderFaixas(); } });
+})();
+</script>
+</body>
+</html>
