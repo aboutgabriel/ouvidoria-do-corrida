@@ -182,9 +182,10 @@
   .achados p { margin: .6rem 0 0; font-size: .95rem; color: var(--tinta-2); }
   .bloco-achados { margin-bottom: 4.5rem; }
   .bloco-episodio { margin-bottom: 4.5rem; }
-  .resumo-ep { margin: 1rem 0 0; font: 400 clamp(1.08rem, 2.6vw, 1.25rem)/1.55 var(--display); color: var(--tinta); }
-  .resumo-ep::first-letter { float: left; font-size: 3.3em; line-height: .85; padding: .08em .12em 0 0; color: var(--ouro); }
-  .nota-ep { margin: .8rem 0 0; font-size: .8rem; color: var(--tinta-2); }
+  .cartao-ep { margin-top: 1.4rem; padding: 1.4rem 1.6rem 1.2rem; background: var(--porcelana-clara); border: 1px solid var(--ouro-claro); border-radius: 4px; box-shadow: inset 0 0 0 5px var(--porcelana-clara), inset 0 0 0 6px rgba(164,127,56,.3); }
+  .resumo-ep { margin: 0; font: 400 1.04rem/1.75 var(--texto); color: var(--tinta); }
+  .resumo-ep::first-letter { float: left; font: 400 3.1em/.9 var(--display); padding: .06em .14em 0 0; color: var(--ouro); }
+  .nota-ep { margin: 1rem 0 0; padding-top: .8rem; border-top: 1px solid rgba(164,127,56,.25); font-size: .78rem; color: var(--tinta-2); }
   details { margin-top: 1.2rem; font-size: .9rem; }
   summary { cursor: pointer; color: var(--tinta-2); }
   table { width: 100%; border-collapse: collapse; margin-top: .8rem; font-variant-numeric: tabular-nums; }
@@ -332,8 +333,10 @@
     <div class="bloco-episodio" id="bloco-episodio" aria-labelledby="t-episodio" hidden>
       <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
       <h2 id="t-episodio"></h2>
+      <div class="cartao-ep">
       <p class="resumo-ep" id="resumo-ep"></p>
       <p class="nota-ep">Resumo escrito pelo Gemini a partir dos números, das cenas mais comentadas e dos comentários mais curtidos do episódio, e revisado antes de ir ao ar.</p>
+      </div>
     </div>
     <div class="bloco-achados" aria-labelledby="t-achados">
       <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
