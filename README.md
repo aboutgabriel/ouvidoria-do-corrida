@@ -10,13 +10,18 @@ Projeto de dados e IA que acompanha, episódio a episódio, como a torcida reage
 
 A pergunta central: **a torcida consegue prever quem sai?**
 
+Como os comentários de um episódio são escritos depois que ele vai ao ar, quando a torcida já sabe quem saiu, o projeto separa duas medidas:
+
+- **Concordância:** quem sai é quem a torcida mais critica no próprio episódio?
+- **Previsão:** o saldo do episódio anterior, escrito antes do resultado, já apontava quem ia sair? O primeiro teste de previsão acontece na próxima eliminação.
+
 > Projeto em andamento, atualizado a cada episódio da temporada (outubro de 2026 a janeiro de 2027).
 
 ## O que os dados mostram até agora
 
 Depois de 2 episódios e 13.369 comentários lidos (as primeiras 48 horas de cada episódio):
 
-- **A torcida acertou a primeira eliminação.** Peter Poc saiu no episódio 1 com o pior saldo da torcida (−77).
+- **Torcida e júri concordaram na primeira eliminação.** Peter Poc saiu no episódio 1 e era quem a torcida mais criticava (−77). Isso é concordância, não previsão: os comentários foram escritos depois do episódio.
 - **A maior virada foi de Bárbara Freitas**, que saiu de −32 no episódio 1 para +80 no episódio 2, depois de vencer a prova.
 - **Paizinho dos Looks liderou a conversa do episódio 2** (847 menções), e 69% dos comentários foram críticas, principalmente pela desistência no meio da prova do flop.
 - **Latyffa Romayale é quase unanimidade:** 201 elogios e só 6 críticas no episódio 2.
