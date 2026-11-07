@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
+from corrigir import aplicar_correcoes
 from janela import JANELA_HORAS, janelas, na_janela
 from verificar_apelidos import BANCO, PASTA
 
@@ -26,6 +27,9 @@ AVALIACAO = os.path.join(PASTA, "dados", "avaliacao.json")
 RESUMOS = os.path.join(PASTA, "dados", "resumos.json")
 RESUMOS_EPISODIOS = os.path.join(PASTA, "dados", "resumos_episodios.json")
 CENAS = os.path.join(PASTA, "dados", "cenas.json")  # descrições das cenas, escritas à mão
+# Comentários que não devem aparecer em destaque no painel (continuam contando nos números).
+OCULTAS = os.path.join(PASTA, "dados", "citacoes_ocultas.csv")
+IDS_OCULTOS = set(pd.read_csv(OCULTAS)["comentario_id"]) if os.path.exists(OCULTAS) else set()
 SAIDA = os.path.join(PASTA, "docs", "dados.js")
 FOTOS = os.path.join(PASTA, "docs", "fotos")
 CREDITO_FOTOS = "Foto: DiaTV/divulgação"
@@ -69,7 +73,7 @@ def achar_fotos(nomes):
 
 def mais_curtido(df):
     """Comentário com mais curtidas de um grupo, sem links nem textos longos demais."""
-    df = df[~df["texto"].str.contains("http", na=False)]
+    df = df[~df["texto"].str.contains("http", na=False) & ~df["id"].isin(IDS_OCULTOS)]
     if df.empty:
         return None
     linha = df.sort_values("curtidas", ascending=False).iloc[0]
@@ -125,6 +129,7 @@ def cenas_do_episodio(comentarios, revisao=None):
 
 
 def main():
+    aplicar_correcoes()  # correções da revisão humana (dados/correcoes.csv)
     with sqlite3.connect(BANCO) as conexao:
         todos = pd.read_sql("SELECT id, episodio, video_id, texto, curtidas, publicado_em, coletado_em FROM comentarios", conexao)
         processados = pd.read_sql("SELECT comentario_id, modelo FROM processados", conexao)
@@ -226,6 +231,9 @@ def main():
         "resumos_episodios": resumos_episodios,
         "fotos": achar_fotos(sorted(tabela["participante"].unique()) + APRESENTADORES),
         "apresentadores": APRESENTADORES,
+        # Recorte sem fundo dos anfitriões (docs/fotos/edu-recorte.png): se existir, substitui o medalhão.
+        "recortes": {n: f"fotos/{n.lower()}-recorte.png" for n in APRESENTADORES
+                     if os.path.exists(os.path.join(FOTOS, f"{n.lower()}-recorte.png"))},
         "credito_fotos": CREDITO_FOTOS,
     }
 

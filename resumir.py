@@ -31,6 +31,7 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
+from corrigir import aplicar_correcoes
 from janela import janelas, na_janela
 from verificar_apelidos import BANCO, PASTA
 
@@ -144,6 +145,7 @@ def main():
     parser.add_argument("--todos", action="store_true", help="Refaz todos os resumos")
     args = parser.parse_args()
 
+    aplicar_correcoes()  # correções da revisão humana (dados/correcoes.csv)
     load_dotenv()
     chave = os.getenv("GEMINI_API_KEY")
     if not chave or chave == "cole_sua_chave_aqui":

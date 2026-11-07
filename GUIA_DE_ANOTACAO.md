@@ -54,3 +54,5 @@ O sentimento é **para aquela participante**, não para o comentário inteiro. "
 Anote aqui cada caso novo e a decisão tomada, com um exemplo.
 
 - 07/11/2026: comentários mistos seguem a ideia principal (exemplo da Breia na seção 3).
+- 07/11/2026: "Não aguento [participante]... kkkk" é risada com a participante, não crítica: neutro, a não ser que tenha uma crítica explícita junto. Já o deboche que questiona algo dela ("que bordão?", "cadê esse carisma?") é negativo.
+- 07/11/2026: criticar quem votou na participante ou foi incoerente com ela é defesa, então é positivo para ela.

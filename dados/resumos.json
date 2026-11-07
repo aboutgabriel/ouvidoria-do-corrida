@@ -5,7 +5,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +64 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para −10, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior."
+    "texto": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +67 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para −10, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior."
   },
   "Breia": {
     "episodios": [
@@ -13,7 +13,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +64 para +52. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia."
+    "texto": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +64 para +53. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia."
   },
   "Bárbara Freitas": {
     "episodios": [
@@ -21,7 +21,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −31 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +79. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas."
+    "texto": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −31 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +80. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas."
   },
   "Gabriel Queiroz": {
     "episodios": [
@@ -69,7 +69,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "No primeiro episódio, a torcida criticou a atitude de Peter Poc no trabalho em grupo, resultando em um saldo de −77. Após a eliminação, a audiência ficou dividida no segundo episódio, com saldo de −2, oscilando entre o desejo pelo retorno de Peter Poc para gerar entretenimento e a rejeição à sua postura durante a competição."
+    "texto": "No primeiro episódio, a torcida criticou a atitude de Peter Poc no trabalho em grupo, resultando em um saldo de −77. Após a eliminação, a audiência ficou dividida no segundo episódio, com saldo de −1, oscilando entre o desejo pelo retorno de Peter Poc para gerar entretenimento e a rejeição à sua postura durante a competição."
   },
   "Rhanyane Garcia": {
     "episodios": [

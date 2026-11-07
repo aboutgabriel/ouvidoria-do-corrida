@@ -226,17 +226,17 @@ window.DADOS = {
           "nome": "Aysha Pink",
           "resultado": "Flop",
           "mencoes": 218,
-          "positivo": 162,
-          "negativo": 22,
-          "neutro": 34,
-          "saldo": 64.2202,
+          "positivo": 164,
+          "negativo": 19,
+          "neutro": 35,
+          "saldo": 66.5138,
           "elogio": {
             "texto": "uma sacanagem não terem salvo a Aysha QUE FEZ A ÚNICA ENTREGA MINIMAMENTE BOA DAQUELE GRUPO.",
             "curtidas": 1783
           },
           "critica": {
-            "texto": "1:11:40 concordo com o Peter só nisso, a Thalita ter escolhido a Aisha pro flop mesmo a maquiagem sendo a única coisa elogiada foi uma bola fora, o paizinho deveria ter ido já que não fez nada além de desfilar",
-            "curtidas": 1606
+            "texto": "Aysha sempre inconveniente 🤮",
+            "curtidas": 3
           }
         },
         {
@@ -483,13 +483,13 @@ window.DADOS = {
           "nome": "Paizinho dos Looks",
           "resultado": "Desistiu",
           "mencoes": 847,
-          "positivo": 115,
+          "positivo": 114,
           "negativo": 586,
-          "neutro": 146,
-          "saldo": -55.608,
+          "neutro": 147,
+          "saldo": -55.7261,
           "elogio": {
-            "texto": "hora que o paizinho e o outro menino q esqueci o nome começaram a falar, senti que ele já tava detestando… acho que pra ele o paizinho não era favorito pra entrar não",
-            "curtidas": 151
+            "texto": "Dividido entre entender a revolta do Edu, pois ele está na total razão, mas também de entender a ansiedade do Rodolfo. Fiquei com pena real. Boa sorte pra ele! 🫶",
+            "curtidas": 117
           },
           "critica": {
             "texto": "Paizinho realmente foi um pai: Desistiu e foi embora na primeira oportunidade",
@@ -500,34 +500,34 @@ window.DADOS = {
           "nome": "Talitah Sampaio",
           "resultado": "Venceu",
           "mencoes": 640,
-          "positivo": 435,
-          "negativo": 98,
-          "neutro": 107,
-          "saldo": 52.6563,
+          "positivo": 437,
+          "negativo": 95,
+          "neutro": 108,
+          "saldo": 53.4375,
           "elogio": {
             "texto": "Meu Deus a ideia da Barbara, que mente preciosa KKKKKKKKKKKKKKKKKKKK. Deitei pra Thalita, ela entrega nas provas, winner material total.",
             "curtidas": 7591
           },
           "critica": {
-            "texto": "Essa Talitah que criaram é bizarro, não vi em nenhum segundo ela. A mamis ta aguentando muito e sendo simpática ainda",
-            "curtidas": 1789
+            "texto": "a perseguição com a talita até da pra entender, ela tem um ego enorme, mas a da breia n tem justificativa",
+            "curtidas": 76
           }
         },
         {
           "nome": "Breia",
           "resultado": "Salvo",
           "mencoes": 372,
-          "positivo": 247,
-          "negativo": 54,
-          "neutro": 71,
-          "saldo": 51.8817,
+          "positivo": 248,
+          "negativo": 52,
+          "neutro": 72,
+          "saldo": 52.6882,
           "elogio": {
             "texto": "A Lattyfa é MUITO carismática fico chocada, pra mim é um dos diamantes da temporada junto com a Breia",
             "curtidas": 5144
           },
           "critica": {
-            "texto": "Não aguento a breia chamando \"beijos da breia\" de bordão KAKAKAKAKAKKAAK",
-            "curtidas": 507
+            "texto": "27:12 gente eu grito toda a vez que a Breia fala do “BORDÃO” “beijos da Breia” kkkkkkkk tipo assim que bordão? ai meu bordão é “tchau, até mais!”",
+            "curtidas": 321
           }
         },
         {
@@ -552,16 +552,16 @@ window.DADOS = {
           "resultado": "Venceu",
           "mencoes": 248,
           "positivo": 209,
-          "negativo": 12,
-          "neutro": 27,
-          "saldo": 79.4355,
+          "negativo": 11,
+          "neutro": 28,
+          "saldo": 79.8387,
           "elogio": {
             "texto": "Meu Deus a ideia da Barbara, que mente preciosa KKKKKKKKKKKKKKKKKKKK. Deitei pra Thalita, ela entrega nas provas, winner material total.",
             "curtidas": 7591
           },
           "critica": {
-            "texto": "Exatamente e ele quer da palestrinha pra Talita q ela n foi justa e foi incoerente sendo que ele tb foi pq o mais criticado foi a saia da Bárbara ou seja por desempenho quem iria pro flop seria a Bárbara mas nao ele…",
-            "curtidas": 12
+            "texto": "A Bárbara é bonita, mas essa franja é de lascar kkkk",
+            "curtidas": 3
           }
         },
         {
@@ -602,17 +602,17 @@ window.DADOS = {
           "nome": "Peter Poc",
           "resultado": null,
           "mencoes": 179,
-          "positivo": 75,
-          "negativo": 78,
+          "positivo": 76,
+          "negativo": 77,
           "neutro": 26,
-          "saldo": -1.676,
+          "saldo": -0.5587,
           "elogio": {
             "texto": "Em alguma linha temporal o paizinho dos looks nem entrou no CDB e nós poderíamos ter visto Peter Poc fazendo mais uma rima pra vender seu gloss sabor saladinha 😂",
             "curtidas": 4400
           },
           "critica": {
-            "texto": "Não acredito que vamos perder a nossa Doechii Poc que rima LADO com LADO.",
-            "curtidas": 646
+            "texto": "“SUA HISTÓRIA AINDA NÃO ACABOU” ninguém pediu novos capítulos de Peter Poc! prometeu rios, cavou a própria cova e ainda vai voltar?! que sacanagem!",
+            "curtidas": 632
           }
         },
         {
@@ -641,12 +641,12 @@ window.DADOS = {
           "neutro": 24,
           "saldo": -21.1268,
           "elogio": {
-            "texto": "A Rhanyane parecia que estava chapada, kkkkk eu ri muito, foi a mais engraçada do multiverso! Haha",
-            "curtidas": 206
+            "texto": "Gabriel e Rany vendo que rasparam a sobrancelha a toa kkkkkkkkkkkk paizinho podia ter desistido antes pra poupar os divos",
+            "curtidas": 2
           },
           "critica": {
-            "texto": "Como a Jheny saiu de “rosto da marca” pra “ela não é nada” na hora da apresentação? Rhany cheirou muito gloss, só pode kkkk",
-            "curtidas": 159
+            "texto": "Gente que absurdo essa rani falando que a jenny e fantasma",
+            "curtidas": 13
           }
         },
         {
@@ -709,15 +709,15 @@ window.DADOS = {
     }
   },
   "resumos": {
-    "Aysha Pink": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +64 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para −10, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior.",
-    "Breia": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +64 para +52. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia.",
-    "Bárbara Freitas": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −31 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +79. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas.",
+    "Aysha Pink": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +67 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para −10, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior.",
+    "Breia": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +64 para +53. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia.",
+    "Bárbara Freitas": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −31 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +80. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas.",
     "Gabriel Queiroz": "A torcida destacou o talento de Gabriel Queiroz na maquiagem, com o saldo passando de +77 para +40 ao longo dos episódios. Enquanto os comentários elogiaram a qualidade técnica e a postura de Gabriel, a audiência ficou dividida quanto ao desempenho em provas de grupo e à comunicação durante as apresentações. As críticas focaram na dificuldade de Gabriel em sustentar o papel e na gestão do tempo durante os desafios.",
     "Jheny Albano": "A torcida iniciou a trajetória de Jheny Albano com um saldo de +15, elogiando sua participação, embora já dividida sobre a autenticidade de suas interações. No episódio seguinte, o saldo caiu para −22, com comentários criticando a postura e a tentativa de criar cenas para o programa. A percepção geral oscilou entre o reconhecimento de seu carisma e o descontentamento com o comportamento adotado ao longo dos episódios.",
     "Latyffa Romayale": "Latyffa conquistou a torcida desde o início pelo seu carisma contagiante, mantendo um saldo de +92 no primeiro episódio. No segundo episódio, a torcida reforçou os elogios à sua simpatia e humor, resultando em um saldo de +85. Embora alguns comentários tenham apontado críticas pontuais sobre o desempenho em provas e escolhas estéticas, a percepção geral permaneceu amplamente positiva, com o público destacando Latyffa como um dos principais destaques da temporada.",
     "Matthel": "A torcida iniciou a trajetória de Matthel com saldo +53, elogiando o carisma e a postura observadora, embora tenha criticado a qualidade de sua maquiagem. No segundo episódio, o saldo caiu para −51, com comentários divididos sobre suas falas e escolhas, enquanto críticas sobre sua postura e atitudes em relação aos outros participantes ganharam força. A percepção geral tornou-se negativa devido ao comportamento de Matthel durante as dinâmicas de grupo.",
     "Paizinho dos Looks": "A torcida recebeu Paizinho dos Looks com saldo de −35 no primeiro episódio, com mais críticas do que elogios, principalmente pela falta de participação nas provas. No segundo episódio, o saldo caiu para −56, com os comentários criticando a desistência do participante e a transferência de responsabilidade para outros colegas. A audiência demonstrou descontentamento com a postura apresentada, culminando em uma recepção negativa após sua saída precoce da competição.",
-    "Peter Poc": "No primeiro episódio, a torcida criticou a atitude de Peter Poc no trabalho em grupo, resultando em um saldo de −77. Após a eliminação, a audiência ficou dividida no segundo episódio, com saldo de −2, oscilando entre o desejo pelo retorno de Peter Poc para gerar entretenimento e a rejeição à sua postura durante a competição.",
+    "Peter Poc": "No primeiro episódio, a torcida criticou a atitude de Peter Poc no trabalho em grupo, resultando em um saldo de −77. Após a eliminação, a audiência ficou dividida no segundo episódio, com saldo de −1, oscilando entre o desejo pelo retorno de Peter Poc para gerar entretenimento e a rejeição à sua postura durante a competição.",
     "Rhanyane Garcia": "No primeiro episódio, a torcida elogiou o carisma e a sagacidade de Rhanyane, resultando em um saldo de +33, apesar de críticas divididas sobre suas escolhas de moda. No segundo episódio, a percepção mudou para um saldo de −21, com os comentários criticando a atitude e o desempenho de Rhanyane na apresentação, embora parte do público tenha se divertido com o humor da participante.",
     "Sttefone": "A torcida criticou a incoerência de Sttefone no voto durante o primeiro episódio, resultando em um saldo de −27. No episódio seguinte, a percepção mudou positivamente com elogios à agilidade e capacidade de salvar a dupla, elevando o saldo para +77. Ao longo da trajetória, os comentários destacaram a habilidade de Sttefone em momentos de execução, embora a postura estratégica tenha gerado opiniões divididas entre o público.",
     "Talitah Sampaio": "A torcida criticou a liderança de Talitah no primeiro episódio, resultando em um saldo de −28, devido a decisões estratégicas na indicação ao flop. No segundo episódio, a percepção mudou positivamente com o desempenho em prova, elevando o saldo para +53. Apesar da virada, a torcida permaneceu dividida sobre a postura de Talitah, oscilando entre elogios ao seu protagonismo e críticas ao seu comportamento no jogo."
@@ -746,5 +746,6 @@ window.DADOS = {
     "Edu",
     "Fih"
   ],
+  "recortes": {},
   "credito_fotos": "Foto: DiaTV/divulgação"
 };

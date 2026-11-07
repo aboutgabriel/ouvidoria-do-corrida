@@ -73,20 +73,22 @@
   .cortina.dir { right: 0; transform: scaleX(-1); }
   .salao > .conteudo { position: relative; z-index: 2; }
   .palco { display: flex; align-items: center; justify-content: center; gap: clamp(.5rem, 2vw, 1.6rem); }
-  .anfitriao { display: none; margin: 0; flex: 0 0 auto; width: 7.2rem; text-align: center; }
-  .anfitriao svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
-  .anfitriao figcaption { margin-top: .35rem; line-height: 1.25; }
-  .anfitriao .an-nome { display: block; color: var(--dourado-texto); font: 400 1.05rem var(--display); }
-  .anfitriao .an-papel { display: block; color: var(--nevoa-2); font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
-  @media (min-width: 980px) { .anfitriao { display: block; } }
-  @media (max-width: 979px) {
-    .palco { flex-wrap: wrap; column-gap: 2rem; row-gap: .6rem; }
-    .palco > .cartela { order: -1; flex-basis: 100%; }
-    .anfitriao { display: flex; align-items: center; gap: .55rem; width: auto; text-align: left; }
-    .anfitriao svg { width: 2.9rem; }
-    .anfitriao figcaption { margin: 0; }
-    .anfitriao .an-nome { font-size: .95rem; }
-    .anfitriao .an-papel { font-size: .62rem; }
+  .anfitrioes { display: flex; justify-content: center; gap: 2rem; margin: 1.2rem 0 0; }
+  .anfitriao { margin: 0; display: flex; align-items: center; gap: .55rem; text-align: left; }
+  .anfitriao svg { display: block; width: 2.9rem; height: auto; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
+  .anfitriao figcaption { line-height: 1.25; }
+  .anfitriao .an-nome { display: block; color: var(--dourado-texto); font: 400 .95rem var(--display); }
+  .anfitriao .an-papel { display: block; color: var(--nevoa-2); font-size: .62rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+  .anfitriao img { display: none; }
+  @media (min-width: 980px) {
+    .anfitrioes { position: absolute; top: calc(min(100%, 760px) * 260 / 800 + 2.5rem); left: 50%; transform: translateX(-50%); width: min(100%, 66rem); margin: 0; justify-content: space-between; pointer-events: none; }
+    .anfitriao { flex-direction: column; gap: 0; width: clamp(8.5rem, 13vw, 11.5rem); text-align: center; }
+    .anfitriao svg { width: 100%; }
+    .anfitriao figcaption { margin-top: .5rem; }
+    .anfitriao .an-nome { font-size: 1.25rem; }
+    .anfitriao .an-papel { font-size: .7rem; }
+    .anfitriao.recorte svg { display: none; }
+    .anfitriao.recorte img { display: block; width: 100%; height: auto; filter: drop-shadow(0 10px 22px rgba(0,0,0,.45)); }
   }
   .palco > .cartela { margin: 0; flex: 0 1 760px; min-width: 0; }
   .cartela { position: relative; container-type: inline-size; width: min(100%, 760px); aspect-ratio: 800 / 260; margin: 0 auto; }
@@ -299,7 +301,6 @@
 
   <div class="conteudo">
     <div class="palco">
-    <figure class="anfitriao" id="anfitriao-0" aria-hidden="true"></figure>
     <div class="cartela">
       <svg viewBox="0 0 800 260" aria-hidden="true" fill="none" stroke="#C9A65A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <g><path d="M150 40 C112 40 92 60 100 84 C106 102 128 102 130 88 C131 78 120 74 113 82"/>
@@ -339,7 +340,10 @@
       </svg>
       <h1>Ouvidoria do Corrida</h1>
     </div>
-    <figure class="anfitriao" id="anfitriao-1" aria-hidden="true"></figure>
+    </div>
+    <div class="anfitrioes" aria-hidden="true">
+      <figure class="anfitriao" id="anfitriao-0"></figure>
+      <figure class="anfitriao" id="anfitriao-1"></figure>
     </div>
     <p class="temporada">O que a torcida do Corrida das Blogueiras 8 diz quando ninguém está perguntando.</p>
     <p class="fonte">Fonte: comentários do YouTube</p>
@@ -865,7 +869,7 @@
       </table>
       ${citacoes ? `<h3>O que a torcida mais curtiu no episódio ${foco.ep.numero}</h3>
         ${citacoes}
-        <p class="sub" style="margin-top:.6rem;font-size:.8rem">Elogio ou crítica segundo a classificação do modelo, que pode errar em ironias.</p>` : ""}`;
+        <p class="sub" style="margin-top:.6rem;font-size:.8rem">Elogio ou crítica segundo a classificação do modelo, que pode errar em ironias. As citações em destaque passam por revisão humana.</p>` : ""}`;
     fichaConteudo.querySelector(".fechar").addEventListener("click", () => ficha.close());
     ficha.showModal();
     fichaConteudo.scrollTop = 0;
@@ -887,7 +891,10 @@
   // ---------- anfitriões (decoração do salão, fora da parede de dados) ----------
   function renderAnfitrioes() {
     (D.apresentadores || []).slice(0, 2).forEach((nome, i) => {
-      document.getElementById("anfitriao-" + i).innerHTML = `${retratoSVG(nome, null, "#8C3157")}
+      const recorte = (D.recortes || {})[nome];
+      const fig = document.getElementById("anfitriao-" + i);
+      fig.classList.toggle("recorte", Boolean(recorte));
+      fig.innerHTML = `${recorte ? `<img src="${esc(recorte)}" alt="">` : ""}${retratoSVG(nome, null, "#8C3157")}
         <figcaption><span class="an-nome">${esc(nome)}</span><span class="an-papel">anfitrião</span></figcaption>`;
     });
   }

@@ -17,7 +17,7 @@ A pergunta central: **a torcida consegue prever quem sai?**
 Depois de 2 episódios e 13.369 comentários lidos (as primeiras 48 horas de cada episódio):
 
 - **A torcida acertou a primeira eliminação.** Peter Poc saiu no episódio 1 com o pior saldo da torcida (−77).
-- **A maior virada foi de Bárbara Freitas**, que saiu de −31 no episódio 1 para +79 no episódio 2, depois de vencer a prova.
+- **A maior virada foi de Bárbara Freitas**, que saiu de −31 no episódio 1 para +80 no episódio 2, depois de vencer a prova.
 - **Paizinho dos Looks liderou a conversa do episódio 2** (847 menções), e 69% dos comentários foram críticas, principalmente pela desistência no meio da prova do flop.
 - **Latyffa Romayale é quase unanimidade:** 201 elogios e só 6 críticas no episódio 2.
 
@@ -51,6 +51,8 @@ As divergências se concentram em ironia e em elogios indiretos, como defender u
 - `dados/resultados.csv`: resultados oficiais por episódio (Venceu, Salvo, Flop, Eliminado, Desistiu).
 - `dados/resumos.json`: resumos da percepção da torcida sobre cada participante, revisados à mão.
 - `dados/resumos_episodios.json`: resumos de como a torcida recebeu cada episódio, revisados à mão.
+- `dados/correcoes.csv`: correções da revisão humana em comentários que aparecem no painel, com o motivo de cada uma (`corrigir.py`). Não mudam a taxa de acerto publicada, que vem só da amostra às cegas.
+- `dados/citacoes_ocultas.csv`: comentários que continuam contando nos números, mas não aparecem em destaque no painel (por exemplo, piadas que associam uma participante a drogas).
 - `dados/cenas.json`: o que acontece em cada cena mais comentada, escrito à mão a partir da transcrição do episódio.
 - `docs/fotos/`: fotos oficiais das participantes (DiaTV/divulgação). O painel encontra cada foto pelo nome do arquivo (ex.: `talitah-sampaio.jpg`) e mostra as iniciais quando não há foto.
 - `docs/fotos/edu.jpg` e `docs/fotos/fih.jpg`: os anfitriões aparecem só como decoração no topo do painel, sem dados.
