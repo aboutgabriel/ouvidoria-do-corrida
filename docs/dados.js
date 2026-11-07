@@ -708,6 +708,10 @@ window.DADOS = {
     "Sttefone": "A torcida criticou a incoerência de Sttefone no voto durante o primeiro episódio, resultando em um saldo de −25. No episódio seguinte, a percepção mudou positivamente com elogios à agilidade e capacidade de salvar a dupla, elevando o saldo para +75. Ao longo da trajetória, os comentários destacaram a habilidade de Sttefone em momentos de execução, embora a postura estratégica tenha gerado opiniões divididas entre o público.",
     "Talitah Sampaio": "A torcida criticou a liderança de Talitah no primeiro episódio, resultando em um saldo de −26, devido a decisões estratégicas na indicação ao flop. No segundo episódio, a percepção mudou positivamente com o desempenho em prova, elevando o saldo para +52. Apesar da virada, a torcida permaneceu dividida sobre a postura de Talitah, oscilando entre elogios ao seu protagonismo e críticas ao seu comportamento no jogo."
   },
+  "resumos_episodios": {
+    "1": "Peter Poc concentrou a conversa da estreia, com 941 menções e saldo −78: a torcida criticou a postura dele no trabalho em grupo, e ele acabou eliminado. Breia foi a mais elogiada, pela simplicidade, e Gabriel Queiroz ganhou carinho por ter sido o último escolhido e entregado uma maquiagem elogiada. Muita gente achou injusto a Aysha Pink ir para o flop, a rivalidade entre Jheny Albano e Paizinho dos Looks rendeu piadas, e o público comemorou a volta do programa e os novos patrocinadores.",
+    "2": "A desistência de Paizinho dos Looks no meio da prova do flop dominou a conversa, com 892 menções e saldo −56, e o fecho do apresentador Edu sobre o assunto foi muito elogiado. Talitah Sampaio e Bárbara Freitas, que venceram juntas, e Latyffa Romayale receberam elogios pelo desempenho e pelo carisma. A discussão sobre etarismo entre Talitah e Matthel também movimentou os comentários, e Matthel terminou com saldo −50. O público ainda se divertiu com a impaciência do Edu nas avaliações e com um erro de edição na abertura."
+  },
   "fotos": {
     "Aysha Pink": "fotos/aysha-pink.jpg",
     "Breia": "fotos/breia.jpg",

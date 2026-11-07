@@ -23,6 +23,7 @@ from verificar_apelidos import BANCO, PASTA
 RESULTADOS = os.path.join(PASTA, "dados", "resultados.csv")
 AVALIACAO = os.path.join(PASTA, "dados", "avaliacao.json")
 RESUMOS = os.path.join(PASTA, "dados", "resumos.json")
+RESUMOS_EPISODIOS = os.path.join(PASTA, "dados", "resumos_episodios.json")
 CENAS = os.path.join(PASTA, "dados", "cenas.json")  # descrições das cenas, escritas à mão
 SAIDA = os.path.join(PASTA, "docs", "dados.js")
 FOTOS = os.path.join(PASTA, "docs", "fotos")
@@ -194,6 +195,11 @@ def main():
         with open(RESUMOS, encoding="utf-8") as arquivo:
             resumos = {nome: r["texto"] for nome, r in json.load(arquivo).items()}
 
+    resumos_episodios = {}
+    if os.path.exists(RESUMOS_EPISODIOS):
+        with open(RESUMOS_EPISODIOS, encoding="utf-8") as arquivo:
+            resumos_episodios = {ep: r["texto"] for ep, r in json.load(arquivo).items()}
+
     dados = {
         "exemplo": False,
         "atualizado_em": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
@@ -202,6 +208,7 @@ def main():
         "episodios": episodios,
         "avaliacao": avaliacao,
         "resumos": resumos,
+        "resumos_episodios": resumos_episodios,
         "fotos": achar_fotos(sorted(tabela["participante"].unique())),
         "credito_fotos": CREDITO_FOTOS,
     }

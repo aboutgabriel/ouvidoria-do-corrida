@@ -69,7 +69,10 @@
   .cortina.esq { left: 0; }
   .cortina.dir { right: 0; transform: scaleX(-1); }
   .salao > .conteudo { position: relative; z-index: 2; }
-  .salao h1 { margin: 0; color: var(--dourado-texto); font: 400 clamp(2.6rem, 11vw, 4.6rem)/1 var(--display); letter-spacing: -.015em; text-wrap: balance; }
+  .cartela { position: relative; container-type: inline-size; width: min(100%, 760px); aspect-ratio: 800 / 260; margin: 0 auto; }
+  .cartela svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .salao h1 { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); margin: 0; color: var(--dourado-texto); font: 400 clamp(1.6rem, 6.6vw, 3.6rem)/1 var(--display); font-size: 8cqw; letter-spacing: -.015em; white-space: nowrap; text-shadow: 0 2px 18px rgba(232,207,148,.18); }
+  .fonte { display: inline-block; margin: .9rem 0 0; padding: .2rem .8rem; border: 1px solid rgba(201,166,90,.55); border-radius: 999px; color: var(--dourado-texto); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
   .temporada { margin: 1rem auto 0; max-width: 22rem; color: var(--nevoa); font-size: .98rem; }
 
   .episodios { display: flex; justify-content: center; gap: .5rem; margin: 1.8rem 0 0; flex-wrap: wrap; }
@@ -178,6 +181,10 @@
   .achados .rotulo { display: block; margin-top: .15rem; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ouro); }
   .achados p { margin: .6rem 0 0; font-size: .95rem; color: var(--tinta-2); }
   .bloco-achados { margin-bottom: 4.5rem; }
+  .bloco-episodio { margin-bottom: 4.5rem; }
+  .resumo-ep { margin: 1rem 0 0; font: 400 clamp(1.08rem, 2.6vw, 1.25rem)/1.55 var(--display); color: var(--tinta); }
+  .resumo-ep::first-letter { float: left; font-size: 3.3em; line-height: .85; padding: .08em .12em 0 0; color: var(--ouro); }
+  .nota-ep { margin: .8rem 0 0; font-size: .8rem; color: var(--tinta-2); }
   details { margin-top: 1.2rem; font-size: .9rem; }
   summary { cursor: pointer; color: var(--tinta-2); }
   table { width: 100%; border-collapse: collapse; margin-top: .8rem; font-variant-numeric: tabular-nums; }
@@ -270,8 +277,47 @@
   </svg>
 
   <div class="conteudo">
-    <h1>Ouvidoria do Corrida</h1>
+    <div class="cartela">
+      <svg viewBox="0 0 800 260" aria-hidden="true" fill="none" stroke="#C9A65A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <g><path d="M150 40 C112 40 92 60 100 84 C106 102 128 102 130 88 C131 78 120 74 113 82"/>
+        <path d="M150 220 C112 220 92 200 100 176 C106 158 128 158 130 172 C131 182 120 186 113 178"/>
+        <path d="M100 84 C78 104 76 156 100 176"/>
+        <path d="M150 40 H352 M150 220 H372" />
+        <path d="M164 54 H400 M164 206 H400" stroke-width="1" opacity=".7"/>
+        <path d="M164 54 C150 54 146 66 156 70 M164 206 C150 206 146 194 156 190" stroke-width="1" opacity=".7"/>
+        <path d="M88 130 C62 130 44 116 34 94 C52 102 66 106 78 118"/>
+        <path d="M88 130 C62 130 44 144 34 166 C52 158 66 154 78 142"/>
+        <path d="M34 94 C24 88 22 76 32 72 C40 70 43 80 36 82 M34 166 C24 172 22 184 32 188 C40 190 43 180 36 178"/>
+        <path d="M88 130 H56" stroke-width="1"/>
+        <circle cx="50" cy="130" r="3.2" fill="#C9A65A" stroke="none"/>
+        <circle cx="122" cy="62" r="2" fill="#C9A65A" stroke="none"/>
+        <circle cx="122" cy="198" r="2" fill="#C9A65A" stroke="none"/>
+        <path d="M190 40 C200 30 214 30 222 38 M190 220 C200 230 214 230 222 222" stroke-width="1.2"/></g>
+        <g transform="translate(800 0) scale(-1 1)"><path d="M150 40 C112 40 92 60 100 84 C106 102 128 102 130 88 C131 78 120 74 113 82"/>
+        <path d="M150 220 C112 220 92 200 100 176 C106 158 128 158 130 172 C131 182 120 186 113 178"/>
+        <path d="M100 84 C78 104 76 156 100 176"/>
+        <path d="M150 40 H352 M150 220 H372" />
+        <path d="M164 54 H400 M164 206 H400" stroke-width="1" opacity=".7"/>
+        <path d="M164 54 C150 54 146 66 156 70 M164 206 C150 206 146 194 156 190" stroke-width="1" opacity=".7"/>
+        <path d="M88 130 C62 130 44 116 34 94 C52 102 66 106 78 118"/>
+        <path d="M88 130 C62 130 44 144 34 166 C52 158 66 154 78 142"/>
+        <path d="M34 94 C24 88 22 76 32 72 C40 70 43 80 36 82 M34 166 C24 172 22 184 32 188 C40 190 43 180 36 178"/>
+        <path d="M88 130 H56" stroke-width="1"/>
+        <circle cx="50" cy="130" r="3.2" fill="#C9A65A" stroke="none"/>
+        <circle cx="122" cy="62" r="2" fill="#C9A65A" stroke="none"/>
+        <circle cx="122" cy="198" r="2" fill="#C9A65A" stroke="none"/>
+        <path d="M190 40 C200 30 214 30 222 38 M190 220 C200 230 214 230 222 222" stroke-width="1.2"/></g>
+        <path d="M352 40 C350 8 450 8 448 40 Z" fill="#3A1A2D"/>
+        <path d="M400 40 L372 22 M400 40 L384 13 M400 40 V9 M400 40 L416 13 M400 40 L428 22" stroke-width="1.3"/>
+        <path d="M352 40 C342 40 336 32 342 26 C347 22 353 28 348 31 M448 40 C458 40 464 32 458 26 C453 22 447 28 452 31" stroke-width="1.4"/>
+        <circle cx="400" cy="42" r="3" fill="#C9A65A" stroke="none"/>
+        <path d="M372 220 C384 238 416 238 428 220"/>
+        <path d="M400 236 C394 244 394 252 400 256 C406 252 406 244 400 236 Z" fill="#C9A65A" stroke="none"/>
+      </svg>
+      <h1>Ouvidoria do Corrida</h1>
+    </div>
     <p class="temporada">O que a torcida do Corrida das Blogueiras 8 diz quando ninguém está perguntando.</p>
+    <p class="fonte">Fonte: comentários do YouTube</p>
     <div class="episodios" role="tablist" aria-label="Escolha o episódio" id="seletor"></div>
     <p class="manchete" id="manchete"></p>
     <p class="edicao" id="edicao"></p>
@@ -283,6 +329,12 @@
 
 <section class="sala clara" aria-labelledby="t-conversa">
   <div class="miolo">
+    <div class="bloco-episodio" id="bloco-episodio" aria-labelledby="t-episodio" hidden>
+      <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
+      <h2 id="t-episodio"></h2>
+      <p class="resumo-ep" id="resumo-ep"></p>
+      <p class="nota-ep">Resumo escrito pelo Gemini a partir dos números, das cenas mais comentadas e dos comentários mais curtidos do episódio, e revisado antes de ir ao ar.</p>
+    </div>
     <div class="bloco-achados" aria-labelledby="t-achados">
       <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
       <h2 id="t-achados">O que os dados mostram até agora</h2>
@@ -793,6 +845,16 @@
   }
 
   // ---------- método ----------
+  // ---------- como a torcida recebeu o episódio ----------
+  function renderResumoEpisodio(ep) {
+    const texto = (D.resumos_episodios || {})[String(ep.numero)];
+    const bloco = document.getElementById("bloco-episodio");
+    bloco.hidden = !texto;
+    if (!texto) return;
+    document.getElementById("t-episodio").textContent = `Como a torcida recebeu o episódio ${ep.numero}`;
+    document.getElementById("resumo-ep").textContent = texto;
+  }
+
   // ---------- achados da temporada (não mudam com o episódio escolhido) ----------
   function renderAchados() {
     const itens = [];
@@ -872,7 +934,8 @@
     const ep = epDe(atual);
     seletor.querySelectorAll("button").forEach((b, i) => b.setAttribute("aria-selected", eps[i].numero === atual));
     document.getElementById("manchete").textContent = manchete(ep);
-    document.getElementById("edicao").textContent = `${fmt(ep.comentarios)} comentários lidos no vídeo do episódio ${ep.numero} no YouTube.`;
+    document.getElementById("edicao").textContent = `${fmt(ep.comentarios)} comentários lidos no episódio ${ep.numero}.`;
+    renderResumoEpisodio(ep);
     renderParede(ep);
     renderRanking(ep);
     renderViradas(ep);
