@@ -75,14 +75,14 @@
   .palco { display: flex; align-items: center; justify-content: center; gap: clamp(.5rem, 2vw, 1.6rem); }
   .anfitrioes { display: flex; justify-content: center; gap: 2rem; margin: 1.2rem 0 0; }
   .anfitriao { margin: 0; display: flex; align-items: center; gap: .55rem; text-align: left; }
-  .anfitriao svg { display: block; width: 2.9rem; height: auto; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
+  .anfitriao svg { display: block; width: 3.4rem; height: auto; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
   .anfitriao figcaption { line-height: 1.25; }
   .anfitriao .an-nome { display: block; color: var(--dourado-texto); font: 400 .95rem var(--display); }
   .anfitriao .an-papel { display: block; color: var(--nevoa-2); font-size: .62rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
   .anfitriao img { display: none; }
   @media (min-width: 980px) {
     .anfitrioes { position: absolute; top: calc(min(100%, 760px) * 500 / 1520 + 2.5rem); left: 50%; transform: translateX(-50%); width: min(100%, 66rem); margin: 0; justify-content: space-between; pointer-events: none; }
-    .anfitriao { flex-direction: column; gap: 0; width: clamp(8.5rem, 13vw, 11.5rem); text-align: center; }
+    .anfitriao { flex-direction: column; gap: 0; width: clamp(9.5rem, 14vw, 12.5rem); text-align: center; }
     .anfitriao svg { width: 100%; }
     .anfitriao figcaption { margin-top: .5rem; }
     .anfitriao .an-nome { font-size: 1.25rem; }
@@ -901,12 +901,61 @@
   }
 
   // ---------- anfitriões (decoração do salão, fora da parede de dados) ----------
+  // Moldura própria, mais ornamentada, nas cores do título: ouro, verde-água e gemas rosa.
+  let idMoldura = 0;
+  function molduraAnfitriao(nome) {
+    const k = ++idMoldura, ouro = `ouro-${k}`, gema = `gema-${k}`, rec = `rec-${k}`;
+    const foto = (D.fotos || {})[nome];
+    const traco = d => `<path d="${d}" fill="none" stroke="#5a3a0c" stroke-width="5.6" stroke-linecap="round"/><path d="${d}" fill="none" stroke="url(#${ouro})" stroke-width="3.6" stroke-linecap="round"/>`;
+    const folha = d => `<path d="${d}" fill="url(#${ouro})" stroke="#5a3a0c" stroke-width="1.1" stroke-linejoin="round"/>`;
+    const lado = [
+      "M30 74 C14 80 12 98 24 101 C32 103 34 94 27 92",
+      "M30 124 C14 118 12 100 24 97",
+      "M22 108 C12 110 8 118 13 124 C17 128 22 124 19 120",
+      "M22 90 C12 88 8 80 13 74 C17 70 22 74 19 78",
+    ].map(traco).join("") +
+      folha("M24 100 C17 90 7 88 2 94 C8 95 12 97 14 100 C12 103 8 105 2 106 C7 112 17 110 24 100 Z") +
+      folha("M34 62 C26 56 18 58 16 64 C21 63 25 64 28 67 Z") + folha("M34 138 C26 144 18 142 16 136 C21 137 25 136 28 133 Z");
+    return `<svg viewBox="0 0 140 196" aria-hidden="true">
+      <defs>
+        <linearGradient id="${ouro}" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8a5a12"/><stop offset=".28" stop-color="#f7dc84"/>
+          <stop offset=".5" stop-color="#c38a24"/><stop offset=".72" stop-color="#fff0b5"/><stop offset="1" stop-color="#a1680f"/>
+        </linearGradient>
+        <linearGradient id="${gema}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd1e6"/><stop offset=".5" stop-color="#f06aa6"/><stop offset="1" stop-color="#b8236a"/></linearGradient>
+        <clipPath id="${rec}"><ellipse cx="70" cy="100" rx="37" ry="49"/></clipPath>
+      </defs>
+      <g>${lado}</g>
+      <g transform="translate(140 0) scale(-1 1)">${lado}</g>
+      ${folha("M70 40 C60 28 46 26 38 34 C46 33 53 35 58 42 Z")}
+      ${folha("M70 40 C80 28 94 26 102 34 C94 33 87 35 82 42 Z")}
+      ${traco("M70 40 C60 31 48 30 42 37 C49 35 55 37 58 42")}
+      ${traco("M70 40 C80 31 92 30 98 37 C91 35 85 37 82 42")}
+      ${traco("M58 28 C52 22 44 24 44 30 M82 28 C88 22 96 24 96 30")}
+      <ellipse cx="70" cy="100" rx="52" ry="64" fill="none" stroke="#5a3a0c" stroke-width="9"/>
+      <ellipse cx="70" cy="100" rx="52" ry="64" fill="none" stroke="url(#${ouro})" stroke-width="7"/>
+      <ellipse cx="70" cy="100" rx="45" ry="57" fill="none" stroke="#bfe3cf" stroke-width="7"/>
+      <ellipse cx="70" cy="100" rx="45" ry="57" fill="none" stroke="#e7c35e" stroke-width=".8" stroke-dasharray="1.5 3.5"/>
+      <ellipse cx="70" cy="100" rx="40" ry="52" fill="none" stroke="url(#${ouro})" stroke-width="3"/>
+      <ellipse cx="70" cy="100" rx="37" ry="49" fill="#EFE2E7"/>
+      ${foto ? `<image href="${esc(foto)}" x="33" y="51" width="74" height="98" preserveAspectRatio="xMidYMin slice" clip-path="url(#${rec})"/>`
+             : `<text x="70" y="112" text-anchor="middle" font-family="Young Serif, Georgia, serif" font-size="34" fill="#34182A">${esc(iniciais(nome))}</text>`}
+      <circle cx="18" cy="100" r="3.4" fill="url(#${gema})" stroke="#5a3a0c" stroke-width=".8"/>
+      <circle cx="122" cy="100" r="3.4" fill="url(#${gema})" stroke="#5a3a0c" stroke-width=".8"/>
+      <path d="M61 22 L65 14 L75 14 L79 22 L70 34 Z" fill="url(#${gema})" stroke="#5a3a0c" stroke-width="1"/>
+      <path d="M61 22 H79 M65 14 L68 22 L70 34 M75 14 L72 22 L70 34" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width=".7"/>
+      ${folha("M70 164 C62 162 52 166 48 174 C55 171 62 171 67 172 Z")}
+      ${folha("M70 164 C78 162 88 166 92 174 C85 171 78 171 73 172 Z")}
+      ${traco("M56 166 C62 172 66 170 70 166 C74 170 78 172 84 166")}
+      <path d="M70 172 C65 179 65 186 70 190 C75 186 75 179 70 172 Z" fill="url(#${gema})" stroke="#5a3a0c" stroke-width="1"/>
+    </svg>`;
+  }
   function renderAnfitrioes() {
     (D.apresentadores || []).slice(0, 2).forEach((nome, i) => {
       const recorte = (D.recortes || {})[nome];
       const fig = document.getElementById("anfitriao-" + i);
       fig.classList.toggle("recorte", Boolean(recorte));
-      fig.innerHTML = `${recorte ? `<img src="${esc(recorte)}" alt="">` : ""}${retratoSVG(nome, null, "#8C3157")}
+      fig.innerHTML = `${recorte ? `<img src="${esc(recorte)}" alt="">` : ""}${molduraAnfitriao(nome)}
         <figcaption><span class="an-nome">${esc(nome)}</span><span class="an-papel">anfitrião</span></figcaption>`;
     });
   }
