@@ -10,10 +10,7 @@ Projeto de dados e IA que acompanha, episódio a episódio, como a torcida reage
 
 A pergunta central: **a torcida consegue prever quem sai?**
 
-Como os comentários de um episódio são escritos depois que ele vai ao ar, quando a torcida já sabe quem saiu, o projeto separa duas medidas:
-
-- **Concordância:** quem sai é quem a torcida mais critica no próprio episódio?
-- **Previsão:** o saldo do episódio anterior, escrito antes do resultado, já apontava quem ia sair? O primeiro teste de previsão acontece na próxima eliminação.
+Quem sai do flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então os comentários de cada episódio são escritos sem saber o resultado, e o saldo funciona como uma previsão da torcida. A comparação é feita só entre quem estava no flop, porque só eles podiam sair. O eliminado é registrado em `dados/resultados.csv` no episódio do flop, mesmo que o resultado seja revelado no episódio seguinte.
 
 > Projeto em andamento, atualizado a cada episódio da temporada (outubro de 2026 a janeiro de 2027).
 
@@ -21,7 +18,8 @@ Como os comentários de um episódio são escritos depois que ele vai ao ar, qua
 
 Depois de 2 episódios e 13.369 comentários lidos (as primeiras 48 horas de cada episódio):
 
-- **Torcida e júri concordaram na primeira eliminação.** Peter Poc saiu no episódio 1 e era quem a torcida mais criticava (−77). Isso é concordância, não previsão: os comentários foram escritos depois do episódio.
+- **A torcida acertou a primeira eliminação.** No flop do episódio 1 estavam Peter, Talitah, Aysha e Breia. Peter tinha o pior saldo entre os quatro (−77) e foi quem saiu, revelado só no começo do episódio 2. Com uma eliminação só, ainda é cedo para conclusões.
+- **No episódio 2 não há previsão para testar:** Paizinho desistiu durante a prova do flop, então a torcida já sabia quem ia sair. A saída dele é anunciada no começo do episódio 3.
 - **A maior virada foi de Bárbara Freitas**, que saiu de −32 no episódio 1 para +80 no episódio 2, depois de vencer a prova.
 - **Paizinho dos Looks liderou a conversa do episódio 2** (847 menções), e 69% dos comentários foram críticas, principalmente pela desistência no meio da prova do flop.
 - **Latyffa Romayale é quase unanimidade:** 201 elogios e só 6 críticas no episódio 2.
@@ -53,6 +51,7 @@ As divergências se concentram em ironia e em elogios indiretos, como defender u
 ## Dados
 
 - `dados/participantes.json`: as 12 participantes e as formas como são citadas.
+- `dados/eliminacoes.csv`: se o flop de cada episódio teve eliminação. Um episódio sem linha aqui é tratado como resultado ainda não revelado, e o painel mostra a aposta da torcida.
 - `dados/resultados.csv`: resultados oficiais por episódio (Venceu, Salvo, Flop, Eliminado, Desistiu).
 - `dados/resumos.json`: resumos da percepção da torcida sobre cada participante, revisados à mão.
 - `dados/resumos_episodios.json`: resumos de como a torcida recebeu cada episódio, revisados à mão.

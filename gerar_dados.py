@@ -23,6 +23,8 @@ from janela import JANELA_HORAS, janelas, na_janela
 from verificar_apelidos import BANCO, PASTA
 
 RESULTADOS = os.path.join(PASTA, "dados", "resultados.csv")
+# Se o flop de cada episódio teve eliminação (sim/nao). Episódio sem linha = resultado ainda não revelado.
+ELIMINACOES = os.path.join(PASTA, "dados", "eliminacoes.csv")
 AVALIACAO = os.path.join(PASTA, "dados", "avaliacao.json")
 RESUMOS = os.path.join(PASTA, "dados", "resumos.json")
 RESUMOS_EPISODIOS = os.path.join(PASTA, "dados", "resumos_episodios.json")
@@ -138,6 +140,10 @@ def main():
         classificacoes = pd.read_sql("SELECT * FROM classificacoes", conexao)
 
     resultados = pd.read_csv(RESULTADOS)
+    eliminacoes = {}
+    if os.path.exists(ELIMINACOES):
+        for linha in pd.read_csv(ELIMINACOES, dtype=str).fillna("").itertuples():
+            eliminacoes[int(linha.episodio)] = {"houve": linha.houve_eliminacao.strip().lower() == "sim", "motivo": linha.motivo}
 
     # Só entram os comentários das primeiras 48 horas de cada episódio (ver janela.py).
     tabela_janelas = janelas(todos)
@@ -182,6 +188,7 @@ def main():
             "numero": int(ep),
             "video_id": do_episodio["video_id"].iat[0],
             "comentarios": int(len(do_episodio)),
+            "eliminacao": eliminacoes.get(int(ep)),
             "janela": {
                 "horas": JANELA_HORAS,
                 "inicio": tabela_janelas.at[ep, "inicio"].strftime("%Y-%m-%dT%H:%M:%SZ"),

@@ -8,6 +8,10 @@ window.DADOS = {
       "numero": 1,
       "video_id": "C2PHb9TwaF4",
       "comentarios": 5888,
+      "eliminacao": {
+        "houve": true,
+        "motivo": ""
+      },
       "janela": {
         "horas": 48,
         "inicio": "2026-10-27T21:32:55Z",
@@ -347,6 +351,10 @@ window.DADOS = {
       "numero": 2,
       "video_id": "6QDGPDd4wWw",
       "comentarios": 7481,
+      "eliminacao": {
+        "houve": false,
+        "motivo": "Paizinho desistiu durante a prova do flop, então já se sabia quem ia sair"
+      },
       "janela": {
         "horas": 48,
         "inicio": "2026-11-03T21:22:00Z",

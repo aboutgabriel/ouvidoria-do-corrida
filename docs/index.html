@@ -12,12 +12,12 @@
 <meta property="og:image" content="https://aboutgabriel.github.io/ouvidoria-do-corrida/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ouvidoria do Corrida: 13.369 comentários lidos, torcida e júri de acordo em 1 de 1 eliminação e 82% de acerto da IA.">
+<meta property="og:image:alt" content="Ouvidoria do Corrida: 13.369 comentários lidos, 1 de 1 eliminação prevista e 82% de acerto da IA.">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#3A1A2D">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-64.png" sizes="64x64" type="image/png">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -387,9 +387,9 @@
 <section class="sala escura" aria-labelledby="t-resultado">
   <div class="miolo">
     <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#C9A65A" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
-    <h2 id="t-resultado">A torcida concorda com o júri?</h2>
+    <h2 id="t-resultado">A torcida adivinha quem sai?</h2>
     <p class="lede">Cada ponto é uma participante, posicionada pelo saldo da torcida: elogios menos críticas, de −100 a +100. Quanto mais à direita, mais a torcida estava a favor.</p>
-    <p class="nota-faixas">Os comentários de um episódio são escritos depois que ele vai ao ar, quando a torcida já sabe quem saiu. Por isso, comparar o saldo com o resultado do mesmo episódio mostra se a torcida <strong>concorda</strong> com o júri, e não se ela previu. A <strong>previsão</strong> usa o saldo do episódio anterior, escrito antes de o resultado sair.</p>
+    <p class="nota-faixas">Quem sai do flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então os comentários são escritos <strong>sem saber o resultado</strong>, e dá para testar se a torcida adivinha. A comparação é feita só entre quem estava no flop, porque só eles podiam sair.</p>
     <div class="legenda" aria-hidden="true">
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5.5" fill="#C9A65A"/></svg>Venceu</span>
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="#8E7684"/></svg>Seguiu na disputa</span>
@@ -723,35 +723,44 @@
     revelar(box);
   }
 
-  // ---------- a torcida concorda com o júri? (sala escura) ----------
-  // Concordância: saldo e resultado do MESMO episódio (os comentários já sabem quem saiu).
-  // Previsão: saldo do episódio ANTERIOR, escrito antes de o resultado sair.
+  // ---------- a torcida adivinha quem sai? (sala escura) ----------
+  // O resultado do flop do episódio N só é revelado no começo do episódio N+1, depois
+  // que a janela de 48 horas já fechou. Por isso o saldo do episódio N é uma previsão.
+  // Só quem estava no flop pode sair, então a comparação é feita entre eles.
+  const listaNomes = ps => {
+    const n = ps.map(p => primeiroNome(p.nome));
+    return n.length > 1 ? n.slice(0, -1).join(", ") + " e " + n[n.length - 1] : n.join("");
+  };
   function previsao(ep) {
-    const saiu = emJogo(ep).find(p => p.resultado === "Eliminado");
-    const ant = epDe(ep.numero - 1);
-    if (!saiu || !ant) return null;
-    const naDisputa = new Set(emJogo(ep).filter(p => p.resultado !== "Desistiu").map(p => p.nome));
-    const candidatas = emJogo(ant).filter(p => naDisputa.has(p.nome) && !SAIU(p.resultado));
-    if (!candidatas.some(p => p.nome === saiu.nome)) return null;
-    const pior = candidatas.slice().sort((a, b) => a.saldo - b.saldo)[0];
-    return { ep: ep.numero, saiu, pior, acertou: pior.nome === saiu.nome };
+    const noFlop = emJogo(ep).filter(p => ["Flop", "Eliminado", "Desistiu"].includes(p.resultado));
+    const flop = noFlop.filter(p => p.resultado !== "Desistiu");
+    if (flop.length < 2) return null;
+    const ordem = flop.slice().sort((a, b) => a.saldo - b.saldo);
+    const [pior, segundo] = ordem;
+    const saiu = flop.find(p => p.resultado === "Eliminado");
+    const ultimo = ep.numero === eps[eps.length - 1].numero;
+    const empate = segundo && arred(segundo.saldo) - arred(pior.saldo) < 5;
+    if (saiu) return { tipo: "resultado", ep: ep.numero, flop, pior, saiu, acertou: pior.nome === saiu.nome };
+    const semEliminacao = ep.eliminacao && !ep.eliminacao.houve;
+    return { tipo: semEliminacao || !ultimo ? "sem-eliminacao" : "aguardando", ep: ep.numero, flop, noFlop, pior, segundo, empate, motivo: semEliminacao ? ep.eliminacao.motivo : "" };
   }
-  function frase(ep, lista) {
-    const ordem = lista.slice().sort((a, b) => a.saldo - b.saldo);
-    const saiu = lista.find(p => p.resultado === "Eliminado");
+  function frase(ep) {
+    const prev = previsao(ep);
     const desistiu = emJogo(ep).find(p => p.resultado === "Desistiu");
     const partes = [];
-    if (saiu) {
-      const pos = ordem.indexOf(saiu) + 1;
-      partes.push(pos === 1
-        ? `${primeiroNome(saiu.nome)} saiu e era quem a torcida mais criticava no episódio: torcida e júri concordaram.`
-        : `${primeiroNome(saiu.nome)} saiu com o ${pos}º pior saldo entre ${lista.length}. O pior era de ${primeiroNome(ordem[0].nome)}: torcida e júri discordaram.`);
-      const prev = previsao(ep);
-      partes.push(prev
-        ? `Previsão: no episódio ${ep.numero - 1}, o pior saldo era de ${primeiroNome(prev.pior.nome)} (${sinal(prev.pior.saldo)}). ${prev.acertou ? "A torcida previu a saída." : `A previsão errou: quem saiu foi ${primeiroNome(saiu.nome)}.`}`
-        : "Não há episódio anterior para testar a previsão.");
-    } else partes.push("Não houve eliminação pelo júri neste episódio.");
-    if (desistiu) partes.push(`${primeiroNome(desistiu.nome)} desistiu, então fica fora da comparação.`);
+    if (!prev) partes.push("Não houve flop com eliminação neste episódio.");
+    else if (prev.tipo === "resultado") {
+      partes.push(`No flop estavam ${listaNomes(prev.flop)}.`);
+      partes.push(prev.acertou
+        ? `${primeiroNome(prev.saiu.nome)} tinha o pior saldo entre eles (${sinal(prev.saiu.saldo)}) e foi quem saiu: a torcida acertou.`
+        : `O pior saldo era de ${primeiroNome(prev.pior.nome)} (${sinal(prev.pior.saldo)}), mas quem saiu foi ${primeiroNome(prev.saiu.nome)} (${sinal(prev.saiu.saldo)}): a torcida errou.`);
+    } else if (prev.tipo === "aguardando") {
+      partes.push(`No flop estão ${listaNomes(prev.flop)}, e o resultado sai no começo do episódio ${ep.numero + 1}.`);
+      partes.push(prev.empate
+        ? `A torcida aponta ${primeiroNome(prev.pior.nome)} (${sinal(prev.pior.saldo)}), praticamente empatada com ${primeiroNome(prev.segundo.nome)} (${sinal(prev.segundo.saldo)}).`
+        : `A torcida aponta ${primeiroNome(prev.pior.nome)}, com o pior saldo do flop (${sinal(prev.pior.saldo)}).`);
+    } else partes.push(`No flop estavam ${listaNomes(prev.noFlop)}. ${prev.motivo ? prev.motivo + "." : "Ninguém foi eliminado."} Não há previsão para testar neste episódio.`);
+    if (desistiu && !(prev && prev.motivo)) partes.push(`${primeiroNome(desistiu.nome)} desistiu, então fica fora da comparação.`);
     return partes.join(" ");
   }
   function renderFaixas() {
@@ -763,7 +772,7 @@
       const x = s => M + (s + 100) / 200 * (W - 2 * M);
       const div = document.createElement("div");
       div.className = "faixa";
-      div.innerHTML = `<h3>Episódio ${ep.numero}</h3><p>${frase(ep, lista.filter(p => p.resultado !== "Desistiu"))}</p>`;
+      div.innerHTML = `<h3>Episódio ${ep.numero}</h3><p>${frase(ep)}</p>`;
       const svg = document.createElementNS(NS, "svg");
       svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
       svg.setAttribute("role", "img");
@@ -926,37 +935,28 @@
   function renderAchados() {
     const itens = [];
 
-    // 1. Torcida e júri concordam? Saldo e resultado do mesmo episódio.
-    const elim = eps.map(e => {
-      const lista = emJogo(e).filter(p => p.resultado !== "Desistiu");
-      const saiu = lista.find(p => p.resultado === "Eliminado");
-      if (!saiu) return null;
-      const pior = lista.slice().sort((a, b) => a.saldo - b.saldo)[0];
-      return { ep: e.numero, saiu, concordou: pior.nome === saiu.nome };
-    }).filter(Boolean);
-    const prevs = eps.map(previsao).filter(Boolean);
-    if (elim.length) {
-      const iguais = elim.filter(x => x.concordou).length;
-      const ult = elim[elim.length - 1];
-      itens.push({
-        grande: `${iguais} de ${elim.length}`,
-        rotulo: "torcida e júri de acordo",
-        texto: (elim.length === 1
-          ? `Na única eliminação até agora, ${primeiroNome(ult.saiu.nome)} ${ult.concordou ? "era quem a torcida mais criticava no episódio" : "não era quem a torcida mais criticava"} (${sinal(ult.saiu.saldo)}).`
-          : `Em ${iguais} das ${elim.length} eliminações, quem saiu era quem a torcida mais criticava no episódio.`)
-          + (prevs.length ? "" : " Isso é concordância, não previsão: o teste de previsão, com o episódio anterior, começa na próxima eliminação.")
-      });
-    }
-    // 1b. Previsão: o pior saldo do episódio anterior aponta quem sai?
+    // 1. A torcida adivinha quem sai do flop? (só episódios com resultado revelado)
+    const prevs = eps.map(previsao).filter(x => x && x.tipo === "resultado");
     if (prevs.length) {
       const acertos = prevs.filter(x => x.acertou).length;
       const ult = prevs[prevs.length - 1];
       itens.push({
         grande: `${acertos} de ${prevs.length}`,
         rotulo: prevs.length === 1 ? "eliminação prevista" : "eliminações previstas",
-        texto: `Usando só o saldo do episódio anterior, escrito antes do resultado. Na última, o pior saldo era de ${primeiroNome(ult.pior.nome)}, e quem saiu foi ${primeiroNome(ult.saiu.nome)}.`
+        texto: prevs.length === 1
+          ? `No flop do episódio ${ult.ep}, ${primeiroNome(ult.saiu.nome)} ${ult.acertou ? "tinha o pior saldo" : "não tinha o pior saldo"} entre os ${["", "", "dois", "três", "quatro", "cinco", "seis"][ult.flop.length] || ult.flop.length} (${sinal(ult.saiu.saldo)}) e foi quem saiu. A torcida comentou antes de o resultado ser revelado.`
+          : `Em ${acertos} das ${prevs.length} eliminações, quem saiu era quem tinha o pior saldo no flop, com comentários escritos antes do resultado.`
       });
     }
+    // 1b. Aposta em aberto: o flop do episódio mais recente, cujo resultado ainda não saiu.
+    const aberta = previsao(eps[eps.length - 1]);
+    if (aberta && aberta.tipo === "aguardando") itens.push({
+      grande: aberta.empate ? `${primeiroNome(aberta.pior.nome)} ou ${primeiroNome(aberta.segundo.nome)}?` : `${primeiroNome(aberta.pior.nome)}?`,
+      rotulo: `aposta da torcida para o episódio ${aberta.ep + 1}`,
+      texto: aberta.empate
+        ? `No flop do episódio ${aberta.ep}, as duas têm os piores saldos e estão praticamente empatadas (${sinal(aberta.pior.saldo)} e ${sinal(aberta.segundo.saldo)}). O resultado sai no começo do próximo episódio.`
+        : `Pior saldo do flop do episódio ${aberta.ep} (${sinal(aberta.pior.saldo)}). O resultado sai no começo do próximo episódio.`
+    });
 
     // 2. Maior virada entre dois episódios seguidos (só bases com 50+ menções nos dois).
     let virada = null;
@@ -1004,7 +1004,7 @@
     document.getElementById("metodo").innerHTML = `
       <p class="lede">Os dados vêm dos comentários públicos de cada episódio no canal da DiaTV no YouTube, coletados pela API oficial. Outras redes, como X, Instagram e TikTok, ficam de fora, e a torcida de cada rede pode pensar diferente. Por isso, os números mostram a torcida que comenta no YouTube, e não o público inteiro do programa.</p>
       <p>Cada episódio conta só os comentários publicados nas <strong>primeiras 48 horas</strong> depois que o vídeo sai. Assim todos são comparados com a mesma régua, e o painel sai dois dias depois do episódio, sem esperar a conversa acabar. O período foi testado: no episódio 1, que tem 11 dias de comentários, o saldo de cada participante com mais de 100 menções nas primeiras 48 horas ficou a no máximo 5 pontos do saldo final.</p>
-      <p>Os comentários de cada episódio são escritos depois que ele vai ao ar. Por isso, o painel separa duas perguntas: se quem sai é quem a torcida mais critica no próprio episódio (<strong>concordância</strong> com o júri) e se o saldo do episódio anterior já apontava quem ia sair (<strong>previsão</strong>).</p>
+      <p>Quem sai do flop só é revelado no começo do episódio seguinte. Como a janela de 48 horas fecha antes disso, o saldo de cada episódio funciona como uma <strong>previsão</strong> feita pela torcida, comparada só entre quem estava no flop.</p>
       <p>Foram lidos <span class="numero">${fmt(D.total_comentarios)}</span> comentários. Destes, <span class="numero">${fmt(citam)}</span> citam pelo menos uma participante pelo nome ou por um apelido da torcida, como Talita para Talitah ou Poc para Peter Poc.</p>
       <p>Um modelo de linguagem (${esc(D.modelo)}) lê cada um e decide o sentimento para cada participante citada. Um mesmo comentário pode elogiar uma e criticar outra, e as duas opiniões são contadas separadamente.</p>
       ${acerto}
