@@ -53,6 +53,7 @@ As divergências se concentram em ironia e em elogios indiretos, como defender u
 - `dados/resumos_episodios.json`: resumos de como a torcida recebeu cada episódio, revisados à mão.
 - `dados/cenas.json`: o que acontece em cada cena mais comentada, escrito à mão a partir da transcrição do episódio.
 - `docs/fotos/`: fotos oficiais das participantes (DiaTV/divulgação). O painel encontra cada foto pelo nome do arquivo (ex.: `talitah-sampaio.jpg`) e mostra as iniciais quando não há foto.
+- `docs/fotos/edu.jpg` e `docs/fotos/fih.jpg`: os anfitriões aparecem só como decoração no topo do painel, sem dados.
 - O banco `dados/corrida.db` é gerado localmente e não vai para o repositório.
 
 **Privacidade:** o projeto não guarda nomes de usuários. As citações publicadas aparecem sem autor, sem @menções e sem links.

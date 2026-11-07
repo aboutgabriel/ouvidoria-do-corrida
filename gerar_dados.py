@@ -31,6 +31,9 @@ FOTOS = os.path.join(PASTA, "docs", "fotos")
 CREDITO_FOTOS = "Foto: DiaTV/divulgação"
 EXTENSOES_FOTO = (".jpg", ".jpeg", ".png", ".webp")
 
+# Anfitriões: só aparecem como decoração no topo do painel, com foto e nome.
+APRESENTADORES = ["Edu", "Fih"]
+
 # Minutagens que a torcida escreve: 14:32 ou 1:02:15
 MINUTAGEM = re.compile(r"(?<![\d:])(?:(\d{1,2}):)?(\d{1,2}):(\d{2})(?![\d:])")
 DURACAO_MAXIMA = 130 * 60  # descarta horários que não cabem num episódio
@@ -221,7 +224,8 @@ def main():
         "avaliacao": avaliacao,
         "resumos": resumos,
         "resumos_episodios": resumos_episodios,
-        "fotos": achar_fotos(sorted(tabela["participante"].unique())),
+        "fotos": achar_fotos(sorted(tabela["participante"].unique()) + APRESENTADORES),
+        "apresentadores": APRESENTADORES,
         "credito_fotos": CREDITO_FOTOS,
     }
 
@@ -232,7 +236,8 @@ def main():
         arquivo.write(";\n")
 
     print(f"Painel atualizado com {len(episodios)} episódio(s): {SAIDA}")
-    print(f"  Fotos encontradas: {len(dados['fotos'])} de {tabela['participante'].nunique()} participantes")
+    print(f"  Fotos encontradas: {len(dados['fotos'])} de {tabela['participante'].nunique() + len(APRESENTADORES)} "
+          f"({tabela['participante'].nunique()} participantes e {len(APRESENTADORES)} anfitriões)")
     for ep in episodios:
         j = ep["janela"]
         aviso = " (janela ainda aberta: colete de novo depois de " + j["fim"][:16].replace("T", " ") + " UTC)" if j["aberta"] else ""

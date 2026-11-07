@@ -72,9 +72,26 @@
   .cortina.esq { left: 0; }
   .cortina.dir { right: 0; transform: scaleX(-1); }
   .salao > .conteudo { position: relative; z-index: 2; }
+  .palco { display: flex; align-items: center; justify-content: center; gap: clamp(.5rem, 2vw, 1.6rem); }
+  .anfitriao { display: none; margin: 0; flex: 0 0 auto; width: 7.2rem; text-align: center; }
+  .anfitriao svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
+  .anfitriao figcaption { margin-top: .35rem; line-height: 1.25; }
+  .anfitriao .an-nome { display: block; color: var(--dourado-texto); font: 400 1.05rem var(--display); }
+  .anfitriao .an-papel { display: block; color: var(--nevoa-2); font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+  @media (min-width: 980px) { .anfitriao { display: block; } }
+  @media (max-width: 979px) {
+    .palco { flex-wrap: wrap; column-gap: 2rem; row-gap: .6rem; }
+    .palco > .cartela { order: -1; flex-basis: 100%; }
+    .anfitriao { display: flex; align-items: center; gap: .55rem; width: auto; text-align: left; }
+    .anfitriao svg { width: 2.9rem; }
+    .anfitriao figcaption { margin: 0; }
+    .anfitriao .an-nome { font-size: .95rem; }
+    .anfitriao .an-papel { font-size: .62rem; }
+  }
+  .palco > .cartela { margin: 0; flex: 0 1 760px; min-width: 0; }
   .cartela { position: relative; container-type: inline-size; width: min(100%, 760px); aspect-ratio: 800 / 260; margin: 0 auto; }
   .cartela svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-  .salao h1 { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); margin: 0; color: var(--dourado-texto); font: 400 clamp(1.6rem, 6.6vw, 3.6rem)/1 var(--display); font-size: 8cqw; letter-spacing: -.015em; white-space: nowrap; text-shadow: 0 2px 18px rgba(232,207,148,.18); }
+  .salao h1 { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); margin: 0; color: var(--dourado-texto); font: 400 clamp(1.4rem, 5.4vw, 3rem)/1 var(--display); font-size: 6.4cqw; letter-spacing: -.015em; white-space: nowrap; text-shadow: 0 2px 18px rgba(232,207,148,.18); }
   .fonte { display: inline-block; margin: .9rem 0 0; padding: .2rem .8rem; border: 1px solid rgba(201,166,90,.55); border-radius: 999px; color: var(--dourado-texto); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
   .temporada { margin: 1rem auto 0; max-width: 22rem; color: var(--nevoa); font-size: .98rem; }
 
@@ -281,6 +298,8 @@
   </svg>
 
   <div class="conteudo">
+    <div class="palco">
+    <figure class="anfitriao" id="anfitriao-0" aria-hidden="true"></figure>
     <div class="cartela">
       <svg viewBox="0 0 800 260" aria-hidden="true" fill="none" stroke="#C9A65A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <g><path d="M150 40 C112 40 92 60 100 84 C106 102 128 102 130 88 C131 78 120 74 113 82"/>
@@ -319,6 +338,8 @@
         <path d="M400 236 C394 244 394 252 400 256 C406 252 406 244 400 236 Z" fill="#C9A65A" stroke="none"/>
       </svg>
       <h1>Ouvidoria do Corrida</h1>
+    </div>
+    <figure class="anfitriao" id="anfitriao-1" aria-hidden="true"></figure>
     </div>
     <p class="temporada">O que a torcida do Corrida das Blogueiras 8 diz quando ninguém está perguntando.</p>
     <p class="fonte">Fonte: comentários do YouTube</p>
@@ -455,8 +476,8 @@
   // Moldura oval dourada, com laço no topo e pingente embaixo.
   // Com foto em docs/fotos, ela ocupa o oval interno; sem foto, ficam as iniciais.
   let idRecorte = 0;
-  function retratoSVG(nome, saldo) {
-    const cor = saldo === null ? "#CDBFC6" : corSaldo(saldo);
+  function retratoSVG(nome, saldo, anel) {
+    const cor = anel || (saldo === null ? "#CDBFC6" : corSaldo(saldo));
     const foto = (D.fotos || {})[nome];
     const id = "recorte-" + (++idRecorte);
     const miolo = foto
@@ -863,6 +884,14 @@
       : `${fmt(ep.comentarios)} comentários publicados nas primeiras ${j.horas} horas (${datas}).`;
   }
 
+  // ---------- anfitriões (decoração do salão, fora da parede de dados) ----------
+  function renderAnfitrioes() {
+    (D.apresentadores || []).slice(0, 2).forEach((nome, i) => {
+      document.getElementById("anfitriao-" + i).innerHTML = `${retratoSVG(nome, null, "#8C3157")}
+        <figcaption><span class="an-nome">${esc(nome)}</span><span class="an-papel">anfitrião</span></figcaption>`;
+    });
+  }
+
   // ---------- como a torcida recebeu o episódio ----------
   function renderResumoEpisodio(ep) {
     const texto = (D.resumos_episodios || {})[String(ep.numero)];
@@ -955,6 +984,7 @@
     document.getElementById("manchete").textContent = manchete(ep);
     document.getElementById("edicao").textContent = periodo(ep);
     renderResumoEpisodio(ep);
+    renderAnfitrioes();
     renderParede(ep);
     renderRanking(ep);
     renderViradas(ep);
