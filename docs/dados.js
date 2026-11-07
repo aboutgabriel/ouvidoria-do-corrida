@@ -107,6 +107,7 @@ window.DADOS = {
             "minuto": 20,
             "segundos": 1257,
             "citacoes": 34,
+            "descricao": "Na chegada do elenco, Jheny diz que nunca vai chamar o Rodolfo de Paizinho, e a rivalidade entre os dois começa.",
             "comentario": "\"não chamo o Rodolfo de Paizinho nunca!\" corta pra segundos depois chamando ele de Paizinho kkkkk (20:25 e 20:44)",
             "curtidas": 3560
           },
@@ -114,6 +115,7 @@ window.DADOS = {
             "minuto": 70,
             "segundos": 4236,
             "citacoes": 22,
+            "descricao": "Formação do primeiro flop: a líder Talitah escolhe Peter e Aysha, e o grupo de Matthel vota na Breia.",
             "comentario": "1:11:40 concordo com o Peter só nisso, a Thalita ter escolhido a Aisha pro flop mesmo a maquiagem sendo a única coisa elogiada foi uma bola fora, o paizinho deveria ter ido já que não fez nada além de desfilar",
             "curtidas": 1606
           },
@@ -121,8 +123,9 @@ window.DADOS = {
             "minuto": 76,
             "segundos": 4566,
             "citacoes": 17,
-            "comentario": "1:16:14 chamou ela pq então? Oxe! Edu me cansa com essas grosserias q só são aceitas pq ele eh o protagonista do q faz!!!!!!",
-            "curtidas": 18
+            "descricao": "Prova do flop: cada participante grava um vídeo ensinando regras de etiqueta, e Talitah convida o público a ser uma \"Sampaio Girl\".",
+            "comentario": "1:16:06 KKKKKKKKKKKKKKKKKK acho que ninguém quer, eu amo os comentários do edu",
+            "curtidas": 15
           }
         ]
       },
@@ -439,20 +442,23 @@ window.DADOS = {
             "minuto": 6,
             "segundos": 379,
             "citacoes": 53,
-            "comentario": "6:07 Hum, repescagem...",
-            "curtidas": 19
+            "descricao": "Abertura do episódio: a torcida percebe um erro de edição, que mostra quem voltou do flop já sentado no QG antes de a volta ser exibida.",
+            "comentario": "6:18 a edição mostrando os três que voltaram do flop já sentados antes de mostrarem a volta deles. alguém foi demitido! 😂",
+            "curtidas": 5
           },
           {
             "minuto": 14,
             "segundos": 890,
             "citacoes": 45,
-            "comentario": "14:23 gente MAS ELE NÃO FALOU ISSO, que mulher surtada kkkkkkkk tomara que saia",
-            "curtidas": 103
+            "descricao": "Talitah confronta Matthel por ele ter dito que, na idade dela, ela já devia ter aprendido, e chama a fala de etarismo.",
+            "comentario": "14:38 eu achei que é etarismo mesmo. Ter 45 anos não significa que ela saiba tudo da vida. E os jovens falam isso com empáfia, como se eles jamais fossem envelhecer.",
+            "curtidas": 22
           },
           {
             "minuto": 83,
             "segundos": 5000,
             "citacoes": 30,
+            "descricao": "Prova do flop: recriar a maquiagem da Ana, que acompanha tudo do estúdio. Participantes raspam a sobrancelha, e Paizinho desiste no meio da prova.",
             "comentario": "1:22:43 a ana rindo igual vilã de novela vendo o povo raspar a sobrancelha 😂😂😂😂😂😂😂 eu amo",
             "curtidas": 17
           }

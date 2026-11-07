@@ -8,6 +8,13 @@
 <meta property="og:title" content="Ouvidoria do Corrida">
 <meta property="og:description" content="O que a torcida do Corrida das Blogueiras 8 diz quando ninguém está perguntando.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://aboutgabriel.github.io/ouvidoria-do-corrida/">
+<meta property="og:image" content="https://aboutgabriel.github.io/ouvidoria-do-corrida/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ouvidoria do Corrida: 15.007 comentários lidos, 1 de 1 eliminação prevista e 82% de acerto da IA.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#3A1A2D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,6 +157,9 @@
   .cena h3 { margin: 0; font: 400 1.1rem/1.3 var(--display); }
   .cena .meta { margin: .1rem 0 .55rem; font-size: .85rem; color: var(--tinta-2); }
   .cena blockquote { margin: 0 0 .6rem; font-size: .95rem; }
+  .cena .descricao { margin: 0 0 .7rem; font-size: 1rem; color: var(--tinta); }
+  .cena .descricao + blockquote { padding-left: .8rem; border-left: 2px solid var(--ouro-claro); color: var(--tinta-2); font-size: .9rem; }
+  .cena blockquote small { display: block; margin-top: .2rem; font-size: .78rem; }
   .cena a { font-size: .875rem; font-weight: 500; }
 
   /* faixas */
@@ -160,6 +170,14 @@
   /* método */
   .metodo p { max-width: 36rem; }
   .metodo .numero { font: 400 1.05em var(--display); }
+
+  /* achados da temporada */
+  .achados { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+  .achados li { background: var(--porcelana-clara); border: 1px solid var(--ouro-claro); border-radius: 4px; padding: 1.1rem 1.2rem 1.2rem; box-shadow: inset 0 0 0 4px var(--porcelana-clara), inset 0 0 0 5px rgba(164,127,56,.35); }
+  .achados .grande { display: block; font: 400 2.1rem/1.1 var(--display); color: var(--tinta); }
+  .achados .rotulo { display: block; margin-top: .15rem; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ouro); }
+  .achados p { margin: .6rem 0 0; font-size: .95rem; color: var(--tinta-2); }
+  .bloco-achados { margin-bottom: 4.5rem; }
   details { margin-top: 1.2rem; font-size: .9rem; }
   summary { cursor: pointer; color: var(--tinta-2); }
   table { width: 100%; border-collapse: collapse; margin-top: .8rem; font-variant-numeric: tabular-nums; }
@@ -265,6 +283,11 @@
 
 <section class="sala clara" aria-labelledby="t-conversa">
   <div class="miolo">
+    <div class="bloco-achados" aria-labelledby="t-achados">
+      <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
+      <h2 id="t-achados">O que os dados mostram até agora</h2>
+      <ul class="achados" id="achados"></ul>
+    </div>
     <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#A47F38" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
     <h2 id="t-conversa">Quem a torcida comentou</h2>
     <p class="lede">Em ordem de menções. A barra mostra, entre os comentários sobre cada participante, a parcela de críticas e de elogios.</p>
@@ -629,7 +652,8 @@
       li.innerHTML = `<span class="num" aria-hidden="true">${i + 1}</span>
         <h3>Por volta de ${relogio(p.segundos)}</h3>
         <p class="meta">${p.citacoes} citações nesse trecho</p>
-        <blockquote>“${esc(p.comentario)}”</blockquote>
+        ${p.descricao ? `<p class="descricao">${esc(p.descricao)}</p>` : ""}
+        <blockquote>“${esc(p.comentario)}”${p.descricao ? `<small>Comentário da torcida sobre esse trecho</small>` : ""}</blockquote>
         <a href="https://www.youtube.com/watch?v=${encodeURIComponent(ep.video_id)}&t=${Math.max(0, p.segundos - 10)}s" target="_blank" rel="noopener">Ver a cena no YouTube</a>`;
       ol.appendChild(li);
     });
@@ -769,12 +793,72 @@
   }
 
   // ---------- método ----------
+  // ---------- achados da temporada (não mudam com o episódio escolhido) ----------
+  function renderAchados() {
+    const itens = [];
+
+    // 1. A torcida acerta quem sai? Conta as eliminações pelo júri.
+    const elim = eps.map(e => {
+      const lista = emJogo(e).filter(p => p.resultado !== "Desistiu");
+      const saiu = lista.find(p => p.resultado === "Eliminado");
+      if (!saiu) return null;
+      const pior = lista.slice().sort((a, b) => a.saldo - b.saldo)[0];
+      return { ep: e.numero, saiu, acertou: pior.nome === saiu.nome };
+    }).filter(Boolean);
+    if (elim.length) {
+      const acertos = elim.filter(x => x.acertou).length;
+      const ult = elim[elim.length - 1];
+      itens.push({
+        grande: `${acertos} de ${elim.length}`,
+        rotulo: elim.length === 1 ? "eliminação prevista" : "eliminações previstas",
+        texto: elim.length === 1
+          ? `Na única eliminação até agora, ${primeiroNome(ult.saiu.nome)} ${ult.acertou ? "tinha o pior saldo da torcida" : "não tinha o pior saldo da torcida"}: ${sinal(ult.saiu.saldo)} no episódio ${ult.ep}.`
+          : `Em ${acertos} das ${elim.length} eliminações, quem saiu tinha o pior saldo da torcida. A última foi de ${primeiroNome(ult.saiu.nome)}, com ${sinal(ult.saiu.saldo)} no episódio ${ult.ep}.`
+      });
+    }
+
+    // 2. Maior virada entre dois episódios seguidos (só bases com 50+ menções nos dois).
+    let virada = null;
+    eps.slice(1).forEach(e => {
+      const ant = epDe(e.numero - 1);
+      if (!ant) return;
+      emJogo(e).forEach(p => {
+        const a = ant.participantes.find(q => q.nome === p.nome);
+        if (!a || a.mencoes < 50 || p.mencoes < 50) return;
+        const v = p.saldo - a.saldo;
+        if (!virada || Math.abs(v) > Math.abs(virada.v)) virada = { nome: p.nome, de: a.saldo, para: p.saldo, v, e1: ant.numero, e2: e.numero };
+      });
+    });
+    if (virada) itens.push({
+      grande: `${sinal(virada.v)} pontos`,
+      rotulo: "maior virada",
+      texto: `${primeiroNome(virada.nome)} ${virada.v > 0 ? "ganhou" : "perdeu"} a torcida entre os episódios ${virada.e1} e ${virada.e2}: o saldo foi de ${sinal(virada.de)} para ${sinal(virada.para)}.`
+    });
+
+    // 3. Quem mais foi comentada no episódio mais recente, e o tom.
+    const ultimo = eps[eps.length - 1];
+    const topo = emJogo(ultimo).slice().sort((a, b) => b.mencoes - a.mencoes)[0];
+    if (topo) {
+      const neg = pct(topo.negativo, topo.mencoes), pos = pct(topo.positivo, topo.mencoes);
+      itens.push({
+        grande: fmt(topo.mencoes),
+        rotulo: `menções no episódio ${ultimo.numero}`,
+        texto: `${primeiroNome(topo.nome)} liderou a conversa do episódio mais recente, e ${neg >= pos ? `${neg}% dos comentários foram críticas` : `${pos}% dos comentários foram elogios`}.`
+      });
+    }
+
+    document.getElementById("achados").innerHTML = itens.map(i =>
+      `<li><span class="grande">${esc(i.grande)}</span><span class="rotulo">${esc(i.rotulo)}</span><p>${esc(i.texto)}</p></li>`).join("");
+  }
+
   function renderMetodo() {
     const citam = eps.reduce((s, e) => s + e.comentarios_com_citacao, 0);
     const av = D.avaliacao;
     const num = v => String(v).replace(".", ",");
+    // Margem de erro de 95% de uma proporção: 1,96 × √(p × (1 − p) / n).
+    const margem = av ? Math.round(1.96 * Math.sqrt(av.acerto / 100 * (1 - av.acerto / 100) / av.amostra) * 100) : 0;
     const acerto = av
-      ? `<p>Para saber se dá para confiar nos números, ${fmt(av.amostra)} menções sorteadas foram revisadas à mão, sem ver a resposta do modelo, e depois comparadas com ela. O modelo identificou a participante certa em <span class="numero">${num(av.identificacao)}%</span> dos casos e concordou com o sentimento da revisão humana em <span class="numero">${num(av.acerto)}%</span>. As divergências se concentram em ironia e em elogios indiretos, como defender uma participante criticando outra.</p>`
+      ? `<p>Para saber se dá para confiar nos números, ${fmt(av.amostra)} menções sorteadas foram revisadas à mão, sem ver a resposta do modelo, e depois comparadas com ela. O modelo identificou a participante certa em <span class="numero">${num(av.identificacao)}%</span> dos casos e concordou com o sentimento da revisão humana em <span class="numero">${num(av.acerto)}%</span>, com margem de erro de cerca de ${margem} pontos para mais ou para menos, já que a amostra é de ${fmt(av.amostra)} menções. As divergências se concentram em ironia e em elogios indiretos, como defender uma participante criticando outra.</p>`
       : `<p>A taxa de acerto do modelo está sendo medida: uma amostra sorteada de comentários está sendo classificada à mão para comparação.</p>`;
     document.getElementById("metodo").innerHTML = `
       <p class="lede">Os dados vêm dos comentários públicos de cada episódio no canal da DiaTV no YouTube, coletados pela API oficial. Outras redes, como X, Instagram e TikTok, ficam de fora, e a torcida de cada rede pode pensar diferente. Por isso, os números mostram a torcida que comenta no YouTube, e não o público inteiro do programa.</p>
@@ -798,6 +882,7 @@
   render();
   renderFaixas();
   renderMetodo();
+  renderAchados();
   let larguraAnterior = innerWidth;
   addEventListener("resize", () => {
     if (innerWidth === larguraAnterior) return;

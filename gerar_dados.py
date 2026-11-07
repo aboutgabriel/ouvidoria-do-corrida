@@ -23,6 +23,7 @@ from verificar_apelidos import BANCO, PASTA
 RESULTADOS = os.path.join(PASTA, "dados", "resultados.csv")
 AVALIACAO = os.path.join(PASTA, "dados", "avaliacao.json")
 RESUMOS = os.path.join(PASTA, "dados", "resumos.json")
+CENAS = os.path.join(PASTA, "dados", "cenas.json")  # descrições das cenas, escritas à mão
 SAIDA = os.path.join(PASTA, "docs", "dados.js")
 FOTOS = os.path.join(PASTA, "docs", "fotos")
 CREDITO_FOTOS = "Foto: DiaTV/divulgação"
@@ -70,20 +71,27 @@ def mais_curtido(df):
     return {"texto": limpar_citacao(linha["texto"]), "curtidas": int(linha["curtidas"])}
 
 
-def cenas_do_episodio(textos_curtidas):
-    """Conta as minutagens citadas, minuto a minuto, e acha os três maiores picos."""
-    marcas = []  # (segundos, curtidas, texto)
-    for texto, curtidas in textos_curtidas:
+def cenas_do_episodio(comentarios, revisao=None):
+    """Conta as minutagens citadas, minuto a minuto, e acha os três maiores picos.
+
+    comentarios: tuplas (id, texto, curtidas).
+    revisao: dados/cenas.json daquele episódio, {minuto: {"descricao": ..., "comentario_id": ...}}.
+    A descrição conta o que acontece na cena; o comentario_id troca a citação
+    automática (a mais curtida) por outro comentário do mesmo trecho.
+    """
+    revisao = revisao or {}
+    marcas = []  # (segundos, curtidas, texto, id)
+    for id_, texto, curtidas in comentarios:
         for h, m, seg in MINUTAGEM.findall(texto):
             h, m, seg = int(h or 0), int(m), int(seg)
             total = h * 3600 + m * 60 + seg
             if m < 60 and seg < 60 and total <= DURACAO_MAXIMA:
-                marcas.append((total, curtidas, texto))
+                marcas.append((total, curtidas, texto, id_))
     if not marcas:
         return {"por_minuto": [], "picos": []}
-    ultimo = max(t for t, _, _ in marcas) // 60
+    ultimo = max(t for t, _, _, _ in marcas) // 60
     por_minuto = [0] * (ultimo + 1)
-    for t, _, _ in marcas:
+    for t, _, _, _ in marcas:
         por_minuto[t // 60] += 1
 
     # Picos: minutos com mais citações, separados por pelo menos 3 minutos.
@@ -95,13 +103,16 @@ def cenas_do_episodio(textos_curtidas):
             picos.append(minuto)
     resultado = []
     for minuto in picos:
-        janela = [(t, c, tx) for t, c, tx in marcas if minuto - 1 <= t // 60 <= minuto + 1]
-        segundos = sorted(t for t, _, _ in janela)[len(janela) // 2]
-        _, curtidas, texto = max(janela, key=lambda x: x[1])
+        janela = [x for x in marcas if minuto - 1 <= x[0] // 60 <= minuto + 1]
+        segundos = sorted(t for t, _, _, _ in janela)[len(janela) // 2]
+        nota = revisao.get(str(minuto), {})
+        escolhido = next((x for x in janela if x[3] == nota.get("comentario_id")), None)
+        _, curtidas, texto, _ = escolhido or max(janela, key=lambda x: x[1])
         resultado.append({
             "minuto": minuto,
             "segundos": segundos,
             "citacoes": len(janela),
+            "descricao": nota.get("descricao"),
             "comentario": limpar_citacao(texto),
             "curtidas": int(curtidas),
         })
@@ -115,6 +126,11 @@ def main():
         classificacoes = pd.read_sql("SELECT * FROM classificacoes", conexao)
 
     resultados = pd.read_csv(RESULTADOS)
+
+    revisao_cenas = {}
+    if os.path.exists(CENAS):
+        with open(CENAS, encoding="utf-8") as arquivo:
+            revisao_cenas = json.load(arquivo)
 
     # Cada menção ganha o episódio do comentário de onde veio.
     mencoes = classificacoes.merge(comentarios, left_on="comentario_id", right_on="id")
@@ -151,7 +167,8 @@ def main():
             "video_id": do_episodio["video_id"].iat[0],
             "comentarios": int(len(do_episodio)),
             "comentarios_com_citacao": com_citacao,
-            "cenas": cenas_do_episodio(zip(do_episodio["texto"], do_episodio["curtidas"])),
+            "cenas": cenas_do_episodio(zip(do_episodio["id"], do_episodio["texto"], do_episodio["curtidas"]),
+                                       revisao_cenas.get(str(int(ep)))),
             "participantes": [
                 {
                     "nome": linha.participante,
