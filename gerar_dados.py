@@ -11,7 +11,9 @@ Uso:
 
 import json
 import os
+import re
 import sqlite3
+import unicodedata
 from datetime import datetime, timezone
 
 import pandas as pd
@@ -20,12 +22,95 @@ from verificar_apelidos import BANCO, PASTA
 
 RESULTADOS = os.path.join(PASTA, "dados", "resultados.csv")
 AVALIACAO = os.path.join(PASTA, "dados", "avaliacao.json")
+RESUMOS = os.path.join(PASTA, "dados", "resumos.json")
 SAIDA = os.path.join(PASTA, "docs", "dados.js")
+FOTOS = os.path.join(PASTA, "docs", "fotos")
+CREDITO_FOTOS = "Foto: DiaTV/divulgação"
+EXTENSOES_FOTO = (".jpg", ".jpeg", ".png", ".webp")
+
+# Minutagens que a torcida escreve: 14:32 ou 1:02:15
+MINUTAGEM = re.compile(r"(?<![\d:])(?:(\d{1,2}):)?(\d{1,2}):(\d{2})(?![\d:])")
+DURACAO_MAXIMA = 130 * 60  # descarta horários que não cabem num episódio
+
+
+def limpar_citacao(texto, limite=220):
+    """Tira @menções e links antes de publicar um comentário como citação."""
+    texto = re.sub(r"https?://\S+|@\S+", "", texto)
+    texto = re.sub(r"\s+", " ", texto).strip()
+    return texto if len(texto) <= limite else texto[:limite].rsplit(" ", 1)[0] + "…"
+
+
+def nome_de_arquivo(nome):
+    """'Bárbara Freitas' vira 'barbara-freitas': sem acentos, minúsculas e com hífens."""
+    sem_acento = unicodedata.normalize("NFKD", nome).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", sem_acento.lower()).strip("-")
+
+
+def achar_fotos(nomes):
+    """Procura em docs/fotos um arquivo para cada participante, como talitah-sampaio.jpg."""
+    if not os.path.isdir(FOTOS):
+        return {}
+    arquivos = {os.path.splitext(a)[0].lower(): a for a in os.listdir(FOTOS) if a.lower().endswith(EXTENSOES_FOTO)}
+    fotos = {}
+    for nome in nomes:
+        arquivo = arquivos.pop(nome_de_arquivo(nome), None)
+        if arquivo:
+            fotos[nome] = f"fotos/{arquivo}"
+    for sobra in arquivos.values():
+        print(f"  Aviso: a foto {sobra} não corresponde a nenhuma participante e ficou de fora.")
+    return fotos
+
+
+def mais_curtido(df):
+    """Comentário com mais curtidas de um grupo, sem links nem textos longos demais."""
+    df = df[~df["texto"].str.contains("http", na=False)]
+    if df.empty:
+        return None
+    linha = df.sort_values("curtidas", ascending=False).iloc[0]
+    return {"texto": limpar_citacao(linha["texto"]), "curtidas": int(linha["curtidas"])}
+
+
+def cenas_do_episodio(textos_curtidas):
+    """Conta as minutagens citadas, minuto a minuto, e acha os três maiores picos."""
+    marcas = []  # (segundos, curtidas, texto)
+    for texto, curtidas in textos_curtidas:
+        for h, m, seg in MINUTAGEM.findall(texto):
+            h, m, seg = int(h or 0), int(m), int(seg)
+            total = h * 3600 + m * 60 + seg
+            if m < 60 and seg < 60 and total <= DURACAO_MAXIMA:
+                marcas.append((total, curtidas, texto))
+    if not marcas:
+        return {"por_minuto": [], "picos": []}
+    ultimo = max(t for t, _, _ in marcas) // 60
+    por_minuto = [0] * (ultimo + 1)
+    for t, _, _ in marcas:
+        por_minuto[t // 60] += 1
+
+    # Picos: minutos com mais citações, separados por pelo menos 3 minutos.
+    picos = []
+    for minuto in sorted(range(len(por_minuto)), key=lambda i: -por_minuto[i]):
+        if por_minuto[minuto] < 3 or len(picos) == 3:
+            break
+        if all(abs(minuto - p) >= 3 for p in picos):
+            picos.append(minuto)
+    resultado = []
+    for minuto in picos:
+        janela = [(t, c, tx) for t, c, tx in marcas if minuto - 1 <= t // 60 <= minuto + 1]
+        segundos = sorted(t for t, _, _ in janela)[len(janela) // 2]
+        _, curtidas, texto = max(janela, key=lambda x: x[1])
+        resultado.append({
+            "minuto": minuto,
+            "segundos": segundos,
+            "citacoes": len(janela),
+            "comentario": limpar_citacao(texto),
+            "curtidas": int(curtidas),
+        })
+    return {"por_minuto": por_minuto, "picos": resultado}
 
 
 def main():
     with sqlite3.connect(BANCO) as conexao:
-        comentarios = pd.read_sql("SELECT id, episodio FROM comentarios", conexao)
+        comentarios = pd.read_sql("SELECT id, episodio, video_id, texto, curtidas FROM comentarios", conexao)
         processados = pd.read_sql("SELECT comentario_id, modelo FROM processados", conexao)
         classificacoes = pd.read_sql("SELECT * FROM classificacoes", conexao)
 
@@ -33,6 +118,14 @@ def main():
 
     # Cada menção ganha o episódio do comentário de onde veio.
     mencoes = classificacoes.merge(comentarios, left_on="comentario_id", right_on="id")
+
+    # Para cada participante e episódio: o elogio e a crítica mais curtidos.
+    destaques = {}
+    for (ep, nome), grupo in mencoes.groupby(["episodio", "participante"]):
+        destaques[(ep, nome)] = {
+            "elogio": mais_curtido(grupo[grupo["sentimento"] == "positivo"]),
+            "critica": mais_curtido(grupo[grupo["sentimento"] == "negativo"]),
+        }
 
     # Uma linha por (episódio, participante) com a contagem de cada sentimento.
     tabela = (
@@ -43,18 +136,22 @@ def main():
     )
     tabela["mencoes"] = tabela[["positivo", "negativo", "neutro"]].sum(axis=1)
     # Saldo da torcida: de -100 (só críticas) a +100 (só elogios).
-    tabela["saldo"] = ((tabela["positivo"] - tabela["negativo"]) / tabela["mencoes"] * 100).round(1)
+    # Guarda o saldo com 4 casas: arredondar antes da hora causa erro duplo
+    # (52,48 viraria 52,5 e depois 53 no painel, quando o certo é 52).
+    tabela["saldo"] = ((tabela["positivo"] - tabela["negativo"]) / tabela["mencoes"] * 100).round(4)
 
     tabela = tabela.merge(resultados, on=["episodio", "participante"], how="left")
 
     episodios = []
     for ep, grupo in tabela.groupby("episodio"):
-        total = int((comentarios["episodio"] == ep).sum())
+        do_episodio = comentarios[comentarios["episodio"] == ep]
         com_citacao = int(mencoes.loc[mencoes["episodio"] == ep, "comentario_id"].nunique())
         episodios.append({
             "numero": int(ep),
-            "comentarios": total,
+            "video_id": do_episodio["video_id"].iat[0],
+            "comentarios": int(len(do_episodio)),
             "comentarios_com_citacao": com_citacao,
+            "cenas": cenas_do_episodio(zip(do_episodio["texto"], do_episodio["curtidas"])),
             "participantes": [
                 {
                     "nome": linha.participante,
@@ -64,6 +161,7 @@ def main():
                     "negativo": int(linha.negativo),
                     "neutro": int(linha.neutro),
                     "saldo": float(linha.saldo),
+                    **destaques.get((ep, linha.participante), {}),
                 }
                 for linha in grupo.sort_values("mencoes", ascending=False).itertuples()
             ],
@@ -74,6 +172,11 @@ def main():
         with open(AVALIACAO, encoding="utf-8") as arquivo:
             avaliacao = json.load(arquivo)
 
+    resumos = {}
+    if os.path.exists(RESUMOS):
+        with open(RESUMOS, encoding="utf-8") as arquivo:
+            resumos = {nome: r["texto"] for nome, r in json.load(arquivo).items()}
+
     dados = {
         "exemplo": False,
         "atualizado_em": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
@@ -81,6 +184,9 @@ def main():
         "total_comentarios": int(len(comentarios)),
         "episodios": episodios,
         "avaliacao": avaliacao,
+        "resumos": resumos,
+        "fotos": achar_fotos(sorted(tabela["participante"].unique())),
+        "credito_fotos": CREDITO_FOTOS,
     }
 
     os.makedirs(os.path.dirname(SAIDA), exist_ok=True)
@@ -90,6 +196,7 @@ def main():
         arquivo.write(";\n")
 
     print(f"Painel atualizado com {len(episodios)} episódio(s): {SAIDA}")
+    print(f"  Fotos encontradas: {len(dados['fotos'])} de {tabela['participante'].nunique()} participantes")
     for ep in episodios:
         print(f"  Episódio {ep['numero']}: {ep['comentarios_com_citacao']} comentários citam participantes")
 
