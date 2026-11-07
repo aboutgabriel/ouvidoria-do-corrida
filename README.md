@@ -17,7 +17,7 @@ A pergunta central: **a torcida consegue prever quem sai?**
 Depois de 2 episódios e 13.369 comentários lidos (as primeiras 48 horas de cada episódio):
 
 - **A torcida acertou a primeira eliminação.** Peter Poc saiu no episódio 1 com o pior saldo da torcida (−77).
-- **A maior virada foi de Bárbara Freitas**, que saiu de −31 no episódio 1 para +80 no episódio 2, depois de vencer a prova.
+- **A maior virada foi de Bárbara Freitas**, que saiu de −32 no episódio 1 para +80 no episódio 2, depois de vencer a prova.
 - **Paizinho dos Looks liderou a conversa do episódio 2** (847 menções), e 69% dos comentários foram críticas, principalmente pela desistência no meio da prova do flop.
 - **Latyffa Romayale é quase unanimidade:** 201 elogios e só 6 críticas no episódio 2.
 
@@ -98,6 +98,7 @@ A coleta deve ser feita depois que as 48 horas fecharem. Se for antes, o `gerar_
 - A API do YouTube devolve no máximo 5 respostas por comentário, então conversas longas ficam incompletas.
 - Só vão para o modelo os comentários que citam alguma participante pelo nome ou apelido. Comentários como "ela foi injustiçada", sem nome, ficam de fora.
 - A torcida erra muito a grafia dos nomes. A lista de apelidos foi construída a partir dos próprios dados (ex.: "Talita" aparece mais que o oficial "Talitah").
+- O modelo às vezes lê a defesa de uma participante ("injusto ela ir pro flop") como crítica a ela. Isso pode puxar para baixo o saldo de quem foi para o flop. As citações em destaque no painel são revisadas à mão (`dados/correcoes.csv`), mas a contagem geral carrega esse tipo de erro, que está incluído na taxa de acerto de 82%.
 - Participantes com poucas menções têm saldo menos estável, porque cada comentário pesa mais.
 
 ## Tecnologias

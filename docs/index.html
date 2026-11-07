@@ -204,6 +204,7 @@
   .achados p { margin: .6rem 0 0; font-size: .95rem; color: var(--tinta-2); }
   .bloco-achados { margin-bottom: 4.5rem; }
   .bloco-episodio { margin-bottom: 4.5rem; }
+  .sem-citacao { margin: .5rem 0 0; padding: .6rem .9rem; border-left: 3px solid var(--neutro); font-size: .85rem; color: var(--tinta-2); font-style: italic; }
   .cartao-ep { margin-top: 1.4rem; padding: 1.4rem 1.6rem 1.2rem; background: var(--porcelana-clara); border: 1px solid var(--ouro-claro); border-radius: 4px; box-shadow: inset 0 0 0 5px var(--porcelana-clara), inset 0 0 0 6px rgba(164,127,56,.3); }
   .resumo-ep { margin: 0; font: 400 1.04rem/1.75 var(--texto); color: var(--tinta); }
   .resumo-ep::first-letter { float: left; font: 400 3.1em/.9 var(--display); padding: .06em .14em 0 0; color: var(--ouro); }
@@ -845,8 +846,15 @@
     const q = foco.p;
     // Só mostra citações com pelo menos 10 curtidas: com poucos comentários, um erro do modelo apareceria em destaque.
     const MIN_CURTIDAS = 10;
-    const citacao = (c, tipo, titulo) => c && c.curtidas >= MIN_CURTIDAS ? `<div class="citacao ${tipo}">“${esc(c.texto)}”<small>${titulo}, com ${fmt(c.curtidas)} curtidas</small></div>` : "";
-    const citacoes = citacao(q.elogio, "pos", "Elogio mais curtido") + citacao(q.critica, "neg", "Crítica mais curtida");
+    const temCitacao = c => c && c.curtidas >= MIN_CURTIDAS;
+    const citacao = (c, tipo, titulo, falta) => temCitacao(c)
+      ? `<div class="citacao ${tipo}">“${esc(c.texto)}”<small>${titulo}, com ${fmt(c.curtidas)} curtidas</small></div>`
+      : `<p class="sem-citacao">${falta}</p>`;
+    const algumaCitacao = temCitacao(q.elogio) || temCitacao(q.critica);
+    const citacoes = algumaCitacao
+      ? citacao(q.elogio, "pos", "Elogio mais curtido", `Nenhum elogio teve ${MIN_CURTIDAS} curtidas ou mais neste episódio.`) +
+        citacao(q.critica, "neg", "Crítica mais curtida", `Nenhuma crítica teve ${MIN_CURTIDAS} curtidas ou mais neste episódio.`)
+      : "";
 
     fichaConteudo.innerHTML = `
       <button class="fechar" type="button">Fechar</button>

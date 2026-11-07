@@ -158,16 +158,16 @@ window.DADOS = {
           "nome": "Breia",
           "resultado": "Flop",
           "mencoes": 666,
-          "positivo": 496,
-          "negativo": 68,
+          "positivo": 498,
+          "negativo": 66,
           "neutro": 102,
-          "saldo": 64.2643,
+          "saldo": 64.8649,
           "elogio": {
             "texto": "Eu ADOREI a Breia!!! Concordo plenamente! Geral fantasiado, performando! Eu amei a simplicidade delaaaaaa",
             "curtidas": 4304
           },
           "critica": {
-            "texto": "Me surpreendeu o grupo que ganhou porq confesso que não botei fé neles, e eles arrasaram, a líder me surpreendeu também pela liderança, ela foi super calma, ensinou como fazer algumas coisas, achei merecido 👏🏻 Agora o…",
+            "texto": "Me surpreendeu o grupo que ganhou porq confesso que não botei fé neles, e eles arrasaram, a líder me surpreendeu também pela liderança, ela foi super calma, ensinou como fazer algumas coisas, achei merecido 👏🏻 Agora o grupo da Breia foi o contrário doq falei kkk Achei que eles iam arrasar e ficou a desejar bastante 👀",
             "curtidas": 69
           }
         },
@@ -209,10 +209,10 @@ window.DADOS = {
           "nome": "Bárbara Freitas",
           "resultado": "Salvo",
           "mencoes": 220,
-          "positivo": 46,
-          "negativo": 114,
+          "positivo": 45,
+          "negativo": 115,
           "neutro": 60,
-          "saldo": -30.9091,
+          "saldo": -31.8182,
           "elogio": {
             "texto": "Bárbara sinto q n vai entregar mas me representa muito KKKKKKK amei a diva",
             "curtidas": 166
@@ -333,7 +333,7 @@ window.DADOS = {
           "neutro": 2,
           "saldo": 33.3333,
           "elogio": {
-            "texto": "Rhany veio da minha cidade, cidade pequena do interior. É muito bonito ver onde está chegando a cada dia. Ela batalhou demais pra chegar onde está. E merece cada conquista. Nunca foi arrogante e nunca esqueceu de onde…",
+            "texto": "Rhany veio da minha cidade, cidade pequena do interior. É muito bonito ver onde está chegando a cada dia. Ela batalhou demais pra chegar onde está. E merece cada conquista. Nunca foi arrogante e nunca esqueceu de onde veio. Nunca fui muuuuito próxima dela, mas sempre torci por ela. Porque qualquer pessoa que já tenha…",
             "curtidas": 8
           },
           "critica": {
@@ -710,8 +710,8 @@ window.DADOS = {
   },
   "resumos": {
     "Aysha Pink": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +67 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para −10, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior.",
-    "Breia": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +64 para +53. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia.",
-    "Bárbara Freitas": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −31 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +80. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas.",
+    "Breia": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +65 para +53. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia.",
+    "Bárbara Freitas": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −32 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +80. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas.",
     "Gabriel Queiroz": "A torcida destacou o talento de Gabriel Queiroz na maquiagem, com o saldo passando de +77 para +40 ao longo dos episódios. Enquanto os comentários elogiaram a qualidade técnica e a postura de Gabriel, a audiência ficou dividida quanto ao desempenho em provas de grupo e à comunicação durante as apresentações. As críticas focaram na dificuldade de Gabriel em sustentar o papel e na gestão do tempo durante os desafios.",
     "Jheny Albano": "A torcida iniciou a trajetória de Jheny Albano com um saldo de +15, elogiando sua participação, embora já dividida sobre a autenticidade de suas interações. No episódio seguinte, o saldo caiu para −22, com comentários criticando a postura e a tentativa de criar cenas para o programa. A percepção geral oscilou entre o reconhecimento de seu carisma e o descontentamento com o comportamento adotado ao longo dos episódios.",
     "Latyffa Romayale": "Latyffa conquistou a torcida desde o início pelo seu carisma contagiante, mantendo um saldo de +92 no primeiro episódio. No segundo episódio, a torcida reforçou os elogios à sua simpatia e humor, resultando em um saldo de +85. Embora alguns comentários tenham apontado críticas pontuais sobre o desempenho em provas e escolhas estéticas, a percepção geral permaneceu amplamente positiva, com o público destacando Latyffa como um dos principais destaques da temporada.",

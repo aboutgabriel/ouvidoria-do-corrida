@@ -43,10 +43,12 @@ MINUTAGEM = re.compile(r"(?<![\d:])(?:(\d{1,2}):)?(\d{1,2}):(\d{2})(?![\d:])")
 DURACAO_MAXIMA = 130 * 60  # descarta horários que não cabem num episódio
 
 
-def limpar_citacao(texto, limite=220):
+def limpar_citacao(texto, limite=320):
     """Tira @menções e links antes de publicar um comentário como citação."""
     texto = re.sub(r"https?://\S+|@\S+", "", texto)
     texto = re.sub(r"\s+", " ", texto).strip()
+    if texto[:1] in "\"“" and texto[-1:] in "\"”" and texto.count('"') + texto.count("“") + texto.count("”") == 2:
+        texto = texto[1:-1].strip()  # tira aspas que envolvem o comentário inteiro, para não ficar ““…””
     return texto if len(texto) <= limite else texto[:limite].rsplit(" ", 1)[0] + "…"
 
 
