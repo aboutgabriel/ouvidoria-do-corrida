@@ -3,9 +3,11 @@ Ouvidoria do Corrida | Etapa 5: a percepção da torcida em texto
 
 Faz dois tipos de resumo com o Gemini:
 
-1. Por participante: junta os números de cada episódio e os comentários mais
-   curtidos (elogios e críticas) e resume como a torcida a enxergou ao longo
-   da temporada. Vai para dados/resumos.json e aparece na ficha do painel.
+1. Por participante: junta os números de cada episódio, os comentários mais
+   curtidos (elogios e críticas) e o que aconteceu com ela no programa
+   (dados/contexto.json, escrito à mão a partir da transcrição) e resume como
+   a torcida a enxergou ao longo da temporada. O contexto serve para o resumo
+   dizer a que momento cada tema se refere. Vai para dados/resumos.json e aparece na ficha do painel.
 2. Por episódio: junta os números do episódio, as cenas mais comentadas e os
    comentários mais curtidos (sobre qualquer assunto) e resume como a torcida
    recebeu o episódio. Vai para dados/resumos_episodios.json e aparece no topo
@@ -14,8 +16,10 @@ Faz dois tipos de resumo com o Gemini:
 Todo resumo deve ser revisado por uma pessoa antes de ir ao ar.
 
 Uso:
-    python resumir.py             (resume só o que é novo)
-    python resumir.py --todos     (refaz todos os resumos e apaga correções manuais)
+    python resumir.py                   (resume só o que é novo)
+    python resumir.py --participantes   (refaz só os resumos das participantes;
+                                         guarda os antigos em dados/resumos_antes.json)
+    python resumir.py --todos           (refaz todos os resumos e apaga correções manuais)
 """
 
 import argparse
@@ -39,23 +43,27 @@ RESULTADOS = os.path.join(PASTA, "dados", "resultados.csv")
 SAIDA = os.path.join(PASTA, "dados", "resumos.json")
 SAIDA_EPISODIOS = os.path.join(PASTA, "dados", "resumos_episodios.json")
 CENAS = os.path.join(PASTA, "dados", "cenas.json")
-COMENTARIOS_POR_TIPO = 8   # elogios e críticas mais curtidos, por episódio
+CONTEXTO = os.path.join(PASTA, "dados", "contexto.json")
+BACKUP = os.path.join(PASTA, "dados", "resumos_antes.json")
+COMENTARIOS_POR_TIPO = 10  # elogios e críticas mais curtidos, por episódio
 COMENTARIOS_DO_EPISODIO = 30   # comentários mais curtidos do episódio, sobre qualquer assunto
 
 INSTRUCOES = """Você escreve para a Ouvidoria do Corrida, um projeto que analisa os comentários do YouTube sobre o reality show Corrida das Blogueiras 8.
 
-Com base APENAS nos números e nos comentários fornecidos, escreva um resumo de no máximo 3 frases (até 75 palavras) sobre como a torcida enxergou a participante ao longo dos episódios.
+Você recebe, para cada episódio, os números da participante, o que aconteceu com ela no programa (escrito à mão a partir do episódio) e os comentários mais curtidos. Com base APENAS nisso, escreva um resumo de 3 ou 4 frases (até 100 palavras) sobre como a torcida enxergou a participante ao longo dos episódios.
 
 Regras:
 1. Descreva a percepção da TORCIDA, nunca a sua opinião. Use construções como "a torcida elogiou", "os comentários criticaram".
 2. Conte a trajetória na ordem dos episódios e cite os saldos exatamente como aparecem nos dados ("de −26 para +52"). Cada tema deve ser atribuído ao episódio em que aparece nos comentários.
-3. Só cite um tema (liderança, maquiagem, atitude, carisma etc.) se ele aparecer em mais de um comentário. Não generalize a partir de um comentário isolado e não invente temas.
-4. Quando a torcida estiver dividida, diga que está dividida, em vez de escolher um lado.
-5. Não reproduza ofensas nem palavrões. Não fale de corpo, aparência física, vida pessoal, saúde, saúde mental ou estado emocional, mesmo que os comentários falem disso.
-6. Comece pelo ponto mais marcante da trajetória, e não por "A trajetória de...". Evite advérbios genéricos como "drasticamente" e "significativamente".
-7. Refira-se à pessoa pelo nome. Se não souber o gênero, evite artigos e adjetivos com gênero.
-8. Tom editorial, leve e respeitoso, em português do Brasil, sem travessões.
-9. O saldo vai de −100 (só críticas) a +100 (só elogios)."""
+3. Só cite um tema se ele aparecer em mais de um comentário. Não generalize a partir de um comentário isolado e não invente temas.
+4. Seja concreto: diga a que momento do programa cada tema se refere, usando o contexto (qual prova, o que a participante fez, com quem). Escreva "criticaram o nervosismo na apresentação do gloss, quando a dupla estourou o tempo", e não "criticaram a comunicação durante as apresentações". Não use palavras vagas como "postura", "comportamento", "desempenho", "atitude" ou "dinâmicas" sem dizer o que aconteceu.
+5. O contexto só explica os fatos. A reação da torcida tem que vir dos comentários: não diga que a torcida elogiou ou criticou algo que não aparece neles. Se um fato do contexto não aparece nos comentários, não o cite.
+6. Quando a torcida estiver dividida, diga que está dividida e sobre o quê, em vez de escolher um lado.
+7. Não reproduza ofensas nem palavrões. Não fale de corpo, aparência física, vida pessoal, saúde, saúde mental ou estado emocional, mesmo que os comentários falem disso.
+8. Comece pelo ponto mais marcante da trajetória, e não por "A trajetória de...". Evite advérbios genéricos como "drasticamente" e "significativamente".
+9. Refira-se à pessoa pelo nome. Se não souber o gênero, evite artigos e adjetivos com gênero.
+10. Tom editorial, leve e respeitoso, em português do Brasil, sem travessões.
+11. O saldo vai de −100 (só críticas) a +100 (só elogios)."""
 
 
 INSTRUCOES_EPISODIO = """Você escreve para a Ouvidoria do Corrida, um projeto que analisa os comentários do YouTube sobre o reality show Corrida das Blogueiras 8.
@@ -74,7 +82,7 @@ Regras:
 9. O saldo vai de −100 (só críticas) a +100 (só elogios)."""
 
 
-def limpar(texto, limite=220):
+def limpar(texto, limite=300):
     """Tira @menções e links: o resumo não deve citar nem expor quem comentou."""
     texto = re.sub(r"\s+", " ", re.sub(r"https?://\S+|@\S+", "", texto)).strip()
     return texto[:limite]
@@ -86,7 +94,8 @@ def saldo_texto(valor):
     return f"+{inteiro}" if inteiro > 0 else f"−{abs(inteiro)}" if inteiro < 0 else "0"
 
 
-def montar_entrada(nome, linhas, comentarios):
+def montar_entrada(nome, linhas, comentarios, contexto=None):
+    contexto = contexto or {}
     partes = [f"Participante: {nome}", ""]
     for linha in linhas.itertuples():
         resultado = linha.resultado if isinstance(linha.resultado, str) else "já estava fora"
@@ -94,6 +103,11 @@ def montar_entrada(nome, linhas, comentarios):
             f"Episódio {linha.episodio}: resultado oficial {resultado}; {linha.mencoes} menções; "
             f"{linha.positivo} elogios, {linha.negativo} críticas, {linha.neutro} neutros; saldo {saldo_texto(linha.saldo)}."
         )
+        do_ep = contexto.get(str(int(linha.episodio)), {})
+        if do_ep.get("geral"):
+            partes.append(f"  O episódio: {do_ep['geral']}")
+        if do_ep.get("participantes", {}).get(nome):
+            partes.append(f"  O que aconteceu com {nome}: {do_ep['participantes'][nome]}")
         for sentimento, rotulo in (("positivo", "Elogios mais curtidos"), ("negativo", "Críticas mais curtidas")):
             selecao = comentarios[(comentarios["episodio"] == linha.episodio) & (comentarios["sentimento"] == sentimento)]
             selecao = selecao.sort_values("curtidas", ascending=False).head(COMENTARIOS_POR_TIPO)
@@ -143,6 +157,8 @@ def resumir(cliente, modelo, entrada, instrucoes=INSTRUCOES):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--todos", action="store_true", help="Refaz todos os resumos")
+    parser.add_argument("--participantes", action="store_true",
+                        help="Refaz só os resumos das participantes (os de episódio ficam como estão)")
     args = parser.parse_args()
 
     aplicar_correcoes()  # correções da revisão humana (dados/correcoes.csv)
@@ -174,23 +190,41 @@ def main():
     tabela["saldo"] = (tabela["positivo"] - tabela["negativo"]) / tabela["mencoes"] * 100
     tabela = tabela.merge(pd.read_csv(RESULTADOS), on=["episodio", "participante"], how="left")
 
+    contexto = {}
+    if os.path.exists(CONTEXTO):
+        with open(CONTEXTO, encoding="utf-8") as arquivo:
+            contexto = json.load(arquivo)
+    for ep in sorted(int(e) for e in tabela["episodio"].unique()):
+        if str(ep) not in contexto:
+            print(f"  Aviso: o episódio {ep} não tem contexto em dados/contexto.json; o resumo vai sair mais genérico.")
+
+    refazer = args.todos or args.participantes
     resumos = {}
-    if os.path.exists(SAIDA) and not args.todos:
+    if os.path.exists(SAIDA):
         with open(SAIDA, encoding="utf-8") as arquivo:
             resumos = json.load(arquivo)
+        if refazer:
+            with open(BACKUP, "w", encoding="utf-8") as arquivo:  # guarda os revisados à mão
+                json.dump(resumos, arquivo, ensure_ascii=False, indent=2)
+            print(f"Resumos antigos guardados em {BACKUP}.")
+            resumos = {}
 
     for nome, linhas in tabela.groupby("participante"):
         episodios = sorted(int(e) for e in linhas["episodio"])
-        if not args.todos and resumos.get(nome, {}).get("episodios") == episodios:
+        if not refazer and resumos.get(nome, {}).get("episodios") == episodios:
             continue  # já resumido com estes mesmos episódios
         print(f"Resumindo {nome} (episódios {episodios})...")
-        entrada = montar_entrada(nome, linhas.sort_values("episodio"), comentarios[comentarios["participante"] == nome])
+        entrada = montar_entrada(nome, linhas.sort_values("episodio"),
+                                 comentarios[comentarios["participante"] == nome], contexto)
         resumos[nome] = {"episodios": episodios, "modelo": modelo, "texto": resumir(cliente, modelo, entrada)}
         with open(SAIDA, "w", encoding="utf-8") as arquivo:  # salva a cada participante
             json.dump(resumos, arquivo, ensure_ascii=False, indent=2)
         time.sleep(4)
 
     print(f"{len(resumos)} resumos de participantes em {SAIDA}.")
+    if args.participantes:
+        print("Revise os textos novos antes de publicar. Depois rode gerar_dados.py para levar ao painel.")
+        return
 
     # ---------- resumos por episódio ----------
     cenas = {}

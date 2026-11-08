@@ -34,7 +34,7 @@ O **saldo da torcida** vai de −100 (só críticas) a +100 (só elogios) e é c
 2. **Verificação de apelidos** (`verificar_apelidos.py`): mede quais formas de chamar cada participante a torcida realmente usa.
 3. **Classificação com IA** (`classificar.py`): o Gemini identifica quais participantes cada comentário cita e o sentimento **para cada uma delas** (análise de sentimento por aspecto), já que um mesmo comentário pode elogiar uma e criticar outra. O prompt inclui um dicionário do programa (`dados/dicionario.csv`), com gírias e referências da torcida, como "flop", "entregou" e "deitei". A saída é validada antes de ir para o banco.
 4. **Avaliação** (`gerar_amostra.py` e `avaliar.py`): uma amostra sorteada de menções é revisada à mão, às cegas (a planilha não mostra a resposta do modelo), e comparada com a classificação do Gemini. Os critérios da revisão estão no [guia de anotação](GUIA_DE_ANOTACAO.md). Os números também são conferidos por um segundo caminho, em SQL puro (`conferir.py`).
-5. **Resumos da percepção** (`resumir.py`): o Gemini escreve um resumo curto de como a torcida viu cada participante, a partir dos saldos e dos comentários mais curtidos, e outro de como a torcida recebeu cada episódio, a partir dos números, das cenas mais comentadas e dos 30 comentários mais curtidos do episódio. As regras do prompt proíbem opinião própria, temas citados em um comentário só e qualquer menção a corpo, saúde ou vida pessoal. **Todo resumo passa por revisão humana antes de ir ao ar**, e os corrigidos à mão ficam em `dados/resumos.json`.
+5. **Resumos da percepção** (`resumir.py`): o Gemini escreve um resumo curto de como a torcida viu cada participante, a partir dos saldos, dos comentários mais curtidos e de um resumo do que aconteceu com ela em cada episódio (`dados/contexto.json`, escrito à mão a partir da transcrição). O contexto faz o resumo dizer a que momento cada comentário se refere ("criticaram o nervosismo na apresentação do gloss", e não "criticaram a comunicação"), mas a reação da torcida continua vindo só dos comentários. O Gemini também escreve um resumo de como a torcida recebeu cada episódio, a partir dos números, das cenas mais comentadas e dos 30 comentários mais curtidos do episódio. As regras do prompt proíbem opinião própria, temas citados em um comentário só e qualquer menção a corpo, saúde ou vida pessoal. **Todo resumo passa por revisão humana antes de ir ao ar**, e os corrigidos à mão ficam em `dados/resumos.json`.
 6. **Painel** (`gerar_dados.py` e `docs/`): calcula, com pandas, menções e saldo da torcida por participante e episódio, e alimenta um painel em HTML, CSS e JavaScript puros, publicado no GitHub Pages.
 
 ## Resultado da avaliação
@@ -61,6 +61,7 @@ Na rodada 2, das 47 menções que a revisão marcou como elogio ou crítica, só
 - `dados/correcoes.csv`: correções da revisão humana em comentários que aparecem no painel, com o motivo de cada uma (`corrigir.py`). Não mudam a taxa de acerto publicada, que vem só da amostra às cegas.
 - `dados/citacoes_ocultas.csv`: comentários que continuam contando nos números, mas não aparecem em destaque no painel (por exemplo, piadas que associam uma participante a drogas).
 - `dados/cenas.json`: o que acontece em cada cena mais comentada, escrito à mão a partir da transcrição do episódio.
+- `dados/contexto.json`: o que aconteceu com cada participante em cada episódio (prova, dupla, resultado, conflitos), escrito à mão a partir da transcrição. Vai para o prompt dos resumos.
 - `docs/fotos/`: fotos oficiais das participantes (DiaTV/divulgação). O painel encontra cada foto pelo nome do arquivo (ex.: `talitah-sampaio.jpg`) e mostra as iniciais quando não há foto.
 - `docs/fotos/edu.jpg` e `docs/fotos/fih.jpg`: os anfitriões aparecem só como decoração no topo do painel, sem dados.
 - O banco `dados/corrida.db` é gerado localmente e não vai para o repositório.
@@ -93,8 +94,8 @@ python gerar_dados.py               # atualiza o painel em docs/
 
 1. Dois dias depois do episódio sair, coletar e classificar os comentários.
 2. Atualizar `dados/resultados.csv` com o resultado oficial.
-3. Ler a transcrição em volta das cenas mais comentadas e descrever cada uma em `dados/cenas.json`.
-4. Rodar `resumir.py` (ele usa as descrições das cenas) e revisar os resumos novos antes de publicar.
+3. Ler a transcrição do episódio, descrever as cenas mais comentadas em `dados/cenas.json` e escrever o que aconteceu com cada participante em `dados/contexto.json`.
+4. Rodar `resumir.py` (ele usa as cenas e o contexto) e revisar os resumos novos antes de publicar.
 5. Rodar `gerar_dados.py` e publicar.
 
 A coleta deve ser feita depois que as 48 horas fecharem. Se for antes, o `gerar_dados.py` avisa que a janela ainda está aberta e o painel mostra os números como parciais.

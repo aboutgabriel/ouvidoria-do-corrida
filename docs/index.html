@@ -872,7 +872,7 @@
       </div>
       ${resumo ? `<h3>Como a torcida viu ${esc(primeiroNome(nome))}</h3>
         <p class="resumo">${esc(resumo)}</p>
-        <p class="sub" style="font-size:.8rem">Resumo escrito pelo Gemini a partir dos números e dos comentários mais curtidos. Pode conter imprecisões.</p>` : ""}
+        <p class="sub" style="font-size:.8rem">Resumo escrito pelo Gemini a partir dos números, dos comentários mais curtidos e de um resumo do que aconteceu em cada episódio, e revisado antes de ir ao ar.</p>` : ""}
       <h3>Saldo da torcida, episódio a episódio</h3>
       <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Trajetória do saldo: ${traj.map(t => "episódio " + t.ep.numero + " " + sinal(t.p.saldo)).join(", ")}" style="width:100%;height:auto;overflow:visible;font-family:var(--texto)">${mini}</svg>
       <table>

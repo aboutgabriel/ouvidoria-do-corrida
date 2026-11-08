@@ -5,7 +5,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida considerou injusta a ida de Aysha para o flop no primeiro episódio, resultando em um saldo de +69 devido aos elogios à sua maquiagem e desempenho. No segundo episódio, o saldo caiu para −7, com a torcida dividida entre defender Aysha de perseguições e criticar sua insistência em retomar discussões passadas sobre a indicação anterior."
+    "texto": "A torcida defendeu Aysha Pink no primeiro episódio e achou injusta a ida dela ao flop, já que a maquiagem que ela fez em Paizinho foi o ponto mais elogiado do grupo de Talitah. O saldo foi de +69. No segundo episódio, caiu para −7: os comentários criticaram Aysha por retomar com Talitah a discussão sobre a indicação ao flop e reclamaram da repetição do bordão \"quem procura, Aysha\". A dupla com Latyffa no gloss de cuscuz, uma das melhores da noite, ainda rendeu elogios."
   },
   "Breia": {
     "episodios": [
@@ -13,7 +13,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida destacou Breia como protagonista desde o início, com o saldo variando de +71 para +48. No primeiro episódio, os comentários elogiaram a simplicidade e defenderam Breia de uma indicação considerada injusta. Já no segundo episódio, a torcida ficou dividida, pois, embora muitos exaltassem o carisma e a coragem, outros espectadores questionaram a autenticidade do bordão e a percepção de carisma atribuída a Breia."
+    "texto": "Na estreia, a torcida defendeu o look básico de oncinha de Breia, lembrando participantes que entraram simples e chegaram longe, e achou injusto o grupo votar nela para o flop, que ela acabou vencendo. O saldo foi de +71. No segundo episódio, ficou em +48: os comentários elogiaram o carisma de Breia ao fazer a prova do gloss sozinha, mas parte da torcida zombou do bordão \"beijos da Breia\" e questionou se ele é mesmo um bordão."
   },
   "Bárbara Freitas": {
     "episodios": [
@@ -21,7 +21,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida iniciou a trajetória de Bárbara Freitas com críticas ao desempenho técnico, resultando em um saldo de −27 no primeiro episódio. No episódio seguinte, a percepção mudou positivamente com elogios ao humor e à criatividade, elevando o saldo para +79. Os comentários destacaram a evolução de Bárbara, que passou de alvo de questionamentos sobre sua entrega para ser celebrada por sua parceria e ideias nas provas."
+    "texto": "Bárbara Freitas virou o jogo: saiu de −27 para +79. No primeiro episódio, os comentários criticaram a demora dela com a saia na prova em grupo e questionaram por que o grupo mandou Breia para o flop no lugar de Bárbara. No segundo, a torcida se divertiu com o humor de Bárbara e celebrou a ideia do gloss que prometia aumentar os seios, criado com Talitah, que deu a vitória à dupla."
   },
   "Gabriel Queiroz": {
     "episodios": [
@@ -29,7 +29,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida destacou o talento de Gabriel Queiroz na maquiagem, com o saldo passando de +75 para +38 ao longo dos episódios. Enquanto os comentários elogiaram a qualidade técnica e a postura de Gabriel, a audiência ficou dividida quanto ao desempenho em provas de grupo e à comunicação durante as apresentações. As críticas focaram na dificuldade de Gabriel em sustentar o papel e na gestão do tempo durante os desafios."
+    "texto": "A torcida acolheu Gabriel Queiroz na estreia: ele foi o último escolhido, ficou quieto e fez a maquiagem do look vencedor, e o saldo foi de +75. No segundo episódio, caiu para +38. Os comentários criticaram o nervosismo dele na apresentação do gloss de pitaia, quando a dupla estourou o tempo, mas muitos defenderam Gabriel quando Paizinho o culpou pelo resultado. A maquiagem de Ana Mary B que ele fez no flop, com as sobrancelhas raspadas, foi muito elogiada."
   },
   "Jheny Albano": {
     "episodios": [
@@ -37,7 +37,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida iniciou a trajetória de Jheny Albano com um saldo de +12, elogiando sua participação, embora já dividida sobre a autenticidade de suas interações. No episódio seguinte, o saldo caiu para −20, com comentários criticando a postura e a tentativa de criar cenas para o programa. A percepção geral oscilou entre o reconhecimento de seu carisma e o descontentamento com o comportamento adotado ao longo dos episódios."
+    "texto": "Na estreia, a torcida achou forçada a rivalidade de Jheny Albano com Paizinho dos Looks, e o saldo foi de +12. No segundo episódio, caiu para −20: os comentários criticaram a apresentação do gloss com Rhanyane, quando Jheny não conseguiu disfarçar o desconforto, e alguns viram a reconciliação com Paizinho como mais uma tentativa de render cenas."
   },
   "Latyffa Romayale": {
     "episodios": [
@@ -45,7 +45,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Latyffa conquistou a torcida desde o início pelo seu carisma contagiante, mantendo um saldo de +96 no primeiro episódio. No segundo episódio, a torcida reforçou os elogios à sua simpatia e humor, resultando em um saldo de +85. Embora alguns comentários tenham apontado críticas pontuais sobre o desempenho em provas e escolhas estéticas, a percepção geral permaneceu amplamente positiva, com o público destacando Latyffa como um dos principais destaques da temporada."
+    "texto": "Latyffa Romayale tem os saldos mais altos da temporada: +96 na estreia e +85 no segundo episódio. Na estreia, foi elogiada por desfilar e vender o look vencedor da Fanta Uva. No segundo episódio, a torcida se divertiu com a piada da \"mainha sem look\", depois que a mala dela foi extraviada, elogiou a energia dela na apresentação do gloss de cuscuz com Aysha e pediu, em muitos comentários, que a DiaTV a contrate como repórter."
   },
   "Matthel": {
     "episodios": [
@@ -53,7 +53,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida iniciou a trajetória de Matthel com saldo +56, elogiando o carisma e a postura observadora, embora tenha criticado a qualidade de sua maquiagem. No segundo episódio, o saldo caiu para −51, com comentários divididos sobre suas falas e escolhas, enquanto críticas sobre sua postura e atitudes em relação aos outros participantes ganharam força. A percepção geral tornou-se negativa devido ao comportamento de Matthel durante as dinâmicas de grupo."
+    "texto": "Na estreia, a torcida recebeu bem Matthel, com comparações carinhosas com Lorelay Fox, e o saldo foi de +56, mesmo com críticas à maquiagem que ele fez em Breia e ao voto nela para o flop. No segundo episódio, o saldo caiu para −51. Os comentários criticaram a fala de Matthel sobre a idade de Talitah, que ela chamou de etarismo, e a frase \"a gente quer te ajudar\", dita a ela. Parte da torcida defendeu que ele não quis ofender."
   },
   "Paizinho dos Looks": {
     "episodios": [
@@ -61,7 +61,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida recebeu Paizinho dos Looks com saldo de −51 no primeiro episódio, com mais críticas do que elogios, principalmente pela falta de participação nas provas. No segundo episódio, o saldo caiu para −54, com os comentários criticando a desistência do participante e a transferência de responsabilidade para outros colegas. A audiência demonstrou descontentamento com a postura apresentada, culminando em uma recepção negativa após sua saída precoce da competição."
+    "texto": "Paizinho dos Looks começou com saldo de −51, com comentários dizendo que, no grupo de Talitah, ele só desfilou e deveria ter ido para o flop no lugar de Aysha. No segundo episódio, ficou em −54. A torcida criticou a desistência no meio da prova do flop, depois de Gabriel e Rhanyane terem raspado as sobrancelhas, e o fato de ele ter culpado Gabriel pela apresentação do gloss. Parte dos comentários achou duro demais o discurso final do apresentador Edu."
   },
   "Peter Poc": {
     "episodios": [
@@ -69,7 +69,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "No primeiro episódio, a torcida criticou a atitude de Peter Poc no trabalho em grupo, resultando em um saldo de −75. Após a eliminação, a audiência ficou dividida no segundo episódio, com saldo de −1, oscilando entre o desejo pelo retorno de Peter Poc para gerar entretenimento e a rejeição à sua postura durante a competição."
+    "texto": "Peter Poc teve o pior saldo da estreia, −75. A torcida lembrou que ele disse saber fazer cabelo e depois reclamou de ter ficado com a peruca, e criticou a forma como culpou a líder Talitah pelo resultado do grupo. Ele foi eliminado. No segundo episódio, quando a recapitulação sugeriu que ele pode voltar, a torcida se dividiu, com saldo de −1: parte sentiu falta dele e parte disse que não quer o retorno."
   },
   "Rhanyane Garcia": {
     "episodios": [
@@ -77,7 +77,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "No primeiro episódio, a torcida elogiou o carisma e a sagacidade de Rhanyane, resultando em um saldo de +33, apesar de críticas divididas sobre suas escolhas de moda. No segundo episódio, a percepção mudou para um saldo de −20, com os comentários criticando a atitude e o desempenho de Rhanyane na apresentação, embora parte do público tenha se divertido com o humor da participante."
+    "texto": "Rhanyane Garcia venceu a estreia como líder do grupo da Fanta Uva, com saldo de +33. No segundo episódio, o saldo caiu para −20. Os comentários criticaram a forma como ela tratou Jheny na apresentação do gloss, chamando a dupla de \"quase um membro fantasma\" depois de apresentá-la como rosto da marca, e alguns reprovaram ela não ter ajudado Paizinho no flop. Ainda assim, muita gente achou Rhanyane a mais engraçada da apresentação."
   },
   "Sttefone": {
     "episodios": [
@@ -85,7 +85,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida criticou a incoerência de Sttefone no voto durante o primeiro episódio, resultando em um saldo de −30. No episódio seguinte, a percepção mudou positivamente com elogios à agilidade e capacidade de salvar a dupla, elevando o saldo para +82. Ao longo da trajetória, os comentários destacaram a habilidade de Sttefone em momentos de execução, embora a postura estratégica tenha gerado opiniões divididas entre o público."
+    "texto": "Sttefone foi criticada na estreia por reclamar a prova inteira da saia de Bárbara e, no fim, votar em Breia para o flop, e o saldo foi de −30, apesar dos elogios ao cabelo que fez. No segundo episódio, subiu para +82: a torcida destacou como Sttefone salvou a apresentação do gloss com MP3, quando Matthel se perdeu nas falas."
   },
   "Talitah Sampaio": {
     "episodios": [
@@ -93,6 +93,6 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida criticou a liderança de Talitah no primeiro episódio, resultando em um saldo de −26, devido a decisões estratégicas na indicação ao flop. No segundo episódio, a percepção mudou positivamente com o desempenho em prova, elevando o saldo para +56. Apesar da virada, a torcida permaneceu dividida sobre a postura de Talitah, oscilando entre elogios ao seu protagonismo e críticas ao seu comportamento no jogo."
+    "texto": "Talitah Sampaio saiu de −26 para +56. Na estreia, a torcida criticou a liderança dela e, principalmente, a decisão de mandar Aysha para o flop, mas parte dos comentários a defendeu das reclamações de Peter. No segundo episódio, venceu a prova do gloss com Bárbara, e a torcida elogiou a dupla e reclamou da perseguição a Talitah, ficando ao lado dela na discussão com Matthel sobre etarismo."
   }
 }
