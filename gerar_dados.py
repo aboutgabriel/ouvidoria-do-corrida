@@ -29,6 +29,7 @@ AVALIACAO = os.path.join(PASTA, "dados", "avaliacao.json")
 RESUMOS = os.path.join(PASTA, "dados", "resumos.json")
 RESUMOS_EPISODIOS = os.path.join(PASTA, "dados", "resumos_episodios.json")
 CENAS = os.path.join(PASTA, "dados", "cenas.json")  # descrições das cenas, escritas à mão
+CONTEXTO = os.path.join(PASTA, "dados", "contexto.json")  # o que aconteceu com cada participante, escrito à mão
 # Comentários que não devem aparecer em destaque no painel (continuam contando nos números).
 OCULTAS = os.path.join(PASTA, "dados", "citacoes_ocultas.csv")
 IDS_OCULTOS = set(pd.read_csv(OCULTAS)["comentario_id"]) if os.path.exists(OCULTAS) else set()
@@ -229,6 +230,11 @@ def main():
         with open(RESUMOS_EPISODIOS, encoding="utf-8") as arquivo:
             resumos_episodios = {ep: r["texto"] for ep, r in json.load(arquivo).items()}
 
+    ganchos = {}
+    if os.path.exists(CONTEXTO):
+        with open(CONTEXTO, encoding="utf-8") as arquivo:
+            ganchos = {ep: c.get("ganchos", {}) for ep, c in json.load(arquivo).items() if not ep.startswith("_")}
+
     dados = {
         "exemplo": False,
         "atualizado_em": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
@@ -238,6 +244,7 @@ def main():
         "avaliacao": avaliacao,
         "resumos": resumos,
         "resumos_episodios": resumos_episodios,
+        "ganchos": ganchos,
         "fotos": achar_fotos(sorted(tabela["participante"].unique()) + APRESENTADORES),
         "apresentadores": APRESENTADORES,
         # Recorte sem fundo dos anfitriões (docs/fotos/edu-recorte.png): se existir, substitui o medalhão.

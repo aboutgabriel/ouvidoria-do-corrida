@@ -540,9 +540,9 @@ window.DADOS = {
           "resultado": "Salvo",
           "mencoes": 269,
           "positivo": 79,
-          "negativo": 97,
-          "neutro": 93,
-          "saldo": -6.6914,
+          "negativo": 96,
+          "neutro": 94,
+          "saldo": -6.3197,
           "elogio": {
             "texto": "Que wig linda a Aysha está usando!",
             "curtidas": 17
@@ -715,13 +715,13 @@ window.DADOS = {
     }
   },
   "resumos": {
-    "Aysha Pink": "A torcida defendeu Aysha Pink no primeiro episódio e achou injusta a ida dela ao flop, já que a maquiagem que ela fez em Paizinho foi o ponto mais elogiado do grupo de Talitah. O saldo foi de +69. No segundo episódio, caiu para −7: os comentários criticaram Aysha por retomar com Talitah a discussão sobre a indicação ao flop e reclamaram da repetição do bordão \"quem procura, Aysha\". A dupla com Latyffa no gloss de cuscuz, uma das melhores da noite, ainda rendeu elogios.",
+    "Aysha Pink": "A torcida defendeu Aysha Pink no primeiro episódio e achou injusta a ida dela ao flop, já que a maquiagem que ela fez em Paizinho foi o ponto mais elogiado do grupo de Talitah. O saldo foi de +69. No segundo episódio, caiu para −6: os comentários criticaram Aysha por retomar com Talitah a discussão sobre a indicação ao flop, e parte da torcida achou que, na apresentação do gloss de cuscuz, foi Latyffa quem segurou a dupla.",
     "Breia": "Na estreia, a torcida defendeu o look básico de oncinha de Breia, lembrando participantes que entraram simples e chegaram longe, e achou injusto o grupo votar nela para o flop, que ela acabou vencendo. O saldo foi de +71. No segundo episódio, ficou em +48: os comentários elogiaram o carisma de Breia ao fazer a prova do gloss sozinha, mas parte da torcida zombou do bordão \"beijos da Breia\" e questionou se ele é mesmo um bordão.",
     "Bárbara Freitas": "Bárbara Freitas virou o jogo: saiu de −27 para +79. No primeiro episódio, os comentários criticaram a demora dela com a saia na prova em grupo e questionaram por que o grupo mandou Breia para o flop no lugar de Bárbara. No segundo, a torcida se divertiu com o humor de Bárbara e celebrou a ideia do gloss que prometia aumentar os seios, criado com Talitah, que deu a vitória à dupla.",
     "Gabriel Queiroz": "A torcida acolheu Gabriel Queiroz na estreia: ele foi o último escolhido, ficou quieto e fez a maquiagem do look vencedor, e o saldo foi de +75. No segundo episódio, caiu para +38. Os comentários criticaram o nervosismo dele na apresentação do gloss de pitaia, quando a dupla estourou o tempo, mas muitos defenderam Gabriel quando Paizinho o culpou pelo resultado. A maquiagem de Ana Mary B que ele fez no flop, com as sobrancelhas raspadas, foi muito elogiada.",
     "Jheny Albano": "Na estreia, a torcida achou forçada a rivalidade de Jheny Albano com Paizinho dos Looks, e o saldo foi de +12. No segundo episódio, caiu para −20: os comentários criticaram a apresentação do gloss com Rhanyane, quando Jheny não conseguiu disfarçar o desconforto, e alguns viram a reconciliação com Paizinho como mais uma tentativa de render cenas.",
     "Latyffa Romayale": "Latyffa Romayale tem os saldos mais altos da temporada: +96 na estreia e +85 no segundo episódio. Na estreia, foi elogiada por desfilar e vender o look vencedor da Fanta Uva. No segundo episódio, a torcida se divertiu com a piada da \"mainha sem look\", depois que a mala dela foi extraviada, elogiou a energia dela na apresentação do gloss de cuscuz com Aysha e pediu, em muitos comentários, que a DiaTV a contrate como repórter.",
-    "Matthel": "Na estreia, a torcida recebeu bem Matthel, com comparações carinhosas com Lorelay Fox, e o saldo foi de +56, mesmo com críticas à maquiagem que ele fez em Breia e ao voto nela para o flop. No segundo episódio, o saldo caiu para −51. Os comentários criticaram a fala de Matthel sobre a idade de Talitah, que ela chamou de etarismo, e a frase \"a gente quer te ajudar\", dita a ela. Parte da torcida defendeu que ele não quis ofender.",
+    "Matthel": "Na estreia, a torcida comemorou a entrada de Matthel e brincou com a semelhança dele com a jurada Lorelay Fox: o comentário mais curtido sobre ele diz que Matthel é \"a substância da Lorelay\", em referência ao filme A Substância. O saldo foi de +56, mesmo com críticas à maquiagem que ele fez em Breia e ao voto nela para o flop. No segundo episódio, o saldo caiu para −51. Os comentários criticaram a fala de Matthel sobre a idade de Talitah, que ela chamou de etarismo, e a frase \"a gente quer te ajudar\". Parte da torcida defendeu que ele não quis ofender.",
     "Paizinho dos Looks": "Paizinho dos Looks começou com saldo de −51, com comentários dizendo que, no grupo de Talitah, ele só desfilou e deveria ter ido para o flop no lugar de Aysha. No segundo episódio, ficou em −54. A torcida criticou a desistência no meio da prova do flop, depois de Gabriel e Rhanyane terem raspado as sobrancelhas, e o fato de ele ter culpado Gabriel pela apresentação do gloss. Parte dos comentários achou duro demais o discurso final do apresentador Edu.",
     "Peter Poc": "Peter Poc teve o pior saldo da estreia, −75. A torcida lembrou que ele disse saber fazer cabelo e depois reclamou de ter ficado com a peruca, e criticou a forma como culpou a líder Talitah pelo resultado do grupo. Ele foi eliminado. No segundo episódio, quando a recapitulação sugeriu que ele pode voltar, a torcida se dividiu, com saldo de −1: parte sentiu falta dele e parte disse que não quer o retorno.",
     "Rhanyane Garcia": "Rhanyane Garcia venceu a estreia como líder do grupo da Fanta Uva, com saldo de +33. No segundo episódio, o saldo caiu para −20. Os comentários criticaram a forma como ela tratou Jheny na apresentação do gloss, chamando a dupla de \"quase um membro fantasma\" depois de apresentá-la como rosto da marca, e alguns reprovaram ela não ter ajudado Paizinho no flop. Ainda assim, muita gente achou Rhanyane a mais engraçada da apresentação.",
@@ -729,8 +729,38 @@ window.DADOS = {
     "Talitah Sampaio": "Talitah Sampaio saiu de −26 para +56. Na estreia, a torcida criticou a liderança dela e, principalmente, a decisão de mandar Aysha para o flop, mas parte dos comentários a defendeu das reclamações de Peter. No segundo episódio, venceu a prova do gloss com Bárbara, e a torcida elogiou a dupla e reclamou da perseguição a Talitah, ficando ao lado dela na discussão com Matthel sobre etarismo."
   },
   "resumos_episodios": {
-    "1": "Peter Poc concentrou a conversa da estreia, com 725 menções e saldo −75: a torcida criticou a postura dele no trabalho em grupo, e ele acabou eliminado. Breia foi a mais elogiada, pela simplicidade, e Gabriel Queiroz ganhou carinho por ter sido o último escolhido e entregado uma maquiagem elogiada. Muita gente achou injusto a Aysha Pink ir para o flop, a rivalidade entre Jheny Albano e Paizinho dos Looks rendeu piadas, e o público comemorou a volta do programa e os novos patrocinadores.",
-    "2": "A desistência de Paizinho dos Looks no meio da prova do flop dominou a conversa, com 853 menções e saldo −54, e o fecho do apresentador Edu sobre o assunto foi muito elogiado. Talitah Sampaio e Bárbara Freitas, que venceram juntas, e Latyffa Romayale receberam elogios pelo desempenho e pelo carisma. A discussão sobre etarismo entre Talitah e Matthel também movimentou os comentários, e Matthel terminou com saldo −51. O público ainda se divertiu com a impaciência do Edu nas avaliações e com um erro de edição na abertura."
+    "1": "Peter Poc concentrou a conversa da estreia, com 725 menções e saldo −75: a torcida lembrou que ele disse saber fazer cabelo e depois reclamou de ficar com a peruca, culpou a líder Talitah pelo resultado do grupo, e ele acabou eliminado. Breia foi a mais elogiada, com a torcida defendendo o look básico de oncinha, e Gabriel Queiroz ganhou carinho por ter sido o último escolhido e feito a maquiagem do look vencedor. Muita gente achou injusto Talitah mandar Aysha Pink para o flop, parte dela achou forçada a rivalidade entre Jheny Albano e Paizinho dos Looks, e o público comemorou a volta do programa.",
+    "2": "A desistência de Paizinho dos Looks no meio da prova do flop, depois de Gabriel e Rhanyane terem raspado as sobrancelhas para reproduzir a maquiagem de Ana Mary B, dominou a conversa, com 853 menções e saldo −54. O fecho duro do apresentador Edu foi muito elogiado, embora parte da torcida o tenha achado pesado demais. Talitah Sampaio e Bárbara Freitas venceram com o gloss que prometia aumentar os seios, e Latyffa Romayale virou pedido de repórter da DiaTV. A discussão sobre etarismo entre Talitah e Matthel levou Matthel a saldo −51, e o público riu da impaciência do Edu nas apresentações."
+  },
+  "ganchos": {
+    "1": {
+      "Peter Poc": "reclamar do grupo na prova do look rococó",
+      "Breia": "ser mandada para o flop pelo próprio grupo",
+      "Talitah Sampaio": "mandar Aysha para o flop como líder",
+      "Matthel": "estrear com um look elogiado",
+      "Bárbara Freitas": "demorar com a saia na prova em grupo",
+      "Aysha Pink": "ir para o flop mesmo com a maquiagem mais elogiada do grupo",
+      "Paizinho dos Looks": "desfilar o look do pior grupo da prova",
+      "Sttefone": "reclamar da saia de Bárbara e votar em Breia para o flop",
+      "Gabriel Queiroz": "ser o último escolhido e fazer a maquiagem do look vencedor",
+      "Latyffa Romayale": "desfilar o look vencedor mesmo com a mala extraviada",
+      "Jheny Albano": "estrear em rivalidade com Paizinho",
+      "Rhanyane Garcia": "liderar o grupo vencedor"
+    },
+    "2": {
+      "Paizinho dos Looks": "desistir no meio da prova do flop",
+      "Talitah Sampaio": "vencer a prova do gloss com Bárbara",
+      "Breia": "fazer a prova do gloss sozinha",
+      "Aysha Pink": "retomar com Talitah a discussão sobre o flop",
+      "Bárbara Freitas": "vencer a prova do gloss com Talitah",
+      "Matthel": "discutir com Talitah sobre etarismo",
+      "Latyffa Romayale": "apresentar o gloss de cuscuz com Aysha",
+      "Peter Poc": "a recapitulação sugerir que ele pode voltar",
+      "Gabriel Queiroz": "ser culpado por Paizinho pela apresentação do gloss",
+      "Rhanyane Garcia": "chamar Jheny de membro fantasma na apresentação",
+      "Jheny Albano": "apresentar o gloss com Rhanyane e ir para o flop",
+      "Sttefone": "apresentar o gloss com MP3 com Matthel"
+    }
   },
   "fotos": {
     "Aysha Pink": "fotos/aysha-pink.jpg",

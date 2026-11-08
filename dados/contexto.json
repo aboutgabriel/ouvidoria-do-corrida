@@ -1,5 +1,5 @@
 {
-  "_como_usar": "O que aconteceu com cada participante em cada episódio, escrito à mão a partir da transcrição. O resumir.py manda isto para o Gemini junto com os comentários, para que ele saiba a que momento cada comentário se refere. Só fatos do programa: nada de opinião, corpo, saúde ou vida pessoal.",
+  "_como_usar": "O que aconteceu com cada participante em cada episódio, escrito à mão a partir da transcrição. O resumir.py manda isto para o Gemini junto com os comentários, para que ele saiba a que momento cada comentário se refere. Só fatos do programa: nada de opinião, corpo, saúde ou vida pessoal. O campo \"ganchos\" traz, para cada participante, o fato principal do episódio numa frase curta que completa \"depois de...\" (ex.: \"desistir no meio da prova do flop\"). O painel usa os ganchos na manchete, nos destaques e nas viradas.",
   "1": {
     "geral": "Prova em grupo: criar um visual rococó completo (roupa, cabelo e maquiagem) inspirado em uma Fanta, em 2 horas, com uma pessoa desfilando e outra defendendo o look no palco. Grupo de Breia: Fanta Laranja. Grupo de Talitah: Fanta Guaraná. Grupo de Rhanyane: Fanta Uva, que venceu. O grupo de Talitah foi o pior. Flop: gravar um vídeo de até 1 minuto ensinando regras de etiqueta à mesa.",
     "participantes": {
@@ -15,6 +15,20 @@
       "Latyffa Romayale": "A mala dela foi extraviada no aeroporto, e ela chegou com o único cabelo que coube na mala de mão. Estava no grupo vencedor de Rhanyane e desfilou o look da Fanta Uva, que as juradas chamaram de melhor look da noite. Foi elogiada por saber vender o look na passarela.",
       "Jheny Albano": "Entrou com rivalidade declarada com Paizinho dos Looks, e parte do elenco achou que a briga era combinada para render cenas. Foi a primeira escolhida por Rhanyane e ajudou a montar o look vencedor.",
       "Rhanyane Garcia": "Foi líder do grupo da Fanta Uva, que venceu a prova, e defendeu o look no palco. As juradas elogiaram o look, mas disseram que a defesa poderia ter sido melhor. Ganhou uma vantagem para o episódio seguinte."
+    },
+    "ganchos": {
+      "Peter Poc": "reclamar do grupo na prova do look rococó",
+      "Breia": "ser mandada para o flop pelo próprio grupo",
+      "Talitah Sampaio": "mandar Aysha para o flop como líder",
+      "Matthel": "estrear com um look elogiado",
+      "Bárbara Freitas": "demorar com a saia na prova em grupo",
+      "Aysha Pink": "ir para o flop mesmo com a maquiagem mais elogiada do grupo",
+      "Paizinho dos Looks": "desfilar o look do pior grupo da prova",
+      "Sttefone": "reclamar da saia de Bárbara e votar em Breia para o flop",
+      "Gabriel Queiroz": "ser o último escolhido e fazer a maquiagem do look vencedor",
+      "Latyffa Romayale": "desfilar o look vencedor mesmo com a mala extraviada",
+      "Jheny Albano": "estrear em rivalidade com Paizinho",
+      "Rhanyane Garcia": "liderar o grupo vencedor"
     }
   },
   "2": {
@@ -32,6 +46,20 @@
       "Rhanyane Garcia": "Usou a vantagem da semana anterior para assistir a todas as apresentações com Jheny. Na apresentação da dupla, chamou Jheny de \"quase um membro fantasma\" da empresa. As juradas acharam a apresentação decepcionante, e a dupla foi para o flop. Rhanyane usou o poder de indicar alguém e escolheu Paizinho. No flop, raspou as sobrancelhas para reproduzir a maquiagem de Ana Mary B.",
       "Jheny Albano": "No começo do episódio, conversou com Paizinho e as duas partes fizeram as pazes. Fez dupla com Rhanyane, que a chamou de \"quase um membro fantasma\" na apresentação. A dupla foi para o flop, e Edu disse que Jheny se apagou nessa semana. No flop, se recusou a raspar as sobrancelhas.",
       "Sttefone": "No começo do episódio, parabenizou Rhanyane pela vitória, e Rhanyane respondeu que ela estava \"sabonetando\". Fez dupla com Matthel no Super Music Gloss, um gloss com MP3 embutido, e as juradas elogiaram a criatividade. Ficou salva."
+    },
+    "ganchos": {
+      "Paizinho dos Looks": "desistir no meio da prova do flop",
+      "Talitah Sampaio": "vencer a prova do gloss com Bárbara",
+      "Breia": "fazer a prova do gloss sozinha",
+      "Aysha Pink": "retomar com Talitah a discussão sobre o flop",
+      "Bárbara Freitas": "vencer a prova do gloss com Talitah",
+      "Matthel": "discutir com Talitah sobre etarismo",
+      "Latyffa Romayale": "apresentar o gloss de cuscuz com Aysha",
+      "Peter Poc": "a recapitulação sugerir que ele pode voltar",
+      "Gabriel Queiroz": "ser culpado por Paizinho pela apresentação do gloss",
+      "Rhanyane Garcia": "chamar Jheny de membro fantasma na apresentação",
+      "Jheny Albano": "apresentar o gloss com Rhanyane e ir para o flop",
+      "Sttefone": "apresentar o gloss com MP3 com Matthel"
     }
   }
 }

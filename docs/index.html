@@ -22,7 +22,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     /* salas claras */
@@ -47,7 +47,7 @@
     --sevres-noite: #5E90D6;
     --pompadour-noite: #DB6894;
     --neutro-noite: #8E7684;
-    --display: "Young Serif", Georgia, serif;
+    --display: "Fraunces", Georgia, serif;
     --texto: "Instrument Sans", system-ui, sans-serif;
     --coluna: 46rem;
   }
@@ -77,7 +77,7 @@
   .anfitriao { margin: 0; display: flex; align-items: center; gap: .55rem; text-align: left; }
   .anfitriao svg { display: block; width: 3.4rem; height: auto; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
   .anfitriao figcaption { line-height: 1.25; }
-  .anfitriao .an-nome { display: block; color: var(--dourado-texto); font: 400 .95rem var(--display); }
+  .anfitriao .an-nome { display: block; color: var(--dourado-texto); font: 500 .95rem var(--display); }
   .anfitriao .an-papel { display: block; color: var(--nevoa-2); font-size: .62rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
   .anfitriao img { display: none; }
   @media (min-width: 980px) {
@@ -96,12 +96,13 @@
   .salao h1 img { display: block; width: 100%; height: auto; filter: drop-shadow(0 6px 22px rgba(0,0,0,.45)) drop-shadow(0 0 26px rgba(232,207,148,.12)); }
   .fonte { display: inline-block; margin: .9rem 0 0; padding: .2rem .8rem; border: 1px solid rgba(201,166,90,.55); border-radius: 999px; color: var(--dourado-texto); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
   .temporada { margin: 1rem auto 0; max-width: 22rem; color: var(--nevoa); font-size: .98rem; }
+  .proposito { margin: .7rem auto 0; max-width: 30rem; color: var(--nevoa-2); font-size: .86rem; line-height: 1.55; text-wrap: pretty; }
 
   .episodios { display: flex; justify-content: center; gap: .5rem; margin: 1.8rem 0 0; flex-wrap: wrap; }
   .episodios button { font-weight: 500; font-size: .95rem; background: transparent; color: var(--dourado-texto); border: 1px solid var(--dourado); border-radius: 999px; padding: .45rem 1.15rem; cursor: pointer; }
   .episodios button[aria-selected="true"] { background: var(--dourado); color: var(--vinho); }
 
-  .manchete { margin: 2.2rem auto 0; max-width: 34rem; color: var(--porcelana); font: 400 clamp(1.35rem, 4.6vw, 1.9rem)/1.3 var(--display); text-wrap: balance; }
+  .manchete { margin: 2.2rem auto 0; max-width: 34rem; color: var(--porcelana); font: 500 clamp(1.35rem, 4.6vw, 1.9rem)/1.3 var(--display); text-wrap: balance; }
   .edicao { margin: .8rem 0 0; color: var(--nevoa-2); font-size: .9rem; }
 
   /* parede de retratos */
@@ -114,7 +115,7 @@
   .retrato { background: none; border: 0; padding: .2rem; cursor: pointer; width: 100%; display: flex; flex-direction: column; align-items: center; gap: .3rem; border-radius: 10px; }
   .retrato svg { width: 88%; height: auto; display: block; transition: transform .2s ease, filter .2s ease; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
   .retrato:hover svg { transform: translateY(-3px); filter: drop-shadow(0 10px 18px rgba(0,0,0,.45)); }
-  .retrato .rn { font: 400 1rem/1.15 var(--display); color: var(--dourado-texto); }
+  .retrato .rn { font: 500 1rem/1.15 var(--display); color: var(--dourado-texto); }
   .p .retrato .rn { font-size: .88rem; }
   .retrato .rs { font-size: .82rem; color: var(--nevoa); font-variant-numeric: tabular-nums; }
   .retrato .rm { font-size: .74rem; color: var(--nevoa-2); margin-top: -.3rem; }
@@ -122,7 +123,7 @@
   .retrato.fora { filter: grayscale(.7); opacity: .6; }
 
   .saldo-explica { max-width: 30rem; margin: 2.8rem auto 0; padding: 1.1rem 1.3rem 1rem; border: 1px solid rgba(201,166,90,.45); border-radius: 6px; background: rgba(58,26,45,.55); }
-  .saldo-titulo { margin: 0; color: var(--dourado-texto); font: 400 1.05rem var(--display); }
+  .saldo-titulo { margin: 0; color: var(--dourado-texto); font: 500 1.05rem var(--display); }
   .saldo-titulo strong { font-weight: 400; color: var(--porcelana); }
   .saldo-texto { margin: .45rem 0 0; color: var(--nevoa); font-size: .9rem; line-height: 1.55; }
   .saldo-texto b { color: var(--porcelana); font-weight: 600; }
@@ -140,7 +141,7 @@
   .sala.escura { background: var(--vinho); color: var(--nevoa); box-shadow: inset 0 1px 0 rgba(201,166,90,.45); }
   .sala > .miolo { max-width: var(--coluna); margin: 0 auto; }
   .ornamento { display: block; width: 7rem; height: auto; margin: 0 auto 2rem; }
-  h2 { margin: 0; font: 400 clamp(1.7rem, 5.8vw, 2.4rem)/1.15 var(--display); }
+  h2 { margin: 0; font: 500 clamp(1.7rem, 5.8vw, 2.4rem)/1.15 var(--display); }
   .escura h2 { color: var(--dourado-texto); }
   .lede { margin: .7rem 0 0; color: var(--tinta-2); max-width: 36rem; }
   .escura .lede { color: var(--nevoa); }
@@ -156,8 +157,8 @@
   .ranking { list-style: none; margin: 0; padding: 0; }
   .ranking li { padding: 1.05rem 0 1.1rem; border-bottom: 1px solid var(--porcelana-funda); }
   .linha-nome { display: grid; grid-template-columns: 1.6rem 1fr auto; align-items: baseline; gap: .6rem; }
-  .posicao { font: 400 .95rem var(--display); color: var(--ouro); }
-  .nome { font: 400 1.18rem/1.25 var(--display); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; }
+  .posicao { font: 500 .95rem var(--display); color: var(--ouro); }
+  .nome { font: 500 1.18rem/1.25 var(--display); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; }
   .nome:hover { text-decoration-color: var(--ouro); }
   .resultado { font-size: .8rem; color: var(--tinta-2); margin-left: .5rem; white-space: nowrap; }
   .resultado.venceu { color: var(--ouro); font-weight: 600; }
@@ -186,8 +187,8 @@
   /* cenas */
   .cenas { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: 1rem; }
   .cena { position: relative; padding: 1.1rem 1.2rem 1.1rem 3.6rem; background: var(--porcelana-clara); border: 1px solid var(--ouro-claro); border-radius: 8px; box-shadow: inset 0 0 0 4px var(--porcelana-clara), inset 0 0 0 5px rgba(164,127,56,.35); }
-  .cena .num { position: absolute; left: 1.1rem; top: 1rem; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--ouro); color: var(--porcelana-clara); font: 400 1rem/1.8rem var(--display); text-align: center; }
-  .cena h3 { margin: 0; font: 400 1.1rem/1.3 var(--display); }
+  .cena .num { position: absolute; left: 1.1rem; top: 1rem; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--ouro); color: var(--porcelana-clara); font: 500 1rem/1.8rem var(--display); text-align: center; }
+  .cena h3 { margin: 0; font: 500 1.1rem/1.3 var(--display); }
   .cena .meta { margin: .1rem 0 .55rem; font-size: .85rem; color: var(--tinta-2); }
   .cena blockquote { margin: 0 0 .6rem; font-size: .95rem; }
   .cena .descricao { margin: 0 0 .7rem; font-size: 1rem; color: var(--tinta); }
@@ -197,17 +198,17 @@
 
   /* faixas */
   .faixa { margin-top: 2rem; }
-  .faixa h3 { margin: 0 0 .2rem; font: 400 1.15rem var(--display); color: var(--dourado-texto); }
+  .faixa h3 { margin: 0 0 .2rem; font: 500 1.15rem var(--display); color: var(--dourado-texto); }
   .faixa p { margin: 0 0 .8rem; color: var(--nevoa); font-size: .95rem; max-width: 36rem; }
 
   /* método */
   .metodo p { max-width: 36rem; }
-  .metodo .numero { font: 400 1.05em var(--display); }
+  .metodo .numero { font: 500 1.05em var(--display); }
 
   /* achados da temporada */
   .achados { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
   .achados li { background: var(--porcelana-clara); border: 1px solid var(--ouro-claro); border-radius: 4px; padding: 1.1rem 1.2rem 1.2rem; box-shadow: inset 0 0 0 4px var(--porcelana-clara), inset 0 0 0 5px rgba(164,127,56,.35); }
-  .achados .grande { display: block; font: 400 2.1rem/1.1 var(--display); color: var(--tinta); }
+  .achados .grande { display: block; font: 500 2.1rem/1.1 var(--display); color: var(--tinta); }
   .achados .rotulo { display: block; margin-top: .15rem; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ouro); }
   .achados p { margin: .6rem 0 0; font-size: .95rem; color: var(--tinta-2); }
   .bloco-achados { margin-bottom: 4.5rem; }
@@ -217,7 +218,7 @@
   .sem-citacao { margin: .5rem 0 0; padding: .6rem .9rem; border-left: 3px solid var(--neutro); font-size: .85rem; color: var(--tinta-2); font-style: italic; }
   .cartao-ep { margin-top: 1.4rem; padding: 1.4rem 1.6rem 1.2rem; background: var(--porcelana-clara); border: 1px solid var(--ouro-claro); border-radius: 4px; box-shadow: inset 0 0 0 5px var(--porcelana-clara), inset 0 0 0 6px rgba(164,127,56,.3); }
   .resumo-ep { margin: 0; font: 400 1.04rem/1.75 var(--texto); color: var(--tinta); }
-  .resumo-ep::first-letter { float: left; font: 400 3.1em/.9 var(--display); padding: .06em .14em 0 0; color: var(--ouro); }
+  .resumo-ep::first-letter { float: left; font: 600 3.1em/.9 var(--display); padding: .06em .14em 0 0; color: var(--ouro); }
   .nota-ep { margin: 1rem 0 0; padding-top: .8rem; border-top: 1px solid rgba(164,127,56,.25); font-size: .78rem; color: var(--tinta-2); }
   details { margin-top: 1.2rem; font-size: .9rem; }
   summary { cursor: pointer; color: var(--tinta-2); }
@@ -231,7 +232,7 @@
   footer .miolo { max-width: var(--coluna); margin: 0 auto; }
   footer p { margin: .35rem 0; }
   footer a { color: var(--dourado-texto); text-decoration-color: var(--dourado); }
-  footer .assinatura { font: 400 1.3rem var(--display); color: var(--dourado-texto); margin-bottom: .8rem; }
+  footer .assinatura { font: 500 1.3rem var(--display); color: var(--dourado-texto); margin-bottom: .8rem; }
 
   /* ficha */
   dialog.ficha { width: min(34rem, calc(100% - 2rem)); max-height: calc(100% - 2rem); padding: 0; border: 0; background: var(--porcelana-clara); color: var(--tinta); border-radius: 12px; box-shadow: 0 24px 70px rgba(20,6,14,.55); }
@@ -241,7 +242,7 @@
   .ficha-topo svg { width: 5.2rem; flex: none; }
   .ficha h2 { font-size: 1.7rem; }
   .ficha .sub { margin: .2rem 0 0; color: var(--tinta-2); font-size: .9rem; }
-  .ficha h3 { margin: 1.6rem 0 .5rem; font: 400 1.1rem var(--display); }
+  .ficha h3 { margin: 1.6rem 0 .5rem; font: 500 1.1rem var(--display); }
   .resumo { margin: 0 0 .4rem; font-size: 1.02rem; line-height: 1.65; }
   .citacao { margin: .6rem 0 0; padding: .7rem .9rem; border-left: 3px solid; background: var(--porcelana); border-radius: 0 6px 6px 0; font-size: .95rem; }
   .citacao.pos { border-color: var(--sevres); }
@@ -321,6 +322,7 @@
       <figure class="anfitriao" id="anfitriao-1"></figure>
     </div>
     <p class="temporada">O que a torcida do Corrida das Blogueiras 8 diz quando ninguém está perguntando.</p>
+    <p class="proposito">Enquetes medem o que o público responde quando é perguntado. A Ouvidoria escuta o que a torcida escreve por conta própria no YouTube e mostra, a cada episódio, quem ela elogia, quem critica e se ela adivinha quem sai no flop.</p>
     <p class="fonte">Fonte: comentários do YouTube</p>
     <div class="episodios" role="tablist" aria-label="Escolha o episódio" id="seletor"></div>
     <p class="manchete" id="manchete"></p>
@@ -342,7 +344,7 @@
       <h2 id="t-episodio"></h2>
       <div class="cartao-ep">
       <p class="resumo-ep" id="resumo-ep"></p>
-      <p class="nota-ep">Resumo escrito pelo Gemini a partir dos números, das cenas mais comentadas e dos comentários mais curtidos do episódio, e revisado antes de ir ao ar.</p>
+      <p class="nota-ep">Resumo escrito pelo Gemini a partir dos números, do que aconteceu no episódio, das cenas mais comentadas e dos comentários mais curtidos, e revisado antes de ir ao ar.</p>
       </div>
     </div>
     <div class="bloco-achados" aria-labelledby="t-achados">
@@ -389,7 +391,7 @@
     <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#C9A65A" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
     <h2 id="t-resultado">A torcida adivinha quem sai?</h2>
     <p class="lede">Cada ponto é uma participante, posicionada pelo saldo da torcida: elogios menos críticas, de −100 a +100. Quanto mais à direita, mais a torcida estava a favor.</p>
-    <p class="nota-faixas">Quem sai do flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então os comentários são escritos <strong>sem saber o resultado</strong>, e dá para testar se a torcida adivinha. A comparação é feita só entre quem estava no flop, porque só eles podiam sair.</p>
+    <p class="nota-faixas">Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então os comentários são escritos <strong>sem saber o resultado</strong>, e dá para testar se a torcida adivinha. A comparação é feita só entre quem estava no flop, porque só eles podiam sair.</p>
     <div class="legenda" aria-hidden="true">
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5.5" fill="#C9A65A"/></svg>Venceu</span>
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="#8E7684"/></svg>Seguiu na disputa</span>
@@ -470,7 +472,7 @@
          <image href="${esc(foto)}" x="19" y="27" width="62" height="82" preserveAspectRatio="xMidYMin slice" clip-path="url(#${id})"/>
          <ellipse cx="50" cy="68" rx="31" ry="41" fill="none" stroke="#C9A65A" stroke-width=".8"/>`
       : `<ellipse cx="50" cy="68" rx="31" ry="41" fill="#EFE2E7" stroke="#C9A65A" stroke-width=".8"/>
-         <text x="50" y="79" text-anchor="middle" font-family="Young Serif, Georgia, serif" font-size="30" fill="#34182A">${esc(iniciais(nome))}</text>`;
+         <text x="50" y="79" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="30" fill="#34182A">${esc(iniciais(nome))}</text>`;
     return `<svg viewBox="0 0 100 132" aria-hidden="true">
       <path d="M38 12 C42 4 46 3 50 8 C54 3 58 4 62 12 C56 10 52 11 50 14 C48 11 44 10 38 12Z" fill="#C9A65A"/>
       <ellipse cx="50" cy="68" rx="46" ry="56" fill="#C9A65A"/>
@@ -523,6 +525,13 @@
     seletor.appendChild(b);
   });
 
+  // O fato principal de cada participante no episódio, escrito à mão em dados/contexto.json
+  // ("desistir no meio da prova do flop"). Vira " depois de ..." nos textos automáticos.
+  function gancho(numero, nome) {
+    const g = ((D.ganchos || {})[String(numero)] || {})[nome];
+    return g ? ` depois de ${g}` : "";
+  }
+
   function manchete(ep) {
     const lista = emJogo(ep);
     // Três fatos diferentes: quem foi mais comentada (volume), quem recebeu
@@ -531,7 +540,7 @@
     const elogiada = lista.slice().sort((a, b) => b.positivo - a.positivo)[0];
     const fav = lista.filter(p => p.mencoes >= 30).sort((a, b) => b.saldo - a.saldo)[0];
     const nome = p => primeiroNome(p.nome);
-    let t = `${nome(topo)} liderou as menções do episódio ${ep.numero}`;
+    let t = `${nome(topo)} liderou as menções do episódio ${ep.numero}${gancho(ep.numero, topo.nome)}`;
     t += elogiada.nome === topo.nome ? " e também recebeu mais elogios." : `, e ${nome(elogiada)} recebeu mais elogios.`;
     if (fav && fav.nome !== elogiada.nome) {
       const criticas = fav.negativo === 0 ? "nenhuma crítica" : fav.negativo === 1 ? "só 1 crítica" : `só ${fmt(fav.negativo)} críticas`;
@@ -631,7 +640,7 @@
         <span><i class="amostra" style="background:var(--pompadour-noite)"></i>Quem mais perdeu</span>
         <span><i class="amostra" style="background:var(--neutro-noite)"></i>Demais participantes</span>
       </div><div class="grafico"></div>
-      <p class="conclusao">${subiu ? `<strong>${esc(primeiroNome(subiu.nome))}</strong> foi quem mais ganhou a torcida: saiu de ${sinal(subiu.de)} para ${sinal(subiu.para)}, uma virada de ${sinal(subiu.var)} pontos. ` : ""}${caiu ? `<strong>${esc(primeiroNome(caiu.nome))}</strong> fez o caminho contrário, de ${sinal(caiu.de)} para ${sinal(caiu.para)}.` : ""}</p>
+      <p class="conclusao">${subiu ? `<strong>${esc(primeiroNome(subiu.nome))}</strong> foi quem mais ganhou a torcida: saiu de ${sinal(subiu.de)} para ${sinal(subiu.para)}${esc(gancho(ep.numero, subiu.nome))}, uma virada de ${sinal(subiu.var)} pontos. ` : ""}${caiu ? `<strong>${esc(primeiroNome(caiu.nome))}</strong> fez o caminho contrário, de ${sinal(caiu.de)} para ${sinal(caiu.para)}${gancho(ep.numero, caiu.nome) ? "," + esc(gancho(ep.numero, caiu.nome)) : ""}.` : ""}</p>
       <p class="lede nota">Só entram nos destaques participantes com pelo menos 50 menções nos dois episódios, para que poucos comentários não distorçam a comparação.</p>`;
     const alvo = box.querySelector(".grafico");
 
@@ -703,7 +712,7 @@
       const pico = destaques.get(i);
       el.innerHTML = `<rect x="${i * bw}" y="${mt}" width="${bw}" height="${H - mb - mt}" fill="transparent"/>
         <rect class="barra-viva" style="--d:${Math.round(i * 8)}ms" x="${i * bw + Math.min(1, bw * .15)}" y="${H - mb - h}" width="${Math.max(1, bw - Math.min(2, bw * .3))}" height="${h}" rx="${Math.min(2, bw / 3)}" fill="${pico ? "#A47F38" : "#CDBFC6"}"/>
-        ${pico ? `<circle cx="${i * bw + bw / 2}" cy="${H - mb - h - 13}" r="9" fill="#A47F38"/><text x="${i * bw + bw / 2}" y="${H - mb - h - 9}" text-anchor="middle" font-size="11" fill="#FBF6F8" font-family="Young Serif, Georgia, serif">${pico}</text>` : ""}`;
+        ${pico ? `<circle cx="${i * bw + bw / 2}" cy="${H - mb - h - 13}" r="9" fill="#A47F38"/><text x="${i * bw + bw / 2}" y="${H - mb - h - 9}" text-anchor="middle" font-size="11" fill="#FBF6F8" font-family="Fraunces, Georgia, serif">${pico}</text>` : ""}`;
       ligarDica(el, `Minuto ${i}: ${v} ${v === 1 ? "citação" : "citações"}`);
       svg.appendChild(el);
     });
@@ -939,7 +948,7 @@
       <ellipse cx="70" cy="100" rx="40" ry="52" fill="none" stroke="url(#${ouro})" stroke-width="3"/>
       <ellipse cx="70" cy="100" rx="37" ry="49" fill="#EFE2E7"/>
       ${foto ? `<image href="${esc(foto)}" x="33" y="51" width="74" height="98" preserveAspectRatio="xMidYMin slice" clip-path="url(#${rec})"/>`
-             : `<text x="70" y="112" text-anchor="middle" font-family="Young Serif, Georgia, serif" font-size="34" fill="#34182A">${esc(iniciais(nome))}</text>`}
+             : `<text x="70" y="112" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="34" fill="#34182A">${esc(iniciais(nome))}</text>`}
       <circle cx="18" cy="100" r="3.4" fill="url(#${gema})" stroke="#5a3a0c" stroke-width=".8"/>
       <circle cx="122" cy="100" r="3.4" fill="url(#${gema})" stroke="#5a3a0c" stroke-width=".8"/>
       <path d="M61 22 L65 14 L75 14 L79 22 L70 34 Z" fill="url(#${gema})" stroke="#5a3a0c" stroke-width="1"/>
@@ -984,7 +993,7 @@
   function renderAchados() {
     const itens = [];
 
-    // 1. A torcida adivinha quem sai do flop? (só episódios com resultado revelado)
+    // 1. A torcida adivinha quem sai no flop? (só episódios com resultado revelado)
     const prevs = eps.map(previsao).filter(x => x && x.tipo === "resultado");
     if (prevs.length) {
       const acertos = prevs.filter(x => x.acertou).length;
@@ -1022,7 +1031,7 @@
     if (virada) itens.push({
       grande: `${sinal(virada.v)} pontos`,
       rotulo: "maior virada",
-      texto: `${primeiroNome(virada.nome)} ${virada.v > 0 ? "ganhou" : "perdeu"} a torcida entre os episódios ${virada.e1} e ${virada.e2}: o saldo foi de ${sinal(virada.de)} para ${sinal(virada.para)}.`
+      texto: `${primeiroNome(virada.nome)} ${virada.v > 0 ? "ganhou" : "perdeu"} a torcida entre os episódios ${virada.e1} e ${virada.e2}${gancho(virada.e2, virada.nome)}: o saldo foi de ${sinal(virada.de)} para ${sinal(virada.para)}.`
     });
 
     // 3. Quem mais foi comentada no episódio mais recente, e o tom.
@@ -1033,7 +1042,7 @@
       itens.push({
         grande: fmt(topo.mencoes),
         rotulo: `menções no episódio ${ultimo.numero}`,
-        texto: `${primeiroNome(topo.nome)} liderou a conversa do episódio mais recente, e ${neg >= pos ? `${neg}% dos comentários foram críticas` : `${pos}% dos comentários foram elogios`}.`
+        texto: `${primeiroNome(topo.nome)} liderou a conversa do episódio mais recente${gancho(ultimo.numero, topo.nome)}, e ${neg >= pos ? `${neg}% dos comentários foram críticas` : `${pos}% dos comentários foram elogios`}.`
       });
     }
 
@@ -1053,7 +1062,7 @@
     document.getElementById("metodo").innerHTML = `
       <p class="lede">Os dados vêm dos comentários públicos de cada episódio no canal da DiaTV no YouTube, coletados pela API oficial. Outras redes, como X, Instagram e TikTok, ficam de fora, e a torcida de cada rede pode pensar diferente. Por isso, os números mostram a torcida que comenta no YouTube, e não o público inteiro do programa.</p>
       <p>Cada episódio conta só os comentários publicados nas <strong>primeiras 48 horas</strong> depois que o vídeo sai. Assim todos são comparados com a mesma régua, e o painel sai dois dias depois do episódio, sem esperar a conversa acabar. O período foi testado: no episódio 1, que tem 11 dias de comentários, o saldo de cada participante com mais de 100 menções nas primeiras 48 horas ficou a no máximo 6 pontos do saldo final.</p>
-      <p>Quem sai do flop só é revelado no começo do episódio seguinte. Como a janela de 48 horas fecha antes disso, o saldo de cada episódio funciona como uma <strong>previsão</strong> feita pela torcida, comparada só entre quem estava no flop.</p>
+      <p>Quem sai no flop só é revelado no começo do episódio seguinte. Como a janela de 48 horas fecha antes disso, o saldo de cada episódio funciona como uma <strong>previsão</strong> feita pela torcida, comparada só entre quem estava no flop.</p>
       <p>Foram lidos <span class="numero">${fmt(D.total_comentarios)}</span> comentários. Destes, <span class="numero">${fmt(citam)}</span> citam pelo menos uma participante pelo nome ou por um apelido da torcida, como Talita para Talitah ou Poc para Peter Poc.</p>
       <p>Um modelo de linguagem (${esc(D.modelo)}) lê cada um e decide o sentimento para cada participante citada. Um mesmo comentário pode elogiar uma e criticar outra, e as duas opiniões são contadas separadamente.</p>
       ${acerto}

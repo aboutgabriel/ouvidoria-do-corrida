@@ -68,13 +68,14 @@ Regras:
 
 INSTRUCOES_EPISODIO = """Você escreve para a Ouvidoria do Corrida, um projeto que analisa os comentários do YouTube sobre o reality show Corrida das Blogueiras 8.
 
-Com base APENAS nos números, nas cenas e nos comentários fornecidos, escreva um resumo de 3 ou 4 frases (até 90 palavras) sobre como a torcida recebeu o episódio.
+Com base APENAS nos números, no que aconteceu no episódio (escrito à mão), nas cenas e nos comentários fornecidos, escreva um resumo de 3 ou 4 frases (até 100 palavras) sobre como a torcida recebeu o episódio.
 
 Regras:
 1. Descreva a reação da TORCIDA, nunca a sua opinião. Use construções como "a torcida comentou", "os comentários se dividiram".
 2. Diga quais assuntos e momentos dominaram a conversa e qual foi o clima geral (empolgação, revolta, divisão, humor).
 3. Pode citar participantes e números, sempre exatamente como aparecem nos dados. Não liste todas as participantes: fale só de quem marcou o episódio.
 4. Só cite um assunto se ele aparecer em mais de um comentário ou nas cenas mais comentadas. Não invente acontecimentos e não generalize a partir de um comentário isolado.
+4b. Seja concreto: diga a que momento do programa cada assunto se refere, usando o que aconteceu no episódio (qual prova, quem fez o quê). Não use palavras vagas como "postura", "desempenho" ou "comportamento" sem dizer o que aconteceu. O que aconteceu no episódio só explica os fatos: a reação da torcida tem que vir dos comentários.
 5. Quando a torcida estiver dividida, diga que está dividida.
 6. Não reproduza ofensas nem palavrões. Não fale de corpo, aparência física, vida pessoal, saúde, saúde mental ou estado emocional de ninguém, mesmo que os comentários falem disso. Fatos do programa, como uma desistência, podem ser citados.
 7. Não comece com "O episódio" nem com "A torcida". Evite advérbios genéricos como "drasticamente" e "significativamente".
@@ -118,10 +119,16 @@ def montar_entrada(nome, linhas, comentarios, contexto=None):
     return "\n".join(partes)
 
 
-def montar_entrada_episodio(ep, linhas, todos, cenas):
-    """Números do episódio, cenas descritas à mão e os comentários mais curtidos."""
+def montar_entrada_episodio(ep, linhas, todos, cenas, contexto=None):
+    """Números do episódio, o que aconteceu (escrito à mão), cenas descritas à mão e os comentários mais curtidos."""
     do_ep = todos[todos["episodio"] == ep]
-    partes = [f"Episódio {ep}: {len(do_ep)} comentários lidos.", "", "Participantes (menções, elogios, críticas, saldo, resultado oficial):"]
+    partes = [f"Episódio {ep}: {len(do_ep)} comentários lidos."]
+    ctx = (contexto or {}).get(str(int(ep)), {})
+    if ctx.get("geral"):
+        partes += ["", f"O que aconteceu no episódio: {ctx['geral']}"]
+    for nome, texto in ctx.get("participantes", {}).items():
+        partes.append(f"- {nome}: {texto}")
+    partes += ["", "Participantes (menções, elogios, críticas, saldo, resultado oficial):"]
     for linha in linhas.sort_values("mencoes", ascending=False).itertuples():
         resultado = linha.resultado if isinstance(linha.resultado, str) else "já estava fora"
         partes.append(f"- {linha.participante}: {linha.mencoes} menções, {linha.positivo} elogios, "
@@ -241,7 +248,7 @@ def main():
         if chave_ep in resumos_ep:
             continue  # já resumido; para refazer um só, apague a entrada dele no arquivo
         print(f"Resumindo o episódio {chave_ep}...")
-        entrada = montar_entrada_episodio(ep, linhas, todos, cenas.get(chave_ep, {}))
+        entrada = montar_entrada_episodio(ep, linhas, todos, cenas.get(chave_ep, {}), contexto)
         resumos_ep[chave_ep] = {"modelo": modelo, "texto": resumir(cliente, modelo, entrada, INSTRUCOES_EPISODIO)}
         with open(SAIDA_EPISODIOS, "w", encoding="utf-8") as arquivo:
             json.dump(resumos_ep, arquivo, ensure_ascii=False, indent=2)
