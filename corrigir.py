@@ -6,7 +6,7 @@ no painel, a correção é registrada em dados/correcoes.csv, com o motivo. Este
 script aplica as correções no banco. O gerar_dados.py e o resumir.py chamam
 ele automaticamente, então não é preciso rodar à parte.
 
-As correções não mudam a taxa de acerto publicada (82%), que vem só da
+As correções não mudam a taxa de acerto publicada, que vem só da
 amostra sorteada e revisada às cegas.
 
 Uso (opcional, para conferir):

@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://aboutgabriel.github.io/ouvidoria-do-corrida/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ouvidoria do Corrida: 13.369 comentários lidos, 1 de 1 eliminação prevista e 82% de acerto da IA.">
+<meta property="og:image:alt" content="Ouvidoria do Corrida: 13.369 comentários lidos, 1 de 1 eliminação prevista e 86% de acerto da IA.">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light">
@@ -1048,11 +1048,11 @@
     // Margem de erro de 95% de uma proporção: 1,96 × √(p × (1 − p) / n).
     const margem = av ? Math.round(1.96 * Math.sqrt(av.acerto / 100 * (1 - av.acerto / 100) / av.amostra) * 100) : 0;
     const acerto = av
-      ? `<p>Para saber se dá para confiar nos números, ${fmt(av.amostra)} menções sorteadas foram revisadas à mão, sem ver a resposta do modelo, e depois comparadas com ela. O modelo identificou a participante certa em <span class="numero">${num(av.identificacao)}%</span> dos casos e concordou com o sentimento da revisão humana em <span class="numero">${num(av.acerto)}%</span>, com margem de erro de cerca de ${margem} pontos para mais ou para menos, já que a amostra é de ${fmt(av.amostra)} menções. As divergências se concentram em ironia e em elogios indiretos, como defender uma participante criticando outra.</p>`
+      ? `<p>Para ajudar o modelo com a linguagem da torcida, ele recebe um dicionário com gírias e referências do programa, como "flop", "entregou" e "deitei". Para saber se dá para confiar nos números, ${fmt(av.amostra)} menções sorteadas foram revisadas à mão, sem ver a resposta do modelo, e depois comparadas com ela. Essa amostra é nova: nenhum desses comentários foi usado para montar o dicionário. O modelo identificou a participante certa em <span class="numero">${num(av.identificacao)}%</span> dos casos e concordou com o sentimento da revisão humana em <span class="numero">${num(av.acerto)}%</span>, com margem de erro de cerca de ${margem} pontos para mais ou para menos, já que a amostra é de ${fmt(av.amostra)} menções. A maioria das divergências fica entre neutro e elogio ou crítica. Trocar elogio por crítica é raro e acontece principalmente quando alguém defende uma participante criticando outra.</p>`
       : `<p>A taxa de acerto do modelo está sendo medida: uma amostra sorteada de comentários está sendo classificada à mão para comparação.</p>`;
     document.getElementById("metodo").innerHTML = `
       <p class="lede">Os dados vêm dos comentários públicos de cada episódio no canal da DiaTV no YouTube, coletados pela API oficial. Outras redes, como X, Instagram e TikTok, ficam de fora, e a torcida de cada rede pode pensar diferente. Por isso, os números mostram a torcida que comenta no YouTube, e não o público inteiro do programa.</p>
-      <p>Cada episódio conta só os comentários publicados nas <strong>primeiras 48 horas</strong> depois que o vídeo sai. Assim todos são comparados com a mesma régua, e o painel sai dois dias depois do episódio, sem esperar a conversa acabar. O período foi testado: no episódio 1, que tem 11 dias de comentários, o saldo de cada participante com mais de 100 menções nas primeiras 48 horas ficou a no máximo 5 pontos do saldo final.</p>
+      <p>Cada episódio conta só os comentários publicados nas <strong>primeiras 48 horas</strong> depois que o vídeo sai. Assim todos são comparados com a mesma régua, e o painel sai dois dias depois do episódio, sem esperar a conversa acabar. O período foi testado: no episódio 1, que tem 11 dias de comentários, o saldo de cada participante com mais de 100 menções nas primeiras 48 horas ficou a no máximo 6 pontos do saldo final.</p>
       <p>Quem sai do flop só é revelado no começo do episódio seguinte. Como a janela de 48 horas fecha antes disso, o saldo de cada episódio funciona como uma <strong>previsão</strong> feita pela torcida, comparada só entre quem estava no flop.</p>
       <p>Foram lidos <span class="numero">${fmt(D.total_comentarios)}</span> comentários. Destes, <span class="numero">${fmt(citam)}</span> citam pelo menos uma participante pelo nome ou por um apelido da torcida, como Talita para Talitah ou Poc para Peter Poc.</p>
       <p>Um modelo de linguagem (${esc(D.modelo)}) lê cada um e decide o sentimento para cada participante citada. Um mesmo comentário pode elogiar uma e criticar outra, e as duas opiniões são contadas separadamente.</p>

@@ -8,7 +8,7 @@ episódio, em vez de esperar a conversa acabar.
 
 Por que 48 horas: no episódio 1, que tem 11 dias de comentários, o saldo
 de cada participante com mais de 100 menções nas primeiras 48 horas ficou
-a no máximo 5 pontos do saldo final, e 82% dos comentários chegaram nesse
+a no máximo 6 pontos do saldo final, e 82% dos comentários chegaram nesse
 período.
 
 O início da janela é o primeiro comentário do vídeo, que aparece minutos

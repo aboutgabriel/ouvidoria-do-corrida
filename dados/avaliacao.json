@@ -1,22 +1,23 @@
 {
-  "amostra": 100,
+  "rodada": 2,
+  "amostra": 50,
   "identificacao": 100.0,
-  "acerto": 82.0,
+  "acerto": 86.0,
   "confusao": {
     "negativo": {
-      "negativo": 33,
+      "negativo": 22,
       "neutro": 2,
-      "positivo": 4
+      "positivo": 0
     },
     "neutro": {
-      "negativo": 1,
-      "neutro": 6,
+      "negativo": 0,
+      "neutro": 1,
       "positivo": 2
     },
     "positivo": {
       "negativo": 2,
-      "neutro": 7,
-      "positivo": 43
+      "neutro": 1,
+      "positivo": 20
     }
   }
 }

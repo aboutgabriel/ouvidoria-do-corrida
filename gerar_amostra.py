@@ -9,6 +9,9 @@ modelo fica guardada em um arquivo separado.
 Uso:
     python gerar_amostra.py              (100 menções, metade de cada episódio)
     python gerar_amostra.py --tamanho 150
+    python gerar_amostra.py --rodada 2 --tamanho 50
+        (amostra nova, sem repetir comentários das rodadas anteriores, só com
+         menções dentro da janela de 48 horas; gera avaliacao2_revisar.xlsx)
 """
 
 import argparse
@@ -20,31 +23,51 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.worksheet.datavalidation import DataValidation
 
+from janela import na_janela
 from verificar_apelidos import BANCO, PASTA
 
-PLANILHA = os.path.join(PASTA, "dados", "avaliacao_revisar.xlsx")
-GABARITO = os.path.join(PASTA, "dados", "avaliacao_modelo.csv")
 SEMENTE = 42  # sorteio reproduzível: rodar de novo gera a mesma amostra
+
+
+def arquivos(rodada):
+    sufixo = "" if rodada == 1 else str(rodada)
+    return (os.path.join(PASTA, "dados", f"avaliacao{sufixo}_revisar.xlsx"),
+            os.path.join(PASTA, "dados", f"avaliacao{sufixo}_modelo.csv"))
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--tamanho", type=int, default=100)
+    parser.add_argument("--rodada", type=int, default=1)
     args = parser.parse_args()
+    PLANILHA, GABARITO = arquivos(args.rodada)
+    if args.rodada > 1 and os.path.exists(PLANILHA):
+        raise SystemExit(f"{PLANILHA} já existe. Apague antes se quiser sortear de novo (a revisão feita nele se perde).")
 
     with sqlite3.connect(BANCO) as conexao:
         mencoes = pd.read_sql("""
             SELECT k.comentario_id, c.episodio, c.texto, k.participante, k.sentimento
             FROM classificacoes k JOIN comentarios c ON c.id = k.comentario_id
         """, conexao)
+        if args.rodada > 1:
+            # Só o que entra no painel (primeiras 48 horas) e nada que já foi revisado antes.
+            todos = pd.read_sql("SELECT id, episodio, publicado_em, coletado_em FROM comentarios", conexao)
+            from janela import janelas
+            dentro = set(na_janela(todos, janelas(todos))["id"])
+            mencoes = mencoes[mencoes["comentario_id"].isin(dentro)]
+            for r in range(1, args.rodada):
+                anterior = arquivos(r)[1]
+                if os.path.exists(anterior):
+                    mencoes = mencoes[~mencoes["comentario_id"].isin(pd.read_csv(anterior)["comentario_id"])]
 
     # Mesma quantidade de cada episódio, para nenhum dominar a avaliação.
     por_episodio = args.tamanho // mencoes["episodio"].nunique()
-    partes = [grupo.sample(n=min(por_episodio, len(grupo)), random_state=SEMENTE)
+    semente = SEMENTE + args.rodada - 1
+    partes = [grupo.sample(n=min(por_episodio, len(grupo)), random_state=semente)
               for _, grupo in mencoes.groupby("episodio")]
     amostra = (
         pd.concat(partes)
-        .sample(frac=1, random_state=SEMENTE)  # embaralha a ordem
+        .sample(frac=1, random_state=semente)  # embaralha a ordem
         .reset_index(drop=True)
     )
     amostra.insert(0, "n", range(1, len(amostra) + 1))
@@ -93,7 +116,7 @@ def main():
     wb.save(PLANILHA)
     print(f"{len(amostra)} menções sorteadas.")
     print(f"Planilha para revisar: {PLANILHA}")
-    print("Não abra o arquivo avaliacao_modelo.csv antes de terminar a revisão.")
+    print(f"Não abra o arquivo {os.path.basename(GABARITO)} antes de terminar a revisão.")
 
 
 if __name__ == "__main__":

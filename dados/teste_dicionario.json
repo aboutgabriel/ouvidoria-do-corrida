@@ -1,0 +1,39 @@
+{
+  "modelo": "gemini-3.1-flash-lite",
+  "mencoes": 100,
+  "acerto": {
+    "original": 83.0,
+    "atual": 86.0,
+    "dicionario": 90.0
+  },
+  "mudancas": [
+    {
+      "n": 49,
+      "participante": "Talitah Sampaio",
+      "atual": "positivo",
+      "dicionario": "negativo",
+      "humano": "negativo"
+    },
+    {
+      "n": 55,
+      "participante": "Breia",
+      "atual": "negativo",
+      "dicionario": "positivo",
+      "humano": "positivo"
+    },
+    {
+      "n": 68,
+      "participante": "Paizinho dos Looks",
+      "atual": "neutro",
+      "dicionario": "negativo",
+      "humano": "negativo"
+    },
+    {
+      "n": 98,
+      "participante": "Peter Poc",
+      "atual": "neutro",
+      "dicionario": "negativo",
+      "humano": "negativo"
+    }
+  ]
+}

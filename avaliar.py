@@ -6,9 +6,11 @@ calcula as taxas de acerto. O resultado vai para dados/avaliacao.json, que o
 painel mostra na seção de método.
 
 Uso:
-    python avaliar.py
+    python avaliar.py              (rodada 1: as 100 menções da primeira revisão)
+    python avaliar.py --rodada 2   (amostra nova, depois do dicionário do fandom)
 """
 
+import argparse
 import json
 import os
 
@@ -16,12 +18,16 @@ import pandas as pd
 
 from verificar_apelidos import PASTA
 
-PLANILHA = os.path.join(PASTA, "dados", "avaliacao_revisar.xlsx")
-GABARITO = os.path.join(PASTA, "dados", "avaliacao_modelo.csv")
 SAIDA = os.path.join(PASTA, "dados", "avaliacao.json")
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--rodada", type=int, default=1)
+    args = parser.parse_args()
+    sufixo = "" if args.rodada == 1 else str(args.rodada)
+    PLANILHA = os.path.join(PASTA, "dados", f"avaliacao{sufixo}_revisar.xlsx")
+    GABARITO = os.path.join(PASTA, "dados", f"avaliacao{sufixo}_modelo.csv")
     humano = pd.read_excel(PLANILHA, sheet_name="Revisar")
     humano = humano.rename(columns={"Ela é citada?": "citada", "Sentimento para ela": "sentimento_humano"})
     modelo = pd.read_csv(GABARITO).rename(columns={"sentimento": "sentimento_modelo"})
@@ -43,6 +49,7 @@ def main():
                            rownames=["humano"], colnames=["modelo"])
 
     resultado = {
+        "rodada": args.rodada,
         "amostra": int(len(revisadas)),
         "identificacao": round(identificacao, 1),
         "acerto": round(acerto, 1),
