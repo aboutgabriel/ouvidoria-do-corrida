@@ -10,7 +10,7 @@ Projeto de dados e IA que acompanha, episódio a episódio, como a torcida reage
 
 A pergunta central: **a torcida consegue prever quem sai?**
 
-Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então os comentários de cada episódio são escritos sem saber o resultado, e o saldo funciona como uma previsão da torcida. A comparação é feita só entre quem estava no flop, porque só eles podiam sair. O eliminado é registrado em `dados/resultados.csv` no episódio do flop, mesmo que o resultado seja revelado no episódio seguinte.
+Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então a torcida comenta cada episódio sem saber o resultado, e o saldo funciona como uma previsão da torcida. A comparação é feita só entre quem estava no flop, porque só eles podiam sair. O eliminado é registrado em `dados/resultados.csv` no episódio do flop, mesmo que o resultado seja revelado no episódio seguinte.
 
 > Projeto em andamento, atualizado a cada episódio da temporada (outubro de 2026 a janeiro de 2027).
 
