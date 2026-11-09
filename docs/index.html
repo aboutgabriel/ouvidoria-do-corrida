@@ -330,7 +330,7 @@
     <ul class="parede" id="parede" aria-label="Retratos das participantes"></ul>
     <div class="saldo-explica">
       <p class="saldo-titulo">Como ler o <strong>saldo da torcida</strong></p>
-      <p class="saldo-texto" id="saldo-texto">É a porcentagem de comentários que elogiam a participante menos a porcentagem dos que a criticam.</p>
+      <p class="saldo-texto" id="saldo-texto">É a porcentagem de elogios menos a porcentagem de críticas entre os comentários sobre cada pessoa.</p>
       <div class="escala" aria-hidden="true"><i></i><span><span>−100<br>só críticas</span><span>0<br>empate</span><span>+100<br>só elogios</span></span></div>
       <p class="dica-capa">O tamanho do retrato mostra quantas menções cada participante recebeu, e a cor do anel acompanha o saldo. Toque num retrato para abrir a ficha.</p>
     </div>
@@ -390,8 +390,8 @@
   <div class="miolo">
     <svg class="ornamento" viewBox="0 0 120 16" aria-hidden="true" fill="none" stroke="#C9A65A" stroke-width="1.1" stroke-linecap="round"><path d="M2 8 H44 M76 8 H118 M44 8 C50 1 56 1 60 8 C64 15 70 15 76 8 M60 8 C56 3 52 4 52 8"/></svg>
     <h2 id="t-resultado">A torcida adivinha quem sai?</h2>
-    <p class="lede">Cada ponto é uma participante, posicionada pelo saldo da torcida: elogios menos críticas, de −100 a +100. Quanto mais à direita, mais a torcida estava a favor.</p>
-    <p class="nota-faixas">Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então a torcida comenta <strong>sem saber o resultado</strong>, e dá para testar se a torcida adivinha. A comparação é feita só entre quem estava no flop, porque só eles podiam sair.</p>
+    <p class="lede">Cada ponto é alguém do elenco, posicionado pelo saldo da torcida (elogios menos críticas, de −100 a +100). Quanto mais à direita, mais a torcida estava a favor.</p>
+    <p class="nota-faixas">Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então a torcida comenta <strong>sem saber o resultado</strong>, e dá para testar se ela adivinha. A comparação é feita só entre quem estava no flop, porque só eles podiam sair.</p>
     <div class="legenda" aria-hidden="true">
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5.5" fill="#C9A65A"/></svg>Venceu</span>
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="#8E7684"/></svg>Seguiu na disputa</span>
@@ -540,7 +540,7 @@
     const elogiada = lista.slice().sort((a, b) => b.positivo - a.positivo)[0];
     const fav = lista.filter(p => p.mencoes >= 30).sort((a, b) => b.saldo - a.saldo)[0];
     const nome = p => primeiroNome(p.nome);
-    let t = `${nome(topo)} liderou as menções do episódio ${ep.numero}${gancho(ep.numero, topo.nome)}`;
+    let t = `${nome(topo)} foi o nome mais citado do episódio ${ep.numero}${gancho(ep.numero, topo.nome)}`;
     t += elogiada.nome === topo.nome ? " e também recebeu mais elogios." : `, e ${nome(elogiada)} recebeu mais elogios.`;
     if (fav && fav.nome !== elogiada.nome) {
       const criticas = fav.negativo === 0 ? "nenhuma crítica" : fav.negativo === 1 ? "só 1 crítica" : `só ${fmt(fav.negativo)} críticas`;
@@ -640,7 +640,7 @@
         <span><i class="amostra" style="background:var(--pompadour-noite)"></i>Quem mais perdeu</span>
         <span><i class="amostra" style="background:var(--neutro-noite)"></i>Demais participantes</span>
       </div><div class="grafico"></div>
-      <p class="conclusao">${subiu ? `<strong>${esc(primeiroNome(subiu.nome))}</strong> foi quem mais ganhou a torcida: saiu de ${sinal(subiu.de)} para ${sinal(subiu.para)}${esc(gancho(ep.numero, subiu.nome))}, uma virada de ${sinal(subiu.var)} pontos. ` : ""}${caiu ? `<strong>${esc(primeiroNome(caiu.nome))}</strong> fez o caminho contrário, de ${sinal(caiu.de)} para ${sinal(caiu.para)}${gancho(ep.numero, caiu.nome) ? "," + esc(gancho(ep.numero, caiu.nome)) : ""}.` : ""}</p>
+      <p class="conclusao">${subiu ? `Quem mais subiu foi <strong>${esc(primeiroNome(subiu.nome))}</strong>, de ${sinal(subiu.de)} para ${sinal(subiu.para)} (${sinal(subiu.var)} pontos)${gancho(ep.numero, subiu.nome) ? "," + esc(gancho(ep.numero, subiu.nome)) : ""}. ` : ""}${caiu ? `<strong>${esc(primeiroNome(caiu.nome))}</strong> fez o caminho inverso, de ${sinal(caiu.de)} para ${sinal(caiu.para)}${gancho(ep.numero, caiu.nome) ? "," + esc(gancho(ep.numero, caiu.nome)) : ""}.` : ""}</p>
       <p class="lede nota">Só entram nos destaques participantes com pelo menos 50 menções nos dois episódios, para que poucos comentários não distorçam a comparação.</p>`;
     const alvo = box.querySelector(".grafico");
 
@@ -973,7 +973,7 @@
   function renderExplicaSaldo(ep) {
     const ex = emJogo(ep).slice().sort((a, b) => b.mencoes - a.mencoes)
       .find(p => p.positivo && p.negativo && pct(p.positivo, p.mencoes) - pct(p.negativo, p.mencoes) === arred(p.saldo));
-    const base = "É a porcentagem de comentários que elogiam a participante menos a porcentagem dos que a criticam. Comentários neutros entram na conta, mas não somam nem tiram.";
+    const base = "É a porcentagem de elogios menos a porcentagem de críticas entre os comentários sobre cada pessoa. Os neutros entram na conta, mas não somam nem tiram.";
     document.getElementById("saldo-texto").innerHTML = ex
       ? `${base} Exemplo: dos comentários sobre ${esc(primeiroNome(ex.nome))} no episódio ${ep.numero}, <b>${pct(ex.positivo, ex.mencoes)}% foram elogios</b> e <b>${pct(ex.negativo, ex.mencoes)}% críticas</b>. ${pct(ex.positivo, ex.mencoes)} − ${pct(ex.negativo, ex.mencoes)} = saldo <b>${sinal(ex.saldo)}</b>.`
       : base;
@@ -1031,7 +1031,7 @@
     if (virada) itens.push({
       grande: `${sinal(virada.v)} pontos`,
       rotulo: "maior virada",
-      texto: `${primeiroNome(virada.nome)} ${virada.v > 0 ? "ganhou" : "perdeu"} a torcida entre os episódios ${virada.e1} e ${virada.e2}${gancho(virada.e2, virada.nome)}: o saldo foi de ${sinal(virada.de)} para ${sinal(virada.para)}.`
+      texto: `${primeiroNome(virada.nome)} ${virada.v > 0 ? "subiu" : "caiu"} de ${sinal(virada.de)} para ${sinal(virada.para)} entre os episódios ${virada.e1} e ${virada.e2}${gancho(virada.e2, virada.nome) ? "," + gancho(virada.e2, virada.nome) : ""}.`
     });
 
     // 3. Quem mais foi comentada no episódio mais recente, e o tom.
@@ -1042,7 +1042,7 @@
       itens.push({
         grande: fmt(topo.mencoes),
         rotulo: `menções no episódio ${ultimo.numero}`,
-        texto: `${primeiroNome(topo.nome)} liderou a conversa do episódio mais recente${gancho(ultimo.numero, topo.nome)}, e ${neg >= pos ? `${neg}% dos comentários foram críticas` : `${pos}% dos comentários foram elogios`}.`
+        texto: `${primeiroNome(topo.nome)} foi o nome mais citado do episódio mais recente${gancho(ultimo.numero, topo.nome)}, e ${neg >= pos ? `${neg}% das menções foram críticas` : `${pos}% das menções foram elogios`}.`
       });
     }
 
@@ -1064,7 +1064,7 @@
       <p>Cada episódio conta só os comentários publicados nas <strong>primeiras 48 horas</strong> depois que o vídeo sai. Assim todos são comparados com a mesma régua, e o painel sai dois dias depois do episódio, sem esperar a conversa acabar. O período foi testado: no episódio 1, que tem 11 dias de comentários, o saldo de cada participante com mais de 100 menções nas primeiras 48 horas ficou a no máximo 6 pontos do saldo final.</p>
       <p>Quem sai no flop só é revelado no começo do episódio seguinte. Como a janela de 48 horas fecha antes disso, o saldo de cada episódio funciona como uma <strong>previsão</strong> feita pela torcida, comparada só entre quem estava no flop.</p>
       <p>Foram lidos <span class="numero">${fmt(D.total_comentarios)}</span> comentários. Desses, <span class="numero">${fmt(citam)}</span> citam pelo menos uma participante pelo nome ou por um apelido da torcida, como Talita para Talitah ou Poc para Peter Poc.</p>
-      <p>Um modelo de linguagem (${esc(D.modelo)}) lê cada um e decide o sentimento para cada participante citada. Um mesmo comentário pode elogiar uma e criticar outra, e as duas opiniões são contadas separadamente.</p>
+      <p>Um modelo de linguagem (${esc(D.modelo)}) lê cada um e decide o sentimento para cada pessoa citada. Um mesmo comentário pode elogiar uma pessoa e criticar outra, e as duas opiniões contam separadas.</p>
       ${acerto}
       <p>Participantes com poucas menções têm um saldo menos estável, porque cada comentário pesa mais. Nenhum nome de quem comentou é guardado ou publicado. Última atualização em ${D.atualizado_em.split("-").reverse().join("/")}.</p>`;
   }

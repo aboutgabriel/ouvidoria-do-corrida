@@ -62,7 +62,7 @@ Regras:
 7. Não reproduza ofensas nem palavrões. Não fale de corpo, aparência física, vida pessoal, saúde, saúde mental ou estado emocional, mesmo que os comentários falem disso.
 8. Comece pelo ponto mais marcante da trajetória, e não por "A trajetória de...". Evite advérbios genéricos como "drasticamente" e "significativamente".
 9. Refira-se à pessoa pelo nome. Se não souber o gênero, evite artigos e adjetivos com gênero.
-10. Tom editorial, leve e respeitoso, em português do Brasil, sem travessões.
+10. Tom leve e natural, como um fã que escreve bem contando o episódio para um amigo, em português do Brasil, sem travessões. Frases curtas e diretas. Não repita "a torcida" em toda frase: varie com "os comentários", "muita gente", "alguns". Evite fórmulas prontas como "virou o jogo", "dominou a conversa", "no calor do momento", "conquistou o público" e frases que anunciam algo com dois-pontos. Confira a concordância de gênero e de tempo verbal ("pediu que contratasse", não "pediu que contrate").
 11. O saldo vai de −100 (só críticas) a +100 (só elogios)."""
 
 
@@ -79,7 +79,7 @@ Regras:
 5. Quando a torcida estiver dividida, diga que está dividida.
 6. Não reproduza ofensas nem palavrões. Não fale de corpo, aparência física, vida pessoal, saúde, saúde mental ou estado emocional de ninguém, mesmo que os comentários falem disso. Fatos do programa, como uma desistência, podem ser citados.
 7. Não comece com "O episódio" nem com "A torcida". Evite advérbios genéricos como "drasticamente" e "significativamente".
-8. Tom editorial, leve e respeitoso, em português do Brasil, sem travessões.
+8. Tom leve e natural, como um fã que escreve bem contando o episódio para um amigo, em português do Brasil, sem travessões. Frases curtas e diretas. Não repita "a torcida" em toda frase: varie com "os comentários", "muita gente", "alguns". Evite fórmulas prontas como "virou o jogo", "dominou a conversa", "no calor do momento", "conquistou o público" e frases que anunciam algo com dois-pontos. Confira a concordância de gênero e de tempo verbal ("pediu que contratasse", não "pediu que contrate").
 9. O saldo vai de −100 (só críticas) a +100 (só elogios)."""
 
 
