@@ -64,7 +64,6 @@ Na rodada 2, das 47 menções que a revisão marcou como elogio ou crítica, só
 - `dados/cenas.json`: o que acontece em cada cena mais comentada, escrito à mão a partir da transcrição do episódio.
 - `dados/contexto.json`: o que aconteceu com cada participante em cada episódio (prova, dupla, resultado, conflitos), escrito à mão a partir da transcrição. Vai para o prompt dos resumos. Os "ganchos" (o fato principal de cada participante numa frase curta) entram nos textos automáticos do painel, como a manchete e as viradas: "Matthel perdeu a torcida depois de discutir com Talitah sobre etarismo".
 - `docs/fotos/`: fotos oficiais das participantes (DiaTV/divulgação). O painel encontra cada foto pelo nome do arquivo (ex.: `talitah-sampaio.jpg`) e mostra as iniciais quando não há foto.
-- `docs/fotos/edu.jpg` e `docs/fotos/fih.jpg`: os anfitriões aparecem só como decoração no topo do painel, sem dados.
 - O banco `dados/corrida.db` é gerado localmente e não vai para o repositório.
 
 **Privacidade:** o projeto não guarda nomes de usuários. As citações publicadas aparecem sem autor, sem @menções e sem links.
