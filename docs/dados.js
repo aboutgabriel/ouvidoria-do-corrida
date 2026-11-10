@@ -1,6 +1,11 @@
 window.DADOS = {
   "exemplo": false,
   "atualizado_em": "2026-11-10",
+  "proximo": {
+    "numero": 3,
+    "estreia": "2026-11-10T20:00:00-03:00",
+    "relatorio": "2026-11-12T22:00:00-03:00"
+  },
   "modelo": "gemini-3.1-flash-lite",
   "total_comentarios": 13369,
   "episodios": [

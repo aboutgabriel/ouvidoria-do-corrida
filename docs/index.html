@@ -101,6 +101,11 @@
   .episodios { display: flex; justify-content: center; gap: .5rem; margin: 1.8rem 0 0; flex-wrap: wrap; }
   .episodios button { font-weight: 500; font-size: .95rem; background: transparent; color: var(--dourado-texto); border: 1px solid var(--dourado); border-radius: 999px; padding: .45rem 1.15rem; cursor: pointer; }
   .episodios button[aria-selected="true"] { background: var(--dourado); color: var(--vinho); }
+  .episodios button.em-breve { border-style: dashed; color: var(--nevoa); }
+  .episodios button.em-breve small { font-size: .75rem; opacity: .8; }
+  .episodios button.em-breve[aria-expanded="true"] { border-style: solid; color: var(--dourado-texto); }
+  .aviso-proximo { max-width: 34rem; margin: .9rem auto 0; padding: .8rem 1.1rem; border: 1px dashed var(--dourado); border-radius: 12px; color: var(--nevoa); font-size: .92rem; line-height: 1.55; text-align: center; }
+  .aviso-proximo strong { color: var(--dourado-texto); font-weight: 600; }
 
   .manchete { margin: 2.2rem auto 0; max-width: 34rem; color: var(--porcelana); font: 400 clamp(1.35rem, 4.6vw, 1.9rem)/1.3 var(--display); text-wrap: balance; }
   .edicao { margin: .8rem 0 0; color: var(--nevoa-2); font-size: .9rem; }
@@ -333,6 +338,7 @@
     <p class="proposito">Enquetes medem o que o público responde quando é perguntado. A Ouvidoria escuta o que a torcida escreve por conta própria no YouTube e mostra, a cada episódio, quem ela elogia, quem critica e se ela adivinha quem sai no flop.</p>
     <p class="fonte">Fonte: comentários do YouTube</p>
     <div class="episodios" role="tablist" aria-label="Escolha o episódio" id="seletor"></div>
+    <p class="aviso-proximo" id="aviso-proximo" hidden></p>
     <p class="manchete" id="manchete"></p>
     <p class="edicao" id="edicao"></p>
     <ul class="parede" id="parede" aria-label="Retratos das participantes"></ul>
@@ -532,6 +538,41 @@
     b.addEventListener("click", () => { atual = ep.numero; render(); });
     seletor.appendChild(b);
   });
+
+  // Aba do próximo episódio, que ainda não tem dados (dados/proximo_episodio.json).
+  // Mostra quando o relatório sai, com a contagem regressiva.
+  const avisoProximo = document.getElementById("aviso-proximo");
+  function textoProximo(p) {
+    const fuso = "America/Sao_Paulo";
+    const rel = new Date(p.relatorio);
+    const dia = rel.toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "2-digit", timeZone: fuso });
+    const hora = rel.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", timeZone: fuso }).replace(":00", "h").replace(":", "h");
+    const artigo = /^(sábado|domingo)/.test(dia) ? "no" : "na";
+    const falta = rel - Date.now();
+    let contagem;
+    if (falta > 0) {
+      const horas = Math.floor(falta / 36e5), dias = Math.floor(horas / 24), resto = horas % 24;
+      const h = n => `${n} ${n === 1 ? "hora" : "horas"}`;
+      contagem = dias >= 1 ? `Faltam ${dias} ${dias === 1 ? "dia" : "dias"}${resto ? ` e ${h(resto)}` : ""}.` : horas >= 1 ? `Faltam ${h(horas)}.` : "Falta menos de uma hora.";
+    } else {
+      contagem = "O relatório está sendo preparado e entra no ar em breve.";
+    }
+    return `<strong>O relatório do episódio ${p.numero} sai ${artigo} ${dia}, às ${hora}.</strong><br>A Ouvidoria espera 48 horas depois da estreia para contar a reação da torcida, e assim todos os episódios são comparados com a mesma régua. ${contagem}`;
+  }
+  if (D.proximo) {
+    const b = document.createElement("button");
+    b.className = "em-breve";
+    b.innerHTML = `Episódio ${D.proximo.numero} <small>em breve</small>`;
+    b.setAttribute("aria-expanded", "false");
+    b.setAttribute("aria-controls", "aviso-proximo");
+    b.addEventListener("click", () => {
+      const abrir = avisoProximo.hidden;
+      avisoProximo.innerHTML = textoProximo(D.proximo);
+      avisoProximo.hidden = !abrir;
+      b.setAttribute("aria-expanded", String(abrir));
+    });
+    seletor.appendChild(b);
+  }
 
   // O fato principal de cada participante no episódio, escrito à mão em dados/contexto.json
   // ("desistir no meio da prova do flop"). Vira " depois de ..." nos textos automáticos.
@@ -1094,7 +1135,10 @@
 
   function render() {
     const ep = epDe(atual);
-    seletor.querySelectorAll("button").forEach((b, i) => b.setAttribute("aria-selected", eps[i].numero === atual));
+    seletor.querySelectorAll('button[role="tab"]').forEach((b, i) => b.setAttribute("aria-selected", eps[i].numero === atual));
+    avisoProximo.hidden = true;
+    const botaoProximo = seletor.querySelector(".em-breve");
+    if (botaoProximo) botaoProximo.setAttribute("aria-expanded", "false");
     document.getElementById("manchete").textContent = manchete(ep);
     document.getElementById("edicao").textContent = periodo(ep);
     renderResumoEpisodio(ep);

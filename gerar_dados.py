@@ -56,6 +56,22 @@ def limpar_citacao(texto, limite=320):
     return texto if len(texto) <= limite else texto[:limite].rsplit(" ", 1)[0] + "…"
 
 
+PROXIMO = os.path.join(PASTA, "dados", "proximo_episodio.json")  # data do próximo relatório, escrita à mão
+
+
+def proximo_episodio(episodios):
+    """O próximo episódio, se ele ainda não tiver dados no painel (vira a aba "em breve")."""
+    if not os.path.exists(PROXIMO):
+        return None
+    with open(PROXIMO, encoding="utf-8") as arquivo:
+        proximo = json.load(arquivo)
+    ja_tem = {int(e["numero"]) for e in episodios}
+    if int(proximo.get("numero", 0)) in ja_tem:
+        print(f"  Aviso: o episódio {proximo['numero']} já está no painel. Atualize dados/proximo_episodio.json para o seguinte.")
+        return None
+    return {k: v for k, v in proximo.items() if not k.startswith("_")}
+
+
 def nome_de_arquivo(nome):
     """'Bárbara Freitas' vira 'barbara-freitas': sem acentos, minúsculas e com hífens."""
     sem_acento = unicodedata.normalize("NFKD", nome).encode("ascii", "ignore").decode()
@@ -248,6 +264,7 @@ def main():
     dados = {
         "exemplo": False,
         "atualizado_em": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "proximo": proximo_episodio(episodios),
         "modelo": processados["modelo"].mode().iat[0] if len(processados) else None,
         "total_comentarios": int(len(comentarios)),
         "episodios": episodios,

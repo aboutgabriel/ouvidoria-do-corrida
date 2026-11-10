@@ -99,6 +99,7 @@ python gerar_dados.py               # atualiza o painel em docs/
 3. Ler a transcrição do episódio, descrever as cenas mais comentadas em `dados/cenas.json` e escrever o que aconteceu com cada participante em `dados/contexto.json`.
 4. Rodar `temas.py` e depois `resumir.py` (ele usa as cenas, o contexto e os temas) e revisar os resumos e os exemplos dos temas antes de publicar.
 5. Rodar `gerar_dados.py` e publicar.
+6. Atualizar `dados/proximo_episodio.json` com o número e as datas do episódio seguinte. O painel mostra uma aba "em breve" com o dia e a hora do próximo relatório.
 
 A coleta deve ser feita depois que as 48 horas fecharem. Se for antes, o `gerar_dados.py` avisa que a janela ainda está aberta e o painel mostra os números como parciais.
 
