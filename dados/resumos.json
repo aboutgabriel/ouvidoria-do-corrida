@@ -5,7 +5,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Na estreia, a torcida ficou do lado de Aysha Pink. A maquiagem que ela fez em Paizinho foi o melhor do grupo de Talitah, e mesmo assim ela foi parar no flop. O saldo foi de +69. No segundo episódio, caiu para −6. Aysha voltou a cobrar Talitah pela indicação, e muita gente achou que já era hora de virar a página. Na apresentação do gloss de cuscuz, os comentários deram a Latyffa o mérito de segurar a dupla."
+    "texto": "Na estreia, um terço das menções a Aysha Pink (72 de 212) dizia que foi injusto ela ir para o flop depois de fazer a maquiagem mais elogiada do grupo de Talitah, e o vídeo de etiqueta também foi elogiado. O saldo foi de +69. No segundo episódio, caiu para −6. Metade das 96 críticas veio da briga com Talitah: 30 reclamaram de Aysha voltar ao assunto da indicação, e 19, de ela dizer que Talitah puxava o enredo para si. A apresentação do gloss de cuscuz com Latyffa rendeu 23 elogios."
   },
   "Breia": {
     "episodios": [
@@ -13,7 +13,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "A torcida comprou o look básico de oncinha de Breia na estreia e lembrou de participantes que entraram simples e foram longe. Também achou injusto o próprio grupo mandá-la para o flop, prova que ela venceu. O saldo foi de +71. No segundo episódio, ficou em +48. Ela fez a prova do gloss sozinha e foi elogiada pelo carisma, mas o bordão \"beijos da Breia\" virou piada, com gente perguntando desde quando aquilo é bordão."
+    "texto": "Breia recebeu mais elogios que qualquer outra pessoa na estreia (529) e terminou com +71. Quase metade das menções era só torcida, mas 119 comentários acharam injusto o próprio grupo mandá-la para o flop, e o look básico de oncinha foi mais defendido (69 elogios) do que criticado (20). No segundo episódio, ficou em +48. Ela sobrou na divisão das duplas, e 41 comentários falaram de Matthel tê-la deixado de lado. Das 52 críticas, 27 foram para a apresentação do gloss que ela fez sozinha. O bordão \"beijos da Breia\" virou piada, mais de riso do que de crítica."
   },
   "Bárbara Freitas": {
     "episodios": [
@@ -21,7 +21,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Bárbara Freitas foi de −27 para +79. Na estreia, ela demorou com a saia na prova em grupo, e os comentários perguntaram por que o grupo mandou Breia para o flop e não ela. No segundo episódio, a ideia do gloss que prometia aumentar os seios, criada com Talitah, venceu a prova e rendeu muita risada."
+    "texto": "Bárbara Freitas foi de −27 para +79. Na estreia, 62 das 104 críticas diziam que quem devia ter ido para o flop era ela, e não Breia, já que foi ela quem não entregou a saia. Outros 85 comentários falavam da contradição do grupo, que reclamou dela a prova inteira e votou em Breia. No segundo episódio, ela venceu a prova do gloss com Talitah, e quase metade das menções (112) elogiou a dupla. A ideia do gloss que prometia aumentar os seios teve mais 22 elogios."
   },
   "Gabriel Queiroz": {
     "episodios": [
@@ -29,7 +29,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Gabriel Queiroz foi o último escolhido na estreia, ficou na dele e fez a maquiagem do look vencedor. A torcida gostou, e o saldo foi de +75. No segundo episódio, caiu para +38. Teve crítica ao nervosismo na apresentação do gloss de pitaia, quando a dupla estourou o tempo, mas muita gente o defendeu quando Paizinho jogou a culpa nele. No flop, a maquiagem inspirada em Ana Mary B, com as sobrancelhas raspadas, foi bem elogiada."
+    "texto": "Gabriel Queiroz teve poucas menções na estreia (56), quase todas positivas, e saldo de +75. O comentário mais curtido sobre ele lembra que ele foi o último escolhido, não foi ouvido e ainda fez a maquiagem do look vencedor. No segundo episódio, o saldo caiu para +38, mas seguiu positivo. Das 27 críticas, 12 foram para o nervosismo na apresentação do gloss de pitaia. Do outro lado, 34 comentários falaram de Paizinho ter jogado a culpa nele, a maquiagem de Ana Mary B no flop teve 29 elogios, e 16 lamentaram ele ter raspado as sobrancelhas à toa."
   },
   "Jheny Albano": {
     "episodios": [
@@ -37,7 +37,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Na estreia, a rivalidade de Jheny Albano com Paizinho dos Looks soou forçada para alguns, e o saldo ficou em +12. No segundo episódio, caiu para −20. Na apresentação do gloss com Rhanyane, ela não conseguiu esconder o desconforto, e os comentários notaram. A reconciliação com Paizinho também foi vista por alguns como mais uma cena pensada para o VT."
+    "texto": "Jheny Albano está entre as menos comentadas, então cada comentário pesa mais no saldo. Na estreia, foram 41 menções e saldo de +12. A crítica mais comum (7 comentários) foi a rivalidade com Paizinho dos Looks, que soou combinada, e quem é de Cascavel comemorou ver a cidade representada. No segundo episódio, com 50 menções, o saldo caiu para −20. Quase metade das críticas não citou um momento específico, e o resto se dividiu entre a relação com Paizinho e a apresentação do gloss com Rhanyane, quando ela não conseguiu esconder o desconforto."
   },
   "Latyffa Romayale": {
     "episodios": [
@@ -45,7 +45,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Latyffa Romayale tem os saldos mais altos da temporada: +96 na estreia e +85 no segundo episódio. Na estreia, foi elogiada por desfilar o look vencedor da Fanta Uva. No segundo, ainda sem a mala, que foi extraviada, se apresentou como \"mainha sem look\" e arrancou risadas. A energia dela na apresentação do gloss de cuscuz com Aysha rendeu tantos elogios que muita gente pediu que a DiaTV a contratasse como repórter."
+    "texto": "Latyffa Romayale tem os saldos mais altos da temporada, +96 na estreia e +85 no segundo episódio, e quase não recebe críticas (foram 4 em 267 menções). A maior parte dos comentários é pura torcida, sem citar um momento. Quando citam, falam da energia dela na apresentação do gloss de cuscuz com Aysha (28 elogios), pedem que a DiaTV a contrate como repórter (18) ou dizem que a dupla merecia ter vencido (15). A piada da \"mainha sem look\", depois que a mala dela foi extraviada, rendeu o comentário mais curtido sobre ela, com mais de 12 mil curtidas."
   },
   "Matthel": {
     "episodios": [
@@ -53,7 +53,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Matthel chegou bem na estreia. A torcida comemorou a entrada dele e brincou com a semelhança com a jurada Lorelay Fox (o comentário mais curtido diz que ele é \"a substância da Lorelay\", em referência ao filme A Substância). O saldo foi de +56, mesmo com críticas à maquiagem que fez em Breia e ao voto nela para o flop. No segundo episódio, caiu para −51, depois de dizer que Talitah, na idade dela, já devia ter aprendido a não interromper os outros. Ela chamou a fala de etarismo, e a frase \"a gente quer te ajudar\" pegou mal. Alguns o defenderam, dizendo que ele não quis ofender."
+    "texto": "Matthel chegou bem na estreia, com saldo de +56 e a maior parte das menções só comemorando a entrada dele. O comentário mais curtido brinca com a semelhança com a jurada Lorelay Fox (\"a substância da Lorelay\", em referência ao filme A Substância), e as poucas críticas foram para a maquiagem que fez em Breia e o voto nela para o flop. No segundo episódio, o saldo despencou para −51. Das 159 críticas, 56 envolvem Talitah: 31 dizem que ele vivia tentando corrigi-la, e 25 falam da fala sobre a idade dela, que ela chamou de etarismo. Outras 23 falam de como ele tratou Breia, que sobrou sem dupla, e quase metade das críticas não aponta um motivo específico."
   },
   "Paizinho dos Looks": {
     "episodios": [
@@ -61,7 +61,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Paizinho dos Looks já começou com −51. Na estreia, os comentários diziam que ele só desfilou no grupo de Talitah e que o flop deveria ter sido dele, e não de Aysha. No segundo episódio, ficou em −54. Ele desistiu no meio da prova do flop, logo depois de Gabriel e Rhanyane rasparem as sobrancelhas, e ainda culpou Gabriel pela apresentação do gloss. O discurso duro de Edu no fim foi aplaudido, mas teve quem achasse que o apresentador pegou pesado."
+    "texto": "Paizinho dos Looks já começou com −51. Na estreia, a crítica mais comum (27 comentários) foi compará-lo a Rico Melquiades, e outros 11 disseram que ele só desfilou no grupo de Talitah. No segundo episódio, foi o nome mais citado, com 853 menções, e ficou em −54. As críticas vieram de vários lados: 155 sobre a desistência no meio da prova do flop, 111 sobre a falta de preparo, 51 sobre ele ter culpado Gabriel pelo tempo estourado no gloss e 28 sobre o prejuízo para quem já tinha raspado as sobrancelhas. O discurso duro de Edu apareceu em 193 menções: 97 aproveitaram para criticar Paizinho, e 64 saíram em defesa dele."
   },
   "Peter Poc": {
     "episodios": [
@@ -69,7 +69,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Peter Poc teve o pior saldo da estreia, −75, e acabou eliminado. A torcida lembrou que ele disse saber fazer cabelo e depois reclamou de ficar com a peruca, e não gostou de vê-lo culpar a líder Talitah pelo resultado do grupo. No segundo episódio, a recapitulação deu a entender que ele pode voltar, e o saldo foi para −1. Teve quem sentisse falta dele e quem não quisesse nem ouvir falar em retorno."
+    "texto": "Peter Poc teve o pior saldo da estreia, −75, e foi eliminado. Quase metade das menções não citava um momento específico. Quem explicou falou de quatro coisas: as queixas durante a prova (105 críticas), ter dito que sabia fazer cabelo e depois reclamar da peruca (75), culpar a líder Talitah e o grupo pelo resultado (54) e o vídeo de etiqueta mal editado no flop (44). No segundo episódio, a recapitulação deu a entender que ele pode voltar, e o saldo foi para −1. A possível volta apareceu em 43 menções, 24 a favor e 13 contra."
   },
   "Rhanyane Garcia": {
     "episodios": [
@@ -77,7 +77,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Rhanyane Garcia liderou o grupo vencedor da estreia, o da Fanta Uva, e terminou com +33. No segundo episódio, caiu para −20. Na apresentação do gloss, ela chamou Jheny de rosto da marca e, logo depois, de \"quase um membro fantasma\", e os comentários não perdoaram. Alguns também reclamaram de ela não ter ajudado Paizinho no flop. Mesmo assim, muita gente riu com ela e a achou a mais engraçada da apresentação."
+    "texto": "Rhanyane Garcia é pouco comentada, então cada comentário pesa mais no saldo. Na estreia, venceu como líder do grupo da Fanta Uva e teve 27 menções, com saldo de +33, quase tudo torcida sem um motivo específico. No segundo episódio, com 71 menções, caiu para −20. Mais da metade das 32 críticas não aponta um momento. As outras se espalham entre a apresentação do gloss em que chamou Jheny de \"quase um membro fantasma\" (5), a vantagem de assistir às outras duplas, que não pareceu servir para nada (4), e não ter ajudado Paizinho no flop (4)."
   },
   "Sttefone": {
     "episodios": [
@@ -85,7 +85,7 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Sttefone passou a prova da estreia reclamando da saia de Bárbara e, no fim, votou em Breia para o flop. A torcida não deixou passar, e o saldo foi de −30, mesmo com elogios ao cabelo que ela fez. No segundo episódio, subiu para +82. Na apresentação do gloss com MP3, Matthel se perdeu nas falas, e os comentários deram a Sttefone o crédito por salvar a dupla."
+    "texto": "Sttefone foi criticada na estreia, com saldo de −30. Das 52 críticas, 45 falam de ela ter reclamado a prova inteira da saia de Bárbara e, no fim, votado em Breia para o flop. O cabelo que ela fez teve 8 elogios. No segundo episódio, com menos menções (39), subiu para +82. Os elogios foram para o visual dela (13) e para a apresentação do gloss com MP3, em que os comentários disseram que ela salvou a dupla quando Matthel se perdeu (10)."
   },
   "Talitah Sampaio": {
     "episodios": [
@@ -93,6 +93,6 @@
       2
     ],
     "modelo": "gemini-3.1-flash-lite",
-    "texto": "Talitah Sampaio foi de −26 para +56. Na estreia, a liderança dela foi criticada, principalmente por mandar Aysha para o flop, mas teve gente que a defendeu das reclamações de Peter. No segundo episódio, ela venceu a prova do gloss com Bárbara. A torcida elogiou a dupla, reclamou da perseguição que Talitah vinha sofrendo e ficou do lado dela na briga com Matthel sobre etarismo."
+    "texto": "Talitah Sampaio foi de −26 para +56. Na estreia, as críticas se dividiram entre a liderança do grupo (26), a decisão de mandar Aysha para o flop (24) e a briga com Peter sobre a peruca (13), e metade das menções não citava um momento específico. No segundo episódio, ela venceu a prova do gloss com Bárbara, e a dupla teve 114 elogios. Outros 93 comentários saíram em defesa dela contra o que chamaram de perseguição do elenco, e, na discussão com Matthel sobre idade, os elogios a ela (27) superaram as críticas (10)."
   }
 }

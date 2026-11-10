@@ -248,6 +248,14 @@
   .citacao.pos { border-color: var(--sevres); }
   .citacao.neg { border-color: var(--pompadour); }
   .citacao small { display: block; margin-top: .3rem; color: var(--tinta-2); font-size: .8rem; }
+  .temas { list-style: none; margin: .4rem 0 0; padding: 0; }
+  .tema { padding: .75rem 0 .6rem; border-top: 1px solid rgba(164,127,56,.3); }
+  .tema b { font-weight: 600; }
+  .tema .meta { display: block; margin-top: .1rem; color: var(--tinta-2); font-size: .82rem; }
+  .tema .tema-barra { display: flex; height: 6px; margin: .4rem 0 .1rem; border-radius: 3px; overflow: hidden; background: var(--neutro); }
+  .tema .tema-barra i { display: block; height: 100%; }
+  .tema .exemplo { margin: .45rem 0 0; font-size: .88rem; line-height: 1.5; color: var(--tinta); }
+  .tema .exemplo small { color: var(--tinta-2); font-size: .78rem; white-space: nowrap; }
   .fechar { position: absolute; top: 1.1rem; right: 1.1rem; background: var(--porcelana); border: 1px solid var(--ouro-claro); border-radius: 999px; padding: .3rem .8rem; font-size: .85rem; cursor: pointer; }
 
   .dica { position: fixed; pointer-events: none; z-index: 20; background: var(--tinta); color: var(--porcelana); font-size: .8rem; line-height: 1.4; padding: .5rem .7rem; border-radius: 4px; opacity: 0; transition: opacity .12s; max-width: 15rem; box-shadow: 0 0 0 1px rgba(201,166,90,.5); }
@@ -869,6 +877,20 @@
         citacao(q.critica, "neg", "Crítica mais curtida", `Nenhuma crítica teve ${MIN_CURTIDAS} curtidas ou mais neste episódio.`)
       : "";
 
+    // Do que falaram: todas as menções do episódio, separadas por tema (temas.py).
+    const temas = q.temas || [];
+    // Temas com menos de 5 menções ficam de fora: são poucos comentários para virar "assunto".
+    const principais = temas.filter(t => t.id !== 0 && t.mencoes >= 5).slice(0, 5);
+    const outros = temas.find(t => t.id === 0);
+    const plural = (n, um, varios) => `${fmt(n)} ${n === 1 ? um : varios}`;
+    const blocoTemas = principais.length ? `<h3>Do que falaram no episódio ${foco.ep.numero}</h3>
+      <p class="sub" style="font-size:.8rem">Cada uma das ${fmt(q.mencoes)} menções foi colocada em um tema pelo Gemini. Os números contam todas elas, não só as mais curtidas.</p>
+      <ul class="temas">${principais.map(t => `<li class="tema"><b>${esc(t.nome)}</b>
+        <span class="meta">${plural(t.mencoes, "menção", "menções")} (${t.pct}%): ${plural(t.negativo, "crítica", "críticas")}, ${plural(t.positivo, "elogio", "elogios")}</span>
+        <div class="tema-barra" aria-hidden="true"><i style="width:${t.negativo / t.mencoes * 100}%;background:var(--pompadour)"></i><i style="width:${t.positivo / t.mencoes * 100}%;background:var(--sevres)"></i></div>
+        ${t.exemplo && t.exemplo.curtidas >= MIN_CURTIDAS ? `<p class="exemplo">“${esc(t.exemplo.texto)}” <small>${plural(t.exemplo.curtidas, "curtida", "curtidas")}</small></p>` : ""}</li>`).join("")}</ul>
+      ${outros ? `<p class="sub" style="font-size:.8rem">Outros assuntos: ${plural(outros.mencoes, "menção", "menções")} (${outros.pct}%).</p>` : ""}` : "";
+
     fichaConteudo.innerHTML = `
       <button class="fechar" type="button">Fechar</button>
       <div class="ficha-topo">
@@ -881,7 +903,8 @@
       </div>
       ${resumo ? `<h3>Como a torcida viu ${esc(primeiroNome(nome))}</h3>
         <p class="resumo">${esc(resumo)}</p>
-        <p class="sub" style="font-size:.8rem">Resumo escrito pelo Gemini a partir dos números, dos comentários mais curtidos e de um resumo do que aconteceu em cada episódio, e revisado antes de ir ao ar.</p>` : ""}
+        <p class="sub" style="font-size:.8rem">Resumo escrito pelo Gemini a partir de todas as menções, separadas por tema, e de um resumo do que aconteceu em cada episódio, e revisado antes de ir ao ar.</p>` : ""}
+      ${blocoTemas}
       <h3>Saldo da torcida, episódio a episódio</h3>
       <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Trajetória do saldo: ${traj.map(t => "episódio " + t.ep.numero + " " + sinal(t.p.saldo)).join(", ")}" style="width:100%;height:auto;overflow:visible;font-family:var(--texto)">${mini}</svg>
       <table>

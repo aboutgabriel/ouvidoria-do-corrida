@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 import pandas as pd
 
 from corrigir import aplicar_correcoes
+from temas import contar_temas
 from janela import JANELA_HORAS, janelas, na_janela
 from verificar_apelidos import BANCO, PASTA
 
@@ -158,6 +159,14 @@ def main():
     # Cada menção ganha o episódio do comentário de onde veio.
     mencoes = classificacoes.merge(comentarios, left_on="comentario_id", right_on="id")
 
+    # Do que a torcida fala sobre cada participante (temas.py), com contagens reais.
+    with sqlite3.connect(BANCO) as conexao:
+        temas_por = contar_temas(conexao, mencoes, IDS_OCULTOS)
+    for lista in temas_por.values():
+        for tema in lista:
+            if tema["exemplo"]:
+                tema["exemplo"]["texto"] = limpar_citacao(tema["exemplo"]["texto"], 220)
+
     # Para cada participante e episódio: o elogio e a crítica mais curtidos.
     destaques = {}
     for (ep, nome), grupo in mencoes.groupby(["episodio", "participante"]):
@@ -210,6 +219,7 @@ def main():
                     "neutro": int(linha.neutro),
                     "saldo": float(linha.saldo),
                     **destaques.get((ep, linha.participante), {}),
+                    "temas": temas_por.get((int(ep), linha.participante), []),
                 }
                 for linha in grupo.sort_values("mencoes", ascending=False).itertuples()
             ],
