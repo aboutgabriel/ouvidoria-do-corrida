@@ -62,7 +62,7 @@
   .aviso { background: var(--tinta); color: var(--porcelana); text-align: center; font-size: .875rem; padding: .6rem 1rem; position: relative; z-index: 5; }
 
   /* ================= capa: o salão ================= */
-  .salao { position: relative; background: var(--vinho); color: var(--nevoa); text-align: center; padding: 7.2rem 1rem 6rem; overflow: hidden; }
+  .salao { position: relative; background: var(--vinho); color: var(--nevoa); text-align: center; padding: 3.6rem 1rem 6rem; overflow: hidden; }
   .salao::before { display: none; /* luz de lustre */
     content: ""; position: absolute; left: 50%; top: 0; width: 60rem; height: 44rem; transform: translateX(-50%);
     background: radial-gradient(ellipse at 50% 18%, rgba(232,207,148,.16), transparent 62%); pointer-events: none;
@@ -274,7 +274,7 @@
   .dica.ativa { opacity: 1; }
 
   @media (min-width: 720px) {
-    .salao { padding-top: 8.5rem; }
+    .salao { padding-top: 4.5rem; }
     .bambinela { height: 8rem; }
     .parede { max-width: 56rem; gap: 2rem 0; }
     .parede li.g { width: 22%; }
@@ -310,31 +310,10 @@
 <div class="aviso" id="aviso" hidden>Prévia com dados de exemplo. Os números ainda não são reais.</div>
 
 <header class="salao">
-  <!-- bambinela: a parte de cima da cortina, que fica sempre -->
-  <svg class="bambinela" viewBox="0 0 400 80" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 0 H400 V30 Q350 78 300 34 Q250 78 200 34 Q150 78 100 34 Q50 78 0 30Z" fill="#6E2244"/>
-    <path d="M0 0 H400 V16 Q350 54 300 20 Q250 54 200 20 Q150 54 100 20 Q50 54 0 16Z" fill="#8C3157"/>
-    <path d="M0 30 Q50 78 100 34 Q150 78 200 34 Q250 78 300 34 Q350 78 400 30" fill="none" stroke="#C9A65A" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
-    <path d="M0 4 H400" stroke="#C9A65A" stroke-width="1" vector-effect="non-scaling-stroke"/>
-  </svg>
-  <!-- cortinas laterais, que se abrem ao carregar -->
-  <svg class="cortina esq" viewBox="0 0 100 400" preserveAspectRatio="none" aria-hidden="true">
-    <rect width="100" height="400" fill="#6E2244"/>
-    <path d="M14 0 C10 120 18 280 12 400 M34 0 C30 140 38 260 32 400 M54 0 C50 110 58 290 52 400 M74 0 C70 130 78 270 72 400" stroke="#56193A" stroke-width="7" fill="none"/>
-    <path d="M24 0 C20 130 28 270 22 400 M64 0 C60 120 68 280 62 400" stroke="#8C3157" stroke-width="5" fill="none"/>
-    <path d="M99 0 V400" stroke="#C9A65A" stroke-width="1.5"/>
-  </svg>
-  <svg class="cortina dir" viewBox="0 0 100 400" preserveAspectRatio="none" aria-hidden="true">
-    <rect width="100" height="400" fill="#6E2244"/>
-    <path d="M14 0 C10 120 18 280 12 400 M34 0 C30 140 38 260 32 400 M54 0 C50 110 58 290 52 400 M74 0 C70 130 78 270 72 400" stroke="#56193A" stroke-width="7" fill="none"/>
-    <path d="M24 0 C20 130 28 270 22 400 M64 0 C60 120 68 280 62 400" stroke="#8C3157" stroke-width="5" fill="none"/>
-    <path d="M99 0 V400" stroke="#C9A65A" stroke-width="1.5"/>
-  </svg>
-
   <div class="conteudo">
     <div class="palco">
     <div class="cartela">
-      <h1><img src="titulo.webp" alt="Ouvidoria do Corrida" width="1520" height="500" fetchpriority="high"></h1>
+      <h1><img src="titulo.webp" alt="Ouvidoria do Corrida" width="1520" height="629" fetchpriority="high"></h1>
     </div>
     </div>
     <p class="temporada">O que a torcida do Corrida das Blogueiras&nbsp;8 diz quando ninguém está perguntando.</p>
