@@ -40,7 +40,7 @@ CREDITO_FOTOS = "Foto: DiaTV/divulgação"
 EXTENSOES_FOTO = (".jpg", ".jpeg", ".png", ".webp")
 
 # Anfitriões: só aparecem como decoração no topo do painel, com foto e nome.
-APRESENTADORES = ["Edu", "Fih"]
+APRESENTADORES = []
 
 # Minutagens que a torcida escreve: 14:32 ou 1:02:15
 MINUTAGEM = re.compile(r"(?<![\d:])(?:(\d{1,2}):)?(\d{1,2}):(\d{2})(?![\d:])")

@@ -3014,14 +3014,9 @@ window.DADOS = {
     "Peter Poc": "fotos/peter-poc.jpg",
     "Rhanyane Garcia": "fotos/rhanyane-garcia.jpg",
     "Sttefone": "fotos/sttefone.jpg",
-    "Talitah Sampaio": "fotos/talitah-sampaio.jpg",
-    "Edu": "fotos/edu.jpg",
-    "Fih": "fotos/fih.jpg"
+    "Talitah Sampaio": "fotos/talitah-sampaio.jpg"
   },
-  "apresentadores": [
-    "Edu",
-    "Fih"
-  ],
+  "apresentadores": [],
   "recortes": {},
   "credito_fotos": "Foto: DiaTV/divulgação"
 };
