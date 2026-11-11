@@ -16,7 +16,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#3A1A2D">
+<meta name="theme-color" content="#10261F">
 <link rel="icon" href="favicon-64.png" sizes="64x64" type="image/png">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -37,7 +37,7 @@
     --pompadour: #B8466F;
     --neutro: #CDBFC6;
     /* salas escuras */
-    --vinho: #3A1A2D;
+    --vinho: #0B1D17;
     --vinho-cortina: #6E2244;
     --vinho-cortina-2: #8C3157;
     --dourado: #C9A65A;
@@ -59,7 +59,7 @@
   button { font: inherit; color: inherit; }
   :focus-visible { outline: 2px solid var(--dourado); outline-offset: 3px; border-radius: 2px; }
 
-  .aviso { background: var(--tinta); color: var(--porcelana); text-align: center; font-size: .875rem; padding: .6rem 1rem; position: relative; z-index: 5; }
+  .aviso { background: var(--tinta); color: var(--tinta); text-align: center; font-size: .875rem; padding: .6rem 1rem; position: relative; z-index: 5; }
 
   /* ================= capa: o salão ================= */
   .salao { position: relative; background: var(--vinho); color: var(--nevoa); text-align: center; padding: 3.6rem 1rem 6rem; overflow: hidden; }
@@ -111,7 +111,7 @@
   .aviso-proximo { max-width: 34rem; margin: 1.6rem auto 0; padding: 1.2rem 1.4rem; border: 1px dashed var(--dourado); border-radius: 12px; color: var(--nevoa); font-size: .92rem; line-height: 1.55; text-align: center; }
   .aviso-proximo strong { color: var(--dourado-texto); font-weight: 600; }
 
-  .manchete { margin: 2.2rem auto 0; max-width: 34rem; color: var(--porcelana); font: 400 clamp(1.35rem, 4.6vw, 1.9rem)/1.3 var(--display); text-wrap: balance; }
+  .manchete { margin: 2.2rem auto 0; max-width: 34rem; color: var(--tinta); font: 400 clamp(1.35rem, 4.6vw, 1.9rem)/1.3 var(--display); text-wrap: balance; }
   .edicao { margin: .8rem 0 0; color: var(--nevoa-2); font-size: .9rem; }
 
   /* parede de retratos */
@@ -136,9 +136,9 @@
 
   .saldo-explica { max-width: 30rem; margin: 2.8rem auto 0; padding: 1.1rem 1.3rem 1rem; border: 1px solid rgba(201,166,90,.45); border-radius: 6px; background: rgba(58,26,45,.55); }
   .saldo-titulo { margin: 0; color: var(--dourado-texto); font: 400 1.05rem var(--display); }
-  .saldo-titulo strong { font-weight: 400; color: var(--porcelana); }
+  .saldo-titulo strong { font-weight: 400; color: var(--tinta); }
   .saldo-texto { margin: .45rem 0 0; color: var(--nevoa); font-size: .9rem; line-height: 1.55; }
-  .saldo-texto b { color: var(--porcelana); font-weight: 600; }
+  .saldo-texto b { color: var(--tinta); font-weight: 600; }
   .saldo-explica .dica-capa { margin-top: .9rem; }
   .escala { max-width: 18rem; margin: 1rem auto 0; font-size: .75rem; color: var(--nevoa-2); line-height: 1.3; }
   .escala i { display: block; height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--pompadour), var(--neutro), var(--sevres)); margin-bottom: .35rem; box-shadow: 0 0 0 1px rgba(201,166,90,.5); }
@@ -228,12 +228,12 @@
 
   /* comentários que comprovam o resumo */
   .vozes-lista { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
-  .voz { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: .25rem .9rem; align-content: start; padding: 1.1rem; background: #46222F; border: 1px solid rgba(201,166,90,.35); border-radius: 14px; }
+  .voz { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: .25rem .9rem; align-content: start; padding: 1.1rem; background: var(--porcelana-clara); border: 1px solid rgba(201,166,90,.35); border-radius: 14px; }
   .voz .arco { grid-row: 1 / span 2; width: 3.4rem; margin: 0; outline-width: 2px; outline-offset: 2px; }
   .voz .sobre { margin: 0; font-size: .82rem; line-height: 1.35; color: var(--nevoa-2); }
-  .voz .sobre button { display: block; padding: 0; background: none; border: 0; cursor: pointer; font: 400 1.1rem/1.2 var(--display); color: var(--porcelana); text-align: left; }
+  .voz .sobre button { display: block; padding: 0; background: none; border: 0; cursor: pointer; font: 400 1.1rem/1.2 var(--display); color: var(--tinta); text-align: left; }
   .voz .sobre button:hover { text-decoration: underline; text-decoration-color: var(--dourado); text-underline-offset: 3px; }
-  .voz blockquote { grid-column: 1 / -1; margin: .75rem 0 0; font: italic 400 1.15rem/1.4 var(--display); color: var(--porcelana); }
+  .voz blockquote { grid-column: 1 / -1; margin: .75rem 0 0; font: italic 400 1.15rem/1.4 var(--display); color: var(--tinta); }
   .voz small { grid-column: 1 / -1; margin-top: .5rem; color: var(--dourado); font-size: .82rem; font-weight: 600; }
   .nota-faixas { margin: .8rem 0 1.4rem; font-size: .9rem; color: var(--nevoa-2); max-width: 40rem; }
   .nota-faixas strong { color: var(--nevoa); font-weight: 600; }
@@ -280,7 +280,7 @@
   .tema .exemplo small { color: var(--tinta-2); font-size: .78rem; white-space: nowrap; }
   .fechar { position: absolute; top: 1.1rem; right: 1.1rem; background: var(--porcelana); border: 1px solid var(--ouro-claro); border-radius: 999px; padding: .3rem .8rem; font-size: .85rem; cursor: pointer; }
 
-  .dica { position: fixed; pointer-events: none; z-index: 20; background: var(--tinta); color: var(--porcelana); font-size: .8rem; line-height: 1.4; padding: .5rem .7rem; border-radius: 4px; opacity: 0; transition: opacity .12s; max-width: 15rem; box-shadow: 0 0 0 1px rgba(201,166,90,.5); }
+  .dica { position: fixed; pointer-events: none; z-index: 20; background: var(--tinta); color: var(--tinta); font-size: .8rem; line-height: 1.4; padding: .5rem .7rem; border-radius: 4px; opacity: 0; transition: opacity .12s; max-width: 15rem; box-shadow: 0 0 0 1px rgba(201,166,90,.5); }
   .dica.ativa { opacity: 1; }
 
   @media (min-width: 720px) {
@@ -314,43 +314,150 @@
     @keyframes abrirFicha { from { opacity: 0; transform: translateY(10px) scale(.98); } }
   }
   @media (prefers-reduced-motion: reduce) { .retrato svg { transition: none; } }
+
+  /* ===== tema streaming verde ===== */
+  :root { --porcelana:#10261F; --porcelana-funda:rgba(255,255,255,.09); --porcelana-clara:#1B372E; --tinta:#F3EFE8; --tinta-2:#A9BFB5; --ouro:#D9B866; --ouro-claro:rgba(217,184,102,.28);
+    --sevres:#8FB8E8; --pompadour:#F08DAA; --neutro:#35584B; --vinho:#0B1D17; --dourado:#D9B866; --dourado-texto:#E8CF94; --nevoa:#E6EFEA; --nevoa-2:#A9BFB5;
+    --sevres-noite:#8FB8E8; --pompadour-noite:#F08DAA; --neutro-noite:#6F8F82; --coluna:68rem; --destaque:#F2A9C0; }
+  html, body { background: #10261F; }
+  .pos { color: var(--sevres); } .neg { color: var(--pompadour); }
+  .cima { position: relative; background: #10261F; color: var(--tinta); }
+  .barra-topo { position: absolute; z-index: 3; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 2.5rem; }
+  .barra-topo h1 { margin: 0; line-height: 0; } .barra-topo h1 img { height: 5.6rem; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,.4)); }
+  .episodios { margin: 0; gap: .25rem; flex-wrap: nowrap; background: rgba(16,38,31,.72); backdrop-filter: blur(8px); border-radius: 999px; padding: .25rem; }
+  .episodios button, .episodios button.em-breve { border: 0; color: var(--tinta-2); padding: .4rem .95rem; font-size: .9rem; white-space: nowrap; }
+  .episodios button[aria-selected="true"], .episodios button.em-breve[aria-selected="true"] { background: var(--dourado); color: #14231D; font-weight: 600; }
+  .hero { position: relative; min-height: 40rem; display: flex; align-items: flex-end; padding: 8.5rem 2.5rem 3.2rem; overflow: hidden; }
+  .hero-foto { position: absolute; right: 0; top: 0; bottom: 0; width: 56%; }
+  .hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #10261F 42%, rgba(16,38,31,.6) 60%, rgba(16,38,31,0) 82%), linear-gradient(0deg, #10261F 0, rgba(16,38,31,0) 30%); }
+  .hero-txt { position: relative; z-index: 2; max-width: 37rem; text-align: left; }
+  .selo { display: inline-block; background: var(--pompadour); color: #2A0F1B; font-weight: 600; font-size: .8rem; padding: .25rem .65rem; border-radius: 6px; }
+  .manchete { margin: .9rem 0 0; max-width: none; color: var(--tinta); font: 400 clamp(1.9rem, 3.6vw, 2.9rem)/1.08 var(--display); text-wrap: balance; }
+  .edicao { margin: .5rem 0 0; color: var(--tinta-2); text-align: left; font-size: .88rem; }
+  .linha-fina { margin: .9rem 0 0; font-size: 1.08rem; color: var(--nevoa); }
+  .voz .sobre, .voz .sobre button { background: none; } .voz .sobre button, .voz blockquote { color: var(--tinta); }
+  .hero-nums { display: flex; gap: 2rem; margin: 1.4rem 0 0; }
+  .hero-nums div { margin: 0; } .hero-nums dt { font: 400 2.1rem/1 var(--display); color: var(--destaque); } .hero-nums dt.neg { color: var(--pompadour); } .hero-nums dt.pos { color: var(--sevres); }
+  .hero-nums dd { margin: .2rem 0 0; font-size: .82rem; color: var(--tinta-2); }
+  .sobre { background: #10261F; color: var(--tinta); padding: .5rem 2.5rem 1.5rem; }
+  .sobre .miolo { max-width: var(--coluna); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 2.5rem; align-items: center; padding: 1.4rem 0; border-top: 1px solid var(--porcelana-funda); border-bottom: 1px solid var(--porcelana-funda); }
+  .sobre .temporada { margin: 0; max-width: none; text-align: left; color: var(--dourado-texto); }
+  .sobre .proposito { margin: 0; max-width: none; text-align: left; color: var(--tinta-2); }
+  .sala, footer { margin-top: 0; border-radius: 0; padding: 2.6rem 2.5rem 3rem; box-shadow: none !important; }
+  .sala.clara { background: #10261F; color: var(--tinta); } .sala.escura, footer { background: #0B1D17; }
+  .sala h2 { color: var(--tinta); } .sala.escura h2 { color: var(--tinta); }
+  .sala .lede { max-width: 46rem; }
+  .parede { max-width: none; margin: 1.4rem 0 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .9rem; }
+  .parede li, .parede li.g, .parede li.m, .parede li.p { width: auto; margin: 0 !important; display: block; }
+  .cartao { position: relative; display: block; width: 100%; padding: 0; text-align: left; cursor: pointer; background: var(--porcelana-clara); border: 1px solid var(--porcelana-funda); border-radius: 14px; overflow: hidden; color: var(--tinta); transition: transform .18s ease, border-color .18s ease; }
+  .cartao:hover { transform: translateY(-4px); border-color: var(--dourado); }
+  .cartao img, .cartao .sem-foto { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 18%; }
+  .cartao .sem-foto { display: grid; place-items: center; font: 400 2rem var(--display); background: #24463B; }
+  .cartao.fora img { filter: grayscale(.85); opacity: .75; }
+  .cartao .tag { position: absolute; top: .6rem; left: .6rem; background: rgba(11,29,23,.82); color: var(--dourado-texto); font-size: .75rem; font-weight: 600; padding: .15rem .5rem; border-radius: 6px; }
+  .cartao .info { display: block; padding: .6rem .75rem .75rem; } .cartao b { font: 400 1.05rem var(--display); }
+  .cartao .lin { display: flex; justify-content: space-between; font-size: .8rem; color: var(--tinta-2); margin-top: .1rem; } .cartao .lin .pos, .cartao .lin .neg { font-weight: 600; }
+  .mbar { display: flex; justify-content: space-between; height: 5px; border-radius: 3px; overflow: hidden; background: var(--neutro); margin-top: .5rem; }
+  .mbar i:first-child { background: var(--pompadour); } .mbar i:last-child { background: var(--sevres); }
+  .lado-a-lado { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1rem; margin-top: 1.2rem; align-items: start; }
+  .lado-a-lado .cartao-ep { margin-top: 0; } .lado-a-lado .achados { margin: 0; grid-template-columns: 1fr; gap: .75rem; }
+  .cartao-ep, .achados li, .cena { border-color: var(--porcelana-funda) !important; box-shadow: none !important; border-radius: 14px !important; }
+  .achados .grande { color: var(--destaque); } .achados .rotulo { color: var(--dourado-texto); }
+  .resumo-ep::first-letter { color: var(--destaque); }
+  .voz { border-color: var(--porcelana-funda); }
+  .vozes-lista { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sala details, #faixas, .metodo #metodo { max-width: 52rem; }
+  .elenco-sala .legenda { margin-top: 1rem; } .elenco-sala .parede { margin-top: .8rem; }
+  #viradas { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 0 2.5rem; }
+  #viradas > .legenda { grid-column: 1 / -1; } #viradas > .grafico { grid-column: 1; grid-row: 2 / span 2; }
+  #viradas > .conclusao { grid-column: 2; grid-row: 2; align-self: end; margin: 0; font-size: 1.1rem; } #viradas > .nota { grid-column: 2; grid-row: 3; align-self: start; }
+  #viradas > .vazio { grid-column: 1 / -1; }
+  .cenas { grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+  dialog.ficha { background: #14302699; background: #153026; color: var(--tinta); }
+  .saldo-explica { display: none; } .ep-c { display: none; }
+  .ver-proximo .hero, .ver-proximo .sobre { display: none; }
+  .ver-proximo .cima { padding: 7rem 1rem 4rem; }
+  .aviso-proximo { border: 1px solid var(--ouro-claro); background: var(--porcelana-clara); color: var(--tinta); }
+  @media (max-width: 760px) {
+    .barra-topo { padding: .7rem 1rem; } .barra-topo h1 img { height: 2.7rem; } .episodios button, .episodios button.em-breve { padding: .3rem .55rem; font-size: .78rem; }
+    .hero { min-height: 0; flex-direction: column; align-items: stretch; padding: 0 1rem 1.6rem; }
+    .selo { align-self: flex-start; }
+    .hero-foto { position: relative; width: auto; height: 27rem; margin: 0 -1rem; }
+    .hero::after { background: linear-gradient(0deg, #10261F 40%, rgba(16,38,31,0) 72%); }
+    .hero-txt { margin-top: -8.5rem; } .hero-nums { gap: 1.2rem; }
+    .sobre { padding: .25rem 1rem 1rem; } .sobre .miolo { grid-template-columns: 1fr; gap: .6rem; }
+    .sala, footer { padding: 2rem 1rem 2.4rem; }
+    .ep-l { display: none; } .ep-c { display: inline; }
+    .parede { display: flex; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; margin: 1.2rem -1rem 0; padding: 0 1rem .4rem; scrollbar-width: none; }
+    .parede li, .parede li.g, .parede li.m, .parede li.p { flex: 0 0 8.6rem; scroll-snap-align: start; }
+    .lado-a-lado { grid-template-columns: 1fr; }
+    #viradas { display: block; } #viradas > .conclusao { margin-top: 1rem; }
+    .parede, .vozes-lista { scroll-padding-left: 1rem; }
+    .vozes-lista { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; margin-left: -1rem; margin-right: -1rem; padding: 0 1rem .4rem; scrollbar-width: none; }
+    .voz { flex: 0 0 17rem; scroll-snap-align: start; }
+  }
 </style>
 </head>
 <body>
 <div class="aviso" id="aviso" hidden>Prévia com dados de exemplo. Os números ainda não são reais.</div>
 
-<header class="salao">
-  <div class="conteudo">
-    <div class="palco">
-    <div class="cartela">
-      <h1><img src="titulo.webp" alt="Ouvidoria do Corrida" width="1520" height="629" fetchpriority="high"></h1>
-    </div>
-    </div>
-    <p class="temporada">O que a torcida do Corrida das Blogueiras&nbsp;8 diz quando ninguém está perguntando.</p>
-    <p class="proposito">Enquetes medem o que o público responde quando é perguntado. A Ouvidoria escuta o que a torcida escreve por conta própria no YouTube e mostra, a cada episódio, quem ela elogia, quem critica e se ela adivinha quem sai no flop.</p>
-    <p class="fonte">Fonte: comentários públicos do YouTube</p>
+<header class="cima">
+  <div class="barra-topo">
+    <h1><img src="titulo.webp" alt="Ouvidoria do Corrida" width="1520" height="629" fetchpriority="high"></h1>
     <div class="episodios" role="tablist" aria-label="Escolha o episódio" id="seletor"></div>
-    <p class="aviso-proximo" id="aviso-proximo" hidden></p>
-    <p class="manchete" id="manchete"></p>
-    <p class="edicao" id="edicao"></p>
-    <ul class="parede" id="parede" aria-label="Retratos das participantes"></ul>
-    <div class="saldo-explica">
-      <p class="saldo-titulo">Como ler o <strong>saldo da torcida</strong></p>
-      <p class="saldo-texto" id="saldo-texto">É a porcentagem de elogios menos a porcentagem de críticas entre os comentários sobre cada pessoa.</p>
-      <div class="escala" aria-hidden="true"><i></i><span><span>−100<br>só críticas</span><span>0<br>empate</span><span>+100<br>só elogios</span></span></div>
-      <p class="dica-capa">O tamanho do retrato mostra quantas menções cada participante recebeu, e a cor do contorno acompanha o saldo. Toque num retrato para abrir a ficha.</p>
+  </div>
+  <div class="hero">
+    <div class="hero-foto"><img id="hero-foto" alt=""></div>
+    <div class="hero-txt">
+      <span class="selo" id="hero-selo"></span>
+      <p class="manchete" id="manchete"></p>
+      <p class="linha-fina" id="linha-fina"></p>
+      <p class="edicao" id="edicao"></p>
+      <dl class="hero-nums" id="hero-nums"></dl>
     </div>
   </div>
+  <div class="aviso-proximo" id="aviso-proximo" hidden></div>
 </header>
+
+<section class="sobre">
+  <div class="miolo">
+    <p class="temporada">O que a torcida do Corrida das Blogueiras&nbsp;8 diz quando ninguém está perguntando.</p>
+    <p class="proposito">Enquetes medem o que o público responde quando é perguntado. A Ouvidoria escuta o que a torcida escreve por conta própria no YouTube e mostra, a cada episódio, quem ela elogia, quem critica e se ela adivinha quem sai no flop.</p>
+  </div>
+</section>
+
+<section class="sala clara elenco-sala">
+  <div class="miolo">
+    <h2>Quem a torcida comentou</h2>
+    <p class="lede" id="saldo-texto">É a porcentagem de elogios menos a porcentagem de críticas entre os comentários sobre cada pessoa.</p>
+    <div class="legenda" aria-hidden="true">
+      <span><i class="amostra" style="background:var(--pompadour)"></i>Críticas</span>
+      <span><i class="amostra" style="background:var(--sevres)"></i>Elogios</span>
+      <span><i class="amostra" style="background:var(--neutro)"></i>Neutros</span>
+      <span>Em ordem de menções. Clique num card para abrir a ficha.</span>
+    </div>
+    <ul class="parede" id="parede" aria-label="Elenco do episódio"></ul>
+    <ol id="ranking" hidden></ol>
+    <details>
+      <summary>Ver os números em tabela</summary>
+      <div id="tabela-conversa"></div>
+    </details>
+  </div>
+</section>
+
 
 <section class="sala clara" id="sala-resumo" aria-labelledby="t-episodio" hidden>
   <div class="miolo">
+    <h2 id="t-episodio"></h2>
+    <div class="lado-a-lado">
     <div class="bloco-episodio" id="bloco-episodio">
-      <h2 id="t-episodio"></h2>
       <div class="cartao-ep">
       <p class="resumo-ep" id="resumo-ep"></p>
-      <p class="nota-ep">Resumo escrito pelo Gemini a partir dos números, do que aconteceu no episódio, das cenas mais comentadas e dos comentários mais curtidos, e revisado antes de ir ao ar.</p>
+      <p class="nota-ep">Resumo escrito pelo Gemini a partir de todas as menções, separadas por tema, do que aconteceu no episódio e das cenas mais comentadas, e revisado antes de ir ao ar.</p>
       </div>
+    </div>
+    <ul class="achados" id="achados"></ul>
     </div>
   </div>
 </section>
@@ -360,27 +467,6 @@
     <h2 id="t-vozes">O que a torcida escreveu</h2>
     <p class="lede">Um comentário real para cada fato do resumo: o mais curtido entre os que falam daquele assunto.</p>
     <ol class="vozes-lista" id="vozes"></ol>
-  </div>
-</section>
-
-<section class="sala clara" aria-labelledby="t-conversa">
-  <div class="miolo">
-    <div class="bloco-achados" aria-labelledby="t-achados">
-      <h2 id="t-achados">O que os dados mostram até agora</h2>
-      <ul class="achados" id="achados"></ul>
-    </div>
-    <h2 id="t-conversa">Quem a torcida comentou</h2>
-    <p class="lede">Em ordem de menções. A barra mostra, entre os comentários sobre cada participante, a parcela de críticas e de elogios.</p>
-    <div class="legenda" aria-hidden="true">
-      <span><i class="amostra" style="background:var(--pompadour)"></i>Críticas</span>
-      <span><i class="amostra" style="background:var(--sevres)"></i>Elogios</span>
-      <span>O restante são comentários neutros</span>
-    </div>
-    <ol class="ranking revelar" id="ranking"></ol>
-    <details>
-      <summary>Ver os números em tabela</summary>
-      <div id="tabela-conversa"></div>
-    </details>
   </div>
 </section>
 
@@ -408,7 +494,7 @@
     <div class="legenda" aria-hidden="true">
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5.5" fill="#C9A65A"/></svg>Venceu</span>
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="#8E7684"/></svg>Seguiu na disputa</span>
-      <span><svg width="14" height="14"><circle cx="7" cy="7" r="4.6" fill="#3A1A2D" stroke="#DB6894" stroke-width="2"/></svg>Flop</span>
+      <span><svg width="14" height="14"><circle cx="7" cy="7" r="4.6" fill="#0B1D17" stroke="#DB6894" stroke-width="2"/></svg>Flop</span>
       <span><svg width="14" height="14"><path d="M3 3 L11 11 M11 3 L3 11" stroke="#F6EDF0" stroke-width="2"/></svg>Saiu</span>
     </div>
     <div id="faixas"></div>
@@ -464,7 +550,7 @@
 
   // ---------- cor do saldo: rosa (críticas) → cinza → azul (elogios) ----------
   const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
-  const POMP = hex("#B8466F"), NEU = hex("#CDBFC6"), SEV = hex("#3D6EA6");
+  const POMP = hex("#F08DAA"), NEU = hex("#6F8F82"), SEV = hex("#8FB8E8");
   function corSaldo(s) {
     const t = Math.max(-1, Math.min(1, s / 100));
     const b = t < 0 ? POMP : SEV, k = Math.abs(t);
@@ -517,7 +603,7 @@
   eps.forEach(ep => {
     const b = document.createElement("button");
     b.setAttribute("role", "tab");
-    b.textContent = "Episódio " + ep.numero;
+    b.innerHTML = `<span class="ep-l">Episódio </span><span class="ep-c">Ep. </span>${ep.numero}`;
     b.addEventListener("click", () => { atual = ep.numero; render(); });
     seletor.appendChild(b);
   });
@@ -546,7 +632,7 @@
     const b = document.createElement("button");
     b.className = "em-breve";
     b.setAttribute("role", "tab");
-    b.innerHTML = `Episódio ${D.proximo.numero} <small>em breve</small>`;
+    b.innerHTML = `<span class="ep-l">Episódio </span><span class="ep-c">Ep. </span>${D.proximo.numero} <small>em breve</small>`;
     b.addEventListener("click", () => {
       seletor.querySelectorAll('button[role="tab"]').forEach(x => x.setAttribute("aria-selected", x === b));
       avisoProximo.innerHTML = textoProximo(D.proximo);
@@ -604,11 +690,13 @@
       const situacao = antes ? `${p.comoSaiu === "Desistiu" ? "desistiu" : "saiu"} no ep. ${p.saiuEm}` : p.resultado !== "Salvo" ? ROTULO[p.resultado] : "";
       const li = document.createElement("li");
       li.className = tam;
-      li.innerHTML = `<button class="retrato${fora ? " fora" : ""}" style="--i:${i};${primeiraVez ? "" : "--atraso:0s"}" aria-label="Ver a ficha de ${esc(p.nome)}: ${temSaldo ? `${fmt(p.mencoes)} menções, saldo ${sinal(p.saldo)}` : "sem menções neste episódio"}${situacao ? ", " + situacao : ""}">
-        ${retratoSVG(p.nome, temSaldo ? p.saldo : null)}
-        <span class="rn">${esc(primeiroNome(p.nome))}</span>
-        ${temSaldo ? `<span class="rs">${sinal(p.saldo)}</span><span class="rm">${fmt(p.mencoes)} menções</span>` : `<span class="rm">sem menções</span>`}
-        ${situacao ? `<span class="rr">${situacao}</span>` : ""}
+      const fotoP = (D.fotos || {})[p.nome];
+      li.innerHTML = `<button class="cartao${antes ? " fora" : ""}" aria-label="Ver a ficha de ${esc(p.nome)}: ${temSaldo ? `${fmt(p.mencoes)} menções, saldo ${sinal(p.saldo)}` : "sem menções neste episódio"}${situacao ? ", " + situacao : ""}">
+        ${situacao ? `<span class="tag">${situacao}</span>` : ""}
+        ${fotoP ? `<img src="${esc(fotoP)}" alt="" loading="lazy">` : `<span class="sem-foto">${esc(iniciais(p.nome))}</span>`}
+        <span class="info"><b>${esc(primeiroNome(p.nome))}</b>
+        <span class="lin"><span>${temSaldo ? fmt(p.mencoes) + " menções" : "sem menções"}</span>${temSaldo ? `<span class="${arred(p.saldo) < 0 ? "neg" : "pos"}">${sinal(p.saldo)}</span>` : ""}</span>
+        ${temSaldo ? `<span class="mbar"><i style="width:${pct(p.negativo, p.mencoes)}%"></i><i style="width:${pct(p.positivo, p.mencoes)}%"></i></span>` : ""}</span>
       </button>`;
       li.querySelector("button").addEventListener("click", () => abrirFicha(p.nome));
       ul.appendChild(li);
@@ -700,8 +788,8 @@
       el.innerHTML = `
         <line x1="${x0}" y1="${y(p.de)}" x2="${x1}" y2="${y(p.para)}" stroke="transparent" stroke-width="14"/>
         <line class="linha-viva" pathLength="1" style="--d:${forte ? 500 + i * 40 : i * 40}ms" x1="${x0}" y1="${y(p.de)}" x2="${x1}" y2="${y(p.para)}" stroke="${cor}" stroke-width="${forte ? 3.2 : 1.8}" stroke-linecap="round"/>
-        <circle cx="${x0}" cy="${y(p.de)}" r="${forte ? 5.5 : 4}" fill="${cor}" stroke="#3A1A2D" stroke-width="2"/>
-        <circle cx="${x1}" cy="${y(p.para)}" r="${forte ? 5.5 : 4}" fill="${cor}" stroke="#3A1A2D" stroke-width="2"/>
+        <circle cx="${x0}" cy="${y(p.de)}" r="${forte ? 5.5 : 4}" fill="${cor}" stroke="#0B1D17" stroke-width="2"/>
+        <circle cx="${x1}" cy="${y(p.para)}" r="${forte ? 5.5 : 4}" fill="${cor}" stroke="#0B1D17" stroke-width="2"/>
         ${forte ? `<text x="${x0 - 10}" y="${y(p.de) + 4}" text-anchor="end" font-size="12.5" fill="#F6EDF0">${esc(primeiroNome(p.nome))} ${sinal(p.de)}</text>
                    <text x="${x1 + 10}" y="${y(p.para) + 4}" font-size="12.5" fill="#F6EDF0">${sinal(p.para)} ${esc(primeiroNome(p.nome))}</text>` : ""}`;
       ligarDica(el, `<strong>${esc(p.nome)}</strong><br>Episódio ${anterior.numero}: ${sinal(p.de)}<br>Episódio ${ep.numero}: ${sinal(p.para)}<br>Variação: ${sinal(p.var)} pontos`);
@@ -834,10 +922,10 @@
         el.setAttribute("aria-label", `${p.nome}, ${ROTULO[r]}, saldo ${sinal(p.saldo)}`);
         el.style.cursor = "pointer";
         let m = `<circle cx="${cx}" cy="${eixo}" r="14" fill="transparent"/>`;
-        if (r === "Venceu") m += `<circle cx="${cx}" cy="${eixo}" r="7" fill="#C9A65A" stroke="#3A1A2D" stroke-width="2"/>`;
-        else if (r === "Flop") m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#3A1A2D" stroke="#DB6894" stroke-width="2.5"/>`;
+        if (r === "Venceu") m += `<circle cx="${cx}" cy="${eixo}" r="7" fill="#C9A65A" stroke="#0B1D17" stroke-width="2"/>`;
+        else if (r === "Flop") m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#0B1D17" stroke="#DB6894" stroke-width="2.5"/>`;
         else if (SAIU(r)) m += `<path d="M${cx - 6} ${eixo - 6} L${cx + 6} ${eixo + 6} M${cx + 6} ${eixo - 6} L${cx - 6} ${eixo + 6}" stroke="#F6EDF0" stroke-width="2.5" stroke-linecap="round"/>`;
-        else m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#8E7684" stroke="#3A1A2D" stroke-width="2"/>`;
+        else m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#8E7684" stroke="#0B1D17" stroke-width="2"/>`;
         el.innerHTML = m;
         ligarDica(el, `<strong>${esc(p.nome)}</strong><br>${ROTULO[r]}<br>Saldo da torcida: ${sinal(p.saldo)}`);
         el.addEventListener("click", () => abrirFicha(p.nome));
@@ -881,8 +969,8 @@
     mini += `<text x="${mx - 22}" y="${ys(0) - 6}" font-size="11" fill="#6A5060">0</text>`;
     if (n > 1) mini += `<polyline points="${traj.map((t, i) => xs(i) + "," + ys(t.p.saldo)).join(" ")}" fill="none" stroke="#A47F38" stroke-width="2"/>`;
     traj.forEach((t, i) => {
-      mini += `<circle cx="${xs(i)}" cy="${ys(t.p.saldo)}" r="6" fill="${corSaldo(t.p.saldo)}" stroke="#FBF6F8" stroke-width="2"/>
-        <text x="${xs(i)}" y="${ys(t.p.saldo) + (t.p.saldo > 60 ? 20 : -12)}" text-anchor="middle" font-size="12.5" fill="#34182A">${sinal(t.p.saldo)}</text>
+      mini += `<circle cx="${xs(i)}" cy="${ys(t.p.saldo)}" r="6" fill="${corSaldo(t.p.saldo)}" stroke="#1B372E" stroke-width="2"/>
+        <text x="${xs(i)}" y="${ys(t.p.saldo) + (t.p.saldo > 60 ? 20 : -12)}" text-anchor="middle" font-size="12.5" fill="#F3EFE8">${sinal(t.p.saldo)}</text>
         <text x="${xs(i)}" y="${H - 2}" text-anchor="middle" font-size="11.5" fill="#6A5060">Ep. ${t.ep.numero}</text>`;
     });
 
@@ -994,7 +1082,7 @@
       <ellipse cx="70" cy="100" rx="40" ry="52" fill="none" stroke="url(#${ouro})" stroke-width="3"/>
       <ellipse cx="70" cy="100" rx="37" ry="49" fill="#EFE2E7"/>
       ${foto ? `<image href="${esc(foto)}" x="33" y="51" width="74" height="98" preserveAspectRatio="xMidYMin slice" clip-path="url(#${rec})"/>`
-             : `<text x="70" y="112" text-anchor="middle" font-family="DM Serif Display, Georgia, serif" font-size="34" fill="#34182A">${esc(iniciais(nome))}</text>`}
+             : `<text x="70" y="112" text-anchor="middle" font-family="DM Serif Display, Georgia, serif" font-size="34" fill="#F3EFE8">${esc(iniciais(nome))}</text>`}
       <circle cx="18" cy="100" r="3.4" fill="url(#${gema})" stroke="#5a3a0c" stroke-width=".8"/>
       <circle cx="122" cy="100" r="3.4" fill="url(#${gema})" stroke="#5a3a0c" stroke-width=".8"/>
       <path d="M61 22 L65 14 L75 14 L79 22 L70 34 Z" fill="url(#${gema})" stroke="#5a3a0c" stroke-width="1"/>
@@ -1069,7 +1157,7 @@
         grande: `${acertos} de ${prevs.length}`,
         rotulo: prevs.length === 1 ? "eliminação prevista" : "eliminações previstas",
         texto: prevs.length === 1
-          ? `No flop do episódio ${ult.ep}, ${primeiroNome(ult.saiu.nome)} ${ult.acertou ? "tinha o pior saldo" : "não tinha o pior saldo"} entre os ${["", "", "dois", "três", "quatro", "cinco", "seis"][ult.flop.length] || ult.flop.length} (${sinal(ult.saiu.saldo)}) e foi quem saiu. A torcida comentou antes de o resultado ser revelado.`
+          ? `No flop do episódio ${ult.ep}, ${primeiroNome(ult.saiu.nome)} ${ult.acertou ? "tinha o pior saldo" : "não tinha o pior saldo"} entre os ${["", "", "dois", "três", "quatro", "cinco", "seis"][ult.flop.length] || ult.flop.length} (${sinal(ult.saiu.saldo)}) e foi quem saiu. A torcida comentou antes de o resultado ser revelado. Com uma eliminação só, ainda é cedo para conclusões.`
           : `Em ${acertos} das ${prevs.length} eliminações, quem saiu era quem tinha o pior saldo no flop, com comentários escritos antes do resultado.`
       });
     }
@@ -1141,8 +1229,16 @@
     seletor.querySelectorAll('button[role="tab"]').forEach((b, i) => b.setAttribute("aria-selected", Boolean(eps[i]) && eps[i].numero === atual));
     avisoProximo.hidden = true;
     document.body.classList.remove("ver-proximo");
-    document.getElementById("manchete").textContent = manchete(ep);
+    const [titulo, ...restoManchete] = manchete(ep).split(/(?<=\.)\s+/);
+    document.getElementById("manchete").textContent = titulo;
+    document.getElementById("linha-fina").textContent = restoManchete.join(" ");
     document.getElementById("edicao").textContent = periodo(ep);
+    const topo = emJogo(ep).slice().sort((a, b) => b.mencoes - a.mencoes)[0];
+    document.getElementById("hero-foto").src = (D.fotos || {})[topo.nome] || "";
+    document.getElementById("hero-selo").textContent = `Mais citado do episódio ${ep.numero}`;
+    document.getElementById("hero-nums").innerHTML = `<div><dt>${fmt(topo.mencoes)}</dt><dd>menções para ${esc(primeiroNome(topo.nome))}</dd></div>
+      <div><dt class="${arred(topo.saldo) < 0 ? "neg" : "pos"}">${sinal(topo.saldo)}</dt><dd>saldo da torcida</dd></div>
+      <div><dt>${fmt(ep.comentarios)}</dt><dd>comentários em 48h</dd></div>`;
     renderResumoEpisodio(ep);
     renderExplicaSaldo(ep);
     renderParede(ep);
