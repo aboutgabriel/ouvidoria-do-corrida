@@ -1,6 +1,6 @@
 window.DADOS = {
   "exemplo": false,
-  "atualizado_em": "2026-11-10",
+  "atualizado_em": "2026-11-11",
   "proximo": {
     "numero": 3,
     "estreia": "2026-11-10T20:00:00-03:00",
@@ -2899,6 +2899,108 @@ window.DADOS = {
       "Jheny Albano": "apresentar o gloss com Rhanyane e ir para o flop",
       "Sttefone": "apresentar o gloss com MP3 com Matthel"
     }
+  },
+  "comentarios_resumo": {
+    "1": [
+      {
+        "nome": "Peter Poc",
+        "tema": "Reclamações e postura no grupo",
+        "mencoes": 111,
+        "texto": "Esse Peter Poc reclamou tanto que foi o que atrapalhou o grupo.",
+        "curtidas": 11619,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Peter Poc",
+        "tema": "Disse que sabia fazer cabelo",
+        "mencoes": 78,
+        "texto": "O peter já me irritou aqui da minha casa kkkkkkkk falar que sabe e não entregar 😂",
+        "curtidas": 7443,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Peter Poc",
+        "tema": "Culpar a líder e o grupo",
+        "mencoes": 67,
+        "texto": "Peter surtou, levou o grupo pro buraco e ainda fez a sonsa KKKKKk",
+        "curtidas": 7703,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Breia",
+        "tema": "Injustiça na indicação ao flop",
+        "mencoes": 119,
+        "texto": "Foram injustos com a Breia sendo que geral sabia da questão da saia",
+        "curtidas": 673,
+        "sentimento": "positivo"
+      },
+      {
+        "nome": "Sttefone",
+        "tema": "Incoerência no voto para o flop",
+        "mencoes": 50,
+        "texto": "STEFANY, reclamou o episódio inteiro da saia da BÁRBARA para no final votar na BREIA...",
+        "curtidas": 1544,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Aysha Pink",
+        "tema": "Injustiça na indicação ao flop",
+        "mencoes": 72,
+        "texto": "uma sacanagem não terem salvo a Aysha QUE FEZ A ÚNICA ENTREGA MINIMAMENTE BOA DAQUELE GRUPO.",
+        "curtidas": 1783,
+        "sentimento": "positivo"
+      }
+    ],
+    "2": [
+      {
+        "nome": "Paizinho dos Looks",
+        "tema": "Desistência na prova do flop",
+        "mencoes": 183,
+        "texto": "Paizinho realmente foi um pai: Desistiu e foi embora na primeira oportunidade",
+        "curtidas": 8694,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Paizinho dos Looks",
+        "tema": "Fecho do Edu no Paizinho",
+        "mencoes": 193,
+        "texto": "O Edu humilhando o Paizinho foi o ponto mais alto desse ep akakakakakkaka",
+        "curtidas": 1250,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Talitah Sampaio",
+        "tema": "Dupla com Bárbara na prova",
+        "mencoes": 126,
+        "texto": "Meu Deus a ideia da Barbara, que mente preciosa KKKKKKKKKKKKKKKKKKKK. Deitei pra Thalita, ela entrega nas provas, winner material total.",
+        "curtidas": 7591,
+        "sentimento": "positivo"
+      },
+      {
+        "nome": "Talitah Sampaio",
+        "tema": "Perseguição do elenco contra Talitah",
+        "mencoes": 104,
+        "texto": "Adorei o Edu dando um chamado nessa galera sem noção pela perseguição com a Talitah!",
+        "curtidas": 1107,
+        "sentimento": "positivo"
+      },
+      {
+        "nome": "Matthel",
+        "tema": "Discussão com Talitah sobre idade",
+        "mencoes": 28,
+        "texto": "O Matthel tá só o espírito reencarnado da Milena KKKK \"a gente quer te ajudar\" AJUDAR EM QUE, MONA 🗣🗣",
+        "curtidas": 916,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Latyffa Romayale",
+        "tema": "Sugestão para repórter da DiaTV",
+        "mencoes": 18,
+        "texto": "Queremos a nossa Queen Latyffa como repórter da DiaTV ❤",
+        "curtidas": 714,
+        "sentimento": "positivo"
+      }
+    ]
   },
   "fotos": {
     "Aysha Pink": "fotos/aysha-pink.jpg",

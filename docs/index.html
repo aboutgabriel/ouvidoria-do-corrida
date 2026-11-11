@@ -224,7 +224,17 @@
   .achados .rotulo { display: block; margin-top: .2rem; font-size: .9rem; font-weight: 600; color: var(--ouro); }
   .achados p { margin: .6rem 0 0; font-size: .95rem; color: var(--tinta-2); }
   .bloco-achados { margin-bottom: 4.5rem; }
-  .bloco-episodio { margin-bottom: 4.5rem; }
+  .bloco-episodio { margin-bottom: 0; }
+
+  /* comentários que comprovam o resumo */
+  .vozes-lista { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
+  .voz { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: .25rem .9rem; align-content: start; padding: 1.1rem; background: #46222F; border: 1px solid rgba(201,166,90,.35); border-radius: 14px; }
+  .voz .arco { grid-row: 1 / span 2; width: 3.4rem; margin: 0; outline-width: 2px; outline-offset: 2px; }
+  .voz .sobre { margin: 0; font-size: .82rem; line-height: 1.35; color: var(--nevoa-2); }
+  .voz .sobre button { display: block; padding: 0; background: none; border: 0; cursor: pointer; font: 400 1.1rem/1.2 var(--display); color: var(--porcelana); text-align: left; }
+  .voz .sobre button:hover { text-decoration: underline; text-decoration-color: var(--dourado); text-underline-offset: 3px; }
+  .voz blockquote { grid-column: 1 / -1; margin: .75rem 0 0; font: italic 400 1.15rem/1.4 var(--display); color: var(--porcelana); }
+  .voz small { grid-column: 1 / -1; margin-top: .5rem; color: var(--dourado); font-size: .82rem; font-weight: 600; }
   .nota-faixas { margin: .8rem 0 1.4rem; font-size: .9rem; color: var(--nevoa-2); max-width: 40rem; }
   .nota-faixas strong { color: var(--nevoa); font-weight: 600; }
   .sem-citacao { margin: .5rem 0 0; padding: .6rem .9rem; border-left: 3px solid var(--neutro); font-size: .85rem; color: var(--tinta-2); font-style: italic; }
@@ -333,15 +343,28 @@
   </div>
 </header>
 
-<section class="sala clara" aria-labelledby="t-conversa">
+<section class="sala clara" id="sala-resumo" aria-labelledby="t-episodio" hidden>
   <div class="miolo">
-    <div class="bloco-episodio" id="bloco-episodio" aria-labelledby="t-episodio" hidden>
+    <div class="bloco-episodio" id="bloco-episodio">
       <h2 id="t-episodio"></h2>
       <div class="cartao-ep">
       <p class="resumo-ep" id="resumo-ep"></p>
       <p class="nota-ep">Resumo escrito pelo Gemini a partir dos números, do que aconteceu no episódio, das cenas mais comentadas e dos comentários mais curtidos, e revisado antes de ir ao ar.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="sala escura vozes" id="sala-vozes" aria-labelledby="t-vozes" hidden>
+  <div class="miolo">
+    <h2 id="t-vozes">O que a torcida escreveu</h2>
+    <p class="lede">Um comentário real para cada fato do resumo: o mais curtido entre os que falam daquele assunto.</p>
+    <ol class="vozes-lista" id="vozes"></ol>
+  </div>
+</section>
+
+<section class="sala clara" aria-labelledby="t-conversa">
+  <div class="miolo">
     <div class="bloco-achados" aria-labelledby="t-achados">
       <h2 id="t-achados">O que os dados mostram até agora</h2>
       <ul class="achados" id="achados"></ul>
@@ -1005,11 +1028,32 @@
   // ---------- como a torcida recebeu o episódio ----------
   function renderResumoEpisodio(ep) {
     const texto = (D.resumos_episodios || {})[String(ep.numero)];
-    const bloco = document.getElementById("bloco-episodio");
-    bloco.hidden = !texto;
+    document.getElementById("sala-resumo").hidden = !texto;
+    renderVozes(ep, Boolean(texto));
     if (!texto) return;
     document.getElementById("t-episodio").textContent = `Como a torcida recebeu o episódio ${ep.numero}`;
     document.getElementById("resumo-ep").textContent = texto;
+  }
+
+  // ---------- o que a torcida escreveu: um comentário para cada fato do resumo ----------
+  // Os temas vêm de dados/comentarios_resumo.json, escolhidos à mão para bater com o texto.
+  function renderVozes(ep, temResumo) {
+    const lista = temResumo ? (D.comentarios_resumo || {})[String(ep.numero)] || [] : [];
+    const sala = document.getElementById("sala-vozes");
+    sala.hidden = !lista.length;
+    const ol = document.getElementById("vozes");
+    ol.innerHTML = "";
+    lista.forEach(c => {
+      const p = ep.participantes.find(x => x.nome === c.nome);
+      const li = document.createElement("li");
+      li.className = "voz";
+      li.innerHTML = `${retratoSVG(c.nome, p ? p.saldo : null)}
+        <p class="sobre"><button type="button">${esc(primeiroNome(c.nome))}</button>${esc(c.tema)}, ${fmt(c.mencoes)} ${c.mencoes === 1 ? "menção" : "menções"}</p>
+        <blockquote>“${esc(c.texto.trim().replace(/"([^"]*)"/g, "‘$1’"))}”</blockquote>
+        <small>${fmt(c.curtidas)} curtidas</small>`;
+      li.querySelector("button").addEventListener("click", () => abrirFicha(c.nome));
+      ol.appendChild(li);
+    });
   }
 
   // ---------- achados da temporada (não mudam com o episódio escolhido) ----------

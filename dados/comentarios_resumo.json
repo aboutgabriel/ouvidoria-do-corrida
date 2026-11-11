@@ -1,0 +1,19 @@
+{
+  "_como_usar": "Para cada episódio, os temas (de temas.py) que comprovam os fatos citados no resumo do episódio, na ordem do texto. O painel mostra, abaixo do resumo, o comentário mais curtido de cada tema, com a foto da participante. Use o nome do tema exatamente como aparece na ficha (depois das trocas de temas_nomes.csv). No máximo 6 por episódio.",
+  "1": [
+    ["Peter Poc", "Reclamações e postura no grupo"],
+    ["Peter Poc", "Disse que sabia fazer cabelo"],
+    ["Peter Poc", "Culpar a líder e o grupo"],
+    ["Breia", "Injustiça na indicação ao flop"],
+    ["Sttefone", "Incoerência no voto para o flop"],
+    ["Aysha Pink", "Injustiça na indicação ao flop"]
+  ],
+  "2": [
+    ["Paizinho dos Looks", "Desistência na prova do flop"],
+    ["Paizinho dos Looks", "Fecho do Edu no Paizinho"],
+    ["Talitah Sampaio", "Dupla com Bárbara na prova"],
+    ["Talitah Sampaio", "Perseguição do elenco contra Talitah"],
+    ["Matthel", "Discussão com Talitah sobre idade"],
+    ["Latyffa Romayale", "Sugestão para repórter da DiaTV"]
+  ]
+}

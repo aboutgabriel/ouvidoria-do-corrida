@@ -59,6 +59,7 @@ Na rodada 2, das 47 menções que a revisão marcou como elogio ou crítica, só
 - `dados/resultados.csv`: resultados oficiais por episódio (Venceu, Salvo, Flop, Eliminado, Desistiu).
 - `dados/resumos.json`: resumos da percepção da torcida sobre cada participante, revisados à mão.
 - `dados/resumos_episodios.json`: resumos de como a torcida recebeu cada episódio, revisados à mão.
+- `dados/comentarios_resumo.json`: para cada episódio, os temas que comprovam os fatos citados no resumo (até 6). Abaixo do resumo, o painel mostra o comentário mais curtido de cada tema, com a foto da participante, para que cada afirmação do texto venha acompanhada de um comentário real.
 - `dados/correcoes.csv`: correções da revisão humana em comentários que aparecem no painel, com o motivo de cada uma (`corrigir.py`). Não mudam a taxa de acerto publicada, que vem só da amostra às cegas.
 - `dados/citacoes_ocultas.csv`: comentários que continuam contando nos números, mas não aparecem em destaque no painel (por exemplo, piadas que associam uma participante a drogas).
 - `dados/cenas.json`: o que acontece em cada cena mais comentada, escrito à mão a partir da transcrição do episódio.
@@ -97,8 +98,9 @@ python gerar_dados.py               # atualiza o painel em docs/
 2. Atualizar `dados/resultados.csv` com o resultado oficial.
 3. Ler a transcrição do episódio, descrever as cenas mais comentadas em `dados/cenas.json` e escrever o que aconteceu com cada participante em `dados/contexto.json`.
 4. Rodar `temas.py` e depois `resumir.py` (ele usa as cenas, o contexto e os temas) e revisar os resumos e os exemplos dos temas antes de publicar.
-5. Rodar `gerar_dados.py` e publicar.
-6. Atualizar `dados/proximo_episodio.json` com o número e as datas do episódio seguinte. O painel mostra uma aba "em breve" com o dia e a hora do próximo relatório.
+5. Escolher, em `dados/comentarios_resumo.json`, os temas que comprovam cada fato do resumo do episódio. O `gerar_dados.py` avisa se algum nome de tema não existir.
+6. Rodar `gerar_dados.py` e publicar.
+7. Atualizar `dados/proximo_episodio.json` com o número e as datas do episódio seguinte. O painel mostra uma aba "em breve" com o dia e a hora do próximo relatório.
 
 A coleta deve ser feita depois que as 48 horas fecharem. Se for antes, o `gerar_dados.py` avisa que a janela ainda está aberta e o painel mostra os números como parciais.
 

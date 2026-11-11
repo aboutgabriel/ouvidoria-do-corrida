@@ -57,6 +57,37 @@ def limpar_citacao(texto, limite=320):
 
 
 PROXIMO = os.path.join(PASTA, "dados", "proximo_episodio.json")  # data do próximo relatório, escrita à mão
+# Temas escolhidos à mão para comprovar, com comentários reais, os fatos citados no resumo de cada episódio.
+COMENTARIOS_RESUMO = os.path.join(PASTA, "dados", "comentarios_resumo.json")
+MAX_COMENTARIOS_RESUMO = 6
+MIN_CURTIDAS_DESTAQUE = 10  # o mesmo corte das citações em destaque no painel
+
+
+def comentarios_do_resumo(episodios):
+    """Para cada episódio, o comentário mais curtido de cada tema escolhido em comentarios_resumo.json."""
+    if not os.path.exists(COMENTARIOS_RESUMO):
+        return {}
+    with open(COMENTARIOS_RESUMO, encoding="utf-8") as arquivo:
+        escolhas = {ep: lista for ep, lista in json.load(arquivo).items() if not ep.startswith("_")}
+    saida = {}
+    for ep in episodios:
+        lista = escolhas.get(str(ep["numero"]), [])
+        if len(lista) > MAX_COMENTARIOS_RESUMO:
+            print(f"  Aviso: episódio {ep['numero']} tem {len(lista)} temas em comentarios_resumo.json; só os {MAX_COMENTARIOS_RESUMO} primeiros entram.")
+        itens = []
+        for nome, tema in lista[:MAX_COMENTARIOS_RESUMO]:
+            participante = next((p for p in ep["participantes"] if p["nome"] == nome), None)
+            achado = next((t for t in (participante or {}).get("temas", []) if t["nome"] == tema), None)
+            exemplo = (achado or {}).get("exemplo")
+            if not achado:
+                print(f"  Aviso: tema \"{tema}\" de {nome} não existe no episódio {ep['numero']} (confira o nome na ficha).")
+            elif not exemplo or exemplo["curtidas"] < MIN_CURTIDAS_DESTAQUE:
+                print(f"  Aviso: o tema \"{tema}\" de {nome} não tem comentário com {MIN_CURTIDAS_DESTAQUE}+ curtidas e ficou de fora.")
+            else:
+                itens.append({"nome": nome, "tema": tema, "mencoes": achado["mencoes"], **exemplo})
+        if itens:
+            saida[str(ep["numero"])] = itens
+    return saida
 
 
 def proximo_episodio(episodios):
@@ -272,6 +303,7 @@ def main():
         "resumos": resumos,
         "resumos_episodios": resumos_episodios,
         "ganchos": ganchos,
+        "comentarios_resumo": comentarios_do_resumo(episodios),
         "fotos": achar_fotos(sorted(tabela["participante"].unique()) + APRESENTADORES),
         "apresentadores": APRESENTADORES,
         # Recorte sem fundo dos anfitriões (docs/fotos/edu-recorte.png): se existir, substitui o medalhão.
