@@ -287,10 +287,13 @@ def main():
         with open(RESUMOS_EPISODIOS, encoding="utf-8") as arquivo:
             resumos_episodios = {ep: r["texto"] for ep, r in json.load(arquivo).items()}
 
-    ganchos = {}
+    ganchos, aconteceu = {}, {}
     if os.path.exists(CONTEXTO):
         with open(CONTEXTO, encoding="utf-8") as arquivo:
-            ganchos = {ep: c.get("ganchos", {}) for ep, c in json.load(arquivo).items() if not ep.startswith("_")}
+            contexto = {ep: c for ep, c in json.load(arquivo).items() if not ep.startswith("_")}
+        ganchos = {ep: c.get("ganchos", {}) for ep, c in contexto.items()}
+        # Resumo curto do episódio para quem não assistiu, escrito à mão (campo "painel").
+        aconteceu = {ep: c["painel"] for ep, c in contexto.items() if c.get("painel")}
 
     dados = {
         "exemplo": False,
@@ -303,6 +306,7 @@ def main():
         "resumos": resumos,
         "resumos_episodios": resumos_episodios,
         "ganchos": ganchos,
+        "aconteceu": aconteceu,
         "comentarios_resumo": comentarios_do_resumo(episodios),
         "fotos": achar_fotos(sorted(tabela["participante"].unique()) + APRESENTADORES),
         "apresentadores": APRESENTADORES,

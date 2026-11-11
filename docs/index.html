@@ -16,7 +16,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#10261F">
+<meta name="theme-color" content="#3A1A2D">
 <link rel="icon" href="favicon-64.png" sizes="64x64" type="image/png">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -33,19 +33,19 @@
     --tinta-2: #6A5060;
     --ouro: #A47F38;
     --ouro-claro: #D9C291;
-    --sevres: #3D6EA6;
-    --pompadour: #B8466F;
+    --sevres: #5FCB8A;
+    --pompadour: #F0736B;
     --neutro: #CDBFC6;
     /* salas escuras */
-    --vinho: #0B1D17;
+    --vinho: #2B1222;
     --vinho-cortina: #6E2244;
     --vinho-cortina-2: #8C3157;
     --dourado: #C9A65A;
     --dourado-texto: #E8CF94;
     --nevoa: #E2CFD8;
     --nevoa-2: #C3ABB8;
-    --sevres-noite: #5E90D6;
-    --pompadour-noite: #DB6894;
+    --sevres-noite: #5FCB8A;
+    --pompadour-noite: #F0736B;
     --neutro-noite: #8E7684;
     --display: "DM Serif Display", Georgia, serif;
     --texto: "Instrument Sans", system-ui, sans-serif;
@@ -316,23 +316,23 @@
   @media (prefers-reduced-motion: reduce) { .retrato svg { transition: none; } }
 
   /* ===== tema streaming verde ===== */
-  :root { --porcelana:#10261F; --porcelana-funda:rgba(255,255,255,.09); --porcelana-clara:#1B372E; --tinta:#F3EFE8; --tinta-2:#A9BFB5; --ouro:#D9B866; --ouro-claro:rgba(217,184,102,.28);
-    --sevres:#8FB8E8; --pompadour:#F08DAA; --neutro:#35584B; --vinho:#0B1D17; --dourado:#D9B866; --dourado-texto:#E8CF94; --nevoa:#E6EFEA; --nevoa-2:#A9BFB5;
-    --sevres-noite:#8FB8E8; --pompadour-noite:#F08DAA; --neutro-noite:#6F8F82; --coluna:68rem; --destaque:#F2A9C0; }
-  html, body { background: #10261F; }
+  :root { --porcelana:#3A1A2D; --porcelana-funda:rgba(255,255,255,.09); --porcelana-clara:#4A2438; --tinta:#F3EFE8; --tinta-2:#C9B3BF; --ouro:#D9B866; --ouro-claro:rgba(217,184,102,.28);
+    --sevres:#5FCB8A; --pompadour:#F0736B; --neutro:#5C3F4E; --vinho:#2B1222; --dourado:#D9B866; --dourado-texto:#E8CF94; --nevoa:#F0E4EA; --nevoa-2:#C9B3BF;
+    --sevres-noite:#5FCB8A; --pompadour-noite:#F0736B; --neutro-noite:#8E7684; --coluna:68rem; --destaque:#E8CF94; }
+  html, body { background: #3A1A2D; }
   .pos { color: var(--sevres); } .neg { color: var(--pompadour); }
-  .cima { position: relative; background: #10261F; color: var(--tinta); }
+  .cima { position: relative; background: #3A1A2D; color: var(--tinta); }
   .barra-topo { position: absolute; z-index: 3; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 2.5rem; }
   .barra-topo h1 { margin: 0; line-height: 0; } .barra-topo h1 img { height: 5.6rem; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,.4)); }
-  .episodios { margin: 0; gap: .25rem; flex-wrap: nowrap; background: rgba(16,38,31,.72); backdrop-filter: blur(8px); border-radius: 999px; padding: .25rem; }
+  .episodios { margin: 0; gap: .25rem; flex-wrap: nowrap; background: rgba(58,26,45,.72); backdrop-filter: blur(8px); border-radius: 999px; padding: .25rem; }
   .episodios button, .episodios button.em-breve { border: 0; color: var(--tinta-2); padding: .4rem .95rem; font-size: .9rem; white-space: nowrap; }
-  .episodios button[aria-selected="true"], .episodios button.em-breve[aria-selected="true"] { background: var(--dourado); color: #14231D; font-weight: 600; }
+  .episodios button[aria-selected="true"], .episodios button.em-breve[aria-selected="true"] { background: var(--dourado); color: #2A1220; font-weight: 600; }
   .hero { position: relative; min-height: 40rem; display: flex; align-items: flex-end; padding: 8.5rem 2.5rem 3.2rem; overflow: hidden; }
   .hero-foto { position: absolute; right: 0; top: 0; bottom: 0; width: 56%; }
   .hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; display: block; }
-  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #10261F 42%, rgba(16,38,31,.6) 60%, rgba(16,38,31,0) 82%), linear-gradient(0deg, #10261F 0, rgba(16,38,31,0) 30%); }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #3A1A2D 42%, rgba(58,26,45,.6) 60%, rgba(58,26,45,0) 82%), linear-gradient(0deg, #3A1A2D 0, rgba(58,26,45,0) 30%); }
   .hero-txt { position: relative; z-index: 2; max-width: 37rem; text-align: left; }
-  .selo { display: inline-block; background: var(--pompadour); color: #2A0F1B; font-weight: 600; font-size: .8rem; padding: .25rem .65rem; border-radius: 6px; }
+  .selo { display: inline-block; background: var(--dourado); color: #2A1220; font-weight: 600; font-size: .8rem; padding: .25rem .65rem; border-radius: 6px; }
   .manchete { margin: .9rem 0 0; max-width: none; color: var(--tinta); font: 400 clamp(1.9rem, 3.6vw, 2.9rem)/1.08 var(--display); text-wrap: balance; }
   .edicao { margin: .5rem 0 0; color: var(--tinta-2); text-align: left; font-size: .88rem; }
   .linha-fina { margin: .9rem 0 0; font-size: 1.08rem; color: var(--nevoa); }
@@ -340,12 +340,12 @@
   .hero-nums { display: flex; gap: 2rem; margin: 1.4rem 0 0; }
   .hero-nums div { margin: 0; } .hero-nums dt { font: 400 2.1rem/1 var(--display); color: var(--destaque); } .hero-nums dt.neg { color: var(--pompadour); } .hero-nums dt.pos { color: var(--sevres); }
   .hero-nums dd { margin: .2rem 0 0; font-size: .82rem; color: var(--tinta-2); }
-  .sobre { background: #10261F; color: var(--tinta); padding: .5rem 2.5rem 1.5rem; }
+  .sobre { background: #3A1A2D; color: var(--tinta); padding: .5rem 2.5rem 1.5rem; }
   .sobre .miolo { max-width: var(--coluna); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 2.5rem; align-items: center; padding: 1.4rem 0; border-top: 1px solid var(--porcelana-funda); border-bottom: 1px solid var(--porcelana-funda); }
   .sobre .temporada { margin: 0; max-width: none; text-align: left; color: var(--dourado-texto); }
   .sobre .proposito { margin: 0; max-width: none; text-align: left; color: var(--tinta-2); }
   .sala, footer { margin-top: 0; border-radius: 0; padding: 2.6rem 2.5rem 3rem; box-shadow: none !important; }
-  .sala.clara { background: #10261F; color: var(--tinta); } .sala.escura, footer { background: #0B1D17; }
+  .sala.clara { background: #3A1A2D; color: var(--tinta); } .sala.escura, footer { background: #2B1222; }
   .sala h2 { color: var(--tinta); } .sala.escura h2 { color: var(--tinta); }
   .sala .lede { max-width: 46rem; }
   .parede { max-width: none; margin: 1.4rem 0 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .9rem; }
@@ -353,7 +353,7 @@
   .cartao { position: relative; display: block; width: 100%; padding: 0; text-align: left; cursor: pointer; background: var(--porcelana-clara); border: 1px solid var(--porcelana-funda); border-radius: 14px; overflow: hidden; color: var(--tinta); transition: transform .18s ease, border-color .18s ease; }
   .cartao:hover { transform: translateY(-4px); border-color: var(--dourado); }
   .cartao img, .cartao .sem-foto { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 18%; }
-  .cartao .sem-foto { display: grid; place-items: center; font: 400 2rem var(--display); background: #24463B; }
+  .cartao .sem-foto { display: grid; place-items: center; font: 400 2rem var(--display); background: #4A2438; }
   .cartao.fora img { filter: grayscale(.85); opacity: .75; }
   .cartao .tag { position: absolute; top: .6rem; left: .6rem; background: rgba(11,29,23,.82); color: var(--dourado-texto); font-size: .75rem; font-weight: 600; padding: .15rem .5rem; border-radius: 6px; }
   .cartao .info { display: block; padding: .6rem .75rem .75rem; } .cartao b { font: 400 1.05rem var(--display); }
@@ -374,7 +374,7 @@
   #viradas > .conclusao { grid-column: 2; grid-row: 2; align-self: end; margin: 0; font-size: 1.1rem; } #viradas > .nota { grid-column: 2; grid-row: 3; align-self: start; }
   #viradas > .vazio { grid-column: 1 / -1; }
   .cenas { grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
-  dialog.ficha { background: #14302699; background: #153026; color: var(--tinta); }
+  dialog.ficha { background: #14302699; background: #3A1A2D; color: var(--tinta); }
   .saldo-explica { display: none; } .ep-c { display: none; }
   .ver-proximo .hero, .ver-proximo .sobre { display: none; }
   .ver-proximo .cima { padding: 7rem 1rem 4rem; }
@@ -384,7 +384,7 @@
     .hero { min-height: 0; flex-direction: column; align-items: stretch; padding: 0 1rem 1.6rem; }
     .selo { align-self: flex-start; }
     .hero-foto { position: relative; width: auto; height: 30rem; margin: 0 -1rem; } .hero-foto img { object-position: 50% 60%; }
-    .hero::after { background: linear-gradient(180deg, rgba(16,38,31,0) 21rem, #10261F 29.5rem); }
+    .hero::after { background: linear-gradient(180deg, rgba(58,26,45,0) 21rem, #3A1A2D 29.5rem); }
     .hero-txt { margin-top: -4.2rem; } .hero-nums { gap: 1.2rem; }
     .sobre { padding: .25rem 1rem 1rem; } .sobre .miolo { grid-template-columns: 1fr; gap: .6rem; }
     .sala, footer { padding: 2rem 1rem 2.4rem; }
@@ -404,8 +404,58 @@
   /* estampa damasco, bem discreta, sobre o verde */
   :root { --estampa: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2296%22 height=%22144%22 viewBox=%220 0 96 144%22%3E%3Cg transform=%22translate(48 72)%22%3E%3Cg fill=%22%23BFE3CF%22 fill-opacity=%22.022%22 stroke=%22%23BFE3CF%22 stroke-opacity=%22.032%22 stroke-width=%221%22%3E%3Cpath fill=%22none%22 d=%22M0,-66 C22,-44 40,-26 40,0 C40,26 22,44 0,66 C-22,44 -40,26 -40,0 C-40,-26 -22,-44 0,-66Z%22/%3E%3Cpath d=%22M0,-40 C10,-26 10,-9 0,3 C-10,-9 -10,-26 0,-40Z%22/%3E%3Cpath d=%22M-4,2 C-20,-6 -28,-22 -18,-31 C-16,-17 -10,-6 -4,2Z%22/%3E%3Cpath d=%22M4,2 C20,-6 28,-22 18,-31 C16,-17 10,-6 4,2Z%22/%3E%3Cpath d=%22M0,10 C8,20 6,33 0,42 C-6,33 -8,20 0,10Z%22/%3E%3Cpath fill=%22none%22 d=%22M-6,8 C-19,11 -25,24 -15,30 C-9,33 -6,26 -11,23%22/%3E%3Cpath fill=%22none%22 d=%22M6,8 C19,11 25,24 15,30 C9,33 6,26 11,23%22/%3E%3Ccircle cx=%220%22 cy=%22-50%22 r=%222%22/%3E%3Ccircle cx=%220%22 cy=%2252%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3Cg transform=%22translate(0 0)%22%3E%3Cg fill=%22%23BFE3CF%22 fill-opacity=%22.022%22 stroke=%22%23BFE3CF%22 stroke-opacity=%22.032%22 stroke-width=%221%22%3E%3Cpath fill=%22none%22 d=%22M0,-66 C22,-44 40,-26 40,0 C40,26 22,44 0,66 C-22,44 -40,26 -40,0 C-40,-26 -22,-44 0,-66Z%22/%3E%3Cpath d=%22M0,-40 C10,-26 10,-9 0,3 C-10,-9 -10,-26 0,-40Z%22/%3E%3Cpath d=%22M-4,2 C-20,-6 -28,-22 -18,-31 C-16,-17 -10,-6 -4,2Z%22/%3E%3Cpath d=%22M4,2 C20,-6 28,-22 18,-31 C16,-17 10,-6 4,2Z%22/%3E%3Cpath d=%22M0,10 C8,20 6,33 0,42 C-6,33 -8,20 0,10Z%22/%3E%3Cpath fill=%22none%22 d=%22M-6,8 C-19,11 -25,24 -15,30 C-9,33 -6,26 -11,23%22/%3E%3Cpath fill=%22none%22 d=%22M6,8 C19,11 25,24 15,30 C9,33 6,26 11,23%22/%3E%3Ccircle cx=%220%22 cy=%22-50%22 r=%222%22/%3E%3Ccircle cx=%220%22 cy=%2252%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3Cg transform=%22translate(0 144)%22%3E%3Cg fill=%22%23BFE3CF%22 fill-opacity=%22.022%22 stroke=%22%23BFE3CF%22 stroke-opacity=%22.032%22 stroke-width=%221%22%3E%3Cpath fill=%22none%22 d=%22M0,-66 C22,-44 40,-26 40,0 C40,26 22,44 0,66 C-22,44 -40,26 -40,0 C-40,-26 -22,-44 0,-66Z%22/%3E%3Cpath d=%22M0,-40 C10,-26 10,-9 0,3 C-10,-9 -10,-26 0,-40Z%22/%3E%3Cpath d=%22M-4,2 C-20,-6 -28,-22 -18,-31 C-16,-17 -10,-6 -4,2Z%22/%3E%3Cpath d=%22M4,2 C20,-6 28,-22 18,-31 C16,-17 10,-6 4,2Z%22/%3E%3Cpath d=%22M0,10 C8,20 6,33 0,42 C-6,33 -8,20 0,10Z%22/%3E%3Cpath fill=%22none%22 d=%22M-6,8 C-19,11 -25,24 -15,30 C-9,33 -6,26 -11,23%22/%3E%3Cpath fill=%22none%22 d=%22M6,8 C19,11 25,24 15,30 C9,33 6,26 11,23%22/%3E%3Ccircle cx=%220%22 cy=%22-50%22 r=%222%22/%3E%3Ccircle cx=%220%22 cy=%2252%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3Cg transform=%22translate(96 0)%22%3E%3Cg fill=%22%23BFE3CF%22 fill-opacity=%22.022%22 stroke=%22%23BFE3CF%22 stroke-opacity=%22.032%22 stroke-width=%221%22%3E%3Cpath fill=%22none%22 d=%22M0,-66 C22,-44 40,-26 40,0 C40,26 22,44 0,66 C-22,44 -40,26 -40,0 C-40,-26 -22,-44 0,-66Z%22/%3E%3Cpath d=%22M0,-40 C10,-26 10,-9 0,3 C-10,-9 -10,-26 0,-40Z%22/%3E%3Cpath d=%22M-4,2 C-20,-6 -28,-22 -18,-31 C-16,-17 -10,-6 -4,2Z%22/%3E%3Cpath d=%22M4,2 C20,-6 28,-22 18,-31 C16,-17 10,-6 4,2Z%22/%3E%3Cpath d=%22M0,10 C8,20 6,33 0,42 C-6,33 -8,20 0,10Z%22/%3E%3Cpath fill=%22none%22 d=%22M-6,8 C-19,11 -25,24 -15,30 C-9,33 -6,26 -11,23%22/%3E%3Cpath fill=%22none%22 d=%22M6,8 C19,11 25,24 15,30 C9,33 6,26 11,23%22/%3E%3Ccircle cx=%220%22 cy=%22-50%22 r=%222%22/%3E%3Ccircle cx=%220%22 cy=%2252%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3Cg transform=%22translate(96 144)%22%3E%3Cg fill=%22%23BFE3CF%22 fill-opacity=%22.022%22 stroke=%22%23BFE3CF%22 stroke-opacity=%22.032%22 stroke-width=%221%22%3E%3Cpath fill=%22none%22 d=%22M0,-66 C22,-44 40,-26 40,0 C40,26 22,44 0,66 C-22,44 -40,26 -40,0 C-40,-26 -22,-44 0,-66Z%22/%3E%3Cpath d=%22M0,-40 C10,-26 10,-9 0,3 C-10,-9 -10,-26 0,-40Z%22/%3E%3Cpath d=%22M-4,2 C-20,-6 -28,-22 -18,-31 C-16,-17 -10,-6 -4,2Z%22/%3E%3Cpath d=%22M4,2 C20,-6 28,-22 18,-31 C16,-17 10,-6 4,2Z%22/%3E%3Cpath d=%22M0,10 C8,20 6,33 0,42 C-6,33 -8,20 0,10Z%22/%3E%3Cpath fill=%22none%22 d=%22M-6,8 C-19,11 -25,24 -15,30 C-9,33 -6,26 -11,23%22/%3E%3Cpath fill=%22none%22 d=%22M6,8 C19,11 25,24 15,30 C9,33 6,26 11,23%22/%3E%3Ccircle cx=%220%22 cy=%22-50%22 r=%222%22/%3E%3Ccircle cx=%220%22 cy=%2252%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
   .sala.clara, .sala.escura, footer { background-image: var(--estampa); background-size: 120px 180px; }
-  .sobre { background-image: linear-gradient(#10261F, rgba(16,38,31,0) 7rem), var(--estampa); background-size: auto, 120px 180px; }
+  .sobre { background-image: linear-gradient(#3A1A2D, rgba(58,26,45,0) 7rem), var(--estampa); background-size: auto, 120px 180px; }
   .ver-proximo .cima { background-image: var(--estampa); background-size: 120px 180px; }
+  /* ajustes finais */
+  .legenda .so-toque { display: none; } .legenda .so-clique { display: inline; } @media (hover: none) { .legenda .so-toque { display: inline; } .legenda .so-clique { display: none; } }
+  .elenco-sala .legenda > span:last-child { display: inline; }
+  .cartao.fora img { filter: saturate(.55) brightness(.8); opacity: 1; }
+  .cartao .tag { z-index: 1; } .cartao.fora .tag { background: var(--dourado); color: #2A1220; }
+  .como-saldo { margin: .2rem 0 0; font-size: .9rem; max-width: 46rem; } .como-saldo p { margin: .5rem 0 0; color: var(--tinta-2); } .como-saldo b { color: var(--tinta); }
+  .elenco-sala .parede + ol + details { margin-top: 1rem; }
+  #faixas { max-width: none; } .metodo #metodo { max-width: none; columns: 2; column-gap: 3rem; } .metodo #metodo p { max-width: none; break-inside: avoid; margin-top: 0; }
+  @media (max-width: 760px) {
+    .parede { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; overflow: visible; margin: 1rem 0 0; padding: 0; }
+    .metodo #metodo { columns: 1; }
+  }
+  /* capa: a foto nunca aparece maior do que a resolução dela aguenta */
+  @media (min-width: 761px) {
+    .barra-topo, .hero { max-width: 76rem; margin-left: auto; margin-right: auto; }
+    .hero-foto { width: min(50%, 33rem); right: 2.5rem; top: 1.2rem; bottom: 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 30%, #000 82%, transparent 100%), linear-gradient(0deg, transparent 0, #000 28%);
+      -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0, #000 30%, #000 82%, transparent 100%), linear-gradient(0deg, transparent 0, #000 28%); mask-composite: intersect; }
+    .hero::after { display: none; }
+    .hero-txt { max-width: 36rem; }
+  }
+  /* seções claras: creme, com cartões brancos */
+  .sala.clara { --porcelana: #F4F0E6; --porcelana-clara: #FFFFFF; --porcelana-funda: rgba(58,26,45,.13); --tinta: #2B1322; --tinta-2: #6A5060;
+    --ouro: #8C6A2C; --ouro-claro: rgba(140,106,44,.3); --dourado-texto: #8C6A2C; --sevres: #1E8A4C; --pompadour: #D2453D; --neutro: #D9DDD6; --destaque: #1B4A3A; --nevoa: #2B1322; --nevoa-2: #6A5060;
+    background: #F4F0E6; background-image: none; color: var(--tinta); }
+  .sala.clara#sala-resumo { --porcelana: #E3EEE6; background: #E3EEE6; }
+  .sala.clara .cartao { box-shadow: 0 1px 2px rgba(58,26,45,.08); }
+  .cartao .tag { color: #F2DFA6; background: rgba(11,29,23,.86); }
+  .metodo #metodo { margin-top: 1.2rem; } .metodo #metodo p { margin-bottom: 1rem; }
+  .aconteceu { max-width: 52rem; margin: .8rem 0 0; color: var(--tinta-2); font-size: 1rem; line-height: 1.6; } .aconteceu b { color: var(--tinta); font-weight: 600; }
+
+  /* prévia: fundo escuro com profundidade e cartões claros */
+  .sala.clara, .sala.clara#sala-resumo { --porcelana:#3A1A2D; --porcelana-clara:#4A2438; --porcelana-funda:rgba(255,255,255,.09); --tinta:#F3EFE8; --tinta-2:#C9B3BF; --ouro:#D9B866; --ouro-claro:rgba(217,184,102,.28);
+    --sevres:#5FCB8A; --pompadour:#F0736B; --neutro:#5C3F4E; --dourado-texto:#E8CF94; --nevoa:#F0E4EA; --nevoa-2:#C9B3BF; --destaque:#E8CF94; background-color:#3A1A2D; color:var(--tinta); }
+  .sala, footer, section.sobre { background-image: radial-gradient(ellipse 75% 55% at 50% 0%, rgba(255,255,255,.085), rgba(255,255,255,0) 70%), linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.28)), var(--estampa) !important; background-size: auto, auto, 120px 180px !important; }
+  section.sobre { background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.22)), var(--estampa) !important; background-size: auto, 120px 180px !important; }
+  .cartao, .cartao-ep, .achados li, .voz, .cena { --porcelana-clara:#F6F1E7; --porcelana-funda:rgba(43,19,34,.14); --tinta:#2B1322; --tinta-2:#6A5060; --ouro:#8C6A2C; --dourado-texto:#8C6A2C; --ouro-claro:rgba(140,106,44,.3);
+    --sevres:#1E8A4C; --pompadour:#D2453D; --neutro:#D9DDD6; --destaque:#7A1F45; --nevoa:#2B1322; --nevoa-2:#6A5060;
+    background:#F6F1E7 !important; color:#2B1322; border-color:rgba(255,255,255,.5) !important; box-shadow:0 16px 36px rgba(0,0,0,.38), 0 2px 6px rgba(0,0,0,.25) !important; }
+  .voz small { color:#8C6A2C; } .voz .sobre button, .voz blockquote { color:#2B1322; } .cena .num { color:#fff; }
+  /* fundo contínuo: uma luz só para a página inteira, sem emenda entre as seções */
+  html { background: #3A1A2D; }
+  body { background: #3A1A2D var(--estampa); background-size: 120px 180px; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: radial-gradient(ellipse 95% 70% at 50% -5%, rgba(255,255,255,.10), rgba(255,255,255,0) 65%), radial-gradient(ellipse 130% 75% at 50% 112%, rgba(0,0,0,.42), rgba(0,0,0,0) 62%); }
+  .cima, .sala, .sala.clara, .sala.clara#sala-resumo, .sala.escura, footer, section.sobre, .ver-proximo .cima { background: none !important; }
+  @media (max-width: 760px) {
+    .hero::after { display: none; }
+    .hero-foto { -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 97%); mask-image: linear-gradient(180deg, #000 60%, transparent 97%); }
+  }
 </style>
 </head>
 <body>
@@ -439,12 +489,13 @@
 <section class="sala clara elenco-sala">
   <div class="miolo">
     <h2>Quem a torcida comentou</h2>
-    <p class="lede" id="saldo-texto">É a porcentagem de elogios menos a porcentagem de críticas entre os comentários sobre cada pessoa.</p>
+    <p class="lede">O número ao lado das menções é o saldo da torcida: a porcentagem de elogios menos a de críticas. Vai de −100 (só críticas) a +100 (só elogios).</p>
+    <details class="como-saldo"><summary>Como o saldo é calculado</summary><p id="saldo-texto"></p></details>
     <div class="legenda" aria-hidden="true">
       <span><i class="amostra" style="background:var(--pompadour)"></i>Críticas</span>
       <span><i class="amostra" style="background:var(--sevres)"></i>Elogios</span>
       <span><i class="amostra" style="background:var(--neutro)"></i>Neutros</span>
-      <span>Em ordem de menções. Clique num card para abrir a ficha.</span>
+      <span>Em ordem de menções. <span class="so-clique">Clique</span><span class="so-toque">Toque</span> num card para abrir a ficha.</span>
     </div>
     <ul class="parede" id="parede" aria-label="Elenco do episódio"></ul>
     <ol id="ranking" hidden></ol>
@@ -459,6 +510,7 @@
 <section class="sala clara" id="sala-resumo" aria-labelledby="t-episodio" hidden>
   <div class="miolo">
     <h2 id="t-episodio"></h2>
+    <p class="aconteceu" id="aconteceu" hidden></p>
     <div class="lado-a-lado">
     <div class="bloco-episodio" id="bloco-episodio">
       <div class="cartao-ep">
@@ -503,7 +555,7 @@
     <div class="legenda" aria-hidden="true">
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5.5" fill="#C9A65A"/></svg>Venceu</span>
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="#8E7684"/></svg>Seguiu na disputa</span>
-      <span><svg width="14" height="14"><circle cx="7" cy="7" r="4.6" fill="#0B1D17" stroke="#DB6894" stroke-width="2"/></svg>Flop</span>
+      <span><svg width="14" height="14"><circle cx="7" cy="7" r="4.6" fill="#2B1222" stroke="#F0736B" stroke-width="2"/></svg>Flop</span>
       <span><svg width="14" height="14"><path d="M3 3 L11 11 M11 3 L3 11" stroke="#F6EDF0" stroke-width="2"/></svg>Saiu</span>
     </div>
     <div id="faixas"></div>
@@ -557,9 +609,9 @@
   const epDe = n => eps.find(e => e.numero === n);
   const emJogo = ep => ep.participantes.filter(p => p.resultado);
 
-  // ---------- cor do saldo: rosa (críticas) → cinza → azul (elogios) ----------
+  // ---------- cor do saldo: vermelho (críticas) → cinza → verde (elogios) ----------
   const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
-  const POMP = hex("#F08DAA"), NEU = hex("#6F8F82"), SEV = hex("#8FB8E8");
+  const POMP = hex("#F0736B"), NEU = hex("#8E7684"), SEV = hex("#5FCB8A");
   function corSaldo(s) {
     const t = Math.max(-1, Math.min(1, s / 100));
     const b = t < 0 ? POMP : SEV, k = Math.abs(t);
@@ -667,14 +719,15 @@
     const fav = lista.filter(p => p.mencoes >= 30).sort((a, b) => b.saldo - a.saldo)[0];
     const nome = p => primeiroNome(p.nome);
     let t = `${nome(topo)} foi o nome mais citado do episódio ${ep.numero}${gancho(ep.numero, topo.nome)}`;
-    t += elogiada.nome === topo.nome ? " e também recebeu mais elogios." : `, e ${nome(elogiada)} recebeu mais elogios.`;
+    // A primeira frase vira o título da capa; o resto vai na linha de baixo.
+    t += elogiada.nome === topo.nome ? ". Também foi quem recebeu mais elogios" : `. ${nome(elogiada)} recebeu mais elogios`;
     if (fav && fav.nome !== elogiada.nome) {
       const criticas = fav.negativo === 0 ? "nenhuma crítica" : fav.negativo === 1 ? "só 1 crítica" : `só ${fmt(fav.negativo)} críticas`;
       t += arred(fav.saldo) >= 80
-        ? ` ${nome(fav)} foi quase unanimidade: ${fmt(fav.positivo)} elogios e ${criticas}.`
-        : ` Proporcionalmente, ${nome(fav)} teve a torcida mais a favor: ${fmt(fav.positivo)} elogios e ${criticas}.`;
+        ? `, e ${nome(fav)} foi quase unanimidade: ${fmt(fav.positivo)} elogios e ${criticas}`
+        : `, e ${nome(fav)} teve, proporcionalmente, a torcida mais a favor: ${fmt(fav.positivo)} elogios e ${criticas}`;
     }
-    return t;
+    return t + ".";
   }
 
   // ---------- capa: parede de retratos ----------
@@ -781,7 +834,7 @@
     });
     g += `<line x1="${x0}" x2="${x0}" y1="${my - 8}" y2="${H - my + 8}" stroke="#6E4A5E"/><line x1="${x1}" x2="${x1}" y1="${my - 8}" y2="${H - my + 8}" stroke="#6E4A5E"/>`;
     g += `<text x="${x0}" y="${H - 2}" text-anchor="middle" font-size="12.5" fill="#C3ABB8">Episódio ${anterior.numero}</text><text x="${x1}" y="${H - 2}" text-anchor="middle" font-size="12.5" fill="#C3ABB8">Episódio ${ep.numero}</text>`;
-    const destaque = new Map([[subiu && subiu.nome, "#5E90D6"], [caiu && caiu.nome, "#DB6894"]]);
+    const destaque = new Map([[subiu && subiu.nome, "#5FCB8A"], [caiu && caiu.nome, "#F0736B"]]);
     const ordem = pares.slice().sort((a, b) => (destaque.has(a.nome) ? 1 : 0) - (destaque.has(b.nome) ? 1 : 0));
     const svg = document.createElementNS(NS, "svg");
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
@@ -797,8 +850,8 @@
       el.innerHTML = `
         <line x1="${x0}" y1="${y(p.de)}" x2="${x1}" y2="${y(p.para)}" stroke="transparent" stroke-width="14"/>
         <line class="linha-viva" pathLength="1" style="--d:${forte ? 500 + i * 40 : i * 40}ms" x1="${x0}" y1="${y(p.de)}" x2="${x1}" y2="${y(p.para)}" stroke="${cor}" stroke-width="${forte ? 3.2 : 1.8}" stroke-linecap="round"/>
-        <circle cx="${x0}" cy="${y(p.de)}" r="${forte ? 5.5 : 4}" fill="${cor}" stroke="#0B1D17" stroke-width="2"/>
-        <circle cx="${x1}" cy="${y(p.para)}" r="${forte ? 5.5 : 4}" fill="${cor}" stroke="#0B1D17" stroke-width="2"/>
+        <circle cx="${x0}" cy="${y(p.de)}" r="${forte ? 5.5 : 4}" fill="${cor}" stroke="#2B1222" stroke-width="2"/>
+        <circle cx="${x1}" cy="${y(p.para)}" r="${forte ? 5.5 : 4}" fill="${cor}" stroke="#2B1222" stroke-width="2"/>
         ${forte ? `<text x="${x0 - 10}" y="${y(p.de) + 4}" text-anchor="end" font-size="12.5" fill="#F6EDF0">${esc(primeiroNome(p.nome))} ${sinal(p.de)}</text>
                    <text x="${x1 + 10}" y="${y(p.para) + 4}" font-size="12.5" fill="#F6EDF0">${sinal(p.para)} ${esc(primeiroNome(p.nome))}</text>` : ""}`;
       ligarDica(el, `<strong>${esc(p.nome)}</strong><br>Episódio ${anterior.numero}: ${sinal(p.de)}<br>Episódio ${ep.numero}: ${sinal(p.para)}<br>Variação: ${sinal(p.var)} pontos`);
@@ -931,10 +984,10 @@
         el.setAttribute("aria-label", `${p.nome}, ${ROTULO[r]}, saldo ${sinal(p.saldo)}`);
         el.style.cursor = "pointer";
         let m = `<circle cx="${cx}" cy="${eixo}" r="14" fill="transparent"/>`;
-        if (r === "Venceu") m += `<circle cx="${cx}" cy="${eixo}" r="7" fill="#C9A65A" stroke="#0B1D17" stroke-width="2"/>`;
-        else if (r === "Flop") m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#0B1D17" stroke="#DB6894" stroke-width="2.5"/>`;
+        if (r === "Venceu") m += `<circle cx="${cx}" cy="${eixo}" r="7" fill="#C9A65A" stroke="#2B1222" stroke-width="2"/>`;
+        else if (r === "Flop") m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#2B1222" stroke="#F0736B" stroke-width="2.5"/>`;
         else if (SAIU(r)) m += `<path d="M${cx - 6} ${eixo - 6} L${cx + 6} ${eixo + 6} M${cx + 6} ${eixo - 6} L${cx - 6} ${eixo + 6}" stroke="#F6EDF0" stroke-width="2.5" stroke-linecap="round"/>`;
-        else m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#8E7684" stroke="#0B1D17" stroke-width="2"/>`;
+        else m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#8E7684" stroke="#2B1222" stroke-width="2"/>`;
         el.innerHTML = m;
         ligarDica(el, `<strong>${esc(p.nome)}</strong><br>${ROTULO[r]}<br>Saldo da torcida: ${sinal(p.saldo)}`);
         el.addEventListener("click", () => abrirFicha(p.nome));
@@ -978,7 +1031,7 @@
     mini += `<text x="${mx - 22}" y="${ys(0) - 6}" font-size="11" fill="#6A5060">0</text>`;
     if (n > 1) mini += `<polyline points="${traj.map((t, i) => xs(i) + "," + ys(t.p.saldo)).join(" ")}" fill="none" stroke="#A47F38" stroke-width="2"/>`;
     traj.forEach((t, i) => {
-      mini += `<circle cx="${xs(i)}" cy="${ys(t.p.saldo)}" r="6" fill="${corSaldo(t.p.saldo)}" stroke="#1B372E" stroke-width="2"/>
+      mini += `<circle cx="${xs(i)}" cy="${ys(t.p.saldo)}" r="6" fill="${corSaldo(t.p.saldo)}" stroke="#4A2438" stroke-width="2"/>
         <text x="${xs(i)}" y="${ys(t.p.saldo) + (t.p.saldo > 60 ? 20 : -12)}" text-anchor="middle" font-size="12.5" fill="#F3EFE8">${sinal(t.p.saldo)}</text>
         <text x="${xs(i)}" y="${H - 2}" text-anchor="middle" font-size="11.5" fill="#6A5060">Ep. ${t.ep.numero}</text>`;
     });
@@ -1130,6 +1183,11 @@
     if (!texto) return;
     document.getElementById("t-episodio").textContent = `Como a torcida recebeu o episódio ${ep.numero}`;
     document.getElementById("resumo-ep").textContent = texto;
+    // Para quem não assistiu: o que aconteceu no episódio (dados/contexto.json, campo "painel").
+    const fato = (D.aconteceu || {})[String(ep.numero)];
+    const pa = document.getElementById("aconteceu");
+    pa.hidden = !fato;
+    pa.innerHTML = fato ? `<b>O que aconteceu no episódio.</b> ${esc(fato)}` : "";
   }
 
   // ---------- o que a torcida escreveu: um comentário para cada fato do resumo ----------
@@ -1198,17 +1256,13 @@
       texto: `${primeiroNome(virada.nome)} ${virada.v > 0 ? "subiu" : "caiu"} de ${sinal(virada.de)} para ${sinal(virada.para)} entre os episódios ${virada.e1} e ${virada.e2}${gancho(virada.e2, virada.nome) ? "," + gancho(virada.e2, virada.nome) : ""}.`
     });
 
-    // 3. Quem mais foi comentada no episódio mais recente, e o tom.
-    const ultimo = eps[eps.length - 1];
-    const topo = emJogo(ultimo).slice().sort((a, b) => b.mencoes - a.mencoes)[0];
-    if (topo) {
-      const neg = pct(topo.negativo, topo.mencoes), pos = pct(topo.positivo, topo.mencoes);
-      itens.push({
-        grande: fmt(topo.mencoes),
-        rotulo: `menções no episódio ${ultimo.numero}`,
-        texto: `${primeiroNome(topo.nome)} foi o nome mais citado do episódio mais recente${gancho(ultimo.numero, topo.nome)}, e ${neg >= pos ? `${neg}% das menções foram críticas` : `${pos}% das menções foram elogios`}.`
-      });
-    }
+    // 3. Quanto dá para confiar na IA: concordância com a revisão humana às cegas.
+    const av = D.avaliacao;
+    if (av) itens.push({
+      grande: `${String(av.acerto).replace(".", ",").replace(/,0$/, "")}%`,
+      rotulo: "de concordância da IA",
+      texto: `Com a revisão humana feita às cegas, em ${fmt(av.amostra)} menções sorteadas. São ${fmt(D.total_comentarios)} comentários lidos até agora.`
+    });
 
     document.getElementById("achados").innerHTML = itens.map(i =>
       `<li><span class="grande">${esc(i.grande)}</span><span class="rotulo">${esc(i.rotulo)}</span><p>${esc(i.texto)}</p></li>`).join("");

@@ -2900,6 +2900,10 @@ window.DADOS = {
       "Sttefone": "apresentar o gloss com MP3 com Matthel"
     }
   },
+  "aconteceu": {
+    "1": "A estreia teve uma prova em grupos: criar um visual rococó completo, com roupa, cabelo e maquiagem, inspirado em um sabor de Fanta. O grupo liderado por Rhanyane venceu, e o de Talitah foi o pior. Peter, Talitah, Aysha e Breia foram para o flop, a prova de eliminação, que pedia um vídeo sobre etiqueta à mesa. Peter foi eliminado.",
+    "2": "A prova foi em duplas: criar um gloss e vender a ideia às juradas e à convidada Camila Coutinho, como se elas fossem investidoras. Talitah e Bárbara venceram. Paizinho, Gabriel, Rhanyane e Jheny foram para o flop, a prova de eliminação, que pedia para reproduzir uma maquiagem de sobrancelhas raspadas. Paizinho desistiu no meio dela."
+  },
   "comentarios_resumo": {
     "1": [
       {
