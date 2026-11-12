@@ -456,10 +456,46 @@
     .hero::after { display: none; }
     .hero-foto { -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 97%); mask-image: linear-gradient(180deg, #000 60%, transparent 97%); }
   }
+  /* topo: logo e abas numa faixa própria, fora da foto */
+  .barra-topo { position: relative; padding-top: 1.4rem; padding-bottom: .4rem; }
+  .barra-topo h1 img { height: 6.4rem; }
+  .episodios { background: rgba(255,255,255,.07); }
+  .hero { padding-top: 1.5rem; min-height: 33rem; }
+  .hero-foto { top: 0; }
+  /* títulos das seções em dourado */
+  .sala h2, .sala.escura h2, .sala.clara h2 { color: var(--dourado-texto); }
+  .cartao-ep h2, .achados h2 { color: inherit; }
+  @media (max-width: 760px) {
+    .barra-topo { flex-direction: column; gap: .7rem; padding: 1.1rem 1rem .9rem; }
+    .barra-topo h1 img { height: 5.2rem; }
+    .hero { padding-top: 0; min-height: 0; }
+    .hero-foto { height: 26rem; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 60%, transparent 97%); mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 60%, transparent 97%); }
+  }
+  .placar { margin: 1.2rem 0 0; font-size: 1.1rem; color: var(--nevoa); } .placar strong { color: var(--dourado-texto); font: 400 1.35rem var(--display); }
+  /* desktop: logo centralizado no topo, com as abas logo abaixo */
+  @media (min-width: 761px) {
+    .barra-topo { flex-direction: column; gap: 1rem; padding-top: 2rem; padding-bottom: 1.2rem; }
+    .barra-topo h1 img { height: 8.5rem; }
+    .hero { padding-top: .5rem; }
+  }
+  /* faixa fixa de vidro: aparece depois que o topo sai da tela */
+  .faixa-fixa { position: fixed; z-index: 10; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .45rem 2.5rem;
+    background: rgba(58,26,45,.58); -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5); border-bottom: 1px solid rgba(232,207,148,.25); box-shadow: 0 8px 24px rgba(0,0,0,.22);
+    transform: translateY(-110%); visibility: hidden; transition: transform .28s ease, visibility .28s; }
+  .faixa-fixa.visivel { transform: none; visibility: visible; }
+  .faixa-fixa a { display: block; line-height: 0; } .faixa-fixa img { height: 2.9rem; width: auto; }
+  .faixa-fixa .episodios { background: rgba(255,255,255,.08); backdrop-filter: none; }
+  @media (max-width: 760px) { .faixa-fixa { padding: .4rem .8rem; } .faixa-fixa img { height: 2.3rem; } }
+  @media (prefers-reduced-motion: reduce) { .faixa-fixa { transition: none; } }
 </style>
 </head>
 <body>
 <div class="aviso" id="aviso" hidden>Prévia com dados de exemplo. Os números ainda não são reais.</div>
+
+<div class="faixa-fixa" id="faixa-fixa">
+  <a href="#" id="faixa-inicio" aria-label="Voltar ao início"><img src="titulo.webp" alt="Ouvidoria do Corrida" width="1520" height="629"></a>
+  <div class="episodios" id="faixa-eps" aria-label="Trocar de episódio"></div>
+</div>
 
 <header class="cima">
   <div class="barra-topo">
@@ -956,7 +992,16 @@
   function renderFaixas() {
     const box = document.getElementById("faixas");
     box.innerHTML = "";
-    eps.slice().reverse().forEach(ep => {
+    // Só o episódio escolhido aparece. O placar conta as eliminações reveladas até ele.
+    const ate = eps.filter(e => e.numero <= atual).map(previsao).filter(x => x && x.tipo === "resultado");
+    if (ate.length) {
+      const certos = ate.filter(x => x.acertou).length;
+      const placar = document.createElement("p");
+      placar.className = "placar";
+      placar.innerHTML = `Até o episódio ${atual}, a torcida acertou <strong>${certos} de ${ate.length}</strong> ${ate.length === 1 ? "saída" : "saídas"}.`;
+      box.appendChild(placar);
+    }
+    eps.filter(e => e.numero === atual).forEach(ep => {
       const lista = emJogo(ep);
       const W = largura(box), H = 120, M = 18, eixo = 66;
       const x = s => M + (s + 100) / 200 * (W - 2 * M);
@@ -1308,10 +1353,31 @@
     renderRanking(ep);
     renderViradas(ep);
     renderCenas(ep);
+    renderFaixas();
   }
 
   render();
-  renderFaixas();
+
+  // ---------- faixa fixa: aparece ao rolar, com o logo (volta ao início) e a troca de episódio ----------
+  const faixaFixa = document.getElementById("faixa-fixa"), faixaEps = document.getElementById("faixa-eps");
+  const suave = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  function sincronizarFaixa() {
+    faixaEps.innerHTML = "";
+    seletor.querySelectorAll("button").forEach(original => {
+      const b = document.createElement("button");
+      b.className = original.className;
+      b.innerHTML = original.innerHTML;
+      b.setAttribute("aria-selected", original.getAttribute("aria-selected") === "true");
+      b.addEventListener("click", () => { original.click(); scrollTo({ top: 0, behavior: suave }); });
+      faixaEps.appendChild(b);
+    });
+  }
+  new MutationObserver(sincronizarFaixa).observe(seletor, { attributes: true, subtree: true, attributeFilter: ["aria-selected"] });
+  sincronizarFaixa();
+  document.getElementById("faixa-inicio").addEventListener("click", e => { e.preventDefault(); scrollTo({ top: 0, behavior: suave }); });
+  const mostrarFaixa = () => faixaFixa.classList.toggle("visivel", scrollY > 320);
+  addEventListener("scroll", mostrarFaixa, { passive: true });
+  mostrarFaixa();
   renderMetodo();
   renderAchados();
   let larguraAnterior = innerWidth;
