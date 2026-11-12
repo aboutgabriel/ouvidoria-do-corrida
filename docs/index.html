@@ -487,6 +487,14 @@
   .faixa-fixa .episodios { background: rgba(255,255,255,.08); backdrop-filter: none; }
   @media (max-width: 760px) { .faixa-fixa { padding: .4rem .8rem; } .faixa-fixa img { height: 2.3rem; } }
   @media (prefers-reduced-motion: reduce) { .faixa-fixa { transition: none; } }
+  /* desktop: volta o topo com o logo à esquerda (maior) e as abas à direita, sobre a foto */
+  @media (min-width: 761px) {
+    .barra-topo { position: absolute; flex-direction: row; align-items: flex-start; padding: 1.6rem 2.5rem 0; }
+    .barra-topo h1 img { height: 8.6rem; margin-left: -.6rem; }
+    .episodios { background: rgba(58,26,45,.72); margin-top: .6rem; }
+    .hero { padding-top: 11.5rem; min-height: 41rem; }
+    .hero-foto { top: 1.2rem; }
+  }
 </style>
 </head>
 <body>
