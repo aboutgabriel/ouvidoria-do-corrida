@@ -40,6 +40,7 @@ from google.genai import types
 
 from corrigir import aplicar_correcoes
 from temas import contar_temas
+from relacoes import calcular as calcular_relacoes, linhas_para_prompt
 from janela import janelas, na_janela
 from verificar_apelidos import BANCO, PASTA
 
@@ -143,7 +144,7 @@ def montar_entrada(nome, linhas, comentarios, contexto=None, temas_por=None):
     return "\n".join(partes)
 
 
-def montar_entrada_episodio(ep, linhas, todos, cenas, contexto=None, temas_por=None):
+def montar_entrada_episodio(ep, linhas, todos, cenas, contexto=None, temas_por=None, relacoes=None):
     """Números do episódio, o que aconteceu (escrito à mão), cenas descritas à mão e os comentários mais curtidos."""
     do_ep = todos[todos["episodio"] == ep]
     partes = [f"Episódio {ep}: {len(do_ep)} comentários lidos."]
@@ -164,6 +165,9 @@ def montar_entrada_episodio(ep, linhas, todos, cenas, contexto=None, temas_por=N
     descritas = [c["descricao"] for c in cenas.values() if c.get("descricao")]
     if descritas:
         partes += ["", "Cenas mais comentadas (em ordem de minutagem):"] + [f"- {d}" for d in descritas]
+    extras = linhas_para_prompt((relacoes or {}).get(str(ep)))
+    if extras:
+        partes += [""] + extras
     partes += ["", "Comentários mais curtidos do episódio:"]
     for linha in do_ep.sort_values("curtidas", ascending=False).head(COMENTARIOS_DO_EPISODIO).itertuples():
         partes.append(f"- \"{limpar(linha.texto)}\" ({linha.curtidas} curtidas)")
@@ -218,6 +222,7 @@ def main():
     comentarios = na_janela(comentarios, tabela_janelas)
     with sqlite3.connect(BANCO) as conexao:
         temas_por = contar_temas(conexao, comentarios)
+        relacoes = calcular_relacoes(conexao)  # duplas e curtidas por tema, sem IA
     if not temas_por:
         print("  Aviso: ainda não há temas. Rode python temas.py antes, para os resumos usarem todas as menções.")
 
@@ -286,7 +291,7 @@ def main():
         if chave_ep in resumos_ep:
             continue  # já resumido; para refazer um só, apague a entrada dele no arquivo
         print(f"Resumindo o episódio {chave_ep}...")
-        entrada = montar_entrada_episodio(ep, linhas, todos, cenas.get(chave_ep, {}), contexto, temas_por)
+        entrada = montar_entrada_episodio(ep, linhas, todos, cenas.get(chave_ep, {}), contexto, temas_por, relacoes)
         resumos_ep[chave_ep] = {"modelo": modelo, "texto": resumir(cliente, modelo, entrada, INSTRUCOES_EPISODIO)}
         with open(SAIDA_EPISODIOS, "w", encoding="utf-8") as arquivo:
             json.dump(resumos_ep, arquivo, ensure_ascii=False, indent=2)

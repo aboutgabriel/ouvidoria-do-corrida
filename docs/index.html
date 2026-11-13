@@ -559,7 +559,7 @@
     <div class="bloco-episodio" id="bloco-episodio">
       <div class="cartao-ep">
       <p class="resumo-ep" id="resumo-ep"></p>
-      <p class="nota-ep">Resumo escrito pelo Gemini a partir de todas as menções, separadas por tema, do que aconteceu no episódio e das cenas mais comentadas, e revisado antes de ir ao ar.</p>
+      <p class="nota-ep">Resumo escrito com apoio de IA a partir de todas as menções, separadas por tema, do que aconteceu no episódio e das cenas mais comentadas. Todos os números foram conferidos e o texto foi revisado antes de ir ao ar.</p>
       </div>
     </div>
     <ul class="achados" id="achados"></ul>
@@ -1129,7 +1129,7 @@
       </div>
       ${resumo ? `<h3>Como a torcida viu ${esc(primeiroNome(nome))}</h3>
         <p class="resumo">${esc(resumo)}</p>
-        <p class="sub" style="font-size:.8rem">Resumo escrito pelo Gemini a partir de todas as menções, separadas por tema, e de um resumo do que aconteceu em cada episódio, e revisado antes de ir ao ar.</p>` : ""}
+        <p class="sub" style="font-size:.8rem">Resumo escrito com apoio de IA a partir de todas as menções, separadas por tema, e do que aconteceu em cada episódio. Os números foram conferidos e o texto foi revisado antes de ir ao ar.</p>` : ""}
       ${blocoTemas}
       <h3>Saldo da torcida, episódio a episódio</h3>
       <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Trajetória do saldo: ${traj.map(t => "episódio " + t.ep.numero + " " + sinal(t.p.saldo)).join(", ")}" style="width:100%;height:auto;overflow:visible;font-family:var(--texto)">${mini}</svg>

@@ -1,0 +1,430 @@
+{
+  "1": {
+    "critica_e_elogio": [
+      {
+        "criticada": "Bárbara Freitas",
+        "elogiada": "Breia",
+        "comentarios": 63
+      },
+      {
+        "criticada": "Talitah Sampaio",
+        "elogiada": "Aysha Pink",
+        "comentarios": 26
+      },
+      {
+        "criticada": "Peter Poc",
+        "elogiada": "Aysha Pink",
+        "comentarios": 26
+      },
+      {
+        "criticada": "Peter Poc",
+        "elogiada": "Breia",
+        "comentarios": 20
+      },
+      {
+        "criticada": "Peter Poc",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 17
+      },
+      {
+        "criticada": "Sttefone",
+        "elogiada": "Breia",
+        "comentarios": 12
+      },
+      {
+        "criticada": "Talitah Sampaio",
+        "elogiada": "Peter Poc",
+        "comentarios": 12
+      },
+      {
+        "criticada": "Matthel",
+        "elogiada": "Breia",
+        "comentarios": 10
+      }
+    ],
+    "elogiadas_juntas": [
+      {
+        "participantes": [
+          "Breia",
+          "Matthel"
+        ],
+        "comentarios": 29
+      },
+      {
+        "participantes": [
+          "Aysha Pink",
+          "Breia"
+        ],
+        "comentarios": 27
+      },
+      {
+        "participantes": [
+          "Breia",
+          "Bárbara Freitas"
+        ],
+        "comentarios": 16
+      },
+      {
+        "participantes": [
+          "Breia",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 12
+      }
+    ],
+    "temas_mais_curtidos": [
+      {
+        "participante": "Breia",
+        "tema": "Look básico de oncinha",
+        "comentarios": 96,
+        "curtidas": 22092
+      },
+      {
+        "participante": "Peter Poc",
+        "tema": "Mentiu sobre saber fazer peruca",
+        "comentarios": 78,
+        "curtidas": 15052
+      },
+      {
+        "participante": "Matthel",
+        "tema": "Semelhança com Lorelay Fox",
+        "comentarios": 11,
+        "curtidas": 13395
+      },
+      {
+        "participante": "Peter Poc",
+        "tema": "Reclamações e postura no grupo",
+        "comentarios": 111,
+        "curtidas": 12972
+      },
+      {
+        "participante": "Peter Poc",
+        "tema": "Culpar a líder e o grupo",
+        "comentarios": 67,
+        "curtidas": 11568
+      },
+      {
+        "participante": "Gabriel Queiroz",
+        "tema": "Maquiagem artística no grupo vencedor",
+        "comentarios": 12,
+        "curtidas": 10810
+      },
+      {
+        "participante": "Aysha Pink",
+        "tema": "Injustiça na indicação ao flop",
+        "comentarios": 72,
+        "curtidas": 4925
+      },
+      {
+        "participante": "Breia",
+        "tema": "Contradição de Sttefone na votação",
+        "comentarios": 80,
+        "curtidas": 4095
+      }
+    ]
+  },
+  "2": {
+    "critica_e_elogio": [
+      {
+        "criticada": "Matthel",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 23
+      },
+      {
+        "criticada": "Paizinho dos Looks",
+        "elogiada": "Gabriel Queiroz",
+        "comentarios": 21
+      },
+      {
+        "criticada": "Paizinho dos Looks",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 19
+      },
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 17
+      },
+      {
+        "criticada": "Peter Poc",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 15
+      },
+      {
+        "criticada": "Paizinho dos Looks",
+        "elogiada": "Peter Poc",
+        "comentarios": 11
+      },
+      {
+        "criticada": "Paizinho dos Looks",
+        "elogiada": "Breia",
+        "comentarios": 11
+      },
+      {
+        "criticada": "Paizinho dos Looks",
+        "elogiada": "Bárbara Freitas",
+        "comentarios": 10
+      }
+    ],
+    "elogiadas_juntas": [
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 124
+      },
+      {
+        "participantes": [
+          "Aysha Pink",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 31
+      },
+      {
+        "participantes": [
+          "Breia",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 20
+      },
+      {
+        "participantes": [
+          "Breia",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 18
+      },
+      {
+        "participantes": [
+          "Latyffa Romayale",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 16
+      },
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 14
+      },
+      {
+        "participantes": [
+          "Breia",
+          "Bárbara Freitas"
+        ],
+        "comentarios": 13
+      },
+      {
+        "participantes": [
+          "Breia",
+          "Matthel"
+        ],
+        "comentarios": 12
+      }
+    ],
+    "temas_mais_curtidos": [
+      {
+        "participante": "Talitah Sampaio",
+        "tema": "Dupla com Bárbara na prova",
+        "comentarios": 126,
+        "curtidas": 19079
+      },
+      {
+        "participante": "Paizinho dos Looks",
+        "tema": "Desistência na prova do flop",
+        "comentarios": 183,
+        "curtidas": 18290
+      },
+      {
+        "participante": "Latyffa Romayale",
+        "tema": "Piadas sobre roupas emprestadas",
+        "comentarios": 9,
+        "curtidas": 12596
+      },
+      {
+        "participante": "Bárbara Freitas",
+        "tema": "Apresentação com Talitah",
+        "comentarios": 112,
+        "curtidas": 12100
+      },
+      {
+        "participante": "Gabriel Queiroz",
+        "tema": "Sobrancelhas raspadas em vão",
+        "comentarios": 16,
+        "curtidas": 9465
+      },
+      {
+        "participante": "Paizinho dos Looks",
+        "tema": "Prejuízo aos outros participantes",
+        "comentarios": 34,
+        "curtidas": 8955
+      },
+      {
+        "participante": "Rhanyane Garcia",
+        "tema": "Raspou sobrancelhas no flop",
+        "comentarios": 10,
+        "curtidas": 8352
+      },
+      {
+        "participante": "Bárbara Freitas",
+        "tema": "Ideia do gloss de aumentar seios",
+        "comentarios": 25,
+        "curtidas": 7855
+      }
+    ]
+  },
+  "3": {
+    "critica_e_elogio": [
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Latyffa Romayale",
+        "comentarios": 72
+      },
+      {
+        "criticada": "Matthel",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 34
+      },
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 30
+      },
+      {
+        "criticada": "Breia",
+        "elogiada": "Rhanyane Garcia",
+        "comentarios": 28
+      },
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Gabriel Queiroz",
+        "comentarios": 19
+      },
+      {
+        "criticada": "Breia",
+        "elogiada": "Gabriel Queiroz",
+        "comentarios": 18
+      },
+      {
+        "criticada": "Breia",
+        "elogiada": "Latyffa Romayale",
+        "comentarios": 18
+      },
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Bárbara Freitas",
+        "comentarios": 17
+      }
+    ],
+    "elogiadas_juntas": [
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Gabriel Queiroz"
+        ],
+        "comentarios": 133
+      },
+      {
+        "participantes": [
+          "Gabriel Queiroz",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 73
+      },
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 66
+      },
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 52
+      },
+      {
+        "participantes": [
+          "Gabriel Queiroz",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 39
+      },
+      {
+        "participantes": [
+          "Latyffa Romayale",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 26
+      },
+      {
+        "participantes": [
+          "Aysha Pink",
+          "Gabriel Queiroz"
+        ],
+        "comentarios": 14
+      },
+      {
+        "participantes": [
+          "Aysha Pink",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 14
+      }
+    ],
+    "temas_mais_curtidos": [
+      {
+        "participante": "Gabriel Queiroz",
+        "tema": "Vitória com menos tempo",
+        "comentarios": 68,
+        "curtidas": 38525
+      },
+      {
+        "participante": "Gabriel Queiroz",
+        "tema": "Resposta à Kitty",
+        "comentarios": 28,
+        "curtidas": 16121
+      },
+      {
+        "participante": "Latyffa Romayale",
+        "tema": "Carisma e humor da Latyffa",
+        "comentarios": 95,
+        "curtidas": 15360
+      },
+      {
+        "participante": "Talitah Sampaio",
+        "tema": "Perseguição e efeito manada",
+        "comentarios": 154,
+        "curtidas": 10997
+      },
+      {
+        "participante": "Bárbara Freitas",
+        "tema": "Personalidade e carisma",
+        "comentarios": 56,
+        "curtidas": 10478
+      },
+      {
+        "participante": "Aysha Pink",
+        "tema": "Destaque positivo injusto",
+        "comentarios": 254,
+        "curtidas": 9805
+      },
+      {
+        "participante": "Breia",
+        "tema": "Desempenho fraco nas provas",
+        "comentarios": 194,
+        "curtidas": 8431
+      },
+      {
+        "participante": "Matthel",
+        "tema": "Choro constante nos episódios",
+        "comentarios": 15,
+        "curtidas": 6634
+      }
+    ]
+  }
+}
