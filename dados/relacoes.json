@@ -280,7 +280,7 @@
       {
         "criticada": "Aysha Pink",
         "elogiada": "Latyffa Romayale",
-        "comentarios": 72
+        "comentarios": 76
       },
       {
         "criticada": "Matthel",
@@ -290,7 +290,7 @@
       {
         "criticada": "Aysha Pink",
         "elogiada": "Talitah Sampaio",
-        "comentarios": 30
+        "comentarios": 31
       },
       {
         "criticada": "Breia",
@@ -300,6 +300,11 @@
       {
         "criticada": "Aysha Pink",
         "elogiada": "Gabriel Queiroz",
+        "comentarios": 22
+      },
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Bárbara Freitas",
         "comentarios": 19
       },
       {
@@ -311,11 +316,6 @@
         "criticada": "Breia",
         "elogiada": "Latyffa Romayale",
         "comentarios": 18
-      },
-      {
-        "criticada": "Aysha Pink",
-        "elogiada": "Bárbara Freitas",
-        "comentarios": 17
       }
     ],
     "elogiadas_juntas": [
@@ -363,17 +363,17 @@
       },
       {
         "participantes": [
-          "Aysha Pink",
-          "Gabriel Queiroz"
+          "Gabriel Queiroz",
+          "Matthel"
         ],
         "comentarios": 14
       },
       {
         "participantes": [
-          "Aysha Pink",
+          "Breia",
           "Latyffa Romayale"
         ],
-        "comentarios": 14
+        "comentarios": 13
       }
     ],
     "temas_mais_curtidos": [

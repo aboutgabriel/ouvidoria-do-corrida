@@ -194,6 +194,13 @@ def main():
         for linha in pd.read_csv(ELIMINACOES, dtype=str).fillna("").itertuples():
             eliminacoes[int(linha.episodio)] = {"houve": linha.houve_eliminacao.strip().lower() == "sim", "motivo": linha.motivo}
 
+    # Quem venceu a prova do flop de cada episódio: já está salvo e não entra na previsão.
+    vencedores_flop = {}
+    caminho_vencedores = os.path.join(PASTA, "dados", "vencedores_flop.csv")
+    if os.path.exists(caminho_vencedores):
+        for linha in pd.read_csv(caminho_vencedores, dtype=str).fillna("").itertuples():
+            vencedores_flop[int(linha.episodio)] = linha.participante.strip()
+
     # Só entram os comentários das primeiras 48 horas de cada episódio (ver janela.py).
     tabela_janelas = janelas(todos)
     comentarios = na_janela(todos, tabela_janelas)
@@ -246,6 +253,7 @@ def main():
             "video_id": do_episodio["video_id"].iat[0],
             "comentarios": int(len(do_episodio)),
             "eliminacao": eliminacoes.get(int(ep)),
+            "venceu_flop": vencedores_flop.get(int(ep)),
             "janela": {
                 "horas": JANELA_HORAS,
                 "inicio": tabela_janelas.at[ep, "inicio"].strftime("%Y-%m-%dT%H:%M:%SZ"),

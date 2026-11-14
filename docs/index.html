@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://aboutgabriel.github.io/ouvidoria-do-corrida/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ouvidoria do Corrida: 13.369 comentários lidos, 1 de 1 eliminação prevista e 86% de acerto da IA.">
+<meta property="og:image:alt" content="Ouvidoria do Corrida: mais de 18 mil comentários lidos, 1 de 1 eliminação prevista e 86% de concordância da IA com a revisão humana.">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light">
@@ -495,6 +495,7 @@
     .hero { padding-top: 11.5rem; min-height: 41rem; }
     .hero-foto { top: 1.2rem; }
   }
+  @media (max-width: 380px) { .faixa-fixa { gap: .5rem; } .faixa-fixa img { height: 1.9rem; } .faixa-fixa .episodios button small { display: none; } .faixa-fixa .episodios button { padding: .3rem .45rem; } }
 </style>
 </head>
 <body>
@@ -595,7 +596,7 @@
   <div class="miolo">
     <h2 id="t-resultado">A torcida adivinha quem sai?</h2>
     <p class="lede">Cada ponto é alguém do elenco, posicionado pelo saldo da torcida (elogios menos críticas, de −100 a +100). Quanto mais à direita, mais a torcida estava a favor.</p>
-    <p class="nota-faixas">Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então a torcida comenta <strong>sem saber o resultado</strong>, e dá para testar se ela adivinha. A comparação é feita só entre quem estava no flop, porque só eles podiam sair.</p>
+    <p class="nota-faixas">Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então a torcida comenta <strong>sem saber o resultado</strong>, e dá para testar se ela adivinha. A comparação é feita só entre quem estava no flop e não venceu a prova de eliminação, porque só eles podiam sair.</p>
     <div class="legenda" aria-hidden="true">
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5.5" fill="#C9A65A"/></svg>Venceu</span>
       <span><svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="#8E7684"/></svg>Seguiu na disputa</span>
@@ -961,22 +962,25 @@
   // O resultado do flop do episódio N só é revelado no começo do episódio N+1, depois
   // que a janela de 48 horas já fechou. Por isso o saldo do episódio N é uma previsão.
   // Só quem estava no flop pode sair, então a comparação é feita entre eles.
+  const porExtenso = n => ["zero", "um", "dois", "três", "quatro", "cinco", "seis"][n] || n;
   const listaNomes = ps => {
     const n = ps.map(p => primeiroNome(p.nome));
     return n.length > 1 ? n.slice(0, -1).join(", ") + " e " + n[n.length - 1] : n.join("");
   };
   function previsao(ep) {
     const noFlop = emJogo(ep).filter(p => ["Flop", "Eliminado", "Desistiu"].includes(p.resultado));
-    const flop = noFlop.filter(p => p.resultado !== "Desistiu");
+    // Quem venceu a prova do flop já está salvo quando o episódio acaba, então não pode sair.
+    const salvo = noFlop.find(p => p.nome === ep.venceu_flop) || null;
+    const flop = noFlop.filter(p => p.resultado !== "Desistiu" && p !== salvo);
     if (flop.length < 2) return null;
     const ordem = flop.slice().sort((a, b) => a.saldo - b.saldo);
     const [pior, segundo] = ordem;
     const saiu = flop.find(p => p.resultado === "Eliminado");
     const ultimo = ep.numero === eps[eps.length - 1].numero;
     const empate = segundo && arred(segundo.saldo) - arred(pior.saldo) < 5;
-    if (saiu) return { tipo: "resultado", ep: ep.numero, flop, pior, saiu, acertou: pior.nome === saiu.nome };
+    if (saiu) return { tipo: "resultado", ep: ep.numero, flop, noFlop, salvo, pior, saiu, acertou: pior.nome === saiu.nome };
     const semEliminacao = ep.eliminacao && !ep.eliminacao.houve;
-    return { tipo: semEliminacao || !ultimo ? "sem-eliminacao" : "aguardando", ep: ep.numero, flop, noFlop, pior, segundo, empate, motivo: semEliminacao ? ep.eliminacao.motivo : "" };
+    return { tipo: semEliminacao || !ultimo ? "sem-eliminacao" : "aguardando", ep: ep.numero, flop, noFlop, salvo, pior, segundo, empate, motivo: semEliminacao ? ep.eliminacao.motivo : "" };
   }
   function frase(ep) {
     const prev = previsao(ep);
@@ -984,15 +988,17 @@
     const partes = [];
     if (!prev) partes.push("Não houve flop com eliminação neste episódio.");
     else if (prev.tipo === "resultado") {
-      partes.push(`No flop estavam ${listaNomes(prev.flop)}.`);
+      partes.push(`No flop estavam ${listaNomes(prev.noFlop)}.`);
+      if (prev.salvo) partes.push(`${primeiroNome(prev.salvo.nome)} venceu a prova do flop e ficou, então a comparação é entre os outros ${porExtenso(prev.flop.length)}.`);
       partes.push(prev.acertou
         ? `${primeiroNome(prev.saiu.nome)} tinha o pior saldo entre eles (${sinal(prev.saiu.saldo)}) e foi quem saiu: a torcida acertou.`
         : `O pior saldo era de ${primeiroNome(prev.pior.nome)} (${sinal(prev.pior.saldo)}), mas quem saiu foi ${primeiroNome(prev.saiu.nome)} (${sinal(prev.saiu.saldo)}): a torcida errou.`);
     } else if (prev.tipo === "aguardando") {
-      partes.push(`No flop estão ${listaNomes(prev.flop)}, e o resultado sai no começo do episódio ${ep.numero + 1}.`);
+      partes.push(`No flop estão ${listaNomes(prev.noFlop)}, e o resultado sai no começo do episódio ${ep.numero + 1}.`);
+      if (prev.salvo) partes.push(`${primeiroNome(prev.salvo.nome)} venceu a prova do flop e já está salvo, então quem sai é um dos outros ${porExtenso(prev.flop.length)}.`);
       partes.push(prev.empate
         ? `A torcida aponta ${primeiroNome(prev.pior.nome)} (${sinal(prev.pior.saldo)}), praticamente empatada com ${primeiroNome(prev.segundo.nome)} (${sinal(prev.segundo.saldo)}).`
-        : `A torcida aponta ${primeiroNome(prev.pior.nome)}, com o pior saldo do flop (${sinal(prev.pior.saldo)}).`);
+        : `A torcida aponta ${primeiroNome(prev.pior.nome)}, com o pior saldo entre eles (${sinal(prev.pior.saldo)}).`);
     } else partes.push(`No flop estavam ${listaNomes(prev.noFlop)}. ${prev.motivo ? prev.motivo + "." : "Ninguém foi eliminado."} Não há previsão para testar neste episódio.`);
     if (desistiu && !(prev && prev.motivo)) partes.push(`${primeiroNome(desistiu.nome)} desistiu, então fica fora da comparação.`);
     return partes.join(" ");
@@ -1277,7 +1283,7 @@
         grande: `${acertos} de ${prevs.length}`,
         rotulo: prevs.length === 1 ? "eliminação prevista" : "eliminações previstas",
         texto: prevs.length === 1
-          ? `No flop do episódio ${ult.ep}, ${primeiroNome(ult.saiu.nome)} ${ult.acertou ? "tinha o pior saldo" : "não tinha o pior saldo"} entre os ${["", "", "dois", "três", "quatro", "cinco", "seis"][ult.flop.length] || ult.flop.length} (${sinal(ult.saiu.saldo)}) e foi quem saiu. A torcida comentou antes de o resultado ser revelado. Com uma eliminação só, ainda é cedo para conclusões.`
+          ? `No flop do episódio ${ult.ep}, ${primeiroNome(ult.saiu.nome)} ${ult.acertou ? "tinha o pior saldo" : "não tinha o pior saldo"} entre os ${["", "", "dois", "três", "quatro", "cinco", "seis"][ult.flop.length] || ult.flop.length} que podiam sair (${sinal(ult.saiu.saldo)}) e foi quem saiu. A torcida comentou antes de o resultado ser revelado. Com uma eliminação só, ainda é cedo para conclusões.`
           : `Em ${acertos} das ${prevs.length} eliminações, quem saiu era quem tinha o pior saldo no flop, com comentários escritos antes do resultado.`
       });
     }
@@ -1288,7 +1294,7 @@
       rotulo: `aposta da torcida para o episódio ${aberta.ep + 1}`,
       texto: aberta.empate
         ? `No flop do episódio ${aberta.ep}, as duas têm os piores saldos e estão praticamente empatadas (${sinal(aberta.pior.saldo)} e ${sinal(aberta.segundo.saldo)}). O resultado sai no começo do próximo episódio.`
-        : `Pior saldo do flop do episódio ${aberta.ep} (${sinal(aberta.pior.saldo)}). O resultado sai no começo do próximo episódio.`
+        : `Pior saldo entre quem ainda pode sair no flop do episódio ${aberta.ep} (${sinal(aberta.pior.saldo)}). O resultado sai no começo do próximo episódio.`
     });
 
     // 2. Maior virada entre dois episódios seguidos (só bases com 50+ menções nos dois).

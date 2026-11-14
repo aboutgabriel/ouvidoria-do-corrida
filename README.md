@@ -10,19 +10,20 @@ Projeto de dados e IA que acompanha, episódio a episódio, como a torcida reage
 
 A pergunta central: **a torcida consegue prever quem sai?**
 
-Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então a torcida comenta cada episódio sem saber o resultado, e o saldo funciona como uma previsão da torcida. A comparação é feita só entre quem estava no flop, porque só eles podiam sair. O eliminado é registrado em `dados/resultados.csv` no episódio do flop, mesmo que o resultado seja revelado no episódio seguinte.
+Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então a torcida comenta cada episódio sem saber o resultado, e o saldo funciona como uma previsão da torcida. A comparação é feita só entre quem estava no flop e não venceu a prova de eliminação, porque só eles podiam sair (quem vence o flop já termina o episódio salvo). O eliminado é registrado em `dados/resultados.csv` no episódio do flop, mesmo que o resultado seja revelado no episódio seguinte.
 
 > Projeto em andamento, atualizado a cada episódio da temporada (outubro de 2026 a janeiro de 2027).
 
 ## O que os dados mostram até agora
 
-Depois de 2 episódios e 13.369 comentários lidos (as primeiras 48 horas de cada episódio):
+Depois de 3 episódios e 18.968 comentários lidos (as primeiras 48 horas de cada episódio):
 
-- **A torcida acertou a primeira eliminação.** No flop do episódio 1 estavam Peter, Talitah, Aysha e Breia. Peter tinha o pior saldo entre os quatro (−75) e foi quem saiu, revelado só no começo do episódio 2. Com uma eliminação só, ainda é cedo para conclusões.
-- **No episódio 2 não há previsão para testar:** Paizinho desistiu durante a prova do flop, então a torcida já sabia quem ia sair. A saída dele é anunciada no começo do episódio 3.
-- **As viradas foram quase do mesmo tamanho, em sentidos opostos:** Matthel caiu de +56 para −51 depois da discussão sobre etarismo com Talitah, e Bárbara Freitas subiu de −27 para +79 depois de vencer a prova.
-- **Paizinho dos Looks liderou a conversa do episódio 2** (853 menções), e 70% dos comentários foram críticas, principalmente pela desistência no meio da prova do flop.
-- **Latyffa Romayale é quase unanimidade:** 192 elogios e só 4 críticas no episódio 2.
+- **A torcida acertou a primeira eliminação.** No flop do episódio 1 estavam Peter, Talitah, Aysha e Breia. Breia venceu a prova do flop e ficou. Entre os outros três, Peter tinha o pior saldo (−75) e foi quem saiu, revelado só no começo do episódio 2. Com uma eliminação só, ainda é cedo para conclusões.
+- **No episódio 2 não há previsão para testar:** Paizinho desistiu durante a prova do flop, então a torcida já sabia quem ia sair.
+- **A aposta do episódio 3 está em aberto:** Matthel venceu a prova do flop e está salvo. Entre os outros três (Breia, Talitah e Rhanyane), o pior saldo é o de Breia (−53). O resultado sai no episódio 4.
+- **A maior virada continua sendo a de Matthel,** que caiu de +56 para −51 entre os episódios 1 e 2, depois da discussão sobre etarismo com Talitah. No episódio 3, Breia caiu de +48 para −53 depois de ir direto para o flop.
+- **Gabriel Queiroz teve o maior saldo da temporada no episódio 3 (+97):** 541 elogios e nenhuma crítica, depois de vencer a prova de maquiagem artística com 50 minutos a menos.
+- **A torcida compara:** no episódio 3, em 76 comentários a crítica a Aysha vem junto de um elogio a Latyffa, que parte do público queria como destaque da prova.
 
 **Janela de 48 horas:** cada episódio conta só os comentários publicados nas primeiras 48 horas depois que o vídeo sai. Assim todos os episódios são comparados com a mesma régua, e o painel sai dois dias depois do episódio. No episódio 1, que tem 11 dias de comentários, o saldo de cada participante com mais de 100 menções nas primeiras 48 horas ficou a no máximo 6 pontos do saldo final (`janela.py`).
 
@@ -57,6 +58,7 @@ Na rodada 2, das 47 menções que a revisão marcou como elogio ou crítica, só
 - `dados/participantes.json`: as 12 participantes e as formas como são citadas.
 - `dados/dicionario.csv`: gírias, bordões e referências da torcida, com o sentido de cada um, que vão no prompt do classificador.
 - `dados/eliminacoes.csv`: se o flop de cada episódio teve eliminação. Um episódio sem linha aqui é tratado como resultado ainda não revelado, e o painel mostra a aposta da torcida.
+- `dados/vencedores_flop.csv`: quem venceu a prova do flop em cada episódio. Essa pessoa já está salva e fica fora da previsão.
 - `dados/resultados.csv`: resultados oficiais por episódio (Venceu, Salvo, Flop, Eliminado, Desistiu).
 - `dados/relacoes.json`: comparações entre participantes e curtidas somadas por tema, calculadas pelo `relacoes.py`.
 - `dados/resumos.json`: resumos da percepção da torcida sobre cada participante, revisados à mão.
@@ -112,6 +114,7 @@ A coleta deve ser feita depois que as 48 horas fecharem. Se for antes, o `gerar_
 - A API do YouTube devolve no máximo 5 respostas por comentário, então conversas longas ficam incompletas.
 - Só vão para o modelo os comentários que citam alguma participante pelo nome ou apelido. Comentários como "ela foi injustiçada", sem nome, ficam de fora.
 - A torcida erra muito a grafia dos nomes. A lista de apelidos foi construída a partir dos próprios dados (ex.: "Talita" aparece mais que o oficial "Talitah").
+- Quando uma participante é citada num comentário que critica uma decisão das juradas ("não entendi ela como destaque"), o modelo tende a ler como elogio a ela. No episódio 3, o autor revisou 130 das 592 menções a Aysha Pink (todos os 65 elogios, mais 40 críticas e 25 neutros sorteados) e discordou de 19: 10 dos 65 elogios eram críticas ou neutros. As correções estão em `dados/correcoes.csv`, e essa revisão não entra na taxa de 86%, porque não foi feita às cegas.
 - O modelo às vezes lê a defesa de uma participante ("injusto ela ir pro flop") como crítica a ela. Isso pode puxar para baixo o saldo de quem foi para o flop. As citações em destaque no painel são revisadas à mão (`dados/correcoes.csv`), mas a contagem geral carrega esse tipo de erro, que está incluído na taxa de acerto de 86%.
 - Participantes com poucas menções têm saldo menos estável, porque cada comentário pesa mais.
 
