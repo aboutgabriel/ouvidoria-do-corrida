@@ -9,6 +9,9 @@ Uso:
     python classificar.py --limite 50     (teste com poucos comentários)
     python classificar.py                 (classifica tudo que falta)
     python classificar.py --refazer       (guarda uma cópia e reclassifica tudo)
+    python classificar.py --episodio 4    (só os comentários do episódio 4)
+    python classificar.py --episodio 4 --reenviar-vazios
+                                          (manda de novo o que o modelo devolveu sem ninguém)
 
 Desde 07/11/2026 as instruções incluem o dicionário do fandom
 (dados/dicionario.csv), que subiu o acerto no teste (testar_dicionario.py).
@@ -63,15 +66,15 @@ def criar_tabelas(conexao):
     """)
 
 
-def comentarios_pendentes(conexao, participantes, limite):
+def comentarios_pendentes(conexao, participantes, limite, episodio=None):
     """Pré-filtro barato: só manda ao modelo quem cita algum apelido."""
     todos_apelidos = [a for p in participantes for a in p["apelidos"]]
     linhas = conexao.execute("""
         SELECT c.id, c.texto FROM comentarios c
         LEFT JOIN processados p ON p.comentario_id = c.id
-        WHERE p.comentario_id IS NULL
+        WHERE p.comentario_id IS NULL AND (? IS NULL OR c.episodio = ?)
         ORDER BY c.episodio, c.publicado_em
-    """).fetchall()
+    """, (episodio, episodio)).fetchall()
     pendentes = []
     for cid, texto in linhas:
         norm = normalizar(texto)
@@ -210,8 +213,9 @@ def classificar_lote(cliente, modelo, instrucoes, lote):
         return primeira + segunda
 
 
-def salvar_resultado(conexao, lote, resultado, nomes_validos, modelo):
+def salvar_resultado(conexao, lote, resultado, nomes_validos, modelo, por_apelido=None):
     """Valida o que o modelo devolveu antes de gravar."""
+    por_apelido = por_apelido or {}
     por_numero = {item.get("n"): item.get("mencoes", []) for item in resultado if isinstance(item, dict)}
     descartadas = 0
     for i, (cid, _) in enumerate(lote, start=1):
@@ -219,6 +223,8 @@ def salvar_resultado(conexao, lote, resultado, nomes_validos, modelo):
             continue  # o modelo pulou este comentário: fica pendente para a próxima rodada
         for mencao in por_numero[i]:
             nome, sentimento = mencao.get("participante"), mencao.get("sentimento")
+            # Às vezes o modelo devolve o apelido ("Talita") no lugar do nome completo.
+            nome = por_apelido.get(normalizar(nome or ""), nome)
             if nome in nomes_validos and sentimento in SENTIMENTOS:
                 conexao.execute("INSERT OR REPLACE INTO classificacoes VALUES (?, ?, ?)", (cid, nome, sentimento))
             else:
@@ -233,6 +239,9 @@ def main():
     parser.add_argument("--limite", type=int, help="Classifica no máximo N comentários (bom para testar)")
     parser.add_argument("--refazer", action="store_true",
                         help="Guarda uma cópia da classificação atual e reclassifica tudo do zero")
+    parser.add_argument("--episodio", type=int, help="Só classifica comentários deste episódio")
+    parser.add_argument("--reenviar-vazios", action="store_true",
+                        help="Manda de novo ao modelo os comentários que ele devolveu sem nenhuma participante")
     args = parser.parse_args()
 
     load_dotenv()
@@ -243,6 +252,7 @@ def main():
 
     participantes = carregar_participantes()
     nomes_validos = {p["nome"] for p in participantes}
+    por_apelido = {normalizar(a): p["nome"] for p in participantes for a in p["apelidos"] + [p["nome"]]}
     instrucoes = montar_instrucoes(participantes, dicionario=True)
     cliente = genai.Client(api_key=chave)
 
@@ -258,7 +268,20 @@ def main():
             conexao.execute("DELETE FROM classificacoes")
             conexao.execute("DELETE FROM processados")
             conexao.commit()
-        pendentes = comentarios_pendentes(conexao, participantes, args.limite)
+        if args.reenviar_vazios:
+            # Comentários que citam alguém pelo apelido, mas voltaram sem nenhuma menção:
+            # quase sempre é falha do modelo (pulou o item ou trocou o nome). Saem de
+            # "processados" para entrar de novo na fila.
+            apagados = conexao.execute("""
+                DELETE FROM processados WHERE comentario_id IN (
+                    SELECT c.id FROM comentarios c JOIN processados p ON p.comentario_id = c.id
+                    WHERE (? IS NULL OR c.episodio = ?)
+                      AND NOT EXISTS (SELECT 1 FROM classificacoes cl WHERE cl.comentario_id = c.id)
+                )
+            """, (args.episodio, args.episodio)).rowcount
+            conexao.commit()
+            print(f"{apagados} comentários sem nenhuma menção voltaram para a fila.")
+        pendentes = comentarios_pendentes(conexao, participantes, args.limite, args.episodio)
         total_lotes = (len(pendentes) + TAMANHO_LOTE - 1) // TAMANHO_LOTE
         print(f"{len(pendentes)} comentários para classificar em {total_lotes} lotes (modelo {modelo}).")
 
@@ -266,7 +289,7 @@ def main():
         for numero, inicio in enumerate(range(0, len(pendentes), TAMANHO_LOTE), start=1):
             lote = pendentes[inicio:inicio + TAMANHO_LOTE]
             resultado = classificar_lote(cliente, modelo, instrucoes, lote)
-            ok, desc = salvar_resultado(conexao, lote, resultado, nomes_validos, modelo)
+            ok, desc = salvar_resultado(conexao, lote, resultado, nomes_validos, modelo, por_apelido)
             feitos += ok
             descartes += desc
             print(f"  Lote {numero}/{total_lotes}: {ok} de {len(lote)} classificados")

@@ -1,41 +1,55 @@
 {
-  "1": {
-    "20": {
-      "descricao": "Na chegada do elenco, Jheny diz que nunca vai chamar o Rodolfo de Paizinho, e a rivalidade entre os dois começa."
-    },
-    "70": {
-      "descricao": "Formação do primeiro flop: Talitah, como líder, escolhe Peter e Aysha, e Matthel, Sttefone e Bárbara votam na própria líder, Breia."
-    },
-    "87": {
-      "descricao": "Peter é eliminado, e a prévia do próximo episódio mostra uma fala dura do Edu para alguém do elenco, que deixa a torcida curiosa para saber quem é.",
-      "comentario_id": "UgxCatClgov6yj78iPZ4AaABAg"
-    }
+ "1": {
+  "20": {
+   "descricao": "Na chegada do elenco, Jheny diz que nunca vai chamar o Rodolfo de Paizinho, e a rivalidade entre os dois começa."
   },
-  "2": {
-    "6": {
-      "descricao": "Abertura do episódio: a torcida percebe um erro de edição, que mostra quem voltou do flop já sentado no QG antes de a volta ser exibida.",
-      "comentario_id": "Ugx_EK3XL8jPHjf94wh4AaABAg"
-    },
-    "14": {
-      "descricao": "Talitah confronta Matthel por ele ter dito que, na idade dela, ela já devia ter aprendido, e chama a fala de etarismo.",
-      "comentario_id": "UgzaXcC1dGY-sqjeaLd4AaABAg"
-    },
-    "83": {
-      "descricao": "Prova do flop: recriar a maquiagem da artista Ana Mary B, que estava no estúdio. Gabriel e Rhanyane raspam as sobrancelhas, e Paizinho desiste no meio da prova."
-    }
+  "70": {
+   "descricao": "Formação do primeiro flop: Talitah, como líder, escolhe Peter e Aysha, e Matthel, Sttefone e Bárbara votam na própria líder, Breia."
   },
-  "3": {
-    "24": {
-      "descricao": "No sofá, quem perdeu minutos de prova espera a vez de começar e conversa. A torcida comenta as reclamações sobre a escolha de Talitah e Bárbara, que tiraram tempo dos colegas.",
-      "comentario_id": "UgyziLCwk5jFmc1gPI14AaABAg"
-    },
-    "46": {
-      "descricao": "No palco, Gabriel apresenta o planeta vegano, feito com 50 minutos a menos de prova, e diz que espera a primeira vitória.",
-      "comentario_id": "Ugy13QimXjYp0r4Ys9d4AaABAg"
-    },
-    "61": {
-      "descricao": "A jurada Renata diz a Breia que a uva não tem acabamento e que chegar ao programa sem nunca ter tentado maquiagem artística é até desrespeitoso com quem se preparou.",
-      "comentario_id": "Ugx18wTAIRC4m-g0Gll4AaABAg"
-    }
+  "87": {
+   "descricao": "Peter é eliminado, e a prévia do próximo episódio mostra uma fala dura do Edu para alguém do elenco, que deixa a torcida curiosa para saber quem é.",
+   "comentario_id": "UgxCatClgov6yj78iPZ4AaABAg"
   }
+ },
+ "2": {
+  "6": {
+   "descricao": "Abertura do episódio: a torcida percebe um erro de edição, que mostra quem voltou do flop já sentado no QG antes de a volta ser exibida.",
+   "comentario_id": "Ugx_EK3XL8jPHjf94wh4AaABAg"
+  },
+  "14": {
+   "descricao": "Talitah confronta Matthel por ele ter dito que, na idade dela, ela já devia ter aprendido, e chama a fala de etarismo.",
+   "comentario_id": "UgzaXcC1dGY-sqjeaLd4AaABAg"
+  },
+  "83": {
+   "descricao": "Prova do flop: recriar a maquiagem da artista Ana Mary B, que estava no estúdio. Gabriel e Rhanyane raspam as sobrancelhas, e Paizinho desiste no meio da prova."
+  }
+ },
+ "3": {
+  "24": {
+   "descricao": "No sofá, quem perdeu minutos de prova espera a vez de começar e conversa. A torcida comenta as reclamações sobre a escolha de Talitah e Bárbara, que tiraram tempo dos colegas.",
+   "comentario_id": "UgyziLCwk5jFmc1gPI14AaABAg"
+  },
+  "46": {
+   "descricao": "No palco, Gabriel apresenta o planeta vegano, feito com 50 minutos a menos de prova, e diz que espera a primeira vitória.",
+   "comentario_id": "Ugy13QimXjYp0r4Ys9d4AaABAg"
+  },
+  "61": {
+   "descricao": "A jurada Renata diz a Breia que a uva não tem acabamento e que chegar ao programa sem nunca ter tentado maquiagem artística é até desrespeitoso com quem se preparou.",
+   "comentario_id": "Ugx18wTAIRC4m-g0Gll4AaABAg"
+  }
+ },
+ "4": {
+  "12": {
+   "descricao": "Breia volta ao QG e explica a plaquinha de 'sem noção' que deu a Latyffa. Colegas concordam que ela passa do limite, e Latyffa responde que é alegre e leva as provas a sério.",
+   "comentario_id": "UgwiYLWGBblAv68CclV4AaABAg"
+  },
+  "38": {
+   "descricao": "Jheny e Talitah escolhem Latyffa e Matthel para ficarem amarrados por meia hora. Matthel diz que foi jogo sujo e que no fim quem decide é o público.",
+   "comentario_id": "UgxlWhbUbj9RmJZ3GkN4AaABAg"
+  },
+  "69": {
+   "descricao": "Talitah vence a prova de cola quente. Ninguém do elenco vai abraçá-la, ela comemora sozinha e manda um beijo para Matthel.",
+   "comentario_id": "UgwNXZsbQEX3JEPS3NN4AaABAg"
+  }
+ }
 }

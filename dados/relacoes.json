@@ -426,5 +426,108 @@
         "curtidas": 6634
       }
     ]
+  },
+  "4": {
+    "critica_e_elogio": [
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 129
+      },
+      {
+        "criticada": "Matthel",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 128
+      },
+      {
+        "criticada": "Breia",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 57
+      },
+      {
+        "criticada": "Breia",
+        "elogiada": "Latyffa Romayale",
+        "comentarios": 37
+      },
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Bárbara Freitas",
+        "comentarios": 27
+      },
+      {
+        "criticada": "Sttefone",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 27
+      },
+      {
+        "criticada": "Breia",
+        "elogiada": "Matthel",
+        "comentarios": 22
+      },
+      {
+        "criticada": "Latyffa Romayale",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 21
+      }
+    ],
+    "elogiadas_juntas": [
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 121
+      },
+      {
+        "participantes": [
+          "Latyffa Romayale",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 97
+      },
+      {
+        "participantes": [
+          "Jheny Albano",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 53
+      },
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 53
+      },
+      {
+        "participantes": [
+          "Gabriel Queiroz",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 29
+      },
+      {
+        "participantes": [
+          "Gabriel Queiroz",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 26
+      },
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Gabriel Queiroz"
+        ],
+        "comentarios": 24
+      },
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Jheny Albano"
+        ],
+        "comentarios": 19
+      }
+    ],
+    "temas_mais_curtidos": []
   }
 }

@@ -14,6 +14,7 @@ generalizar a partir dos poucos comentários mais curtidos.
 Uso:
     python temas.py              (faz só o que falta)
     python temas.py --refazer    (apaga os temas e refaz tudo)
+    python temas.py --refazer-episodio 4   (apaga e refaz só os temas do episódio 4)
 
 Pode ser interrompido e rodado de novo: o que já foi feito é pulado.
 """
@@ -293,6 +294,7 @@ def contar_temas(conexao, mencoes, ocultos=None):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--refazer", action="store_true", help="Apaga os temas e refaz tudo")
+    parser.add_argument("--refazer-episodio", type=int, help="Apaga e refaz só os temas deste episódio")
     args = parser.parse_args()
 
     load_dotenv()
@@ -313,6 +315,11 @@ def main():
             conexao.execute("DELETE FROM temas")
             conexao.execute("DELETE FROM temas_mencoes")
             conexao.commit()
+        if args.refazer_episodio:
+            conexao.execute("DELETE FROM temas WHERE episodio = ?", (args.refazer_episodio,))
+            conexao.execute("DELETE FROM temas_mencoes WHERE episodio = ?", (args.refazer_episodio,))
+            conexao.commit()
+            print(f"Temas do episódio {args.refazer_episodio} apagados. Refazendo...")
 
         mencoes = mencoes_na_janela(conexao)
         feitos = set(conexao.execute("SELECT DISTINCT episodio, participante FROM temas").fetchall())

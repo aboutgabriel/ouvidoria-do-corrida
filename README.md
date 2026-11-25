@@ -16,14 +16,16 @@ Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de
 
 ## O que os dados mostram até agora
 
-Depois de 3 episódios e 18.968 comentários lidos (as primeiras 48 horas de cada episódio):
+Depois de 4 episódios e 28.391 comentários lidos (as primeiras 48 horas de cada episódio):
 
-- **A torcida acertou a primeira eliminação.** No flop do episódio 1 estavam Peter, Talitah, Aysha e Breia. Breia venceu a prova do flop e ficou. Entre os outros três, Peter tinha o pior saldo (−75) e foi quem saiu, revelado só no começo do episódio 2. Com uma eliminação só, ainda é cedo para conclusões.
+- **A torcida acertou 2 das 3 eliminações que dava para prever.** Em cada flop, a comparação é feita entre quem não venceu a prova de eliminação.
+  - **Episódio 1, acertou:** Peter tinha o pior saldo do flop (−75) e saiu.
+  - **Episódio 3, errou:** a aposta era Breia (−53), mas quem saiu foi Rhanyane, que tinha saldo positivo (+15).
+  - **Episódio 4, acertou, por pouco:** Breia (−76) e Matthel (−75) ficaram separados por pouco mais de um ponto, e Breia saiu.
 - **No episódio 2 não há previsão para testar:** Paizinho desistiu durante a prova do flop, então a torcida já sabia quem ia sair.
-- **A aposta do episódio 3 está em aberto:** Matthel venceu a prova do flop e está salvo. Entre os outros três (Breia, Talitah e Rhanyane), o pior saldo é o de Breia (−53). O resultado sai no episódio 4.
-- **A maior virada continua sendo a de Matthel,** que caiu de +56 para −51 entre os episódios 1 e 2, depois da discussão sobre etarismo com Talitah. No episódio 3, Breia caiu de +48 para −53 depois de ir direto para o flop.
-- **Gabriel Queiroz teve o maior saldo da temporada no episódio 3 (+97):** 541 elogios e nenhuma crítica, depois de vencer a prova de maquiagem artística com 50 minutos a menos.
-- **A torcida compara:** no episódio 3, em 76 comentários a crítica a Aysha vem junto de um elogio a Latyffa, que parte do público queria como destaque da prova.
+- **Talitah Sampaio foi o nome mais citado da temporada no episódio 4:** 2.544 menções e saldo de +80, depois de vencer a prova de cola quente mesmo amarrada a Jheny. Muitos elogios a ela vêm junto de críticas a quem a enfrentou: 129 comentários com Aysha e 128 com Matthel.
+- **Gabriel Queiroz teve o maior saldo da temporada no episódio 3 (+97)**, com 541 elogios e nenhuma crítica, e caiu para +34 no episódio 4, depois de escolher amarrar Jheny e Talitah.
+- **A maior virada continua sendo a de Matthel,** que caiu de +56 para −51 entre os episódios 1 e 2, depois da discussão sobre etarismo com Talitah.
 
 **Janela de 48 horas:** cada episódio conta só os comentários publicados nas primeiras 48 horas depois que o vídeo sai. Assim todos os episódios são comparados com a mesma régua, e o painel sai dois dias depois do episódio. No episódio 1, que tem 11 dias de comentários, o saldo de cada participante com mais de 100 menções nas primeiras 48 horas ficou a no máximo 6 pontos do saldo final (`janela.py`).
 
@@ -87,7 +89,7 @@ Copie `.env.example` para `.env` e coloque suas chaves da YouTube Data API v3 e 
 python coletar.py --episodio 1 --video LINK_DO_EPISODIO_1
 python verificar_apelidos.py
 python classificar.py --limite 40   # teste
-python classificar.py               # todos
+python classificar.py --episodio 1  # só os comentários do episódio 1
 python gerar_amostra.py --rodada 2 --tamanho 50  # planilha nova para revisão humana
 python avaliar.py --rodada 2                     # depois de revisar a planilha
 python conferir.py                  # confere os números em SQL
@@ -98,7 +100,7 @@ python gerar_dados.py               # atualiza o painel em docs/
 
 ## A cada episódio novo
 
-1. Dois dias depois do episódio sair, coletar e classificar os comentários.
+1. Dois dias depois do episódio sair, coletar e classificar os comentários (`python classificar.py --episodio N`). Depois, `python classificar.py --episodio N --reenviar-vazios` manda de novo o que o modelo tiver devolvido sem nenhuma participante.
 2. Atualizar `dados/resultados.csv` com o resultado oficial.
 3. Ler a transcrição do episódio, descrever as cenas mais comentadas em `dados/cenas.json` e escrever o que aconteceu com cada participante em `dados/contexto.json`.
 4. Rodar `temas.py` e depois `resumir.py` (ele usa as cenas, o contexto e os temas) e revisar os resumos e os exemplos dos temas antes de publicar.
@@ -114,6 +116,8 @@ A coleta deve ser feita depois que as 48 horas fecharem. Se for antes, o `gerar_
 - A API do YouTube devolve no máximo 5 respostas por comentário, então conversas longas ficam incompletas.
 - Só vão para o modelo os comentários que citam alguma participante pelo nome ou apelido. Comentários como "ela foi injustiçada", sem nome, ficam de fora.
 - A torcida erra muito a grafia dos nomes. A lista de apelidos foi construída a partir dos próprios dados (ex.: "Talita" aparece mais que o oficial "Talitah").
+- **A lista de apelidos cresceu no episódio 4.** Revisando os comentários mais curtidos, apareceram grafias que ficavam de fora, como "Mattel", "Sampaio", "Ayesha" e "Rany". O segundo comentário mais curtido do episódio 4 (14,9 mil curtidas) não tinha sido analisado por escrever "Mattel". Com os apelidos novos, entraram 551 comentários do episódio 4. Nos episódios 1 a 3, os mesmos apelidos encontram cerca de 500 comentários que ainda não foram classificados, e esses episódios serão reprocessados depois.
+- **No episódio 4, o modelo devolveu 456 comentários sem nenhuma participante** (8,5%, contra 1% a 4% nos episódios anteriores), mesmo com o nome escrito no texto. Isso coincidiu com dias de instabilidade da API. Eles foram reenviados (`--reenviar-vazios`) e todos voltaram classificados.
 - Quando uma participante é citada num comentário que critica uma decisão das juradas ("não entendi ela como destaque"), o modelo tende a ler como elogio a ela. No episódio 3, o autor revisou 130 das 592 menções a Aysha Pink (todos os 65 elogios, mais 40 críticas e 25 neutros sorteados) e discordou de 19: 10 dos 65 elogios eram críticas ou neutros. As correções estão em `dados/correcoes.csv`, e essa revisão não entra na taxa de 86%, porque não foi feita às cegas.
 - O modelo às vezes lê a defesa de uma participante ("injusto ela ir pro flop") como crítica a ela. Isso pode puxar para baixo o saldo de quem foi para o flop. As citações em destaque no painel são revisadas à mão (`dados/correcoes.csv`), mas a contagem geral carrega esse tipo de erro, que está incluído na taxa de acerto de 86%.
 - Participantes com poucas menções têm saldo menos estável, porque cada comentário pesa mais.

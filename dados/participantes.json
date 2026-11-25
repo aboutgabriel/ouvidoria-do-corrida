@@ -1,14 +1,14 @@
 [
-  {"nome": "Rhanyane Garcia",    "apelidos": ["Rhanyane", "Rhany"]},
+  {"nome": "Rhanyane Garcia",    "apelidos": ["Rhanyane", "Rhany", "Ranny", "Rany", "Rhanny"]},
   {"nome": "Bárbara Freitas",    "apelidos": ["Bárbara", "Barb"]},
-  {"nome": "Talitah Sampaio",    "apelidos": ["Talitah", "Talita", "Thalita"]},
-  {"nome": "Aysha Pink",         "apelidos": ["Aysha", "Aisha"]},
-  {"nome": "Latyffa Romayale",   "apelidos": ["Latyffa", "Latifa", "Latyfa", "Lattyfa"]},
+  {"nome": "Talitah Sampaio",    "apelidos": ["Talitah", "Talita", "Thalita", "Sampaio", "Thalitah", "Talitha", "Thalyta"]},
+  {"nome": "Aysha Pink",         "apelidos": ["Aysha", "Aisha", "Ayesha", "Aixa"]},
+  {"nome": "Latyffa Romayale",   "apelidos": ["Latyffa", "Latifa", "Latyfa", "Lattyfa", "Latifah", "Latyfah", "Lattyffa"]},
   {"nome": "Breia",              "apelidos": ["Breia", "Brea"]},
-  {"nome": "Matthel",            "apelidos": ["Matthel", "Mathel", "Matel"]},
-  {"nome": "Sttefone",           "apelidos": ["Sttefone", "Stefone", "Steffone", "Stefany"]},
+  {"nome": "Matthel",            "apelidos": ["Matthel", "Mathel", "Matel", "Mattel", "Mateu", "Matheu"]},
+  {"nome": "Sttefone",           "apelidos": ["Sttefone", "Stefone", "Steffone", "Stefany", "Ste", "Sthefone"]},
   {"nome": "Gabriel Queiroz",    "apelidos": ["Gabriel", "Queiroz"]},
-  {"nome": "Jheny Albano",       "apelidos": ["Jheny", "Jhenny", "Jeny", "Jenny", "Jeni"]},
+  {"nome": "Jheny Albano",       "apelidos": ["Jheny", "Jhenny", "Jeny", "Jenny", "Jeni", "Jehnny"]},
   {"nome": "Paizinho dos Looks", "apelidos": ["Paizinho", "Rodolfo"]},
   {"nome": "Peter Poc",          "apelidos": ["Peter", "Poc"]}
 ]
