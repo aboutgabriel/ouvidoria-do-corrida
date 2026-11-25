@@ -4522,18 +4522,246 @@ window.DADOS = {
     }
   },
   "resumos": {
-    "Aysha Pink": "Na estreia, um terço das menções a Aysha Pink (72 de 212) dizia que foi injusto ela ir para o flop depois de fazer a maquiagem mais elogiada do grupo de Talitah, e o vídeo de etiqueta também foi elogiado. O saldo foi de +69. No segundo episódio, caiu para −6. Metade das 96 críticas veio da briga com Talitah: 30 reclamaram de Aysha voltar ao assunto da indicação, e 19, de ela dizer que Talitah puxava o enredo para si. A apresentação do gloss de cuscuz com Latyffa rendeu 23 elogios.\n\nNo terceiro episódio, foi o nome mais citado (592 menções) e o saldo caiu para −71. Das 474 críticas, 245 questionam o destaque positivo que ela recebeu das juradas, e outras 94 dizem que o dragão não ficou bom. O desabafo no palco, em que ela falou de uma perda pessoal, apareceu em 47 menções, a maioria críticas. Em 76 comentários, a crítica a ela vem junto de um elogio a Latyffa, que parte da torcida queria como destaque.\n\nNo quarto episódio, o saldo ficou em −71, igual ao do episódio anterior, com 563 críticas em 696 menções. Ela foi direto para o flop e venceu a prova de eliminação com o vídeo publicitário, mas os comentários mais curtidos sobre ela falam do conflito com Talitah. O primeiro (14,7 mil curtidas) diz que Talitah \"alugou um triplex\" na cabeça dela. Em 129 comentários, a crítica a Aysha vem junto de um elogio a Talitah, o par mais frequente do episódio, e em 27, junto de um elogio a Bárbara.",
-    "Breia": "Breia recebeu mais elogios que qualquer outra pessoa na estreia (529) e terminou com +71. Quase metade das menções era só torcida, mas 119 comentários acharam injusto o próprio grupo mandá-la para o flop, e o look básico de oncinha foi mais defendido (69 elogios) do que criticado (20). No segundo episódio, ficou em +48. Ela sobrou na divisão das duplas, e 41 comentários falaram de Matthel tê-la deixado de lado. Das 52 críticas, 27 foram para a apresentação do gloss que ela fez sozinha. O bordão \"beijos da Breia\" virou piada, mais de riso do que de crítica.\n\nNo terceiro episódio, o saldo caiu de +48 para −53, a maior queda da semana. Das 282 críticas, 181 falam do desempenho fraco nas provas, depois de ela ir direto para o flop com a maquiagem da uva, e 32 dizem que só o carisma não sustenta a permanência. A bronca da jurada Renata apareceu em 25 menções, quase todas concordando com ela. Em 28 comentários, a crítica a ela vem junto de uma defesa de Rhanyane, que também estava no flop.\n\nNo quarto episódio, o saldo caiu para −76, o pior do episódio, com 1.141 críticas em 1.369 menções. Ela voltou do flop, fez um look rosa que foi caindo durante o desfile e foi mandada de novo ao flop pelas três melhores da noite. Em 57 comentários, a crítica a ela vem junto de um elogio a Talitah, e em 37, de um elogio a Latyffa, com quem discutiu sobre a plaquinha de \"sem noção\".",
-    "Bárbara Freitas": "Bárbara Freitas foi de −27 para +79. Na estreia, 62 das 104 críticas diziam que quem devia ter ido para o flop era ela, e não Breia, já que foi ela quem não entregou a saia. Outros 85 comentários falavam da contradição do grupo, que reclamou dela a prova inteira e votou em Breia. No segundo episódio, ela venceu a prova do gloss com Talitah, e quase metade das menções (112) elogiou a dupla. A ideia do gloss que prometia aumentar os seios teve mais 22 elogios.\n\nNo terceiro episódio, o saldo foi de +82. A maquiagem da pessoa possuída, um dos destaques da prova, rendeu 56 elogios, e outros 47 falam da personalidade dela. Mais da metade das menções é torcida declarada, sem citar um momento. Em 133 comentários, ela é elogiada junto com Gabriel, o vencedor da prova.\n\nNo quarto episódio, ficou entre as três melhores com o vestido de baile, e as juradas a chamaram de exemplo de evolução. O saldo ficou em +58, com 204 elogios e 28 críticas em 306 menções. Em 121 comentários, ela é elogiada junto com Talitah, a dupla mais elogiada do episódio, e em 53, junto com Latyffa.",
-    "Gabriel Queiroz": "Gabriel Queiroz teve poucas menções na estreia (56), quase todas positivas, e saldo de +75. O comentário mais curtido sobre ele lembra que ele foi o último escolhido, não foi ouvido e ainda fez a maquiagem do look vencedor. No segundo episódio, o saldo caiu para +38, mas seguiu positivo. Das 27 críticas, 12 foram para o nervosismo na apresentação do gloss de pitaia. Do outro lado, 34 comentários falaram de Paizinho ter jogado a culpa nele, a maquiagem de Ana Mary B no flop teve 29 elogios, e 16 lamentaram ele ter raspado as sobrancelhas à toa.\n\nNo terceiro episódio, venceu a prova de maquiagem artística e chegou a +97, o maior saldo da temporada até aqui: foram 541 elogios e nenhuma crítica em 555 menções. Em 68 delas, a torcida destaca que ele venceu mesmo com 50 minutos a menos de prova. Os comentários sobre essa vitória somam mais de 38 mil curtidas, mais que qualquer outro assunto do episódio, e em 133 comentários ele é elogiado junto com Bárbara.\n\nNo quarto episódio, o saldo caiu de +97 para +34, a maior queda do episódio. Com a vantagem de vencedor, escolheu amarrar Jheny e Talitah, e a crítica mais curtida (906 curtidas) chama a escolha de \"maria vai com as outras\". Mais de um terço das menções (112 de 310) foi neutra, e os elogios vieram mais da briga com Jheny: o mais curtido (550 curtidas) diz que ela o provocou sem ninguém perguntar.",
-    "Jheny Albano": "Jheny Albano está entre as menos comentadas, então cada comentário pesa mais no saldo. Na estreia, foram 41 menções e saldo de +12. A crítica mais comum (7 comentários) foi a rivalidade com Paizinho dos Looks, que soou combinada, e quem é de Cascavel comemorou ver a cidade representada. No segundo episódio, com 50 menções, o saldo caiu para −20. Quase metade das críticas não citou um momento específico, e o resto se dividiu entre a relação com Paizinho e a apresentação do gloss com Rhanyane, quando ela não conseguiu esconder o desconforto.\n\nNo terceiro episódio, o saldo caiu para −39. Das 78 críticas, 23 dizem que o pavão ficou básico, 15 que ela merecia ter ido para o flop, e outras 24 falam da discussão com Sttefone e de ela se irritar com facilidade.\n\nNo quarto episódio, o saldo foi de −33, com 216 críticas em 373 menções. Ela começou cobrando Gabriel pelo que ele disse no lounge e, depois de passar uma hora amarrada a Talitah, disse ter visto de perto o que o elenco faz com a colega. A mudança dividiu a torcida: o elogio mais curtido (3,1 mil curtidas) é de quem passou a concordar com Jheny sobre a perseguição, e a crítica mais curtida (1,8 mil) lembra que ela também alfinetava Talitah. Em 53 comentários, ela é elogiada junto com Talitah.",
-    "Latyffa Romayale": "Latyffa Romayale tem os saldos mais altos da temporada, +96 na estreia e +85 no segundo episódio, e quase não recebe críticas (foram 4 em 267 menções). A maior parte dos comentários é pura torcida, sem citar um momento. Quando citam, falam da energia dela na apresentação do gloss de cuscuz com Aysha (28 elogios), pedem que a DiaTV a contrate como repórter (18) ou dizem que a dupla merecia ter vencido (15). A piada da \"mainha sem look\", depois que a mala dela foi extraviada, rendeu o comentário mais curtido sobre ela, com mais de 12 mil curtidas.\n\nNo terceiro episódio, o saldo foi de +91. A bruxa que ela fez na prova de maquiagem artística rendeu 123 elogios, muitos dizendo que o destaque positivo deveria ter sido dela, e outros 90 elogiam o carisma e o humor. Em 76 comentários, o elogio a ela vem junto de uma crítica a Aysha, que ficou com o destaque.\n\nNo quarto episódio, ficou entre as três melhores com o corset drapeado e teve saldo de +68, com 394 elogios em 502 menções. O comentário mais curtido sobre ela (11,3 mil curtidas) termina em \"Latyffa te amo\". Em 97 comentários, ela é elogiada junto com Talitah, e em 37 o elogio vem com uma crítica a Breia, que a chamou de sem noção. Parte da torcida achou que ela alfinetou Talitah: em 21 comentários, a crítica a ela vem junto de um elogio a Talitah.",
-    "Matthel": "Matthel chegou bem na estreia, com saldo de +56 e a maior parte das menções só comemorando a entrada dele. O comentário mais curtido brinca com a semelhança com a jurada Lorelay Fox (\"a substância da Lorelay\", em referência ao filme A Substância), e as poucas críticas foram para a maquiagem que fez em Breia e o voto nela para o flop. No segundo episódio, o saldo despencou para −51. Das 159 críticas, 56 envolvem Talitah: 31 dizem que ele vivia tentando corrigi-la, e 25 falam da fala sobre a idade dela, que ela chamou de etarismo. Outras 23 falam de como ele tratou Breia, que sobrou sem dupla, e quase metade das críticas não aponta um motivo específico.\n\nNo terceiro episódio, o saldo ficou em −41. Das 210 críticas, 70 dizem que ele promete muito e entrega pouco, 33 falam em arrogância e 27 criticam a insistência em atacar Talitah. Ele foi o mais votado pelo elenco para o flop e venceu a prova de eliminação. Em 34 comentários, a crítica a ele vem junto de um elogio a Talitah.\n\nNo quarto episódio, o saldo foi de −75, com 930 críticas em 1.122 menções, pouco mais de um ponto acima de Breia. Depois de ser amarrado a Latyffa e dizer que Jheny e Talitah jogaram sujo, não terminou o look e chorou no palco. O comentário mais curtido sobre ele (14,9 mil curtidas) diz que ele \"começa soberbo e SEMPRE termina chorando\". Em 128 comentários, a crítica a ele vem junto de um elogio a Talitah. Foi para o flop pela segunda semana seguida.",
-    "Paizinho dos Looks": "Paizinho dos Looks já começou com −51. Na estreia, a crítica mais comum (27 comentários) foi compará-lo a Rico Melquiades, e outros 11 disseram que ele só desfilou no grupo de Talitah. No segundo episódio, foi o nome mais citado, com 853 menções, e ficou em −54. As críticas vieram de vários lados: 155 sobre a desistência no meio da prova do flop, 111 sobre a falta de preparo, 51 sobre ele ter culpado Gabriel pelo tempo estourado no gloss e 28 sobre o prejuízo para quem já tinha raspado as sobrancelhas. O discurso duro de Edu apareceu em 193 menções: 97 aproveitaram para criticar Paizinho, e 64 saíram em defesa dele.\n\nNo terceiro episódio, já fora do programa, ainda foi citado 43 vezes, com saldo −53, em comentários que lembram a desistência e o comparam a outros participantes.",
-    "Peter Poc": "Peter Poc teve o pior saldo da estreia, −75, e foi eliminado. Quase metade das menções não citava um momento específico. Quem explicou falou de quatro coisas: as queixas durante a prova (105 críticas), ter dito que sabia fazer cabelo e depois reclamar da peruca (75), culpar a líder Talitah e o grupo pelo resultado (54) e o vídeo de etiqueta mal editado no flop (44). No segundo episódio, a recapitulação deu a entender que ele pode voltar, e o saldo foi para −1. A possível volta apareceu em 43 menções, 24 a favor e 13 contra.\n\nNo terceiro episódio, teve só 5 menções.",
-    "Rhanyane Garcia": "Rhanyane Garcia é pouco comentada, então cada comentário pesa mais no saldo. Na estreia, venceu como líder do grupo da Fanta Uva e teve 27 menções, com saldo de +33, quase tudo torcida sem um motivo específico. No segundo episódio, com 71 menções, caiu para −20. Mais da metade das 32 críticas não aponta um momento. As outras se espalham entre a apresentação do gloss em que chamou Jheny de \"quase um membro fantasma\" (5), a vantagem de assistir às outras duplas, que não pareceu servir para nada (4), e não ter ajudado Paizinho no flop (4).\n\nNo terceiro episódio, o saldo voltou a ficar positivo (+15), com a torcida dividida: 99 elogios e 69 críticas. Entre quem a defende, 30 comentários dizem que seria injusto ela sair no lugar de Breia, e 18 acham que ela nem deveria ter ido para o flop. A foto sem fundo na prova de eliminação apareceu em 19 menções. Em 28 comentários, a defesa dela vem junto de uma crítica a Breia.\n\nNo quarto episódio, já eliminada, teve 65 menções e o maior saldo dela na temporada (+68). A maior parte lamentava que ela tivesse saído no lugar de Breia, como no comentário \"A Ranny sair pra Breia é o foda\" (392 curtidas).",
-    "Sttefone": "Sttefone foi criticada na estreia, com saldo de −30. Das 52 críticas, 45 falam de ela ter reclamado a prova inteira da saia de Bárbara e, no fim, votado em Breia para o flop. O cabelo que ela fez teve 8 elogios. No segundo episódio, com menos menções (39), subiu para +82. Os elogios foram para o visual dela (13) e para a apresentação do gloss com MP3, em que os comentários disseram que ela salvou a dupla quando Matthel se perdeu (10).\n\nNo terceiro episódio, teve poucas menções (59) e o saldo ficou em −2, com 18 elogios e 19 críticas, divididas entre a discussão com Jheny no QG e a maquiagem de guaraná.\n\nNo quarto episódio, o saldo caiu para −37, com 78 críticas em 121 menções. O look \"rococó street style\" teve elogios isolados, mas a crítica mais curtida (1,3 mil curtidas) é sobre ela dizer a Talitah que \"todo mundo te odeia\", na conversa do elenco sobre idade. Em 27 comentários, a crítica a ela vem junto de um elogio a Talitah.",
-    "Talitah Sampaio": "Talitah Sampaio foi de −26 para +56. Na estreia, as críticas se dividiram entre a liderança do grupo (26), a decisão de mandar Aysha para o flop (24) e a briga com Peter sobre a peruca (13), e metade das menções não citava um momento específico. No segundo episódio, ela venceu a prova do gloss com Bárbara, e a dupla teve 114 elogios. Outros 93 comentários saíram em defesa dela contra o que chamaram de perseguição do elenco, e, na discussão com Matthel sobre idade, os elogios a ela (27) superaram as críticas (10).\n\nNo terceiro episódio, o saldo ficou em +45. O assunto principal foi a defesa contra o que a torcida chama de perseguição do elenco, com 130 elogios em 154 menções, e 33 comentários a compararam a Juliette. A maquiagem de cachorro e a ida ao flop dividiram opiniões: 41 elogios e 40 críticas. Em 34 comentários, o elogio a ela vem junto de uma crítica a Matthel, e em 31, de uma crítica a Aysha.\n\nNo quarto episódio, venceu a prova de cola quente mesmo depois de passar a primeira hora amarrada a Jheny, por escolha de Gabriel, e foi o nome mais citado da temporada até aqui: 2.544 menções e saldo de +80, o maior do episódio, com 2.164 elogios e 127 críticas. O comentário mais curtido do episódio (17,6 mil curtidas) lembra que ninguém do elenco apontou o look dela como o melhor. Boa parte dos elogios vem junto de críticas a quem a enfrentou: em 129 comentários a crítica vai para Aysha, em 128 para Matthel e em 57 para Breia. Ela também foi elogiada junto com Bárbara (121 comentários) e Latyffa (97)."
+    "Aysha Pink": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Na estreia, um terço das menções a Aysha Pink (72 de 212) dizia que foi injusto ela ir para o flop depois de fazer a maquiagem mais elogiada do grupo de Talitah, e o vídeo de etiqueta também foi elogiado. O saldo foi de +69. No segundo episódio, caiu para −6. Metade das 96 críticas veio da briga com Talitah: 30 reclamaram de Aysha voltar ao assunto da indicação, e 19, de ela dizer que Talitah puxava o enredo para si. A apresentação do gloss de cuscuz com Latyffa rendeu 23 elogios."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, foi o nome mais citado (592 menções) e o saldo caiu para −71. Das 474 críticas, 245 questionam o destaque positivo que ela recebeu das juradas, e outras 94 dizem que o dragão não ficou bom. O desabafo no palco, em que ela falou de uma perda pessoal, apareceu em 47 menções, a maioria críticas. Em 76 comentários, a crítica a ela vem junto de um elogio a Latyffa, que parte da torcida queria como destaque."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, o saldo ficou em −71, igual ao do episódio anterior, com 563 críticas em 696 menções. Ela foi direto para o flop e venceu a prova de eliminação com o vídeo publicitário, mas os comentários mais curtidos sobre ela falam do conflito com Talitah. O primeiro (14,7 mil curtidas) diz que Talitah \"alugou um triplex\" na cabeça dela. Em 129 comentários, a crítica a Aysha vem junto de um elogio a Talitah, o par mais frequente do episódio, e em 27, junto de um elogio a Bárbara."
+      }
+    ],
+    "Breia": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Breia recebeu mais elogios que qualquer outra pessoa na estreia (529) e terminou com +71. Quase metade das menções era só torcida, mas 119 comentários acharam injusto o próprio grupo mandá-la para o flop, e o look básico de oncinha foi mais defendido (69 elogios) do que criticado (20). No segundo episódio, ficou em +48. Ela sobrou na divisão das duplas, e 41 comentários falaram de Matthel tê-la deixado de lado. Das 52 críticas, 27 foram para a apresentação do gloss que ela fez sozinha. O bordão \"beijos da Breia\" virou piada, mais de riso do que de crítica."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, o saldo caiu de +48 para −53, a maior queda da semana. Das 282 críticas, 181 falam do desempenho fraco nas provas, depois de ela ir direto para o flop com a maquiagem da uva, e 32 dizem que só o carisma não sustenta a permanência. A bronca da jurada Renata apareceu em 25 menções, quase todas concordando com ela. Em 28 comentários, a crítica a ela vem junto de uma defesa de Rhanyane, que também estava no flop."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, o saldo caiu para −76, o pior do episódio, com 1.141 críticas em 1.369 menções. Ela voltou do flop, fez um look rosa que foi caindo durante o desfile e foi mandada de novo ao flop pelas três melhores da noite. Em 57 comentários, a crítica a ela vem junto de um elogio a Talitah, e em 37, de um elogio a Latyffa, com quem discutiu sobre a plaquinha de \"sem noção\"."
+      }
+    ],
+    "Bárbara Freitas": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Bárbara Freitas foi de −27 para +79. Na estreia, 62 das 104 críticas diziam que quem devia ter ido para o flop era ela, e não Breia, já que foi ela quem não entregou a saia. Outros 85 comentários falavam da contradição do grupo, que reclamou dela a prova inteira e votou em Breia. No segundo episódio, ela venceu a prova do gloss com Talitah, e quase metade das menções (112) elogiou a dupla. A ideia do gloss que prometia aumentar os seios teve mais 22 elogios."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, o saldo foi de +82. A maquiagem da pessoa possuída, um dos destaques da prova, rendeu 56 elogios, e outros 47 falam da personalidade dela. Mais da metade das menções é torcida declarada, sem citar um momento. Em 133 comentários, ela é elogiada junto com Gabriel, o vencedor da prova."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, ficou entre as três melhores com o vestido de baile, e as juradas a chamaram de exemplo de evolução. O saldo ficou em +58, com 204 elogios e 28 críticas em 306 menções. Em 121 comentários, ela é elogiada junto com Talitah, a dupla mais elogiada do episódio, e em 53, junto com Latyffa."
+      }
+    ],
+    "Gabriel Queiroz": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Gabriel Queiroz teve poucas menções na estreia (56), quase todas positivas, e saldo de +75. O comentário mais curtido sobre ele lembra que ele foi o último escolhido, não foi ouvido e ainda fez a maquiagem do look vencedor. No segundo episódio, o saldo caiu para +38, mas seguiu positivo. Das 27 críticas, 12 foram para o nervosismo na apresentação do gloss de pitaia. Do outro lado, 34 comentários falaram de Paizinho ter jogado a culpa nele, a maquiagem de Ana Mary B no flop teve 29 elogios, e 16 lamentaram ele ter raspado as sobrancelhas à toa."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, venceu a prova de maquiagem artística e chegou a +97, o maior saldo da temporada até aqui: foram 541 elogios e nenhuma crítica em 555 menções. Em 68 delas, a torcida destaca que ele venceu mesmo com 50 minutos a menos de prova. Os comentários sobre essa vitória somam mais de 38 mil curtidas, mais que qualquer outro assunto do episódio, e em 133 comentários ele é elogiado junto com Bárbara."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, o saldo caiu de +97 para +34, a maior queda do episódio. Com a vantagem de vencedor, escolheu amarrar Jheny e Talitah, e a crítica mais curtida (906 curtidas) chama a escolha de \"maria vai com as outras\". Mais de um terço das menções (112 de 310) foi neutra, e os elogios vieram mais da briga com Jheny: o mais curtido (550 curtidas) diz que ela o provocou sem ninguém perguntar."
+      }
+    ],
+    "Jheny Albano": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Jheny Albano está entre as menos comentadas, então cada comentário pesa mais no saldo. Na estreia, foram 41 menções e saldo de +12. A crítica mais comum (7 comentários) foi a rivalidade com Paizinho dos Looks, que soou combinada, e quem é de Cascavel comemorou ver a cidade representada. No segundo episódio, com 50 menções, o saldo caiu para −20. Quase metade das críticas não citou um momento específico, e o resto se dividiu entre a relação com Paizinho e a apresentação do gloss com Rhanyane, quando ela não conseguiu esconder o desconforto."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, o saldo caiu para −39. Das 78 críticas, 23 dizem que o pavão ficou básico, 15 que ela merecia ter ido para o flop, e outras 24 falam da discussão com Sttefone e de ela se irritar com facilidade."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, o saldo foi de −33, com 216 críticas em 373 menções. Ela começou cobrando Gabriel pelo que ele disse no lounge e, depois de passar uma hora amarrada a Talitah, disse ter visto de perto o que o elenco faz com a colega. A mudança dividiu a torcida: o elogio mais curtido (3,1 mil curtidas) é de quem passou a concordar com Jheny sobre a perseguição, e a crítica mais curtida (1,8 mil) lembra que ela também alfinetava Talitah. Em 53 comentários, ela é elogiada junto com Talitah."
+      }
+    ],
+    "Latyffa Romayale": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Latyffa Romayale tem os saldos mais altos da temporada, +96 na estreia e +85 no segundo episódio, e quase não recebe críticas (foram 4 em 267 menções). A maior parte dos comentários é pura torcida, sem citar um momento. Quando citam, falam da energia dela na apresentação do gloss de cuscuz com Aysha (28 elogios), pedem que a DiaTV a contrate como repórter (18) ou dizem que a dupla merecia ter vencido (15). A piada da \"mainha sem look\", depois que a mala dela foi extraviada, rendeu o comentário mais curtido sobre ela, com mais de 12 mil curtidas."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, o saldo foi de +91. A bruxa que ela fez na prova de maquiagem artística rendeu 123 elogios, muitos dizendo que o destaque positivo deveria ter sido dela, e outros 90 elogiam o carisma e o humor. Em 76 comentários, o elogio a ela vem junto de uma crítica a Aysha, que ficou com o destaque."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, ficou entre as três melhores com o corset drapeado e teve saldo de +68, com 394 elogios em 502 menções. O comentário mais curtido sobre ela (11,3 mil curtidas) termina em \"Latyffa te amo\". Em 97 comentários, ela é elogiada junto com Talitah, e em 37 o elogio vem com uma crítica a Breia, que a chamou de sem noção. Parte da torcida achou que ela alfinetou Talitah: em 21 comentários, a crítica a ela vem junto de um elogio a Talitah."
+      }
+    ],
+    "Matthel": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Matthel chegou bem na estreia, com saldo de +56 e a maior parte das menções só comemorando a entrada dele. O comentário mais curtido brinca com a semelhança com a jurada Lorelay Fox (\"a substância da Lorelay\", em referência ao filme A Substância), e as poucas críticas foram para a maquiagem que fez em Breia e o voto nela para o flop. No segundo episódio, o saldo despencou para −51. Das 159 críticas, 56 envolvem Talitah: 31 dizem que ele vivia tentando corrigi-la, e 25 falam da fala sobre a idade dela, que ela chamou de etarismo. Outras 23 falam de como ele tratou Breia, que sobrou sem dupla, e quase metade das críticas não aponta um motivo específico."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, o saldo ficou em −41. Das 210 críticas, 70 dizem que ele promete muito e entrega pouco, 33 falam em arrogância e 27 criticam a insistência em atacar Talitah. Ele foi o mais votado pelo elenco para o flop e venceu a prova de eliminação. Em 34 comentários, a crítica a ele vem junto de um elogio a Talitah."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, o saldo foi de −75, com 930 críticas em 1.122 menções, pouco mais de um ponto acima de Breia. Depois de ser amarrado a Latyffa e dizer que Jheny e Talitah jogaram sujo, não terminou o look e chorou no palco. O comentário mais curtido sobre ele (14,9 mil curtidas) diz que ele \"começa soberbo e SEMPRE termina chorando\". Em 128 comentários, a crítica a ele vem junto de um elogio a Talitah. Foi para o flop pela segunda semana seguida."
+      }
+    ],
+    "Paizinho dos Looks": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Paizinho dos Looks já começou com −51. Na estreia, a crítica mais comum (27 comentários) foi compará-lo a Rico Melquiades, e outros 11 disseram que ele só desfilou no grupo de Talitah. No segundo episódio, foi o nome mais citado, com 853 menções, e ficou em −54. As críticas vieram de vários lados: 155 sobre a desistência no meio da prova do flop, 111 sobre a falta de preparo, 51 sobre ele ter culpado Gabriel pelo tempo estourado no gloss e 28 sobre o prejuízo para quem já tinha raspado as sobrancelhas. O discurso duro de Edu apareceu em 193 menções: 97 aproveitaram para criticar Paizinho, e 64 saíram em defesa dele."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, já fora do programa, ainda foi citado 43 vezes, com saldo −53, em comentários que lembram a desistência e o comparam a outros participantes."
+      }
+    ],
+    "Peter Poc": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Peter Poc teve o pior saldo da estreia, −75, e foi eliminado. Quase metade das menções não citava um momento específico. Quem explicou falou de quatro coisas: as queixas durante a prova (105 críticas), ter dito que sabia fazer cabelo e depois reclamar da peruca (75), culpar a líder Talitah e o grupo pelo resultado (54) e o vídeo de etiqueta mal editado no flop (44). No segundo episódio, a recapitulação deu a entender que ele pode voltar, e o saldo foi para −1. A possível volta apareceu em 43 menções, 24 a favor e 13 contra."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, teve só 5 menções."
+      }
+    ],
+    "Rhanyane Garcia": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Rhanyane Garcia é pouco comentada, então cada comentário pesa mais no saldo. Na estreia, venceu como líder do grupo da Fanta Uva e teve 27 menções, com saldo de +33, quase tudo torcida sem um motivo específico. No segundo episódio, com 71 menções, caiu para −20. Mais da metade das 32 críticas não aponta um momento. As outras se espalham entre a apresentação do gloss em que chamou Jheny de \"quase um membro fantasma\" (5), a vantagem de assistir às outras duplas, que não pareceu servir para nada (4), e não ter ajudado Paizinho no flop (4)."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, o saldo voltou a ficar positivo (+15), com a torcida dividida: 99 elogios e 69 críticas. Entre quem a defende, 30 comentários dizem que seria injusto ela sair no lugar de Breia, e 18 acham que ela nem deveria ter ido para o flop. A foto sem fundo na prova de eliminação apareceu em 19 menções. Em 28 comentários, a defesa dela vem junto de uma crítica a Breia."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, já eliminada, teve 65 menções e o maior saldo dela na temporada (+68). A maior parte lamentava que ela tivesse saído no lugar de Breia, como no comentário \"A Ranny sair pra Breia é o foda\" (392 curtidas)."
+      }
+    ],
+    "Sttefone": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Sttefone foi criticada na estreia, com saldo de −30. Das 52 críticas, 45 falam de ela ter reclamado a prova inteira da saia de Bárbara e, no fim, votado em Breia para o flop. O cabelo que ela fez teve 8 elogios. No segundo episódio, com menos menções (39), subiu para +82. Os elogios foram para o visual dela (13) e para a apresentação do gloss com MP3, em que os comentários disseram que ela salvou a dupla quando Matthel se perdeu (10)."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, teve poucas menções (59) e o saldo ficou em −2, com 18 elogios e 19 críticas, divididas entre a discussão com Jheny no QG e a maquiagem de guaraná."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, o saldo caiu para −37, com 78 críticas em 121 menções. O look \"rococó street style\" teve elogios isolados, mas a crítica mais curtida (1,3 mil curtidas) é sobre ela dizer a Talitah que \"todo mundo te odeia\", na conversa do elenco sobre idade. Em 27 comentários, a crítica a ela vem junto de um elogio a Talitah."
+      }
+    ],
+    "Talitah Sampaio": [
+      {
+        "episodios": [
+          1,
+          2
+        ],
+        "texto": "Talitah Sampaio foi de −26 para +56. Na estreia, as críticas se dividiram entre a liderança do grupo (26), a decisão de mandar Aysha para o flop (24) e a briga com Peter sobre a peruca (13), e metade das menções não citava um momento específico. No segundo episódio, ela venceu a prova do gloss com Bárbara, e a dupla teve 114 elogios. Outros 93 comentários saíram em defesa dela contra o que chamaram de perseguição do elenco, e, na discussão com Matthel sobre idade, os elogios a ela (27) superaram as críticas (10)."
+      },
+      {
+        "episodios": [
+          3
+        ],
+        "texto": "No terceiro episódio, o saldo ficou em +45. O assunto principal foi a defesa contra o que a torcida chama de perseguição do elenco, com 130 elogios em 154 menções, e 33 comentários a compararam a Juliette. A maquiagem de cachorro e a ida ao flop dividiram opiniões: 41 elogios e 40 críticas. Em 34 comentários, o elogio a ela vem junto de uma crítica a Matthel, e em 31, de uma crítica a Aysha."
+      },
+      {
+        "episodios": [
+          4
+        ],
+        "texto": "No quarto episódio, venceu a prova de cola quente mesmo depois de passar a primeira hora amarrada a Jheny, por escolha de Gabriel, e foi o nome mais citado da temporada até aqui: 2.544 menções e saldo de +80, o maior do episódio, com 2.164 elogios e 127 críticas. O comentário mais curtido do episódio (17,6 mil curtidas) lembra que ninguém do elenco apontou o look dela como o melhor. Boa parte dos elogios vem junto de críticas a quem a enfrentou: em 129 comentários a crítica vai para Aysha, em 128 para Matthel e em 57 para Breia. Ela também foi elogiada junto com Bárbara (121 comentários) e Latyffa (97)."
+      }
+    ]
   },
   "resumos_episodios": {
     "1": "A estreia teve 5.888 comentários nas primeiras 48 horas, e Peter Poc foi o nome mais citado, com 725 menções e saldo −75. Os comentários criticaram as queixas dele durante a prova do look rococó, o fato de ter dito que sabia fazer cabelo e depois reclamar da peruca, e a forma como culpou a líder Talitah pelo resultado do grupo. Ele foi eliminado no flop do vídeo de etiqueta. Breia recebeu mais elogios que qualquer outra pessoa (529), e 119 comentários acharam injusto o próprio grupo mandá-la para o flop. Muita gente apontou a contradição de Sttefone, que reclamou da saia de Bárbara a prova inteira e votou em Breia. Aysha Pink também foi defendida, por ter feito a maquiagem mais elogiada do grupo de Talitah e mesmo assim ir para o flop.",

@@ -506,6 +506,24 @@
     .hero-foto { top: 1.2rem; }
   }
   @media (max-width: 380px) { .faixa-fixa { gap: .5rem; } .faixa-fixa img { height: 1.9rem; } .faixa-fixa .episodios button small { display: none; } .faixa-fixa .episodios button { padding: .3rem .45rem; } }
+
+  /* ---------- dica (tooltip) e ficha: cartões claros sobre o roxo ---------- */
+  .dica { background: #F6F1E7; color: #2B1322; border-radius: 10px; padding: .55rem .75rem; font-size: .82rem; line-height: 1.45; max-width: 17rem;
+    box-shadow: 0 12px 30px rgba(20,6,14,.45), 0 0 0 1px rgba(201,166,90,.6); }
+  .dica strong { font: 400 1rem/1.2 var(--display); color: #2B1322; }
+  .dica .pessoa { display: flex; align-items: center; gap: .65rem; }
+  .dica .pessoa img { width: 46px; height: 46px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 16%; border: 2px solid #E8CF94; }
+  .ficha-eps { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1.3rem 0 0; padding: .3rem; border-radius: 999px; background: rgba(255,255,255,.07); width: fit-content; }
+  .ficha-eps button { border: 0; border-radius: 999px; padding: .35rem .85rem; background: none; color: var(--nevoa); font: 500 .85rem var(--texto); cursor: pointer; }
+  .ficha-eps button[aria-pressed="true"] { background: var(--dourado-texto); color: #2A1220; font-weight: 600; }
+  .ficha-eps button:focus-visible { outline: 2px solid var(--dourado-texto); outline-offset: 2px; }
+  .curtidas { display: grid; gap: .7rem; margin-top: .4rem; }
+  .curtida { margin: 0; padding: .9rem 1rem .85rem; border-radius: 12px; background: #F6F1E7; color: #2B1322; box-shadow: 0 10px 24px rgba(0,0,0,.28); }
+  .curtida .rot { display: inline-flex; align-items: center; gap: .4rem; font: 600 .75rem var(--texto); color: #6A5060; }
+  .curtida .rot::before { content: ""; width: .55rem; height: .55rem; border-radius: 50%; background: currentColor; }
+  .curtida.pos .rot { color: #1E8A4C; } .curtida.neg .rot { color: #C23A33; }
+  .curtida blockquote { margin: .35rem 0 0; font: italic 400 1.05rem/1.4 var(--display); color: #2B1322; }
+  .curtida .num { display: block; margin-top: .45rem; font: 600 .78rem var(--texto); color: #8C6A2C; }
 </style>
 </head>
 <body>
@@ -697,6 +715,11 @@
     dica.style.top = Math.max(8, y - dica.offsetHeight - 14) + "px";
   }
   const esconder = () => dica.classList.remove("ativa");
+  // Dica com a foto da participante: fica mais fácil reconhecer quem é cada linha ou ponto.
+  function dicaPessoa(nome, linhas) {
+    const foto = (D.fotos || {})[nome];
+    return `<span class="pessoa">${foto ? `<img src="${esc(foto)}" alt="">` : ""}<span><strong>${esc(nome)}</strong>${linhas.map(l => `<br>${l}`).join("")}</span></span>`;
+  }
   function ligarDica(el, html) {
     el.addEventListener("pointermove", e => mostrar(e, html));
     el.addEventListener("pointerleave", esconder);
@@ -848,7 +871,7 @@
           <span class="pct">${pos}%</span>
         </div>`;
       li.querySelector(".nome").addEventListener("click", () => abrirFicha(p.nome));
-      ligarDica(li.querySelector(".barra"), `<strong>${esc(p.nome)}</strong><br>${fmt(p.positivo)} elogios, ${fmt(p.negativo)} críticas, ${fmt(p.neutro)} neutros<br>Saldo da torcida: ${sinal(p.saldo)}`);
+      ligarDica(li.querySelector(".barra"), dicaPessoa(p.nome, [`${fmt(p.positivo)} elogios, ${fmt(p.negativo)} críticas, ${fmt(p.neutro)} neutros`, `Saldo da torcida: ${sinal(p.saldo)}`]));
       ol.appendChild(li);
     });
     document.getElementById("tabela-conversa").innerHTML = `<table>
@@ -911,7 +934,7 @@
         <circle cx="${x1}" cy="${y(p.para)}" r="${forte ? 5.5 : 4}" fill="${cor}" stroke="#2B1222" stroke-width="2"/>
         ${forte ? `<text x="${x0 - 10}" y="${y(p.de) + 4}" text-anchor="end" font-size="12.5" fill="#F6EDF0">${esc(primeiroNome(p.nome))} ${sinal(p.de)}</text>
                    <text x="${x1 + 10}" y="${y(p.para) + 4}" font-size="12.5" fill="#F6EDF0">${sinal(p.para)} ${esc(primeiroNome(p.nome))}</text>` : ""}`;
-      ligarDica(el, `<strong>${esc(p.nome)}</strong><br>Episódio ${anterior.numero}: ${sinal(p.de)}<br>Episódio ${ep.numero}: ${sinal(p.para)}<br>Variação: ${sinal(p.var)} pontos`);
+      ligarDica(el, dicaPessoa(p.nome, [`Episódio ${anterior.numero}: ${sinal(p.de)}`, `Episódio ${ep.numero}: ${sinal(p.para)}`, `Variação: ${sinal(p.var)} pontos`]));
       el.addEventListener("click", () => abrirFicha(p.nome));
       svg.appendChild(el);
     });
@@ -1081,7 +1104,7 @@
         bt.style.cssText = `left:${cx - d / 2}px;top:${cy - d / 2}px;width:${d}px;height:${d}px;${foto ? `background-image:url('${foto}')` : ""}`;
         bt.setAttribute("aria-label", `${p.nome}, ${ROTULO[r]}, saldo ${sinal(p.saldo)}`);
         if (!foto) bt.textContent = iniciais(p.nome);
-        ligarDica(bt, `<strong>${esc(p.nome)}</strong><br>${ROTULO[r]}<br>Saldo da torcida: ${sinal(p.saldo)}`);
+        ligarDica(bt, dicaPessoa(p.nome, [ROTULO[r][0].toUpperCase() + ROTULO[r].slice(1), `Saldo da torcida: ${sinal(p.saldo)}`]));
         bt.addEventListener("click", () => abrirFicha(p.nome));
         area.appendChild(bt);
       });
@@ -1094,11 +1117,12 @@
   const ficha = document.getElementById("ficha");
   const fichaConteudo = document.getElementById("ficha-conteudo");
   ficha.addEventListener("click", e => { if (e.target === ficha) ficha.close(); });
-  function abrirFicha(nome) {
+  // focoNum: episódio que a ficha mostra (resumo, temas e citações). Por padrão, o da aba aberta.
+  function abrirFicha(nome, focoNum) {
     esconder();
     const traj = eps.map(e => ({ ep: e, p: e.participantes.find(q => q.nome === nome) })).filter(t => t.p);
     const ultimo = traj[traj.length - 1].p;
-    const foco = traj.find(t => t.ep.numero === atual) || traj[traj.length - 1];
+    const foco = traj.find(t => t.ep.numero === (focoNum || atual)) || traj[traj.length - 1];
     const saida = traj.find(t => SAIU(t.p.resultado));
 
     const W = 320, H = 140, mx = 30, my = 24;
@@ -1114,13 +1138,16 @@
         <text x="${xs(i)}" y="${H - 2}" text-anchor="middle" font-size="11.5" fill="#6A5060">Ep. ${t.ep.numero}</text>`;
     });
 
-    const resumo = (D.resumos || {})[nome];
+    // O resumo vem em partes, uma por episódio (os episódios 1 e 2 dividem a primeira).
+    const partes = (D.resumos || {})[nome] || [];
+    const parte = partes.find(pt => pt.episodios.includes(foco.ep.numero));
+    const quando = parte && parte.episodios.length > 1 ? `nos episódios ${parte.episodios.join(" e ")}` : `no episódio ${foco.ep.numero}`;
     const q = foco.p;
     // Só mostra citações com pelo menos 10 curtidas: com poucos comentários, um erro do modelo apareceria em destaque.
     const MIN_CURTIDAS = 10;
     const temCitacao = c => c && c.curtidas >= MIN_CURTIDAS;
     const citacao = (c, tipo, titulo, falta) => temCitacao(c)
-      ? `<div class="citacao ${tipo}">“${esc(c.texto)}”<small>${titulo}, com ${fmt(c.curtidas)} curtidas</small></div>`
+      ? `<figure class="curtida ${tipo}"><span class="rot">${titulo}</span><blockquote>“${esc(c.texto)}”</blockquote><span class="num">${fmt(c.curtidas)} curtidas</span></figure>`
       : `<p class="sem-citacao">${falta}</p>`;
     const algumaCitacao = temCitacao(q.elogio) || temCitacao(q.critica);
     const citacoes = algumaCitacao
@@ -1152,22 +1179,26 @@
           ${(D.fotos || {})[nome] ? `<p class="sub" style="font-size:.75rem">${esc(D.credito_fotos || "")}</p>` : ""}
         </div>
       </div>
-      ${resumo ? `<h3>Como a torcida viu ${esc(primeiroNome(nome))}</h3>
-        <p class="resumo">${esc(resumo)}</p>
-        <p class="sub" style="font-size:.8rem">Resumo escrito com apoio de IA a partir de todas as menções, separadas por tema, e do que aconteceu em cada episódio. Os números foram conferidos e o texto foi revisado antes de ir ao ar.</p>` : ""}
+      ${traj.length > 1 ? `<div class="ficha-eps" role="group" aria-label="Escolher o episódio">${traj.map(t => `<button type="button" data-ep="${t.ep.numero}" aria-pressed="${t === foco}">Ep. ${t.ep.numero}</button>`).join("")}</div>` : ""}
+      ${parte ? `<h3>Como a torcida viu ${esc(primeiroNome(nome))} ${quando}</h3>
+        <p class="resumo">${esc(parte.texto)}</p>` : ""}
+      ${citacoes ? `<h3>O que a torcida mais curtiu no episódio ${foco.ep.numero}</h3>
+        <div class="curtidas">${citacoes}</div>` : ""}
       ${blocoTemas}
       <h3>Saldo da torcida, episódio a episódio</h3>
       <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Trajetória do saldo: ${traj.map(t => "episódio " + t.ep.numero + " " + sinal(t.p.saldo)).join(", ")}" style="width:100%;height:auto;overflow:visible;font-family:var(--texto)">${mini}</svg>
       <table>
         <thead><tr><th>Episódio</th><th>Resultado</th><th>Menções</th><th>Saldo</th></tr></thead>
-        <tbody>${traj.map(t => `<tr><td>${t.ep.numero}</td><td>${t.p.resultado ? (t.p.resultado === "Salvo" ? "seguiu" : ROTULO[t.p.resultado]) : "fora"}</td><td>${fmt(t.p.mencoes)}</td><td>${sinal(t.p.saldo)}</td></tr>`).join("")}</tbody>
+        <tbody>${traj.map(t => `<tr><td>${t.ep.numero}</td><td>${t.p.resultado ? (t.p.resultado === "Salvo" ? "seguiu" : ROTULO[t.ep.numero < atual ? t.p.resultado : NO_EPISODIO(t.p.resultado)]) : "fora"}</td><td>${fmt(t.p.mencoes)}</td><td>${sinal(t.p.saldo)}</td></tr>`).join("")}</tbody>
       </table>
-      ${citacoes ? `<h3>O que a torcida mais curtiu no episódio ${foco.ep.numero}</h3>
-        ${citacoes}
-        <p class="sub" style="margin-top:.6rem;font-size:.8rem">Elogio ou crítica segundo a classificação do modelo, que pode errar em ironias. As citações em destaque passam por revisão humana.</p>` : ""}`;
+      ${parte || citacoes ? `<p class="sub" style="margin-top:1.2rem;font-size:.78rem">Resumo escrito com apoio de IA a partir de todas as menções, separadas por tema, e do que aconteceu em cada episódio. Os números foram conferidos e o texto foi revisado. Elogio ou crítica seguem a classificação do modelo, que pode errar em ironias; as citações em destaque passam por revisão humana.</p>` : ""}`;
+    fichaConteudo.querySelectorAll(".ficha-eps button").forEach(b => b.addEventListener("click", () => {
+      abrirFicha(nome, Number(b.dataset.ep));
+      const nova = fichaConteudo.querySelector(`.ficha-eps button[data-ep="${b.dataset.ep}"]`);
+      if (nova) nova.focus();
+    }));
     fichaConteudo.querySelector(".fechar").addEventListener("click", () => ficha.close());
-    ficha.showModal();
-    fichaConteudo.scrollTop = 0;
+    if (!ficha.open) { ficha.showModal(); fichaConteudo.scrollTop = 0; }
   }
 
   // ---------- método ----------

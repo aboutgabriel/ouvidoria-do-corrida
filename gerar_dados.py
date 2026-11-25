@@ -288,7 +288,9 @@ def main():
     resumos = {}
     if os.path.exists(RESUMOS):
         with open(RESUMOS, encoding="utf-8") as arquivo:
-            resumos = {nome: r["texto"] for nome, r in json.load(arquivo).items()}
+            # Um texto por episódio (ou por grupo de episódios), para a ficha mostrar só o do episódio escolhido.
+            resumos = {nome: r.get("partes") or [{"episodios": r.get("episodios", []), "texto": r["texto"]}]
+                       for nome, r in json.load(arquivo).items()}
 
     resumos_episodios = {}
     if os.path.exists(RESUMOS_EPISODIOS):
