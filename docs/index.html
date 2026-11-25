@@ -212,6 +212,16 @@
   .faixa { margin-top: 2rem; }
   .faixa h3 { margin: 0 0 .2rem; font: 400 1.15rem var(--display); color: var(--dourado-texto); }
   .faixa p { margin: 0 0 .8rem; color: var(--nevoa); font-size: .95rem; max-width: 36rem; }
+  .faixa-area { position: relative; }
+  .faixa-area svg { position: absolute; inset: 0; overflow: visible; }
+  .rosto-prev { position: absolute; padding: 0; border-radius: 50%; border: 2px solid #8E7684; background: #4A2A3C center 16% / cover no-repeat;
+    cursor: pointer; color: #F6EDF0; font: 600 .7rem var(--sans, sans-serif); box-shadow: 0 4px 10px rgba(0,0,0,.35); }
+  .rosto-prev.salvo { filter: saturate(.55); opacity: .8; }
+  .rosto-prev.venceu { border: 3px solid #C9A65A; }
+  .rosto-prev.flop { border: 3px solid #F0736B; }
+  .rosto-prev.saiu::after { content: ""; position: absolute; right: -5px; bottom: -5px; width: 18px; height: 18px; border-radius: 50%;
+    background: #2B1222 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5.5 5.5l7 7M12.5 5.5l-7 7' stroke='%23F6EDF0' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"); border: 1.5px solid #F0736B; }
+  .rosto-prev:hover, .rosto-prev:focus-visible { z-index: 2; transform: scale(1.12); outline: 2px solid var(--dourado-texto); outline-offset: 2px; filter: none; opacity: 1; }
 
   /* método */
   .metodo p { max-width: 36rem; }
@@ -595,13 +605,13 @@
 <section class="sala escura" aria-labelledby="t-resultado">
   <div class="miolo">
     <h2 id="t-resultado">A torcida adivinha quem sai?</h2>
-    <p class="lede">Cada ponto é alguém do elenco, posicionado pelo saldo da torcida (elogios menos críticas, de −100 a +100). Quanto mais à direita, mais a torcida estava a favor.</p>
+    <p class="lede">Cada foto é alguém do elenco, posicionado pelo saldo da torcida (elogios menos críticas, de −100 a +100). Quanto mais à direita, mais a torcida estava a favor.</p>
     <p class="nota-faixas">Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de 48 horas fecha antes disso. Então a torcida comenta <strong>sem saber o resultado</strong>, e dá para testar se ela adivinha. A comparação é feita só entre quem estava no flop e não venceu a prova de eliminação, porque só eles podiam sair.</p>
     <div class="legenda" aria-hidden="true">
-      <span><svg width="14" height="14"><circle cx="7" cy="7" r="5.5" fill="#C9A65A"/></svg>Venceu</span>
-      <span><svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="#8E7684"/></svg>Seguiu na disputa</span>
-      <span><svg width="14" height="14"><circle cx="7" cy="7" r="4.6" fill="#2B1222" stroke="#F0736B" stroke-width="2"/></svg>Flop</span>
-      <span><svg width="14" height="14"><path d="M3 3 L11 11 M11 3 L3 11" stroke="#F6EDF0" stroke-width="2"/></svg>Saiu</span>
+      <span><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="#C9A65A" stroke-width="2.5"/></svg>Venceu</span>
+      <span><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="#8E7684" stroke-width="2"/></svg>Seguiu na disputa</span>
+      <span><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="#F0736B" stroke-width="2.5"/></svg>Flop</span>
+      <span><svg width="16" height="16"><circle cx="8" cy="8" r="7" fill="#2B1222" stroke="#F0736B" stroke-width="1.5"/><path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="#F6EDF0" stroke-width="1.8" stroke-linecap="round"/></svg>Saiu</span>
     </div>
     <div id="faixas"></div>
   </div>
@@ -642,6 +652,7 @@
   const ROTULO = { Venceu: "venceu", Salvo: "seguiu na disputa", Flop: "flop", Eliminado: "saiu", Desistiu: "desistiu" };
   const ETIQUETA = { Venceu: "venceu", Flop: "flop", Eliminado: "saiu", Desistiu: "desistiu" };
   const SAIU = r => r === "Eliminado" || r === "Desistiu";
+  const NO_EPISODIO = r => r === "Eliminado" ? "Flop" : r;
   const primeiroNome = n => n.split(" ")[0];
   // Iniciais só das palavras com maiúscula: "Paizinho dos Looks" vira PL.
   const iniciais = n => n.split(" ").filter(p => /^[A-ZÀ-Ú]/.test(p)).slice(0, 2).map(p => p[0]).join("");
@@ -794,7 +805,8 @@
       const tam = antes ? "p" : i < 2 ? "g" : i < 5 ? "m" : "p";
       const fora = antes || SAIU(p.resultado);
       const temSaldo = p.mencoes > 0;
-      const situacao = antes ? `${p.comoSaiu === "Desistiu" ? "desistiu" : "saiu"} no ep. ${p.saiuEm}` : p.resultado !== "Salvo" ? ROTULO[p.resultado] : "";
+      // Quem sai do flop só é revelado no episódio seguinte: na página do próprio episódio, aparece como "flop".
+      const situacao = antes ? `${p.comoSaiu === "Desistiu" ? "desistiu" : "saiu"} no ep. ${p.saiuEm}` : p.resultado !== "Salvo" ? ROTULO[NO_EPISODIO(p.resultado)] : "";
       const li = document.createElement("li");
       li.className = tam;
       const fotoP = (D.fotos || {})[p.nome];
@@ -818,7 +830,7 @@
     ol.innerHTML = "";
     lista.forEach((p, i) => {
       const neg = pct(p.negativo, p.mencoes), pos = pct(p.positivo, p.mencoes);
-      const r = p.resultado;
+      const r = NO_EPISODIO(p.resultado);
       const classe = r === "Venceu" ? "venceu" : SAIU(r) ? "saiu" : "";
       const li = document.createElement("li");
       li.innerHTML = `
@@ -1017,56 +1029,63 @@
     }
     eps.filter(e => e.numero === atual).forEach(ep => {
       const lista = emJogo(ep);
-      const W = largura(box), H = 120, M = 18, eixo = 66;
+      const W = largura(box), M = 22;
+      const d = W >= 600 ? 54 : 34;          // diâmetro da foto
       const x = s => M + (s + 100) / 200 * (W - 2 * M);
+      // Quem tem saldo parecido ficaria em cima um do outro: empilha as fotos para cima.
+      const peso = r => r === "Salvo" ? 1 : 0;
+      const pontos = lista.map(p => ({ p, cx: x(p.saldo) })).sort((a, b) => a.cx - b.cx || peso(a.p.resultado) - peso(b.p.resultado));
+      const niveis = [];
+      pontos.forEach(pt => {
+        let n = 0;
+        while (niveis[n] !== undefined && niveis[n] > pt.cx - d / 2 - 3) n++;
+        niveis[n] = pt.cx + d / 2;
+        pt.nivel = n;
+      });
+      const passo = d + 6, topo = 8, haste = 12;
+      const eixo = topo + niveis.length * passo + haste;
+      const H = eixo + 50;
       const div = document.createElement("div");
       div.className = "faixa";
       div.innerHTML = `<h3>Episódio ${ep.numero}</h3><p>${frase(ep)}</p>`;
+      const area = document.createElement("div");
+      area.className = "faixa-area";
+      area.style.height = H + "px";
       const svg = document.createElementNS(NS, "svg");
       svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-      svg.setAttribute("role", "img");
-      svg.setAttribute("aria-label", `Saldo da torcida no episódio ${ep.numero}: ` + lista.map(p => `${p.nome} ${sinal(p.saldo)}`).join(", "));
+      svg.setAttribute("width", W); svg.setAttribute("height", H);
+      svg.setAttribute("aria-hidden", "true");
       let g = `<line x1="${M}" x2="${W - M}" y1="${eixo}" y2="${eixo}" stroke="#6E4A5E"/>`;
       [-100, -50, 0, 50, 100].forEach(t => {
         if (W < 420 && Math.abs(t) === 50) return;
-        g += `<line x1="${x(t)}" x2="${x(t)}" y1="${eixo - (t === 0 ? 30 : 4)}" y2="${eixo + 4}" stroke="${t === 0 ? "#C3ABB8" : "#6E4A5E"}" ${t === 0 ? 'stroke-dasharray="2 3"' : ""}/>`;
+        g += `<line x1="${x(t)}" x2="${x(t)}" y1="${eixo - (t === 0 ? eixo - topo : 4)}" y2="${eixo + 4}" stroke="${t === 0 ? "#C3ABB8" : "#6E4A5E"}" ${t === 0 ? 'stroke-dasharray="2 3"' : ""}/>`;
         g += `<text x="${x(t)}" y="${eixo + 22}" text-anchor="middle" font-size="12" fill="#C3ABB8">${sinal(t) || "0"}</text>`;
       });
       g += `<text x="${M}" y="${eixo + 44}" font-size="12" fill="#C3ABB8">mais críticas</text><text x="${W - M}" y="${eixo + 44}" text-anchor="end" font-size="12" fill="#C3ABB8">mais elogios</text>`;
+      // Haste e ponto no eixo: marcam o saldo exato, já que a foto pode estar empilhada.
+      pontos.forEach(pt => {
+        const cy = topo + (niveis.length - 1 - pt.nivel) * passo + d / 2;
+        pt.cy = cy;
+        const cor = pt.p.resultado === "Salvo" ? "#8E7684" : pt.p.resultado === "Venceu" ? "#C9A65A" : "#F0736B";
+        g += `<line x1="${pt.cx}" x2="${pt.cx}" y1="${cy + d / 2}" y2="${eixo}" stroke="${cor}" stroke-opacity=".6"/>`;
+        g += `<circle cx="${pt.cx}" cy="${eixo}" r="3" fill="${cor}"/>`;
+      });
       svg.innerHTML = g;
-      const peso = r => r === "Salvo" ? 0 : 1;
-      const rotulos = [];
-      lista.slice().sort((a, b) => peso(a.resultado) - peso(b.resultado)).forEach(p => {
-        const cx = x(p.saldo), r = p.resultado;
-        const el = document.createElementNS(NS, "g");
-        el.setAttribute("tabindex", "0");
-        el.setAttribute("aria-label", `${p.nome}, ${ROTULO[r]}, saldo ${sinal(p.saldo)}`);
-        el.style.cursor = "pointer";
-        let m = `<circle cx="${cx}" cy="${eixo}" r="14" fill="transparent"/>`;
-        if (r === "Venceu") m += `<circle cx="${cx}" cy="${eixo}" r="7" fill="#C9A65A" stroke="#2B1222" stroke-width="2"/>`;
-        else if (r === "Flop") m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#2B1222" stroke="#F0736B" stroke-width="2.5"/>`;
-        else if (SAIU(r)) m += `<path d="M${cx - 6} ${eixo - 6} L${cx + 6} ${eixo + 6} M${cx + 6} ${eixo - 6} L${cx - 6} ${eixo + 6}" stroke="#F6EDF0" stroke-width="2.5" stroke-linecap="round"/>`;
-        else m += `<circle cx="${cx}" cy="${eixo}" r="6" fill="#8E7684" stroke="#2B1222" stroke-width="2"/>`;
-        el.innerHTML = m;
-        ligarDica(el, `<strong>${esc(p.nome)}</strong><br>${ROTULO[r]}<br>Saldo da torcida: ${sinal(p.saldo)}`);
-        el.addEventListener("click", () => abrirFicha(p.nome));
-        svg.appendChild(el);
-        if (r !== "Salvo") rotulos.push({ cx, nome: primeiroNome(p.nome) });
+      area.appendChild(svg);
+      pontos.forEach(({ p, cx, cy }) => {
+        const r = p.resultado;
+        const foto = (D.fotos || {})[p.nome];
+        const bt = document.createElement("button");
+        bt.type = "button";
+        bt.className = "rosto-prev " + ({ Venceu: "venceu", Flop: "flop", Eliminado: "saiu flop", Desistiu: "saiu" }[r] || "salvo");
+        bt.style.cssText = `left:${cx - d / 2}px;top:${cy - d / 2}px;width:${d}px;height:${d}px;${foto ? `background-image:url('${foto}')` : ""}`;
+        bt.setAttribute("aria-label", `${p.nome}, ${ROTULO[r]}, saldo ${sinal(p.saldo)}`);
+        if (!foto) bt.textContent = iniciais(p.nome);
+        ligarDica(bt, `<strong>${esc(p.nome)}</strong><br>${ROTULO[r]}<br>Saldo da torcida: ${sinal(p.saldo)}`);
+        bt.addEventListener("click", () => abrirFicha(p.nome));
+        area.appendChild(bt);
       });
-      rotulos.sort((a, b) => a.cx - b.cx);
-      const niveis = [];
-      rotulos.forEach(l => {
-        const larg = l.nome.length * 7 + 8;
-        let n = 0;
-        while (niveis[n] !== undefined && niveis[n] > l.cx - larg / 2) n++;
-        niveis[n] = l.cx + larg / 2;
-        const t = document.createElementNS(NS, "text");
-        t.setAttribute("x", l.cx); t.setAttribute("y", eixo - 16 - n * 15);
-        t.setAttribute("text-anchor", "middle"); t.setAttribute("font-size", "12.5"); t.setAttribute("fill", "#F6EDF0");
-        t.textContent = l.nome;
-        svg.appendChild(t);
-      });
-      div.appendChild(svg);
+      div.appendChild(area);
       box.appendChild(div);
     });
   }
@@ -1129,7 +1148,7 @@
         ${retratoSVG(nome, ultimo.saldo)}
         <div>
           <h2 id="ficha-nome">${esc(nome)}</h2>
-          <p class="sub">${saida ? (saida.p.resultado === "Desistiu" ? "Desistiu" : "Saiu") + " no episódio " + saida.ep.numero : "Na disputa"}. Com menções em ${traj.length} ${traj.length === 1 ? "episódio" : "episódios"}.</p>
+          <p class="sub">${!saida ? "Na disputa" : saida.p.resultado === "Desistiu" ? "Desistiu no episódio " + saida.ep.numero : saida.ep.numero > atual ? "Na disputa" : saida.ep.numero === atual ? "No flop do episódio " + saida.ep.numero : "Saiu no episódio " + saida.ep.numero}. Com menções em ${traj.length} ${traj.length === 1 ? "episódio" : "episódios"}.</p>
           ${(D.fotos || {})[nome] ? `<p class="sub" style="font-size:.75rem">${esc(D.credito_fotos || "")}</p>` : ""}
         </div>
       </div>
