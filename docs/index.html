@@ -240,9 +240,9 @@
   .vozes-lista { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
   .voz { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: .25rem .9rem; align-content: start; padding: 1.1rem; background: var(--porcelana-clara); border: 1px solid rgba(201,166,90,.35); border-radius: 14px; }
   .voz .arco { grid-row: 1 / span 2; width: 3.4rem; margin: 0; outline-width: 2px; outline-offset: 2px; }
-  .voz .sobre { margin: 0; font-size: .82rem; line-height: 1.35; color: var(--nevoa-2); }
-  .voz .sobre button { display: block; padding: 0; background: none; border: 0; cursor: pointer; font: 400 1.1rem/1.2 var(--display); color: var(--tinta); text-align: left; }
-  .voz .sobre button:hover { text-decoration: underline; text-decoration-color: var(--dourado); text-underline-offset: 3px; }
+  .voz .voz-quem { margin: 0; font-size: .82rem; line-height: 1.35; color: var(--nevoa-2); }
+  .voz .voz-quem button { display: block; padding: 0; background: none; border: 0; cursor: pointer; font: 400 1.1rem/1.2 var(--display); color: var(--tinta); text-align: left; }
+  .voz .voz-quem button:hover { text-decoration: underline; text-decoration-color: var(--dourado); text-underline-offset: 3px; }
   .voz blockquote { grid-column: 1 / -1; margin: .75rem 0 0; font: italic 400 1.15rem/1.4 var(--display); color: var(--tinta); }
   .voz small { grid-column: 1 / -1; margin-top: .5rem; color: var(--dourado); font-size: .82rem; font-weight: 600; }
   .nota-faixas { margin: .8rem 0 1.4rem; font-size: .9rem; color: var(--nevoa-2); max-width: 40rem; }
@@ -326,8 +326,8 @@
   @media (prefers-reduced-motion: reduce) { .retrato svg { transition: none; } }
 
   /* ===== tema streaming verde ===== */
-  :root { --porcelana:#3A1A2D; --porcelana-funda:rgba(255,255,255,.09); --porcelana-clara:#4A2438; --tinta:#F3EFE8; --tinta-2:#C9B3BF; --ouro:#D9B866; --ouro-claro:rgba(217,184,102,.28);
-    --sevres:#5FCB8A; --pompadour:#F0736B; --neutro:#5C3F4E; --vinho:#2B1222; --dourado:#D9B866; --dourado-texto:#E8CF94; --nevoa:#F0E4EA; --nevoa-2:#C9B3BF;
+  :root { --porcelana:#3A1A2D; --porcelana-funda:rgba(255,255,255,.09); --porcelana-clara:#4A2438; --tinta:#F3EFE8; --tinta-2:#E2D4DB; --ouro:#D9B866; --ouro-claro:rgba(217,184,102,.28);
+    --sevres:#5FCB8A; --pompadour:#F0736B; --neutro:#5C3F4E; --vinho:#2B1222; --dourado:#D9B866; --dourado-texto:#E8CF94; --nevoa:#E2D4DB; --nevoa-2:#E2D4DB;
     --sevres-noite:#5FCB8A; --pompadour-noite:#F0736B; --neutro-noite:#8E7684; --coluna:68rem; --destaque:#E8CF94; }
   html, body { background: #3A1A2D; }
   .pos { color: var(--sevres); } .neg { color: var(--pompadour); }
@@ -346,7 +346,7 @@
   .manchete { margin: .9rem 0 0; max-width: none; color: var(--tinta); font: 400 clamp(1.9rem, 3.6vw, 2.9rem)/1.08 var(--display); text-wrap: balance; }
   .edicao { margin: .5rem 0 0; color: var(--tinta-2); text-align: left; font-size: .88rem; }
   .linha-fina { margin: .9rem 0 0; font-size: 1.08rem; color: var(--nevoa); }
-  .voz .sobre, .voz .sobre button { background: none; } .voz .sobre button, .voz blockquote { color: var(--tinta); }
+  .voz .voz-quem, .voz .voz-quem button { background: none; } .voz .voz-quem button, .voz blockquote { color: var(--tinta); }
   .hero-nums { display: flex; gap: 2rem; margin: 1.4rem 0 0; }
   .hero-nums div { margin: 0; } .hero-nums dt { font: 400 2.1rem/1 var(--display); color: var(--destaque); } .hero-nums dt.neg { color: var(--pompadour); } .hero-nums dt.pos { color: var(--sevres); }
   .hero-nums dd { margin: .2rem 0 0; font-size: .82rem; color: var(--tinta-2); }
@@ -449,14 +449,14 @@
   .aconteceu { max-width: 52rem; margin: .8rem 0 0; color: var(--tinta-2); font-size: 1rem; line-height: 1.6; } .aconteceu b { color: var(--tinta); font-weight: 600; }
 
   /* prévia: fundo escuro com profundidade e cartões claros */
-  .sala.clara, .sala.clara#sala-resumo { --porcelana:#3A1A2D; --porcelana-clara:#4A2438; --porcelana-funda:rgba(255,255,255,.09); --tinta:#F3EFE8; --tinta-2:#C9B3BF; --ouro:#D9B866; --ouro-claro:rgba(217,184,102,.28);
-    --sevres:#5FCB8A; --pompadour:#F0736B; --neutro:#5C3F4E; --dourado-texto:#E8CF94; --nevoa:#F0E4EA; --nevoa-2:#C9B3BF; --destaque:#E8CF94; background-color:#3A1A2D; color:var(--tinta); }
+  .sala.clara, .sala.clara#sala-resumo { --porcelana:#3A1A2D; --porcelana-clara:#4A2438; --porcelana-funda:rgba(255,255,255,.09); --tinta:#F3EFE8; --tinta-2:#E2D4DB; --ouro:#D9B866; --ouro-claro:rgba(217,184,102,.28);
+    --sevres:#5FCB8A; --pompadour:#F0736B; --neutro:#5C3F4E; --dourado-texto:#E8CF94; --nevoa:#E2D4DB; --nevoa-2:#E2D4DB; --destaque:#E8CF94; background-color:#3A1A2D; color:var(--tinta); }
   .sala, footer, section.sobre { background-image: radial-gradient(ellipse 75% 55% at 50% 0%, rgba(255,255,255,.085), rgba(255,255,255,0) 70%), linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.28)), var(--estampa) !important; background-size: auto, auto, 120px 180px !important; }
   section.sobre { background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.22)), var(--estampa) !important; background-size: auto, 120px 180px !important; }
   .cartao, .cartao-ep, .achados li, .voz, .cena { --porcelana-clara:#F6F1E7; --porcelana-funda:rgba(43,19,34,.14); --tinta:#2B1322; --tinta-2:#6A5060; --ouro:#8C6A2C; --dourado-texto:#8C6A2C; --ouro-claro:rgba(140,106,44,.3);
     --sevres:#1E8A4C; --pompadour:#D2453D; --neutro:#D9DDD6; --destaque:#7A1F45; --nevoa:#2B1322; --nevoa-2:#6A5060;
     background:#F6F1E7 !important; color:#2B1322; border-color:rgba(255,255,255,.5) !important; box-shadow:0 16px 36px rgba(0,0,0,.38), 0 2px 6px rgba(0,0,0,.25) !important; }
-  .voz small { color:#8C6A2C; } .voz .sobre button, .voz blockquote { color:#2B1322; } .cena .num { color:#fff; }
+  .voz small { color:#8C6A2C; } .voz .voz-quem button, .voz blockquote { color:#2B1322; } .cena .num { color:#fff; }
   /* fundo contínuo: uma luz só para a página inteira, sem emenda entre as seções */
   html { background: #3A1A2D; }
   body { background: #3A1A2D var(--estampa); background-size: 120px 180px; }
@@ -574,6 +574,25 @@
   .menu-eps .ep-l { display: none; } .menu-eps .ep-c { display: inline; }
   .menu-eps button.em-breve .ep-l { display: inline; } .menu-eps button.em-breve .ep-c { display: none; }
   @media (max-width: 760px) { .barra-topo .menu-eps { right: 50%; transform: translateX(50%); } }
+
+  /* polimento: tom único para texto secundário, método com a mesma cor */
+  .metodo .lede { color: var(--tinta); }
+  /* quem já saiu: fileira menor embaixo da grade */
+  /* comentários em destaque: foto maior e curtidas sempre no pé do cartão */
+  .voz { grid-template-columns: 4.2rem minmax(0, 1fr); grid-template-rows: auto auto 1fr auto; align-items: center; }
+  .voz .arco { width: 4.2rem; }
+  .voz .voz-quem { font-size: .86rem; }
+  .voz .voz-quem button { font-size: 1.3rem; margin-bottom: .1rem; }
+  .voz blockquote { align-self: start; }
+  .voz small { align-self: end; margin-top: .9rem; padding-top: .6rem; border-top: 1px solid rgba(43,19,34,.12); }
+  /* previsão: quem se salvou no flop */
+  .rosto-prev.salvou { border: 3px solid #5FCB8A; }
+  .rosto-prev.salvou::after { content: ""; position: absolute; right: -5px; bottom: -5px; width: 18px; height: 18px; border-radius: 50%;
+    background: #1E8A4C url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.4l2.6 2.6L13 6.6' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); border: 1.5px solid #F6F1E7; }
+  /* celular: "O que aconteceu" recolhido */
+  .aconteceu.recolhido { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .ler-aconteceu { margin: .5rem 0 0; padding: .3rem 0; border: 0; background: none; color: var(--dourado-texto); font: 600 .9rem var(--texto); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+  .ler-aconteceu[hidden] { display: none; }
 </style>
 </head>
 <body>
@@ -634,6 +653,7 @@
   <div class="miolo">
     <h2 id="t-episodio"></h2>
     <p class="aconteceu" id="aconteceu" hidden></p>
+    <button type="button" class="ler-aconteceu" id="ler-aconteceu" aria-controls="aconteceu" aria-expanded="false" hidden>Ler o que aconteceu</button>
     <div class="lado-a-lado">
     <div class="bloco-episodio" id="bloco-episodio">
       <div class="cartao-ep">
@@ -679,6 +699,7 @@
       <span><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="#C9A65A" stroke-width="2.5"/></svg>Venceu</span>
       <span><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="#8E7684" stroke-width="2"/></svg>Seguiu na disputa</span>
       <span><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="#F0736B" stroke-width="2.5"/></svg>Flop</span>
+      <span><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="#5FCB8A" stroke-width="2.5"/></svg>Se salvou no flop</span>
       <span><svg width="16" height="16"><circle cx="8" cy="8" r="7" fill="#2B1222" stroke="#F0736B" stroke-width="1.5"/><path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="#F6EDF0" stroke-width="1.8" stroke-linecap="round"/></svg>Saiu</span>
     </div>
     <div id="faixas"></div>
@@ -1140,7 +1161,8 @@
       pontos.forEach(pt => {
         const cy = topo + (niveis.length - 1 - pt.nivel) * passo + d / 2;
         pt.cy = cy;
-        const cor = pt.p.resultado === "Salvo" ? "#8E7684" : pt.p.resultado === "Venceu" ? "#C9A65A" : "#F0736B";
+        const salvou = pt.p.resultado === "Flop" && [].concat(ep.venceu_flop || []).includes(pt.p.nome);
+        const cor = pt.p.resultado === "Salvo" ? "#8E7684" : pt.p.resultado === "Venceu" ? "#C9A65A" : salvou ? "#5FCB8A" : "#F0736B";
         g += `<line x1="${pt.cx}" x2="${pt.cx}" y1="${cy + d / 2}" y2="${eixo}" stroke="${cor}" stroke-opacity=".6"/>`;
         g += `<circle cx="${pt.cx}" cy="${eixo}" r="3" fill="${cor}"/>`;
       });
@@ -1151,11 +1173,12 @@
         const foto = (D.fotos || {})[p.nome];
         const bt = document.createElement("button");
         bt.type = "button";
-        bt.className = "rosto-prev " + ({ Venceu: "venceu", Flop: "flop", Eliminado: "saiu flop", Desistiu: "saiu" }[r] || "salvo");
+        const salvou = r === "Flop" && [].concat(ep.venceu_flop || []).includes(p.nome);
+        bt.className = "rosto-prev " + (salvou ? "salvou" : ({ Venceu: "venceu", Flop: "flop", Eliminado: "saiu flop", Desistiu: "saiu" }[r] || "salvo"));
         bt.style.cssText = `left:${cx - d / 2}px;top:${cy - d / 2}px;width:${d}px;height:${d}px;${foto ? `background-image:url('${foto}')` : ""}`;
         bt.setAttribute("aria-label", `${p.nome}, ${ROTULO[r]}, saldo ${sinal(p.saldo)}`);
         if (!foto) bt.textContent = iniciais(p.nome);
-        ligarDica(bt, dicaPessoa(p.nome, [ROTULO[r][0].toUpperCase() + ROTULO[r].slice(1), `Saldo da torcida: ${sinal(p.saldo)}`]));
+        ligarDica(bt, dicaPessoa(p.nome, [salvou ? "Se salvou no flop" : ROTULO[r][0].toUpperCase() + ROTULO[r].slice(1), `Saldo da torcida: ${sinal(p.saldo)}`]));
         bt.addEventListener("click", () => abrirFicha(p.nome));
         area.appendChild(bt);
       });
@@ -1348,6 +1371,12 @@
     const pa = document.getElementById("aconteceu");
     pa.hidden = !fato;
     pa.innerHTML = fato ? `<b>O que aconteceu no episódio.</b> ${esc(fato)}` : "";
+    // No celular, o texto começa recolhido para não somar dois blocos longos seguidos.
+    const lerMais = document.getElementById("ler-aconteceu");
+    const recolher = fato && matchMedia("(max-width: 760px)").matches;
+    pa.classList.toggle("recolhido", Boolean(recolher));
+    lerMais.hidden = !recolher;
+    lerMais.setAttribute("aria-expanded", "false");
   }
 
   // ---------- o que a torcida escreveu: um comentário para cada fato do resumo ----------
@@ -1363,7 +1392,7 @@
       const li = document.createElement("li");
       li.className = "voz";
       li.innerHTML = `${retratoSVG(c.nome, p ? p.saldo : null)}
-        <p class="sobre"><button type="button">${esc(primeiroNome(c.nome))}</button>${esc(c.tema)}, ${fmt(c.mencoes)} ${c.mencoes === 1 ? "menção" : "menções"}</p>
+        <p class="voz-quem"><button type="button">${esc(primeiroNome(c.nome))}</button>${esc(c.tema)}, ${fmt(c.mencoes)} ${c.mencoes === 1 ? "menção" : "menções"}</p>
         <blockquote>“${esc(c.texto.trim().replace(/"([^"]*)"/g, "‘$1’"))}”</blockquote>
         <small>${fmt(c.curtidas)} curtidas</small>`;
       li.querySelector("button").addEventListener("click", () => abrirFicha(c.nome));
@@ -1500,6 +1529,11 @@
   addEventListener("scroll", mostrarFaixa, { passive: true });
   mostrarFaixa();
   renderMetodo();
+  document.getElementById("ler-aconteceu").addEventListener("click", e => {
+    const aberto = document.getElementById("aconteceu").classList.toggle("recolhido") === false;
+    e.currentTarget.setAttribute("aria-expanded", String(aberto));
+    e.currentTarget.textContent = aberto ? "Recolher" : "Ler o que aconteceu";
+  });
   let larguraAnterior = innerWidth;
   addEventListener("resize", () => {
     if (innerWidth === larguraAnterior) return;
