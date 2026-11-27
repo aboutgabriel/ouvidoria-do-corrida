@@ -432,8 +432,9 @@
   @media (min-width: 761px) {
     .barra-topo, .hero { max-width: 76rem; margin-left: auto; margin-right: auto; }
     .hero-foto { width: min(50%, 33rem); right: 2.5rem; top: 1.2rem; bottom: 0;
-      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 30%, #000 82%, transparent 100%), linear-gradient(0deg, transparent 0, #000 28%);
-      -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0, #000 30%, #000 82%, transparent 100%), linear-gradient(0deg, transparent 0, #000 28%); mask-composite: intersect; }
+      /* some aos poucos nas quatro bordas, sem corte seco no topo */
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 30%, #000 82%, transparent 100%), linear-gradient(180deg, transparent 0, #000 22%, #000 70%, transparent 100%);
+      -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0, #000 30%, #000 82%, transparent 100%), linear-gradient(180deg, transparent 0, #000 22%, #000 70%, transparent 100%); mask-composite: intersect; }
     .hero::after { display: none; }
     .hero-txt { max-width: 36rem; }
   }
