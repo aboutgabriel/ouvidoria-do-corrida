@@ -536,6 +536,44 @@
   /* celular: com 6 abas, "Episódio" vira "Ep." para tudo caber numa linha */
   @media (max-width: 480px) { .episodios .ep-l { display: none; } .episodios .ep-c { display: inline; } }
   @media (max-width: 360px) { .barra-topo .episodios button small { display: none; } }
+
+  /* cartão da previsão ao lado do resumo */
+  .achados li.aposta { padding: 1.4rem 1.4rem 1.5rem; }
+  .aposta .rot { font: 600 .85rem var(--texto); color: #8C6A2C; }
+  .aposta h3 { margin: .2rem 0 1rem; font: 400 1.5rem/1.15 var(--display); color: #2B1322; }
+  .aposta .duelo { display: grid; grid-template-columns: repeat(var(--n, 2), minmax(0, 1fr)); gap: .7rem; }
+  .aposta .duelo button { position: relative; padding: .8rem .3rem .7rem; border: 0; border-radius: 12px; background: rgba(43,19,34,.05); cursor: pointer; font: inherit; text-align: center; }
+  .aposta .duelo button.alvo { background: rgba(210,69,61,.09); outline: 2px solid rgba(210,69,61,.45); }
+  .aposta .duelo button:focus-visible { outline: 2px solid #8C6A2C; outline-offset: 2px; }
+  .aposta .duelo img { display: block; width: 4.4rem; height: 4.4rem; margin: 0 auto .45rem; border-radius: 50%; object-fit: cover; object-position: 50% 16%; border: 3px solid #E8CF94; }
+  .aposta .duelo b { display: block; font: 400 1.08rem var(--display); color: #2B1322; }
+  .aposta .duelo span { font: 400 1.3rem var(--display); } .aposta .neg { color: #D2453D; } .aposta .pos { color: #1E8A4C; }
+  .aposta .duelo small { display: block; margin-top: .15rem; font: 600 .72rem var(--texto); color: #8C6A2C; }
+  .aposta .base-aposta { margin: .9rem 0 0; font-size: .86rem; line-height: 1.5; color: #6A5060; }
+  .aposta .nota-aposta { margin: .5rem 0 0; font-size: .86rem; font-weight: 600; color: #2B1322; }
+  .aposta .nota-aposta a { color: #7A1F45; text-decoration-color: rgba(122,31,69,.4); text-underline-offset: 3px; }
+  .aposta .placar2 { margin: 1rem 0 0; padding-top: .9rem; border-top: 1px solid rgba(43,19,34,.14); font-size: .9rem; color: #6A5060; }
+  .aposta .placar2 strong { margin-right: .3rem; font: 400 1.45rem var(--display); color: #7A1F45; }
+  /* seletor de episódios compacto: anterior, atual com menu, próximo */
+  #seletor[hidden] { display: none !important; }
+  .nav-eps { display: flex; align-items: center; gap: .2rem; flex-wrap: nowrap; }
+  .nav-eps .seta { width: 2.2rem; height: 2.2rem; flex: none; border: 0; border-radius: 50%; background: none; color: var(--dourado-texto); font-size: 1.35rem; line-height: 1; cursor: pointer; }
+  .nav-eps .seta:hover:not(:disabled) { background: rgba(255,255,255,.08); }
+  .nav-eps .seta:disabled { opacity: .28; cursor: default; }
+  .nav-centro { position: relative; }
+  .nav-eps .sel { display: inline-flex; align-items: center; gap: .45rem; padding: .42rem 1rem; border: 0; border-radius: 999px; background: var(--dourado-texto); color: #2A1220; font: 600 .92rem var(--texto); cursor: pointer; white-space: nowrap; }
+  .nav-eps .sel i { font-style: normal; font-size: .75rem; }
+  .nav-eps .sel small { font-weight: 500; opacity: .75; }
+  .nav-eps button:focus-visible { outline: 2px solid var(--dourado-texto); outline-offset: 2px; }
+  .menu-eps { position: absolute; z-index: 40; right: 0; top: calc(100% + .5rem); width: 15rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .3rem; padding: .45rem; border-radius: 12px; background: #F6F1E7; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+  .menu-eps[hidden] { display: none; }
+  .menu-eps button { padding: .55rem 0; border: 0; border-radius: 8px; background: none; color: #2B1322; font: 600 .88rem var(--texto); cursor: pointer; white-space: nowrap; }
+  .menu-eps button:hover { background: rgba(43,19,34,.07); }
+  .menu-eps button[aria-current="true"] { background: #E8CF94; }
+  .menu-eps button.em-breve { color: #8C6A2C; font-weight: 500; border: 1px dashed #C9A65A; grid-column: span 3; }
+  .menu-eps .ep-l { display: none; } .menu-eps .ep-c { display: inline; }
+  .menu-eps button.em-breve .ep-l { display: inline; } .menu-eps button.em-breve .ep-c { display: none; }
+  @media (max-width: 760px) { .barra-topo .menu-eps { right: 50%; transform: translateX(50%); } }
 </style>
 </head>
 <body>
@@ -1334,60 +1372,40 @@
   }
 
   // ---------- achados da temporada (não mudam com o episódio escolhido) ----------
-  function renderAchados() {
-    const itens = [];
-
-    // 1. A torcida adivinha quem sai no flop? (só episódios com resultado revelado)
-    const prevs = eps.map(previsao).filter(x => x && x.tipo === "resultado");
-    if (prevs.length) {
-      const acertos = prevs.filter(x => x.acertou).length;
-      const ult = prevs[prevs.length - 1];
-      itens.push({
-        grande: `${acertos} de ${prevs.length}`,
-        rotulo: prevs.length === 1 ? "eliminação prevista" : "eliminações previstas",
-        texto: prevs.length === 1
-          ? `No flop do episódio ${ult.ep}, ${primeiroNome(ult.saiu.nome)} ${ult.acertou ? "tinha o pior saldo" : "não tinha o pior saldo"} entre os ${["", "", "dois", "três", "quatro", "cinco", "seis"][ult.flop.length] || ult.flop.length} que podiam sair (${sinal(ult.saiu.saldo)}) e foi quem saiu. A torcida comentou antes de o resultado ser revelado. Com uma eliminação só, ainda é cedo para conclusões.`
-          : `Em ${acertos} das ${prevs.length} eliminações, quem saiu era quem tinha o pior saldo no flop, com comentários escritos antes do resultado.`
-      });
+  // ---------- cartão da previsão, ao lado do resumo do episódio ----------
+  // Os outros números da temporada já aparecem em outras partes: a maior virada em "Quem virou o jogo"
+  // e a concordância da IA no método.
+  function renderAposta(ep) {
+    const box = document.getElementById("achados");
+    const prev = previsao(ep);
+    // Na página do episódio, a aposta fica em aberto: quem saiu só aparece na seção da previsão, mais abaixo.
+    // O placar conta só os episódios anteriores, cujo resultado já era conhecido quando este foi ao ar.
+    const antes = eps.filter(e => e.numero < ep.numero).map(previsao).filter(x => x && x.tipo === "resultado");
+    const certos = antes.filter(x => x.acertou).length;
+    const temAposta = prev && prev.tipo !== "sem-eliminacao";
+    let titulo, nota = "";
+    if (!temAposta) {
+      titulo = "Sem aposta neste episódio";
+      const desistiu = emJogo(ep).find(p => p.resultado === "Desistiu");
+      nota = desistiu ? `${primeiroNome(desistiu.nome)} desistiu durante o flop, então não houve eliminação para prever.` : (prev && prev.motivo ? prev.motivo + "." : "Não houve eliminação para prever.");
+    } else {
+      titulo = prev.empate ? `A torcida aposta em ${primeiroNome(prev.pior.nome)} ou ${primeiroNome(prev.segundo.nome)}` : `A torcida aposta em ${primeiroNome(prev.pior.nome)}`;
     }
-    // 1b. Aposta em aberto: o flop do episódio mais recente, cujo resultado ainda não saiu.
-    const aberta = previsao(eps[eps.length - 1]);
-    if (aberta && aberta.tipo === "aguardando") itens.push({
-      grande: aberta.empate ? `${primeiroNome(aberta.pior.nome)} ou ${primeiroNome(aberta.segundo.nome)}?` : `${primeiroNome(aberta.pior.nome)}?`,
-      rotulo: `aposta da torcida para o episódio ${aberta.ep + 1}`,
-      texto: aberta.empate
-        ? `No flop do episódio ${aberta.ep}, as duas têm os piores saldos e estão praticamente empatadas (${sinal(aberta.pior.saldo)} e ${sinal(aberta.segundo.saldo)}). O resultado sai no começo do próximo episódio.`
-        : `Pior saldo entre quem ainda pode sair no flop do episódio ${aberta.ep} (${sinal(aberta.pior.saldo)}). O resultado sai no começo do próximo episódio.`
-    });
-
-    // 2. Maior virada entre dois episódios seguidos (só bases com 50+ menções nos dois).
-    let virada = null;
-    eps.slice(1).forEach(e => {
-      const ant = epDe(e.numero - 1);
-      if (!ant) return;
-      emJogo(e).forEach(p => {
-        const a = ant.participantes.find(q => q.nome === p.nome);
-        if (!a || a.mencoes < 50 || p.mencoes < 50) return;
-        const v = p.saldo - a.saldo;
-        if (!virada || Math.abs(v) > Math.abs(virada.v)) virada = { nome: p.nome, de: a.saldo, para: p.saldo, v, e1: ant.numero, e2: e.numero };
-      });
-    });
-    if (virada) itens.push({
-      grande: `${sinal(virada.v)} pontos`,
-      rotulo: "maior virada",
-      texto: `${primeiroNome(virada.nome)} ${virada.v > 0 ? "subiu" : "caiu"} de ${sinal(virada.de)} para ${sinal(virada.para)} entre os episódios ${virada.e1} e ${virada.e2}${gancho(virada.e2, virada.nome) ? "," + gancho(virada.e2, virada.nome) : ""}.`
-    });
-
-    // 3. Quanto dá para confiar na IA: concordância com a revisão humana às cegas.
-    const av = D.avaliacao;
-    if (av) itens.push({
-      grande: `${String(av.acerto).replace(".", ",").replace(/,0$/, "")}%`,
-      rotulo: "de concordância da IA",
-      texto: `Com a revisão humana feita às cegas, em ${fmt(av.amostra)} menções sorteadas. São ${fmt(D.total_comentarios)} comentários lidos até agora.`
-    });
-
-    document.getElementById("achados").innerHTML = itens.map(i =>
-      `<li><span class="grande">${esc(i.grande)}</span><span class="rotulo">${esc(i.rotulo)}</span><p>${esc(i.texto)}</p></li>`).join("");
+    const lista = temAposta ? prev.flop.slice().sort((x, y) => x.saldo - y.saldo) : [];
+    const duelo = lista.map(p => {
+      const alvo = p === prev.pior || (prev.empate && p === prev.segundo);
+      const foto = (D.fotos || {})[p.nome];
+      return `<button type="button" class="${alvo ? "alvo" : ""}" data-nome="${esc(p.nome)}">${foto ? `<img src="${esc(foto)}" alt="">` : ""}<b>${esc(primeiroNome(p.nome))}</b><span class="${arred(p.saldo) < 0 ? "neg" : "pos"}">${sinal(p.saldo)}</span>${alvo ? `<small>aposta</small>` : ""}</button>`;
+    }).join("");
+    const salvos = temAposta && prev.salvos.length ? ` ${listaNomes(prev.salvos)} ${prev.salvos.length > 1 ? "se salvaram no flop e ficam" : "venceu a prova do flop e fica"} de fora.` : "";
+    const ultimo = ep.numero === eps[eps.length - 1].numero;
+    const base = temAposta ? `<p class="base-aposta">A aposta é quem tem o pior saldo da torcida entre quem ainda podia sair do flop. O saldo é a porcentagem de elogios menos a de críticas nos comentários das primeiras 48 horas, todos escritos antes de a eliminação ser revelada.${salvos}</p>
+      <p class="nota-aposta">${ultimo ? `O resultado sai no começo do episódio ${ep.numero + 1}.` : `O resultado foi revelado no começo do episódio ${ep.numero + 1}: <a href="#t-resultado">veja se a torcida acertou</a>.`}</p>` : `<p class="nota-aposta">${esc(nota)}</p>`;
+    box.innerHTML = `<li class="aposta"><span class="rot">A torcida adivinha quem sai?</span><h3>${esc(titulo)}</h3>
+      ${duelo ? `<div class="duelo" style="--n:${lista.length}">${duelo}</div>` : ""}
+      ${base}
+      ${antes.length ? `<p class="placar2"><strong>${certos} de ${antes.length}</strong> ${antes.length === 1 ? "eliminação prevista" : "eliminações previstas"} nos episódios anteriores</p>` : ""}</li>`;
+    box.querySelectorAll(".duelo button").forEach(bt => bt.addEventListener("click", () => abrirFicha(bt.dataset.nome)));
   }
 
   function renderMetodo() {
@@ -1425,6 +1443,7 @@
       <div><dt class="${arred(topo.saldo) < 0 ? "neg" : "pos"}">${sinal(topo.saldo)}</dt><dd>saldo da torcida</dd></div>
       <div><dt>${fmt(ep.comentarios)}</dt><dd>comentários em 48h</dd></div>`;
     renderResumoEpisodio(ep);
+    renderAposta(ep);
     renderExplicaSaldo(ep);
     renderParede(ep);
     renderRanking(ep);
@@ -1438,25 +1457,49 @@
   // ---------- faixa fixa: aparece ao rolar, com o logo (volta ao início) e a troca de episódio ----------
   const faixaFixa = document.getElementById("faixa-fixa"), faixaEps = document.getElementById("faixa-eps");
   const suave = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-  function sincronizarFaixa() {
-    faixaEps.innerHTML = "";
-    seletor.querySelectorAll("button").forEach(original => {
-      const b = document.createElement("button");
-      b.className = original.className;
-      b.innerHTML = original.innerHTML;
-      b.setAttribute("aria-selected", original.getAttribute("aria-selected") === "true");
-      b.addEventListener("click", () => { original.click(); scrollTo({ top: 0, behavior: suave }); });
-      faixaEps.appendChild(b);
-    });
+  // As abas de verdade ficam escondidas em #seletor; o que aparece é um seletor compacto
+  // (anterior, episódio atual com menu, próximo), que cabe com qualquer número de episódios.
+  const navs = [];
+  function montarNav(caixa, voltarAoTopo) {
+    caixa.classList.add("nav-eps");
+    caixa.innerHTML = `<button type="button" class="seta ant" aria-label="Episódio anterior">‹</button>
+      <div class="nav-centro"><button type="button" class="sel" aria-haspopup="true" aria-expanded="false"><span class="sel-txt"></span><i aria-hidden="true">▾</i></button>
+      <div class="menu-eps" role="menu" hidden></div></div>
+      <button type="button" class="seta prox" aria-label="Próximo episódio">›</button>`;
+    const sel = caixa.querySelector(".sel"), menu = caixa.querySelector(".menu-eps");
+    const abas = () => [...seletor.querySelectorAll('button[role="tab"]')];
+    const ir = aba => { fechar(); aba.click(); if (voltarAoTopo) scrollTo({ top: 0, behavior: suave }); };
+    const fechar = () => { menu.hidden = true; sel.setAttribute("aria-expanded", "false"); };
+    function atualizar() {
+      const t = abas(), i = t.findIndex(b => b.getAttribute("aria-selected") === "true");
+      caixa.querySelector(".sel-txt").innerHTML = i >= 0 ? t[i].innerHTML : "Episódios";
+      caixa.querySelector(".ant").disabled = i <= 0;
+      caixa.querySelector(".prox").disabled = i < 0 || i >= t.length - 1;
+      menu.innerHTML = t.map((b, j) => `<button type="button" role="menuitem" data-i="${j}" class="${b.className}" aria-current="${j === i}">${b.innerHTML}</button>`).join("");
+      menu.querySelectorAll("button").forEach(m => m.addEventListener("click", () => ir(abas()[Number(m.dataset.i)])));
+    }
+    caixa.querySelector(".ant").addEventListener("click", () => { const t = abas(), i = t.findIndex(b => b.getAttribute("aria-selected") === "true"); if (i > 0) ir(t[i - 1]); });
+    caixa.querySelector(".prox").addEventListener("click", () => { const t = abas(), i = t.findIndex(b => b.getAttribute("aria-selected") === "true"); if (i < t.length - 1) ir(t[i + 1]); });
+    sel.addEventListener("click", e => { e.stopPropagation(); const abrir = menu.hidden; navs.forEach(n => n.fechar()); if (abrir) { menu.hidden = false; sel.setAttribute("aria-expanded", "true"); const c = menu.querySelector('[aria-current="true"]'); if (c) c.focus(); } });
+    menu.addEventListener("click", e => e.stopPropagation());
+    navs.push({ atualizar, fechar });
+    atualizar();
   }
-  new MutationObserver(sincronizarFaixa).observe(seletor, { attributes: true, subtree: true, attributeFilter: ["aria-selected"] });
-  sincronizarFaixa();
+  const navTopo = document.createElement("div");
+  navTopo.className = "episodios";
+  navTopo.setAttribute("aria-label", "Escolha o episódio");
+  seletor.after(navTopo);
+  seletor.hidden = true;
+  montarNav(navTopo, false);
+  montarNav(faixaEps, true);
+  document.addEventListener("click", () => navs.forEach(n => n.fechar()));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") navs.forEach(n => n.fechar()); });
+  new MutationObserver(() => navs.forEach(n => n.atualizar())).observe(seletor, { attributes: true, subtree: true, attributeFilter: ["aria-selected"] });
   document.getElementById("faixa-inicio").addEventListener("click", e => { e.preventDefault(); scrollTo({ top: 0, behavior: suave }); });
   const mostrarFaixa = () => faixaFixa.classList.toggle("visivel", scrollY > 320);
   addEventListener("scroll", mostrarFaixa, { passive: true });
   mostrarFaixa();
   renderMetodo();
-  renderAchados();
   let larguraAnterior = innerWidth;
   addEventListener("resize", () => {
     if (innerWidth === larguraAnterior) return;
