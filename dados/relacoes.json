@@ -528,6 +528,207 @@
         "comentarios": 19
       }
     ],
-    "temas_mais_curtidos": []
+    "temas_mais_curtidos": [
+      {
+        "participante": "Talitah Sampaio",
+        "tema": "Comportamento de Aysha e Matthel",
+        "comentarios": 266,
+        "curtidas": 58909
+      },
+      {
+        "participante": "Talitah Sampaio",
+        "tema": "Perseguição e bullying coletivo",
+        "comentarios": 412,
+        "curtidas": 42571
+      },
+      {
+        "participante": "Talitah Sampaio",
+        "tema": "Talento e look da prova",
+        "comentarios": 442,
+        "curtidas": 40586
+      },
+      {
+        "participante": "Aysha Pink",
+        "tema": "Obsessão pela Talitah",
+        "comentarios": 155,
+        "curtidas": 36524
+      },
+      {
+        "participante": "Matthel",
+        "tema": "Choro e vitimismo constante",
+        "comentarios": 116,
+        "curtidas": 31966
+      },
+      {
+        "participante": "Breia",
+        "tema": "Falta de talento e entrega",
+        "comentarios": 495,
+        "curtidas": 21924
+      },
+      {
+        "participante": "Matthel",
+        "tema": "Promete muito e entrega nada",
+        "comentarios": 289,
+        "curtidas": 21145
+      },
+      {
+        "participante": "Matthel",
+        "tema": "Conflitos com Talitah",
+        "comentarios": 137,
+        "curtidas": 20646
+      }
+    ]
+  },
+  "5": {
+    "critica_e_elogio": [
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 298
+      },
+      {
+        "criticada": "Matthel",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 67
+      },
+      {
+        "criticada": "Talitah Sampaio",
+        "elogiada": "Bárbara Freitas",
+        "comentarios": 31
+      },
+      {
+        "criticada": "Matthel",
+        "elogiada": "Bárbara Freitas",
+        "comentarios": 28
+      },
+      {
+        "criticada": "Sttefone",
+        "elogiada": "Talitah Sampaio",
+        "comentarios": 27
+      },
+      {
+        "criticada": "Jheny Albano",
+        "elogiada": "Gabriel Queiroz",
+        "comentarios": 21
+      },
+      {
+        "criticada": "Aysha Pink",
+        "elogiada": "Bárbara Freitas",
+        "comentarios": 21
+      },
+      {
+        "criticada": "Talitah Sampaio",
+        "elogiada": "Aysha Pink",
+        "comentarios": 19
+      }
+    ],
+    "elogiadas_juntas": [
+      {
+        "participantes": [
+          "Aysha Pink",
+          "Matthel"
+        ],
+        "comentarios": 75
+      },
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 73
+      },
+      {
+        "participantes": [
+          "Gabriel Queiroz",
+          "Sttefone"
+        ],
+        "comentarios": 57
+      },
+      {
+        "participantes": [
+          "Gabriel Queiroz",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 34
+      },
+      {
+        "participantes": [
+          "Jheny Albano",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 24
+      },
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Gabriel Queiroz"
+        ],
+        "comentarios": 22
+      },
+      {
+        "participantes": [
+          "Bárbara Freitas",
+          "Latyffa Romayale"
+        ],
+        "comentarios": 22
+      },
+      {
+        "participantes": [
+          "Aysha Pink",
+          "Talitah Sampaio"
+        ],
+        "comentarios": 22
+      }
+    ],
+    "temas_mais_curtidos": [
+      {
+        "participante": "Aysha Pink",
+        "tema": "Perseguição obsessiva a Talitah",
+        "comentarios": 372,
+        "curtidas": 50482
+      },
+      {
+        "participante": "Talitah Sampaio",
+        "tema": "Ataques pessoais da Aysha",
+        "comentarios": 324,
+        "curtidas": 44626
+      },
+      {
+        "participante": "Gabriel Queiroz",
+        "tema": "Cobrança para Gabriel acordar",
+        "comentarios": 54,
+        "curtidas": 23196
+      },
+      {
+        "participante": "Aysha Pink",
+        "tema": "Energia negativa no ambiente",
+        "comentarios": 131,
+        "curtidas": 21547
+      },
+      {
+        "participante": "Aysha Pink",
+        "tema": "Erro de briefing no flop",
+        "comentarios": 152,
+        "curtidas": 18573
+      },
+      {
+        "participante": "Matthel",
+        "tema": "Erro de briefing na live",
+        "comentarios": 81,
+        "curtidas": 17991
+      },
+      {
+        "participante": "Talitah Sampaio",
+        "tema": "Estratégia de jogo da Talitah",
+        "comentarios": 215,
+        "curtidas": 17935
+      },
+      {
+        "participante": "Sttefone",
+        "tema": "Desempenho como planta no jogo",
+        "comentarios": 45,
+        "curtidas": 15042
+      }
+    ]
   }
 }

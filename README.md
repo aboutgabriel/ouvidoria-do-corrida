@@ -16,14 +16,16 @@ Quem sai no flop só é revelado no começo do episódio seguinte, e a janela de
 
 ## O que os dados mostram até agora
 
-Depois de 4 episódios e 28.391 comentários lidos (as primeiras 48 horas de cada episódio):
+Depois de 5 episódios e 35.753 comentários lidos (as primeiras 48 horas de cada episódio):
 
 - **A torcida acertou 2 das 3 eliminações que dava para prever.** Em cada flop, a comparação é feita entre quem não venceu a prova de eliminação.
   - **Episódio 1, acertou:** Peter tinha o pior saldo do flop (−75) e saiu.
   - **Episódio 3, errou:** a aposta era Breia (−53), mas quem saiu foi Rhanyane, que tinha saldo positivo (+15).
   - **Episódio 4, acertou, por pouco:** Breia (−76) e Matthel (−75) ficaram separados por pouco mais de um ponto, e Breia saiu.
+  - **Episódio 5, aguardando:** Matthel e Bárbara se salvaram no flop, e a aposta entre as duas que sobraram é Aysha (−67), contra Talitah (+33). O resultado sai no começo do episódio 6.
 - **No episódio 2 não há previsão para testar:** Paizinho desistiu durante a prova do flop, então a torcida já sabia quem ia sair.
 - **Talitah Sampaio foi o nome mais citado da temporada no episódio 4:** 2.544 menções e saldo de +80, depois de vencer a prova de cola quente mesmo amarrada a Jheny. Muitos elogios a ela vêm junto de críticas a quem a enfrentou: 129 comentários com Aysha e 128 com Matthel.
+- **No episódio 5, a briga entre Aysha e Talitah virou o assunto principal:** 298 comentários criticaram Aysha e elogiaram Talitah na mesma frase, o par mais frequente da temporada.
 - **Gabriel Queiroz teve o maior saldo da temporada no episódio 3 (+97)**, com 541 elogios e nenhuma crítica, e caiu para +34 no episódio 4, depois de escolher amarrar Jheny e Talitah.
 - **A maior virada continua sendo a de Matthel,** que caiu de +56 para −51 entre os episódios 1 e 2, depois da discussão sobre etarismo com Talitah.
 

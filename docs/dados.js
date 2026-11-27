@@ -1,13 +1,13 @@
 window.DADOS = {
   "exemplo": false,
-  "atualizado_em": "2026-11-25",
+  "atualizado_em": "2026-11-26",
   "proximo": {
-    "numero": 5,
-    "estreia": "2026-11-24T20:00:00-03:00",
-    "relatorio": "2026-11-26T22:00:00-03:00"
+    "numero": 6,
+    "estreia": "2026-12-01T20:00:00-03:00",
+    "relatorio": "2026-12-03T22:00:00-03:00"
   },
   "modelo": "gemini-3.1-flash-lite",
-  "total_comentarios": 28391,
+  "total_comentarios": 35753,
   "episodios": [
     {
       "numero": 1,
@@ -17,7 +17,9 @@ window.DADOS = {
         "houve": true,
         "motivo": ""
       },
-      "venceu_flop": "Breia",
+      "venceu_flop": [
+        "Breia"
+      ],
       "janela": {
         "horas": 48,
         "inicio": "2026-10-27T21:32:55Z",
@@ -1372,7 +1374,7 @@ window.DADOS = {
         "houve": false,
         "motivo": "Paizinho desistiu durante a prova do flop, então já se sabia quem ia sair"
       },
-      "venceu_flop": null,
+      "venceu_flop": [],
       "janela": {
         "horas": 48,
         "inicio": "2026-11-03T21:22:00Z",
@@ -2838,7 +2840,9 @@ window.DADOS = {
         "houve": true,
         "motivo": ""
       },
-      "venceu_flop": "Matthel",
+      "venceu_flop": [
+        "Matthel"
+      ],
       "janela": {
         "horas": 48,
         "inicio": "2026-11-10T20:59:42Z",
@@ -4151,7 +4155,9 @@ window.DADOS = {
         "houve": true,
         "motivo": ""
       },
-      "venceu_flop": "Aysha Pink",
+      "venceu_flop": [
+        "Aysha Pink"
+      ],
       "janela": {
         "horas": 48,
         "inicio": "2026-11-17T21:18:32Z",
@@ -4295,7 +4301,113 @@ window.DADOS = {
             "texto": "A Thalita se tivesse entregas minimamente descentes , estaria com a faca e o queijo na mão. Precisamos de entregas além de personalidade",
             "curtidas": 32
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 2,
+              "nome": "Talento e look da prova",
+              "descricao": "Os espectadores destacam que o vestido de cola quente da Talitah foi o melhor da noite e de toda a temporada, criticando os participantes por não reconhecerem seu talento.",
+              "mencoes": 442,
+              "pct": 17,
+              "positivo": 426,
+              "negativo": 6,
+              "neutro": 10,
+              "exemplo": {
+                "texto": "Ãmo que ninguém falou que o look da Talita era o melhor (sendo que claramente era) e ela foi a winner KAKAKAKAKA",
+                "curtidas": 17600,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 1,
+              "nome": "Perseguição e bullying coletivo",
+              "descricao": "Os comentários apontam que o elenco se une para atacar Talitah de forma desproporcional, criando um clima de exclusão e bullying que incomoda o público.",
+              "mencoes": 412,
+              "pct": 16,
+              "positivo": 376,
+              "negativo": 6,
+              "neutro": 30,
+              "exemplo": {
+                "texto": "Nossa nesse episódio realmente da pra ver como chega a ser desnecessário como falam com a Talitah, ela é muito forte pra aguentar tanta palavras más assim",
+                "curtidas": 5931,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Protagonismo e jogo estratégico",
+              "descricao": "A torcida defende que Talitah é a única que realmente entendeu que o programa é uma competição, agindo com estratégia enquanto os outros focam em picuinhas.",
+              "mencoes": 276,
+              "pct": 11,
+              "positivo": 248,
+              "negativo": 15,
+              "neutro": 13,
+              "exemplo": {
+                "texto": "Não pode ser amigo de todos (Lattyffa), mas também não pode ser competitivo (Thalita) gente???",
+                "curtidas": 4917,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Comportamento de Aysha e Matthel",
+              "descricao": "Muitos comentários criticam a obsessão de Aysha e Matthel em atacar Talitah, apontando hipocrisia e misoginia nas falas e atitudes deles contra ela.",
+              "mencoes": 266,
+              "pct": 10,
+              "positivo": 164,
+              "negativo": 5,
+              "neutro": 97,
+              "exemplo": {
+                "texto": "Meu Deus a Thalita alugou um TRIPLEX na cabeça da Aysha",
+                "curtidas": 14661,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 5,
+              "nome": "Solidão na vitória",
+              "descricao": "O público expressa tristeza e desconforto ao ver Talitah ganhando a prova e procurando alguém para comemorar, sem encontrar apoio dos outros participantes.",
+              "mencoes": 63,
+              "pct": 2,
+              "positivo": 61,
+              "negativo": 0,
+              "neutro": 2,
+              "exemplo": {
+                "texto": "Me deu uma pena da Thalita quando ganhou e NINGUÉM parabenizou ela 😢",
+                "curtidas": 1256,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 946,
+              "pct": 37,
+              "positivo": 865,
+              "negativo": 53,
+              "neutro": 28,
+              "exemplo": {
+                "texto": "Vocês conseguem perceber que toda pessoa que faz dupla com Talita acaba \"simpatizando\" com ela? A mona é arrasadora",
+                "curtidas": 8664,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 139,
+              "pct": 5,
+              "positivo": 24,
+              "negativo": 42,
+              "neutro": 73,
+              "exemplo": {
+                "texto": "A aliança culposa entre a Jhenny e a Thalita KKKKKKK",
+                "curtidas": 1855,
+                "sentimento": "neutro"
+              }
+            }
+          ]
         },
         {
           "nome": "Breia",
@@ -4313,7 +4425,98 @@ window.DADOS = {
             "texto": "Kkkkkk mais um episódio do Mattel e Breia entregando horrores, literalmente",
             "curtidas": 5058
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 3,
+              "nome": "Falta de talento e entrega",
+              "descricao": "A torcida afirma que Breia não entrega resultados satisfatórios em nenhuma prova, sendo considerada tecnicamente despreparada e abaixo do nível dos outros participantes.",
+              "mencoes": 495,
+              "pct": 36,
+              "positivo": 18,
+              "negativo": 475,
+              "neutro": 2,
+              "exemplo": {
+                "texto": "Kkkkkk mais um episódio do Mattel e Breia entregando horrores, literalmente",
+                "curtidas": 5058,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 1,
+              "nome": "Erro no briefing do flop",
+              "descricao": "Os comentários apontam que Breia foi eliminada por não seguir as regras do briefing, especificamente por alterar as frases obrigatórias sobre consumo de bebida alcoólica.",
+              "mencoes": 169,
+              "pct": 12,
+              "positivo": 7,
+              "negativo": 144,
+              "neutro": 18,
+              "exemplo": {
+                "texto": "gente, jura que Breia e Matthel acharam boa ideia relacionar bebida alcoólica como solução de problemas, como tristeza e socialização? nossa...",
+                "curtidas": 617,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Look da prova",
+              "descricao": "Os espectadores criticam duramente o look de Breia na prova de cola quente, descrevendo-o como mal acabado, sem conceito e um vexame para uma estudante de moda.",
+              "mencoes": 121,
+              "pct": 9,
+              "positivo": 6,
+              "negativo": 108,
+              "neutro": 7,
+              "exemplo": {
+                "texto": "Juro que look corset pavoroso esse da breia kkkkkkkkkk",
+                "curtidas": 123,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Questionamento sobre faculdade de moda",
+              "descricao": "Os comentários questionam a formação acadêmica de Breia em moda, argumentando que ela não demonstra habilidades básicas de costura, modelagem ou criação de croquis.",
+              "mencoes": 75,
+              "pct": 5,
+              "positivo": 0,
+              "negativo": 71,
+              "neutro": 4,
+              "exemplo": {
+                "texto": "Gente eu acho até irônico a Breia entregar esse look sendo que ela faz moda",
+                "curtidas": 1029,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 415,
+              "pct": 30,
+              "positivo": 59,
+              "negativo": 308,
+              "neutro": 48,
+              "exemplo": {
+                "texto": "me senti no ensino medio vendo o pessoal atacando a Thalita no meio da prova. No mais, tchau Breia kkkkkkk",
+                "curtidas": 1360,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 94,
+              "pct": 7,
+              "positivo": 5,
+              "negativo": 35,
+              "neutro": 54,
+              "exemplo": {
+                "texto": "\"O fim dos seus problemas acabaram de acabar\" (BREIA, Beijos da)",
+                "curtidas": 124,
+                "sentimento": "neutro"
+              }
+            }
+          ]
         },
         {
           "nome": "Matthel",
@@ -4331,7 +4534,98 @@ window.DADOS = {
             "texto": "Mattel que começa soberbo e SEMPRE termina chorando KKKKKKKKKKKKKKKKKKKKKKKKK",
             "curtidas": 14925
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Promete muito e entrega nada",
+              "descricao": "Os comentários criticam Matthel por falar com convicção que vai entregar um bom trabalho, mas sempre apresentar resultados inacabados ou ruins nas provas.",
+              "mencoes": 289,
+              "pct": 26,
+              "positivo": 9,
+              "negativo": 275,
+              "neutro": 5,
+              "exemplo": {
+                "texto": "Kkkkkk mais um episódio do Mattel e Breia entregando horrores, literalmente",
+                "curtidas": 5058,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Conflitos com Talitah",
+              "descricao": "Os comentários mencionam a implicância de Matthel com Talitah, incluindo acusações de etarismo e a postura dele de sempre atacar a participante.",
+              "mencoes": 137,
+              "pct": 12,
+              "positivo": 6,
+              "negativo": 117,
+              "neutro": 14,
+              "exemplo": {
+                "texto": "o beijo que a Talita mandou pro Mattel quando ela ganhou foi muito bom de assistir AKAKAKAKAKAK",
+                "curtidas": 3898,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Choro e vitimismo constante",
+              "descricao": "Os espectadores apontam que Matthel chora em todos os episódios e se faz de vítima quando é alvo de estratégias ou críticas no jogo.",
+              "mencoes": 116,
+              "pct": 10,
+              "positivo": 3,
+              "negativo": 112,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "Mattel que começa soberbo e SEMPRE termina chorando KKKKKKKKKKKKKKKKKKKKKKKKK",
+                "curtidas": 14925,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Erro no briefing do flop",
+              "descricao": "A torcida discute que Matthel falhou ao não incluir as frases obrigatórias sobre consumo de álcool durante todo o vídeo publicitário.",
+              "mencoes": 74,
+              "pct": 7,
+              "positivo": 13,
+              "negativo": 42,
+              "neutro": 19,
+              "exemplo": {
+                "texto": "gente, jura que Breia e Matthel acharam boa ideia relacionar bebida alcoólica como solução de problemas, como tristeza e socialização? nossa...",
+                "curtidas": 617,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 358,
+              "pct": 32,
+              "positivo": 50,
+              "negativo": 296,
+              "neutro": 12,
+              "exemplo": {
+                "texto": "o ranço que eu sinto pelo mathel e da aysha eu nunca senti por nenhum outro participante... eles despertam o PIOR de mim",
+                "curtidas": 1324,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 148,
+              "pct": 13,
+              "positivo": 5,
+              "negativo": 88,
+              "neutro": 55,
+              "exemplo": {
+                "texto": "38:30 joga sujo ou simplesmente joga? Mathel focou tanto em falar mal dos participantes do ano passado q esqueceu que isso é uma competicao",
+                "curtidas": 104,
+                "sentimento": "negativo"
+              }
+            }
+          ]
         },
         {
           "nome": "Aysha Pink",
@@ -4349,7 +4643,98 @@ window.DADOS = {
             "texto": "Meu Deus a Thalita alugou um TRIPLEX na cabeça da Aysha",
             "curtidas": 14661
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Obsessão pela Talitah",
+              "descricao": "Os comentários apontam que Aysha fala constantemente sobre Talitah, demonstrando uma fixação excessiva e tentando convencer outros participantes a irem contra ela.",
+              "mencoes": 155,
+              "pct": 22,
+              "positivo": 1,
+              "negativo": 138,
+              "neutro": 16,
+              "exemplo": {
+                "texto": "Meu Deus a Thalita alugou um TRIPLEX na cabeça da Aysha",
+                "curtidas": 14661,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Desempenho e postura no flop",
+              "descricao": "Os comentários questionam a vitória de Aysha no flop, citando que seu vídeo não foi bom e que ela teve vantagens indevidas, como usar um corset pronto na prova.",
+              "mencoes": 93,
+              "pct": 13,
+              "positivo": 27,
+              "negativo": 58,
+              "neutro": 8,
+              "exemplo": {
+                "texto": "O mathell, aysha e breia no flop curou meu dia KKKKKKKKKKKKKKKKKK",
+                "curtidas": 1083,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Manipulação da Bárbara",
+              "descricao": "A torcida critica Aysha por tentar convencer Bárbara de que ela estaria sendo manipulada por Talitah, sendo que Aysha estaria fazendo o mesmo jogo mental.",
+              "mencoes": 45,
+              "pct": 6,
+              "positivo": 1,
+              "negativo": 42,
+              "neutro": 2,
+              "exemplo": {
+                "texto": "Aysha é daquelas do grupo que quando n gosta de uma pessoa faz intriga e manipulação pra ngm mais gostar.",
+                "curtidas": 1264,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Fala do milho no lounge",
+              "descricao": "Os espectadores criticam duramente a fala de Aysha no lounge, onde ela disse para Talitah que ela só deveria falar quando Aysha jogasse milho.",
+              "mencoes": 36,
+              "pct": 5,
+              "positivo": 1,
+              "negativo": 34,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "Alguém precisa urgentemente lembrar o Matthel e a Aysha que o fato de eles serem gays e drag, não dá carta branca para eles serem machistas e missóginos com as mulheres! Essa temporada tem me incomodado bastante com a…",
+                "curtidas": 1708,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 310,
+              "pct": 45,
+              "positivo": 34,
+              "negativo": 268,
+              "neutro": 8,
+              "exemplo": {
+                "texto": "*O Episódio ainda não começou mas sei que a Aysha vai me irritar daqui de casa kkkk*",
+                "curtidas": 3178,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 57,
+              "pct": 8,
+              "positivo": 2,
+              "negativo": 23,
+              "neutro": 32,
+              "exemplo": {
+                "texto": "o gabriel perdeu a otima chance de colocar talitah e aysha amarradas KKKKKKK",
+                "curtidas": 796,
+                "sentimento": "neutro"
+              }
+            }
+          ]
         },
         {
           "nome": "Latyffa Romayale",
@@ -4367,7 +4752,113 @@ window.DADOS = {
             "texto": "Latyffa se passou nesse EP sinceramente, toda hora dando uma patada na Talitah com medo de se posicionar...",
             "curtidas": 1471
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Carisma e alegria",
+              "descricao": "Os comentários destacam que Latyffa é uma pessoa alegre, leve e carismática, sendo considerada por muitos como o alívio cômico e o coração da temporada.",
+              "mencoes": 105,
+              "pct": 21,
+              "positivo": 98,
+              "negativo": 1,
+              "neutro": 6,
+              "exemplo": {
+                "texto": "Obrigada Latyfa por isso: “esse lugar só vai ser pesado se a gente deixar”",
+                "curtidas": 1627,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Desempenho na prova de cola quente",
+              "descricao": "Os comentários debatem a qualidade do look de Latyffa, com muitos elogiando a criatividade e o corset, enquanto outros criticam a saia e o acabamento.",
+              "mencoes": 83,
+              "pct": 17,
+              "positivo": 50,
+              "negativo": 20,
+              "neutro": 13,
+              "exemplo": {
+                "texto": "A Talita nitidamente com o melhor look e o pessoal fingindo que não está vendo. A Talita, mesmo tendo a Latyfa debochado dela, reconheceu o trabalho bem feito. Isso mostra o que a galera aí não tem: maturidade. Triste.",
+                "curtidas": 1206,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Perseguição e críticas dos colegas",
+              "descricao": "Os fãs defendem Latyffa contra as críticas de outros participantes, que a chamam de sem noção ou inconveniente por ser espontânea e bem-humorada.",
+              "mencoes": 64,
+              "pct": 13,
+              "positivo": 49,
+              "negativo": 5,
+              "neutro": 10,
+              "exemplo": {
+                "texto": "Reclamam que a Thalita está rude mas reclamam que a Latyffa tá boa humorada demais, galera indecisa kkkkkk",
+                "curtidas": 8376,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Relação com Talitah",
+              "descricao": "Os comentários discutem o comportamento de Latyffa em relação a Talitah, dividindo-se entre quem a apoia e quem a critica por seguir a manada no jogo.",
+              "mencoes": 26,
+              "pct": 5,
+              "positivo": 11,
+              "negativo": 12,
+              "neutro": 3,
+              "exemplo": {
+                "texto": "Latyffa se passou nesse EP sinceramente, toda hora dando uma patada na Talitah com medo de se posicionar...",
+                "curtidas": 1471,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 5,
+              "nome": "Resiliência com a mala perdida",
+              "descricao": "Os comentários elogiam a postura de Latyffa em manter o alto astral e continuar se esforçando na competição mesmo após ter perdido sua mala com roupas.",
+              "mencoes": 14,
+              "pct": 3,
+              "positivo": 10,
+              "negativo": 1,
+              "neutro": 3,
+              "exemplo": {
+                "texto": "A mala da Latifa virou um evento kkkk",
+                "curtidas": 29,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 178,
+              "pct": 35,
+              "positivo": 169,
+              "negativo": 4,
+              "neutro": 5,
+              "exemplo": {
+                "texto": "É a corrida das blogueiras MIMOS 👹 É a corrida das blogueiras RECEBIDOS 👹 Latyffa te amo",
+                "curtidas": 11340,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 32,
+              "pct": 6,
+              "positivo": 7,
+              "negativo": 9,
+              "neutro": 16,
+              "exemplo": {
+                "texto": "Não pode ser amigo de todos (Lattyffa), mas também não pode ser competitivo (Thalita) gente???",
+                "curtidas": 4917,
+                "sentimento": "neutro"
+              }
+            }
+          ]
         },
         {
           "nome": "Jheny Albano",
@@ -4385,7 +4876,98 @@ window.DADOS = {
             "texto": "a jheny “vendo de dentro o que VOCES fazem com a thalita” corta pra ela todo episódio alfinetando a thalita tbm ahahaha",
             "curtidas": 1775
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 4,
+              "nome": "Comportamento no jogo",
+              "descricao": "Muitos espectadores criticam Jheny por ser reativa, caçar enredos desnecessários e não saber lidar com críticas ou respostas dos outros participantes.",
+              "mencoes": 92,
+              "pct": 25,
+              "positivo": 2,
+              "negativo": 89,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "a jheny “vendo de dentro o que VOCES fazem com a thalita” corta pra ela todo episódio alfinetando a thalita tbm ahahaha",
+                "curtidas": 1775,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 1,
+              "nome": "Discussão com Gabriel",
+              "descricao": "Os comentários debatem a rivalidade entre Jheny e Gabriel, com muitos apontando que ela iniciou as alfinetadas e depois se vitimizou ao receber o troco.",
+              "mencoes": 79,
+              "pct": 21,
+              "positivo": 6,
+              "negativo": 68,
+              "neutro": 5,
+              "exemplo": {
+                "texto": "Mal começou e a Aysha e a Matthel já se cresceram pra cima da Talitah e a Jheny caçando briga sendo que ela começou a crítica ao Gabriel…",
+                "curtidas": 1390,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Defesa de Talitah",
+              "descricao": "A torcida elogia Jheny por perceber que o elenco estava perseguindo Talitah de forma desproporcional após trabalhar amarrada com ela na prova.",
+              "mencoes": 56,
+              "pct": 15,
+              "positivo": 39,
+              "negativo": 4,
+              "neutro": 13,
+              "exemplo": {
+                "texto": "thalita nem é minha fav mas fez eu CONCORDAR com a jheny!!? está bizarro essa perseguição, virou uma assassina de bebê por nada",
+                "curtidas": 3070,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Look da prova",
+              "descricao": "Os comentários divergem sobre o vestido de Jheny, com alguns elogiando a modelagem e outros criticando o estilo por parecer roupa de igreja ou camisola.",
+              "mencoes": 32,
+              "pct": 9,
+              "positivo": 14,
+              "negativo": 10,
+              "neutro": 8,
+              "exemplo": {
+                "texto": "me curou a roupa da mommy sendo maioral e ela ainda ajudando a jheny a ir bem",
+                "curtidas": 548,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 75,
+              "pct": 20,
+              "positivo": 27,
+              "negativo": 38,
+              "neutro": 10,
+              "exemplo": {
+                "texto": "A JHENY VIROU UMA SAMPAIO GIRL!",
+                "curtidas": 1075,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 39,
+              "pct": 10,
+              "positivo": 5,
+              "negativo": 7,
+              "neutro": 27,
+              "exemplo": {
+                "texto": "A aliança culposa entre a Jhenny e a Thalita KKKKKKK",
+                "curtidas": 1855,
+                "sentimento": "neutro"
+              }
+            }
+          ]
         },
         {
           "nome": "Gabriel Queiroz",
@@ -4403,7 +4985,83 @@ window.DADOS = {
             "texto": "O Gabriel escolher a Talitah para prejudicar foi a maior coisa maria vai com as outras da temporada kkkkk",
             "curtidas": 906
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Conflito com Jheny",
+              "descricao": "Os comentários discutem a dinâmica entre Gabriel e Jhenny, onde ela o alfineta e depois se sente ofendida quando ele responde à altura.",
+              "mencoes": 72,
+              "pct": 23,
+              "positivo": 28,
+              "negativo": 4,
+              "neutro": 40,
+              "exemplo": {
+                "texto": "Engraçado que a aysha revira os olhos quando a Jheny achou ruim a fala do Gabriel, mas ela surtou com a Talita durante 3 ep inteiros!",
+                "curtidas": 1711,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Estratégia de Talitah contra Gabriel",
+              "descricao": "Os comentários abordam o desejo de Talitah de enviar Gabriel ao flop por ele ser um competidor forte e estratégico.",
+              "mencoes": 56,
+              "pct": 18,
+              "positivo": 15,
+              "negativo": 10,
+              "neutro": 31,
+              "exemplo": {
+                "texto": "A THALITA super inteligente em querer mandar o Gabriel q é bom pro flop, e eles vão lá e botam a breia q n entrega nada e que uma hora ou outra iria sair kkkkkkk ai mds",
+                "curtidas": 410,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Escolha de amarrar Jheny e Talitah",
+              "descricao": "Os comentários analisam a decisão de Gabriel de amarrar Talitah e Jhenny na prova, variando entre elogios pela estratégia e críticas por não ter escolhido outras duplas.",
+              "mencoes": 43,
+              "pct": 14,
+              "positivo": 15,
+              "negativo": 7,
+              "neutro": 21,
+              "exemplo": {
+                "texto": "O Gabriel escolher a Talitah para prejudicar foi a maior coisa maria vai com as outras da temporada kkkkk",
+                "curtidas": 906,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 102,
+              "pct": 33,
+              "positivo": 83,
+              "negativo": 14,
+              "neutro": 5,
+              "exemplo": {
+                "texto": "Meu top 3 por enquanto são: Latyffa, Bárbara e Gabriel, QUEENSS",
+                "curtidas": 446,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 37,
+              "pct": 12,
+              "positivo": 11,
+              "negativo": 11,
+              "neutro": 15,
+              "exemplo": {
+                "texto": "O Gabriel falou cor vermelha de limão kkkkkkkkk tadinho nervoso",
+                "curtidas": 4,
+                "sentimento": "positivo"
+              }
+            }
+          ]
         },
         {
           "nome": "Bárbara Freitas",
@@ -4421,7 +5079,98 @@ window.DADOS = {
             "texto": "Gosto da Bárbara, infelizmente ela fica omissa quando agridem verbalmente a Thalita. Isso a torna cúmplice",
             "curtidas": 8
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Parceria com Talitah na prova",
+              "descricao": "Os comentários destacam que Bárbara e Talitah formaram uma dupla colaborativa e bem-sucedida, contrariando a narrativa de que Talitah seria uma má influência.",
+              "mencoes": 48,
+              "pct": 16,
+              "positivo": 36,
+              "negativo": 0,
+              "neutro": 12,
+              "exemplo": {
+                "texto": "até que enfim que alguém(Jheni e Bárbara) entenderam que a Talita não é aquela pessoa que o Mattel, Breia, Aysha, etc pintaram. Pra mim ela está no meu top3",
+                "curtidas": 1025,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Acusação de manipulação por Aysha",
+              "descricao": "Os comentários criticam Aysha por afirmar que Bárbara estaria sendo manipulada por Talitah, apontando que essa fala é, na verdade, uma tentativa de Aysha de manipular Bárbara.",
+              "mencoes": 42,
+              "pct": 14,
+              "positivo": 8,
+              "negativo": 3,
+              "neutro": 31,
+              "exemplo": {
+                "texto": "Uma decisão no primeiro episódio e agora ela já critou teoria de Talita ser manipuladora e deixar Bárbara com espírito de Talita",
+                "curtidas": 1836,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Evolução e desempenho na prova",
+              "descricao": "Os comentários elogiam a capacidade de Bárbara de ouvir feedbacks, aplicar dicas e entregar um look de qualidade mesmo quando não se sente confiante com a técnica.",
+              "mencoes": 33,
+              "pct": 11,
+              "positivo": 22,
+              "negativo": 6,
+              "neutro": 5,
+              "exemplo": {
+                "texto": "A Barbara sempre ganhando ou ficando entre os melhores. Minha campeã",
+                "curtidas": 88,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Postura estratégica no jogo",
+              "descricao": "Os comentários defendem que Bárbara joga de forma inteligente, equilibrando gratidão e estratégia, sem precisar atacar outros participantes para se destacar.",
+              "mencoes": 19,
+              "pct": 6,
+              "positivo": 15,
+              "negativo": 3,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "23:56 Barbara voltou diferente sim, voltou JOGANDO e não apagada como no primeiro ep. Aaaaa faça-me o favor em Aysha",
+                "curtidas": 91,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 133,
+              "pct": 43,
+              "positivo": 121,
+              "negativo": 6,
+              "neutro": 6,
+              "exemplo": {
+                "texto": "A Bárbara não para de subir nas pesquisas!! Simplesmente icônica",
+                "curtidas": 554,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 31,
+              "pct": 10,
+              "positivo": 2,
+              "negativo": 10,
+              "neutro": 19,
+              "exemplo": {
+                "texto": "Mds Kitty você LITERALMENTE só repetiu o conselho da Maddy para a Barbara KKKKKKKKKKKKK",
+                "curtidas": 1202,
+                "sentimento": "neutro"
+              }
+            }
+          ]
         },
         {
           "nome": "Sttefone",
@@ -4439,7 +5188,98 @@ window.DADOS = {
             "texto": "gente que desconfortável a stephany falando ''nao, todo mundo TE odeia'' pra talita, sério, pessimos.",
             "curtidas": 1318
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Ataques gratuitos à Talitah",
+              "descricao": "Os comentários criticam Sttefone por perseguir Talitah com falas desnecessárias e agressivas sem um motivo aparente.",
+              "mencoes": 27,
+              "pct": 22,
+              "positivo": 2,
+              "negativo": 25,
+              "neutro": 0,
+              "exemplo": {
+                "texto": "gente que desconfortável a stephany falando ''nao, todo mundo TE odeia'' pra talita, sério, pessimos.",
+                "curtidas": 1318,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Comportamento de planta",
+              "descricao": "Os comentários apontam que Sttefone é uma participante apagada, sem enredo próprio e que tenta forçar protagonismo.",
+              "mencoes": 24,
+              "pct": 20,
+              "positivo": 0,
+              "negativo": 22,
+              "neutro": 2,
+              "exemplo": {
+                "texto": "A steffone falando “a gente nunca fala da idade dela” Amiga? A gente quem? Eu nem ouço sua voz KKKKK",
+                "curtidas": 784,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Look do baile de máscaras",
+              "descricao": "Os comentários divergem sobre o look de Sttefone, elogiando a estética ou criticando o acabamento e a fuga do tema.",
+              "mencoes": 15,
+              "pct": 12,
+              "positivo": 9,
+              "negativo": 6,
+              "neutro": 0,
+              "exemplo": {
+                "texto": "o look da stefone, pqp q lindo! eu usaria dmsss 46:58",
+                "curtidas": 6,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Efeito manada contra Talitah",
+              "descricao": "Os comentários afirmam que Sttefone ataca Talitah apenas para seguir o grupo e tentar se destacar no jogo.",
+              "mencoes": 13,
+              "pct": 11,
+              "positivo": 0,
+              "negativo": 13,
+              "neutro": 0,
+              "exemplo": {
+                "texto": "e muito do nada, por que o que diabos a Sampaio fez para a Ste não gostar dela? Aysha e Matthel eu entendo, mas o resto parece que só entrou no bonde",
+                "curtidas": 101,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 28,
+              "pct": 23,
+              "positivo": 17,
+              "negativo": 7,
+              "neutro": 4,
+              "exemplo": {
+                "texto": "Steffone = Milena",
+                "curtidas": 51,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 14,
+              "pct": 12,
+              "positivo": 5,
+              "negativo": 5,
+              "neutro": 4,
+              "exemplo": {
+                "texto": "Me surpreendi positivamente com a maioria dos resultados, mas Matthel, Breia e Sthe não foram legais, agora o da Thalita, o melhor.",
+                "curtidas": 1,
+                "sentimento": "negativo"
+              }
+            }
+          ]
         },
         {
           "nome": "Rhanyane Garcia",
@@ -4457,7 +5297,113 @@ window.DADOS = {
             "texto": "Concordo mas querendo ou não a Ranny não conseguiu entregar o Flop direito",
             "curtidas": 10
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 5,
+              "nome": "Expectativa pela repescagem",
+              "descricao": "A torcida expressa grande apoio e esperança de que Rhany retorne ao reality show através da repescagem.",
+              "mencoes": 13,
+              "pct": 20,
+              "positivo": 13,
+              "negativo": 0,
+              "neutro": 0,
+              "exemplo": {
+                "texto": "Rhany uma diva, merece muito voltar em uma repescagem",
+                "curtidas": 4,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Comparação negativa com a permanência de Breia",
+              "descricao": "Muitos espectadores questionam a eliminação de Rhany em detrimento da permanência de Breia, que é vista como menos talentosa.",
+              "mencoes": 12,
+              "pct": 18,
+              "positivo": 10,
+              "negativo": 1,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "A Ranny sair pra Breia é o foda viu",
+                "curtidas": 392,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Potencial desperdiçado no programa",
+              "descricao": "A torcida acredita que Rhany tinha muito talento e entregaria resultados melhores se tivesse permanecido para as provas seguintes.",
+              "mencoes": 8,
+              "pct": 12,
+              "positivo": 8,
+              "negativo": 0,
+              "neutro": 0,
+              "exemplo": {
+                "texto": "mds acho que a rhany ia entregar tanto no night of cola quente",
+                "curtidas": 43,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 1,
+              "nome": "Injustiça na eliminação por falha técnica",
+              "descricao": "Os comentários apontam que a saída de Rhany foi injusta pois ocorreu devido a problemas técnicos com o aplicativo ou renderização da foto.",
+              "mencoes": 5,
+              "pct": 8,
+              "positivo": 5,
+              "negativo": 0,
+              "neutro": 0,
+              "exemplo": {
+                "texto": "Injusto Rany sair pq o app bugou",
+                "curtidas": 3,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Conflito com Matthel no flop",
+              "descricao": "Os comentários criticam a atitude de Matthel ao colocar Rhany no flop e sua falta de empatia quando ela não conseguiu concluir a prova.",
+              "mencoes": 5,
+              "pct": 8,
+              "positivo": 3,
+              "negativo": 0,
+              "neutro": 2,
+              "exemplo": {
+                "texto": "26:25 \"Nunca vou jogar sujo\" DISSE O CARA QUE COLOCOU A RHANY NO FLOP E LANÇOU UM \"OPS\" QUANDO ELA DISSE Q NAO CONSEGUIU FAZER A PROVA",
+                "curtidas": 17,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 14,
+              "pct": 22,
+              "positivo": 11,
+              "negativo": 3,
+              "neutro": 0,
+              "exemplo": {
+                "texto": "Tbm via a Ranny antes dela sair",
+                "curtidas": 13,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 8,
+              "pct": 12,
+              "positivo": 1,
+              "negativo": 3,
+              "neutro": 4,
+              "exemplo": {
+                "texto": "Concordo mas querendo ou não a Ranny não conseguiu entregar o Flop direito",
+                "curtidas": 10,
+                "sentimento": "negativo"
+              }
+            }
+          ]
         },
         {
           "nome": "Paizinho dos Looks",
@@ -4475,7 +5421,68 @@ window.DADOS = {
             "texto": "A jheny já fez hora extra, não aguentou a pressão de falar que o Gabriel ainda não tinha chegado e quando ele rebateu dizendo que chegou ganhando, a diva não gostou e trouxe essa pauta mixuruca para a outra semana, como se não bastasse o mico do lounge, meio que não saber o significado da palavra DISSIMULADA e ainda…",
             "curtidas": 1
           },
-          "temas": []
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Comparação de comportamento com Jheny",
+              "descricao": "Os comentários apontam que Jheny critica Paizinho por se vitimizar enquanto ela mesma demonstra atitudes idênticas.",
+              "mencoes": 19,
+              "pct": 70,
+              "positivo": 1,
+              "negativo": 4,
+              "neutro": 14,
+              "exemplo": {
+                "texto": "Gente, a Jehnny chateadíssima, ofendidíssima desde a semana passada porque o Gabriel falou que ele... ganhou?????? Ela é tudo o que ela falou do Paizinho: se dói por qualquer coisa, \"tudo pega ar\"",
+                "curtidas": 1204,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Desempenho técnico e artístico",
+              "descricao": "Os comentários avaliam a falta de técnica e resultados de Paizinho em comparação com outros participantes.",
+              "mencoes": 3,
+              "pct": 11,
+              "positivo": 1,
+              "negativo": 1,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "Gente a breia sabe fazer o que ? Hahahaha ela tá nível progenitor dos looks só não desistiu, maquiagem não tem, roupa não tem, publi não tem kkk",
+                "curtidas": 1,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 2,
+              "pct": 7,
+              "positivo": 1,
+              "negativo": 1,
+              "neutro": 0,
+              "exemplo": {
+                "texto": "43:28 PODE ENTRAR, PAIZINHO DOS LOOKS 😝🥳🥳🥳 KKKKKKKKKKKKK",
+                "curtidas": 1,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 3,
+              "pct": 11,
+              "positivo": 0,
+              "negativo": 0,
+              "neutro": 3,
+              "exemplo": {
+                "texto": "Não gosto da Thalita, mas ela arrasou hoje e achei desnecessário esses comentários sobre ela hoje. Aproveitando, uma coisa que percebi é que desde o segundo episódio a Jeni tá diferente. No primeiro ela parecia que ia…",
+                "curtidas": 1,
+                "sentimento": "neutro"
+              }
+            }
+          ]
         },
         {
           "nome": "Peter Poc",
@@ -4492,6 +5499,1140 @@ window.DADOS = {
           "critica": {
             "texto": "Talitah é a vilã da edição por causa do Peter Poc! Destruiu a diva no 1° ep e todo mundo comprou o lado dele.",
             "curtidas": 1
+          },
+          "temas": []
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "video_id": "qA2iuy0xTTU",
+      "comentarios": 7362,
+      "eliminacao": null,
+      "venceu_flop": [
+        "Matthel",
+        "Bárbara Freitas"
+      ],
+      "janela": {
+        "horas": 48,
+        "inicio": "2026-11-24T21:06:36Z",
+        "fim": "2026-11-26T21:06:36Z",
+        "aberta": false,
+        "fora_da_janela": 51
+      },
+      "comentarios_com_citacao": 4067,
+      "cenas": {
+        "por_minuto": [
+          3,
+          3,
+          0,
+          0,
+          3,
+          4,
+          7,
+          2,
+          4,
+          2,
+          7,
+          8,
+          7,
+          0,
+          4,
+          5,
+          7,
+          0,
+          17,
+          3,
+          6,
+          0,
+          0,
+          2,
+          1,
+          5,
+          15,
+          7,
+          6,
+          0,
+          2,
+          7,
+          1,
+          4,
+          2,
+          0,
+          2,
+          9,
+          1,
+          4,
+          1,
+          0,
+          2,
+          6,
+          22,
+          16,
+          4,
+          6,
+          2,
+          0,
+          5,
+          10,
+          3,
+          4,
+          7,
+          4,
+          0,
+          2,
+          2,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          5,
+          0,
+          2,
+          1,
+          0,
+          0,
+          10,
+          0,
+          14,
+          9,
+          7,
+          0,
+          4,
+          2,
+          4,
+          10,
+          10,
+          13,
+          12,
+          3,
+          3,
+          3
+        ],
+        "picos": [
+          {
+            "minuto": 44,
+            "segundos": 2695,
+            "citacoes": 44,
+            "descricao": "As juradas entram de pijama, no tema \"acordar\" do episódio, e a convidada Mônica Poplawski chega com o bordão \"bem-vindos ao luxo\".",
+            "comentario": "44:47 QUE SURTOOOOOOO A DONA MÔNICA",
+            "curtidas": 3
+          },
+          {
+            "minuto": 18,
+            "segundos": 1117,
+            "citacoes": 20,
+            "descricao": "No correio deselegante, Matthel escreve a Talitah que o jogo dela é \"sujo como um cão\" e que ela tem duas caras.",
+            "comentario": "18:47 o jogo dela é sujo? Gente mas o que fooi que ela feeeez?",
+            "curtidas": 13
+          },
+          {
+            "minuto": 26,
+            "segundos": 1568,
+            "citacoes": 27,
+            "descricao": "Na preparação da live, Aysha diz a Matthel que Talitah juntou os dois para prejudicá-los e que ela \"é uma pessoa ruim\".",
+            "comentario": "26:00 de onde tiraram q a talita é uma pessoa ruim e com maldade? perdi esse ep…",
+            "curtidas": 16
+          }
+        ]
+      },
+      "participantes": [
+        {
+          "nome": "Talitah Sampaio",
+          "resultado": "Flop",
+          "mencoes": 1942,
+          "positivo": 1096,
+          "negativo": 453,
+          "neutro": 393,
+          "saldo": 33.1102,
+          "elogio": {
+            "texto": "acho incrível que a aysha na primeira vez que viu a talitah amou ela, e só foi ser mandada pra um flop que ela conseguiu manipular todo mundo pra ter uma visão ruim sobre ela",
+            "curtidas": 14572
+          },
+          "critica": {
+            "texto": "Até desanimei com a Talita falando que gostaria que a Bárbara saísse… nem tudo é jogo pelo amor de deus, tem que saber dosar",
+            "curtidas": 359
+          },
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Ataques pessoais da Aysha",
+              "descricao": "Os comentários criticam a Aysha por fazer ataques pessoais e misóginos contra Talitah, alegando que ela a persegue desde o primeiro episódio.",
+              "mencoes": 324,
+              "pct": 17,
+              "positivo": 197,
+              "negativo": 20,
+              "neutro": 107,
+              "exemplo": {
+                "texto": "acho incrível que a aysha na primeira vez que viu a talitah amou ela, e só foi ser mandada pra um flop que ela conseguiu manipular todo mundo pra ter uma visão ruim sobre ela",
+                "curtidas": 14572,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Declaração sobre Bárbara no lounge",
+              "descricao": "Os comentários debatem a fala de Talitah no lounge, onde ela afirmou querer que Bárbara fosse eliminada, gerando críticas sobre lealdade e incoerência.",
+              "mencoes": 234,
+              "pct": 12,
+              "positivo": 33,
+              "negativo": 157,
+              "neutro": 44,
+              "exemplo": {
+                "texto": "A Barbara e a Thalita se atacando foi o auge pra mim. DO NADA",
+                "curtidas": 783,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Estratégia de jogo da Talitah",
+              "descricao": "A torcida defende que Talitah está apenas jogando de forma competitiva e estratégica, enquanto os outros participantes a rotulam erroneamente como uma pessoa ruim.",
+              "mencoes": 215,
+              "pct": 11,
+              "positivo": 174,
+              "negativo": 27,
+              "neutro": 14,
+              "exemplo": {
+                "texto": "É nítido que a Sampaio joga uns shadezinho na zoeira, sem ressentimento.. e em vez do povo entrar no enredo, eles interpretam: ASSASSINA DE BEBÊS",
+                "curtidas": 11301,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Rivalidade com Matthel",
+              "descricao": "Os comentários mencionam a troca de alfinetadas entre Talitah e Matthel, destacando o etarismo nas falas dele e a dinâmica de jogo entre ambos.",
+              "mencoes": 94,
+              "pct": 5,
+              "positivo": 34,
+              "negativo": 16,
+              "neutro": 44,
+              "exemplo": {
+                "texto": "Amo que o Matthel \"reclama\" que a Talitah escreveu a carta pra ele, pra logo depois vermos que ele também escreveu pra ela. Kkkkkkkkkkkkkkkkkkkkk uai Edit: Hitei. Gente, o 'reclama' está entre aspas justamente pq eu sei…",
+                "curtidas": 4366,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 791,
+              "pct": 41,
+              "positivo": 574,
+              "negativo": 155,
+              "neutro": 62,
+              "exemplo": {
+                "texto": "mds só aceito talitah sair se for pra voltar aterrorizando geral na repescagem MANIFESTANDO TRAJETÓRIA DE WINNER",
+                "curtidas": 1278,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 284,
+              "pct": 15,
+              "positivo": 84,
+              "negativo": 78,
+              "neutro": 122,
+              "exemplo": {
+                "texto": "A Jheny falou em um dos lounges que a Talitah muda rápido de opinião, mas a Jheny sustenta nada, nossa ela muda O TEMPO INTEIRO",
+                "curtidas": 1326,
+                "sentimento": "neutro"
+              }
+            }
+          ]
+        },
+        {
+          "nome": "Aysha Pink",
+          "resultado": "Flop",
+          "mencoes": 1499,
+          "positivo": 152,
+          "negativo": 1160,
+          "neutro": 187,
+          "saldo": -67.2448,
+          "elogio": {
+            "texto": "Se for pra ser justo a foto da Aysha está bem melhor. A Talita pecou em falar que quer que a Barbara saia, para aproveitar o talento da garota ela quer, foi parceira dela duas vezes e no final falar isso, achei de uma ingratidão.",
+            "curtidas": 40
+          },
+          "critica": {
+            "texto": "acho incrível que a aysha na primeira vez que viu a talitah amou ela, e só foi ser mandada pra um flop que ela conseguiu manipular todo mundo pra ter uma visão ruim sobre ela",
+            "curtidas": 14572
+          },
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Perseguição obsessiva a Talitah",
+              "descricao": "Os comentários criticam a Aysha por falar constantemente de Talitah, acusando-a de ser uma pessoa ruim e de jogar sujo sem motivos concretos.",
+              "mencoes": 372,
+              "pct": 25,
+              "positivo": 8,
+              "negativo": 314,
+              "neutro": 50,
+              "exemplo": {
+                "texto": "acho incrível que a aysha na primeira vez que viu a talitah amou ela, e só foi ser mandada pra um flop que ela conseguiu manipular todo mundo pra ter uma visão ruim sobre ela",
+                "curtidas": 14572,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Erro de briefing no flop",
+              "descricao": "Os comentários mencionam o momento em que Aysha e Matthel foram para o flop por esquecerem as datas da promoção na live.",
+              "mencoes": 152,
+              "pct": 10,
+              "positivo": 32,
+              "negativo": 97,
+              "neutro": 23,
+              "exemplo": {
+                "texto": "Gente kkkkkkkkk a Aysha e o Mathel falando que outras duplas esqueceram informações e eles esqueceram a data, foi o tombo do episódio",
+                "curtidas": 13406,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Energia negativa no ambiente",
+              "descricao": "A torcida afirma que Aysha torna o clima do reality pesado e desconfortável, agindo como uma presença tóxica para os outros participantes.",
+              "mencoes": 131,
+              "pct": 9,
+              "positivo": 0,
+              "negativo": 127,
+              "neutro": 4,
+              "exemplo": {
+                "texto": "até a talitah aplaudindo a volta da aysha e eles incapazes de aplaudirem ela :(",
+                "curtidas": 6354,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Acusações de misoginia",
+              "descricao": "Os espectadores apontam que Aysha age de forma desproporcional e misógina ao atacar a integridade de Talitah com ofensas pessoais.",
+              "mencoes": 77,
+              "pct": 5,
+              "positivo": 1,
+              "negativo": 75,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "A Aysha é completamente desproporcional, ela faz uns ataques MUITO pessoais pra Talitah e tudo começou porque a Talitah escolheu a Aysha pro primeiro flop no PRIMEIRO episódio",
+                "curtidas": 3025,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 510,
+              "pct": 34,
+              "positivo": 88,
+              "negativo": 399,
+              "neutro": 23,
+              "exemplo": {
+                "texto": "Nossa se a thali sair pra aysha vai ser uma tristeza tão grande que até desanima ver até o final, sério mesmo, desumanooooo",
+                "curtidas": 869,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 257,
+              "pct": 17,
+              "positivo": 23,
+              "negativo": 148,
+              "neutro": 86,
+              "exemplo": {
+                "texto": "Talita fez oq eles tanto reclamaram hoje. No depoimento quer que Aysha saia, na frente deles joga a Bárbara",
+                "curtidas": 303,
+                "sentimento": "neutro"
+              }
+            }
+          ]
+        },
+        {
+          "nome": "Matthel",
+          "resultado": "Flop",
+          "mencoes": 824,
+          "positivo": 193,
+          "negativo": 499,
+          "neutro": 132,
+          "saldo": -37.1359,
+          "elogio": {
+            "texto": "o Mathel até quando ele ganha, ele perde, deu até dó hoje KSJSKSKSKKS",
+            "curtidas": 9000
+          },
+          "critica": {
+            "texto": "Gente kkkkkkkkk a Aysha e o Mathel falando que outras duplas esqueceram informações e eles esqueceram a data, foi o tombo do episódio",
+            "curtidas": 13406
+          },
+          "temas": [
+            {
+              "id": 3,
+              "nome": "Rivalidade e cartas no correio",
+              "descricao": "Os comentários discutem a troca de alfinetadas e cartas entre Matthel e Talitah, apontando a hipocrisia de ele reclamar de ser citado enquanto também a ataca.",
+              "mencoes": 130,
+              "pct": 16,
+              "positivo": 9,
+              "negativo": 87,
+              "neutro": 34,
+              "exemplo": {
+                "texto": "Amo que o Matthel \"reclama\" que a Talitah escreveu a carta pra ele, pra logo depois vermos que ele também escreveu pra ela. Kkkkkkkkkkkkkkkkkkkkk uai Edit: Hitei. Gente, o 'reclama' está entre aspas justamente pq eu sei…",
+                "curtidas": 4366,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Desempenho e estética no flop",
+              "descricao": "Os comentários questionam a vitória de Matthel no flop, citando que sua foto estava poluída, com elementos cortados ou que a de outros participantes era superior.",
+              "mencoes": 123,
+              "pct": 15,
+              "positivo": 30,
+              "negativo": 82,
+              "neutro": 11,
+              "exemplo": {
+                "texto": "Gente, pra mim a Barbara ia ganhar o flop, o mattel só enfiou um monte de coisa na cara kkkkkkk",
+                "curtidas": 1132,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 1,
+              "nome": "Erro de briefing na live",
+              "descricao": "Os comentários apontam a ironia de Matthel criticar outras duplas por esquecerem informações, sendo que ele e Aysha foram para o flop por esquecerem a data da promoção.",
+              "mencoes": 81,
+              "pct": 10,
+              "positivo": 18,
+              "negativo": 53,
+              "neutro": 10,
+              "exemplo": {
+                "texto": "Gente kkkkkkkkk a Aysha e o Mathel falando que outras duplas esqueceram informações e eles esqueceram a data, foi o tombo do episódio",
+                "curtidas": 13406,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Acusação de etarismo contra Talitah",
+              "descricao": "Os comentários criticam Matthel por usar termos como coroa de forma pejorativa e por insistir em se autoafirmar como novinho para diminuir a colega.",
+              "mencoes": 49,
+              "pct": 6,
+              "positivo": 2,
+              "negativo": 42,
+              "neutro": 5,
+              "exemplo": {
+                "texto": "A personalidade do Mathel é ser novinho, Coitado do Mathel quando ele descobrir que dos 20 poucos pros 30 é um pulo",
+                "curtidas": 1580,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 389,
+              "pct": 47,
+              "positivo": 133,
+              "negativo": 218,
+              "neutro": 38,
+              "exemplo": {
+                "texto": "o Mathel até quando ele ganha, ele perde, deu até dó hoje KSJSKSKSKKS",
+                "curtidas": 9000,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 52,
+              "pct": 6,
+              "positivo": 1,
+              "negativo": 17,
+              "neutro": 34,
+              "exemplo": {
+                "texto": "Mathel com o “vai vir” tá só o meme da menina vindo na calçada e nunca vem kkkk",
+                "curtidas": 737,
+                "sentimento": "negativo"
+              }
+            }
+          ]
+        },
+        {
+          "nome": "Bárbara Freitas",
+          "resultado": "Flop",
+          "mencoes": 549,
+          "positivo": 251,
+          "negativo": 59,
+          "neutro": 239,
+          "saldo": 34.9727,
+          "elogio": {
+            "texto": "Kqkakakakak amo a Bárbara 😂 ela quebra o clima pesado e entra nas conversas de forma tão natural ksksks",
+            "curtidas": 1634
+          },
+          "critica": {
+            "texto": "Povo não aguenta nada. Ela falou por algo do jogo e a Bárbara já levou pro pessoal.. que preguiçaaaaa",
+            "curtidas": 168
+          },
+          "temas": [
+            {
+              "id": 2,
+              "nome": "Talitah dizer que queria a saída dela",
+              "descricao": "Os comentários expressam choque, decepção ou análise estratégica sobre o momento em que Talitah diz no lounge que deseja a saída de Bárbara.",
+              "mencoes": 255,
+              "pct": 46,
+              "positivo": 45,
+              "negativo": 17,
+              "neutro": 193,
+              "exemplo": {
+                "texto": "A Barbara e a Thalita se atacando foi o auge pra mim. DO NADA",
+                "curtidas": 783,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 1,
+              "nome": "Foto de Bárbara no flop",
+              "descricao": "Os comentários debatem a qualidade estética da foto de Bárbara no desafio do flop, comparando-a com a de Matthel e defendendo que ela merecia ter vencido.",
+              "mencoes": 75,
+              "pct": 14,
+              "positivo": 53,
+              "negativo": 14,
+              "neutro": 8,
+              "exemplo": {
+                "texto": "Gente, pra mim a Barbara ia ganhar o flop, o mattel só enfiou um monte de coisa na cara kkkkkkk",
+                "curtidas": 1132,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Live de Talitah e Bárbara",
+              "descricao": "Os comentários discutem a performance da dupla na prova da live, avaliando se houve falta de fluidez, cortes excessivos ou se elas foram injustiçadas pelos jurados.",
+              "mencoes": 51,
+              "pct": 9,
+              "positivo": 27,
+              "negativo": 13,
+              "neutro": 11,
+              "exemplo": {
+                "texto": "Talitah e Barbara foram ótimas, forçaram muito pra dizer que não foram bem. Elas não se cortaram, live é assim, uma terminou de falar, a outra pessoa já fala, não pode deixar a live parar, ainda mais com 5 minutos",
+                "curtidas": 328,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 140,
+              "pct": 26,
+              "positivo": 122,
+              "negativo": 11,
+              "neutro": 7,
+              "exemplo": {
+                "texto": "Kqkakakakak amo a Bárbara 😂 ela quebra o clima pesado e entra nas conversas de forma tão natural ksksks",
+                "curtidas": 1634,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 28,
+              "pct": 5,
+              "positivo": 4,
+              "negativo": 4,
+              "neutro": 20,
+              "exemplo": {
+                "texto": "Talitah, Bárbara, Aysha e Matthel no flop é absolute cinema",
+                "curtidas": 54,
+                "sentimento": "neutro"
+              }
+            }
+          ]
+        },
+        {
+          "nome": "Latyffa Romayale",
+          "resultado": "Venceu",
+          "mencoes": 304,
+          "positivo": 191,
+          "negativo": 79,
+          "neutro": 34,
+          "saldo": 36.8421,
+          "elogio": {
+            "texto": "Todo mundo fala que a Latifa é expansiva, mas ela consegue respeitar muito o espaço do outro",
+            "curtidas": 1758
+          },
+          "critica": {
+            "texto": "A Latyfa falar que a Talitha doma a Bárbara por isso prefere fazer dupla com ela, é ofensivo até para a Bárbara! A menina tem talento, é criativa, tem personalidade e ainda é respeitosa..",
+            "curtidas": 1199
+          },
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Desempenho na prova de live",
+              "descricao": "Os comentários divergem sobre a qualidade da live de Latyffa e Jheny, com alguns elogiando a autenticidade e outros criticando a desorganização e as interrupções constantes.",
+              "mencoes": 71,
+              "pct": 23,
+              "positivo": 27,
+              "negativo": 39,
+              "neutro": 5,
+              "exemplo": {
+                "texto": "Temporada do julgamento maluco. Como pode Aysha e Mathel terem sido os melhores??? Jenni e Lattyfa foram as piores, claramente, enquanto Gabriel e Stefone de fato foram os melhores, mais desenvoltos, no improviso e na…",
+                "curtidas": 242,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Relação com Talitah",
+              "descricao": "Os comentários discutem a postura de Latyffa ao criticar Talitah, mencionando que ela a coloca como vilã ou que a persegue no jogo.",
+              "mencoes": 26,
+              "pct": 9,
+              "positivo": 5,
+              "negativo": 11,
+              "neutro": 10,
+              "exemplo": {
+                "texto": "A Latyfa falar que a Talitha doma a Bárbara por isso prefere fazer dupla com ela, é ofensivo até para a Bárbara! A menina tem talento, é criativa, tem personalidade e ainda é respeitosa..",
+                "curtidas": 1199,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Interação com Jheny na prova",
+              "descricao": "Os comentários apontam que a dupla teve problemas de entrosamento, com Jheny cortando Latyffa ou Latyffa falando por cima da parceira.",
+              "mencoes": 21,
+              "pct": 7,
+              "positivo": 10,
+              "negativo": 7,
+              "neutro": 4,
+              "exemplo": {
+                "texto": "a jheny conseguiu ACABAR com a apresentação da Latyfa mds KKKKKKKKKKKKKK",
+                "curtidas": 734,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Escolha de Talitah e Bárbara para o flop",
+              "descricao": "Os comentários questionam a estratégia de Latyffa e Jheny ao enviarem Talitah e Bárbara para o flop, considerando a decisão injusta ou mal fundamentada.",
+              "mencoes": 12,
+              "pct": 4,
+              "positivo": 1,
+              "negativo": 10,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "Cara eu acho muito falho eles SEMPRE darem esse poder de escolha aos participantes. Quem deveria decidir qual dupla iria para o flop eram os próprios jurados, não faz sentido a dupla da latyfa ter tido esse direito de…",
+                "curtidas": 187,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 157,
+              "pct": 52,
+              "positivo": 144,
+              "negativo": 11,
+              "neutro": 2,
+              "exemplo": {
+                "texto": "Todo mundo fala que a Latifa é expansiva, mas ela consegue respeitar muito o espaço do outro",
+                "curtidas": 1758,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 17,
+              "pct": 6,
+              "positivo": 4,
+              "negativo": 1,
+              "neutro": 12,
+              "exemplo": {
+                "texto": "Pela fala da LATIFA acho q quem saiu foi a AYSHA kkkkkkk Ouvi um amém 🙏🏻?",
+                "curtidas": 17,
+                "sentimento": "neutro"
+              }
+            }
+          ]
+        },
+        {
+          "nome": "Gabriel Queiroz",
+          "resultado": "Salvo",
+          "mencoes": 298,
+          "positivo": 195,
+          "negativo": 52,
+          "neutro": 51,
+          "saldo": 47.9866,
+          "elogio": {
+            "texto": "O povo confunde educação com falta de personalidade ! Gabriel mega educado e respeita a sua personalidade! Além de ser extremamente talentoso!!!",
+            "curtidas": 9222
+          },
+          "critica": {
+            "texto": "gnt pqp os jurados não criticaram nda o da stte e do gabriel, como assim? eles foram pessimos",
+            "curtidas": 15
+          },
+          "temas": [
+            {
+              "id": 2,
+              "nome": "Desempenho na prova de live",
+              "descricao": "Os espectadores divergem sobre a qualidade da live de Gabriel e Sttefone, com muitos defendendo que eles foram os melhores e outros criticando a falta de sintonia e interrupções.",
+              "mencoes": 88,
+              "pct": 30,
+              "positivo": 60,
+              "negativo": 22,
+              "neutro": 6,
+              "exemplo": {
+                "texto": "Temporada do julgamento maluco. Como pode Aysha e Mathel terem sido os melhores??? Jenni e Lattyfa foram as piores, claramente, enquanto Gabriel e Stefone de fato foram os melhores, mais desenvoltos, no improviso e na…",
+                "curtidas": 242,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 1,
+              "nome": "Cobrança para Gabriel acordar",
+              "descricao": "Os comentários debatem a pressão dos outros participantes e jurados para que Gabriel seja mais expansivo e polêmico, enquanto seus fãs defendem seu jeito reservado e educado.",
+              "mencoes": 54,
+              "pct": 18,
+              "positivo": 40,
+              "negativo": 7,
+              "neutro": 7,
+              "exemplo": {
+                "texto": "O pessoal falando que o Gabriel ta sendo um flop, mas a maior planta dessa temporada é a Sttefone",
+                "curtidas": 10913,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Interação com Sttefone na prova",
+              "descricao": "Os comentários apontam que a dupla Gabriel e Sttefone teve problemas de comunicação, com críticas sobre quem falava por cima de quem e elogios à química e ao entretenimento gerado.",
+              "mencoes": 27,
+              "pct": 9,
+              "positivo": 5,
+              "negativo": 15,
+              "neutro": 7,
+              "exemplo": {
+                "texto": "\"vou me policiar pra não cortar o Gabriel\" cortou o tempo todo",
+                "curtidas": 239,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 84,
+              "pct": 28,
+              "positivo": 80,
+              "negativo": 3,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "Já tô ansiosa, espero q a Thalita ou o Gabriel ganhem",
+                "curtidas": 71,
+                "sentimento": "positivo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 45,
+              "pct": 15,
+              "positivo": 10,
+              "negativo": 5,
+              "neutro": 30,
+              "exemplo": {
+                "texto": "Amo a Latifa com o romance platônico com o Gabs kskskksksk",
+                "curtidas": 1091,
+                "sentimento": "neutro"
+              }
+            }
+          ]
+        },
+        {
+          "nome": "Jheny Albano",
+          "resultado": "Venceu",
+          "mencoes": 255,
+          "positivo": 56,
+          "negativo": 168,
+          "neutro": 31,
+          "saldo": -43.9216,
+          "elogio": {
+            "texto": "Jenny percebeu que a Talita é a Juliette da temporada e foi a única que percebeu que ela tá sendo honesta! Quero as duas na final ❤️",
+            "curtidas": 37
+          },
+          "critica": {
+            "texto": "a jheny tirando a hot mom do pódio sendo que foi a unica coisa util que ela fez a temporada toda",
+            "curtidas": 1619
+          },
+          "temas": [
+            {
+              "id": 1,
+              "nome": "Desempenho na prova de live",
+              "descricao": "Os comentários divergem sobre a qualidade da live de Jheny e Latyffa, com críticas ao caos e interrupções constantes e elogios por parecerem uma live real.",
+              "mencoes": 58,
+              "pct": 23,
+              "positivo": 20,
+              "negativo": 35,
+              "neutro": 3,
+              "exemplo": {
+                "texto": "Temporada do julgamento maluco. Como pode Aysha e Mathel terem sido os melhores??? Jenni e Lattyfa foram as piores, claramente, enquanto Gabriel e Stefone de fato foram os melhores, mais desenvoltos, no improviso e na…",
+                "curtidas": 242,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Falsidade e mudanças de opinião",
+              "descricao": "Muitos espectadores acusam Jheny de ser falsa, incoerente e de mudar de lado conforme a conveniência, especialmente em relação a Talitah e Gabriel.",
+              "mencoes": 51,
+              "pct": 20,
+              "positivo": 2,
+              "negativo": 46,
+              "neutro": 3,
+              "exemplo": {
+                "texto": "A Jheny falou em um dos lounges que a Talitah muda rápido de opinião, mas a Jheny sustenta nada, nossa ela muda O TEMPO INTEIRO",
+                "curtidas": 1326,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Interação com Latyffa na prova",
+              "descricao": "Há um debate sobre se Jheny atrapalhou ou se a dupla teve sinergia, com muitos apontando que ela cortava a parceira excessivamente durante a live.",
+              "mencoes": 24,
+              "pct": 9,
+              "positivo": 1,
+              "negativo": 20,
+              "neutro": 3,
+              "exemplo": {
+                "texto": "a jheny conseguiu ACABAR com a apresentação da Latyfa mds KKKKKKKKKKKKKK",
+                "curtidas": 734,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Dificuldade em aceitar críticas",
+              "descricao": "A torcida aponta que Jheny reage mal a qualquer comentário negativo, sempre se defendendo ou atacando quem a criticou anteriormente.",
+              "mencoes": 16,
+              "pct": 6,
+              "positivo": 2,
+              "negativo": 14,
+              "neutro": 0,
+              "exemplo": {
+                "texto": "Ninguem vai dizer como a jheny é dodói? Parece criança, sempre que tem uma critica a ela, ela retruca super reativa kkk",
+                "curtidas": 81,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 72,
+              "pct": 28,
+              "positivo": 25,
+              "negativo": 43,
+              "neutro": 4,
+              "exemplo": {
+                "texto": "a jheny tirando a hot mom do pódio sendo que foi a unica coisa util que ela fez a temporada toda",
+                "curtidas": 1619,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 34,
+              "pct": 13,
+              "positivo": 6,
+              "negativo": 10,
+              "neutro": 18,
+              "exemplo": {
+                "texto": "Talita me decepcionou nessa escolha, deveria ter deixado uns segundos pra pensar bem, como que ela junta Aisha com Matteo que os dois são aliados e sempre atacam ela juntos ? Tinha que pôr a jenny com Matteo que se…",
+                "curtidas": 7,
+                "sentimento": "neutro"
+              }
+            }
+          ]
+        },
+        {
+          "nome": "Sttefone",
+          "resultado": "Salvo",
+          "mencoes": 221,
+          "positivo": 66,
+          "negativo": 121,
+          "neutro": 34,
+          "saldo": -24.8869,
+          "elogio": {
+            "texto": "Temporada do julgamento maluco. Como pode Aysha e Mathel terem sido os melhores??? Jenni e Lattyfa foram as piores, claramente, enquanto Gabriel e Stefone de fato foram os melhores, mais desenvoltos, no improviso e na química pqp",
+            "curtidas": 242
+          },
+          "critica": {
+            "texto": "O pessoal falando que o Gabriel ta sendo um flop, mas a maior planta dessa temporada é a Sttefone",
+            "curtidas": 10913
+          },
+          "temas": [
+            {
+              "id": 3,
+              "nome": "Desempenho como planta no jogo",
+              "descricao": "Muitos comentários classificam Sttefone como uma participante apagada que não entrega conteúdo e evita o flop por sorte.",
+              "mencoes": 45,
+              "pct": 20,
+              "positivo": 2,
+              "negativo": 38,
+              "neutro": 5,
+              "exemplo": {
+                "texto": "O pessoal falando que o Gabriel ta sendo um flop, mas a maior planta dessa temporada é a Sttefone",
+                "curtidas": 10913,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 1,
+              "nome": "Interrupções na live com Gabriel",
+              "descricao": "Os comentários apontam que Sttefone falou por cima de Gabriel durante a live, impedindo que ele tivesse espaço para interagir.",
+              "mencoes": 26,
+              "pct": 12,
+              "positivo": 4,
+              "negativo": 17,
+              "neutro": 5,
+              "exemplo": {
+                "texto": "50:58 NAO AGUENTEI COM O GABRIEL LEVANTANDO A PERNOCA PRA STEPHONE COLOCAR A MEIA KAKDKAKKDKAKSK",
+                "curtidas": 130,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 2,
+              "nome": "Rivalidade com Talitah",
+              "descricao": "Os espectadores criticam Sttefone por tentar criar conflitos com Talitah e desmerecer o trabalho dela sem motivo aparente.",
+              "mencoes": 26,
+              "pct": 12,
+              "positivo": 0,
+              "negativo": 20,
+              "neutro": 6,
+              "exemplo": {
+                "texto": "Se fosse a Talitah falando no começo do episódio que queria mt ter ganhado a prova da semana passada como a Stefone fez já tava todo mundo caindo em cima dela dizendo q tá tentando trazer o enredo pra ela. Todo mundo…",
+                "curtidas": 280,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Opinião sobre o look customizado",
+              "descricao": "Os usuários criticam a qualidade da roupa feita por Sttefone no desafio e sua postura ao avaliar o look de Talitah.",
+              "mencoes": 13,
+              "pct": 6,
+              "positivo": 0,
+              "negativo": 11,
+              "neutro": 2,
+              "exemplo": {
+                "texto": "Chamarem aquele look pavoroso da Ste como algo incrível é SURREAL",
+                "curtidas": 2749,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 69,
+              "pct": 31,
+              "positivo": 45,
+              "negativo": 20,
+              "neutro": 4,
+              "exemplo": {
+                "texto": "Papo de tapar o umbigo com fita pra entrar nesse QG, que energia pesada dessa galera. Matthel e Stefone tem energia de adolescente fã de mean girls que tenta incorporar a Regina George, Aysha é outra coisa a parte,…",
+                "curtidas": 1113,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 42,
+              "pct": 19,
+              "positivo": 15,
+              "negativo": 15,
+              "neutro": 12,
+              "exemplo": {
+                "texto": "*Steffone erra* Nátaly: \"Errou?... Gabriel erra muito às vezes.\" Coitado, levou de graça. KKKKKKKKK",
+                "curtidas": 648,
+                "sentimento": "neutro"
+              }
+            }
+          ]
+        },
+        {
+          "nome": "Breia",
+          "resultado": null,
+          "mencoes": 191,
+          "positivo": 48,
+          "negativo": 81,
+          "neutro": 62,
+          "saldo": -17.2775,
+          "elogio": {
+            "texto": "A breia não entendendo a carta no começo me fez rir muitooo kkkkkk😂😂",
+            "curtidas": 240
+          },
+          "critica": {
+            "texto": "Finalmente o último beijo da Breia, até pq pelo nível de entrega dela já sabemos que não passa na repescagem",
+            "curtidas": 1810
+          },
+          "temas": [
+            {
+              "id": 2,
+              "nome": "Desempenho fraco no jogo",
+              "descricao": "Os comentários afirmam que Breia não entregou conteúdo, não se esforçou ou não demonstrou carisma durante sua participação.",
+              "mencoes": 35,
+              "pct": 18,
+              "positivo": 6,
+              "negativo": 25,
+              "neutro": 4,
+              "exemplo": {
+                "texto": "Eu amo que a stefone não faz nada, vai na onda dos outros pra ter um pouco de relevância na competição, cobra posicionamento dos outros e não enxerga o próprio umbigo, falou da breia “eu quero que você acorde porque…",
+                "curtidas": 2943,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 1,
+              "nome": "Confusão com a carta",
+              "descricao": "Os comentários destacam o momento em que Breia não compreende a mensagem da carta de repescagem e sua reação confusa.",
+              "mencoes": 23,
+              "pct": 12,
+              "positivo": 6,
+              "negativo": 6,
+              "neutro": 11,
+              "exemplo": {
+                "texto": "Gente, a breia parecendo feliz que saiu kkkkkkkkkkk qdo veio o \"sua história ainda não acabou\" a cara dela de \"afff\" KKKKKKK",
+                "curtidas": 351,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 3,
+              "nome": "Eliminação por erro de briefing",
+              "descricao": "Os comentários mencionam que a saída de Breia foi motivada pelo erro no cumprimento das regras do briefing.",
+              "mencoes": 8,
+              "pct": 4,
+              "positivo": 0,
+              "negativo": 5,
+              "neutro": 3,
+              "exemplo": {
+                "texto": "Perderam a chance de fazer história com a eliminação dupla neste episódio. Ambos Matel e Breia mereciam ser eliminados, pelas regras do briefing. E acho icônico que os dois únicos que mandaram correio deselegante para a…",
+                "curtidas": 31,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 4,
+              "nome": "Rivalidade com Aysha",
+              "descricao": "Os comentários citam a fala de Breia no lounge sobre a eliminação de Aysha e o fato de Breia ter saído logo em seguida.",
+              "mencoes": 6,
+              "pct": 3,
+              "positivo": 1,
+              "negativo": 4,
+              "neutro": 1,
+              "exemplo": {
+                "texto": "eu amei ver a breia dizendo que ia tirar a aysha e saindo logo dps KKK",
+                "curtidas": 183,
+                "sentimento": "negativo"
+              }
+            },
+            {
+              "id": 98,
+              "nome": "Opinião geral, sem citar um momento",
+              "descricao": "Comentários que só declaram amor, torcida ou rejeição pela pessoa, sem dizer por quê.",
+              "mencoes": 107,
+              "pct": 56,
+              "positivo": 35,
+              "negativo": 39,
+              "neutro": 33,
+              "exemplo": {
+                "texto": "ULTIMO BEIJOS DA BREIA!",
+                "curtidas": 739,
+                "sentimento": "neutro"
+              }
+            },
+            {
+              "id": 0,
+              "nome": "Outros assuntos",
+              "descricao": "Comentários que não se encaixam nos outros temas.",
+              "mencoes": 12,
+              "pct": 6,
+              "positivo": 0,
+              "negativo": 2,
+              "neutro": 10,
+              "exemplo": {
+                "texto": "O edu com o corset q a breia tentou fazer 😂😂",
+                "curtidas": 1,
+                "sentimento": "neutro"
+              }
+            }
+          ]
+        },
+        {
+          "nome": "Rhanyane Garcia",
+          "resultado": null,
+          "mencoes": 13,
+          "positivo": 5,
+          "negativo": 1,
+          "neutro": 7,
+          "saldo": 30.7692,
+          "elogio": {
+            "texto": "A Talitah não pode sair pq quero o retorno da Rhany. Rhany e Talitah na final",
+            "curtidas": 74
+          },
+          "critica": {
+            "texto": "Mas ai eu acho que é estratégia tambem porque se a dupla nao esta alinhada, vai se basear nos outros e sai tudo errado. Exemplo a rany e jenny que assistiram de todos e foram mal pq se perderam pensando no que os outros apresentaram.",
+            "curtidas": 0
+          },
+          "temas": []
+        },
+        {
+          "nome": "Paizinho dos Looks",
+          "resultado": null,
+          "mencoes": 8,
+          "positivo": 0,
+          "negativo": 0,
+          "neutro": 8,
+          "saldo": 0.0,
+          "elogio": null,
+          "critica": null,
+          "temas": []
+        },
+        {
+          "nome": "Peter Poc",
+          "resultado": null,
+          "mencoes": 2,
+          "positivo": 0,
+          "negativo": 1,
+          "neutro": 1,
+          "saldo": -50.0,
+          "elogio": null,
+          "critica": {
+            "texto": "e pensar que essa perseguição toda com a talitah foi por causa do peter poc",
+            "curtidas": 3
           },
           "temas": []
         }
@@ -4541,6 +6682,12 @@ window.DADOS = {
           4
         ],
         "texto": "No quarto episódio, o saldo ficou em −71, igual ao do episódio anterior, com 563 críticas em 696 menções. Ela foi direto para o flop e venceu a prova de eliminação com o vídeo publicitário, mas os comentários mais curtidos sobre ela falam do conflito com Talitah. O primeiro (14,7 mil curtidas) diz que Talitah \"alugou um triplex\" na cabeça dela. Em 129 comentários, a crítica a Aysha vem junto de um elogio a Talitah, o par mais frequente do episódio, e em 27, junto de um elogio a Bárbara."
+      },
+      {
+        "episodios": [
+          5
+        ],
+        "texto": "No quinto episódio, o saldo ficou em −67, com 1.160 críticas em 1.499 menções. Ela e Matthel fizeram a live considerada a melhor pelas juradas, mas esqueceram as datas da promoção e foram direto para o flop. A torcida falou mais da relação dela com Talitah: o tema \"Perseguição obsessiva a Talitah\" teve 372 menções, quase todas críticas (314), e o comentário mais curtido sobre ela (14,6 mil curtidas) lembra que Aysha gostou de Talitah até ser mandada por ela ao flop no primeiro episódio. Ficou entre as duas últimas do flop, com Talitah."
       }
     ],
     "Breia": [
@@ -4562,6 +6709,12 @@ window.DADOS = {
           4
         ],
         "texto": "No quarto episódio, o saldo caiu para −76, o pior do episódio, com 1.141 críticas em 1.369 menções. Ela voltou do flop, fez um look rosa que foi caindo durante o desfile e foi mandada de novo ao flop pelas três melhores da noite. Em 57 comentários, a crítica a ela vem junto de um elogio a Talitah, e em 37, de um elogio a Latyffa, com quem discutiu sobre a plaquinha de \"sem noção\"."
+      },
+      {
+        "episodios": [
+          5
+        ],
+        "texto": "No quinto episódio, a saída dela foi revelada logo na abertura. Com 191 menções, o saldo subiu para −17: a torcida riu da confusão dela com a carta de despedida e repetiu o \"último beijo da Breia\", mas a crítica mais curtida (1,8 mil curtidas) diz que, pelo nível de entrega, ela não passaria numa repescagem."
       }
     ],
     "Bárbara Freitas": [
@@ -4583,6 +6736,12 @@ window.DADOS = {
           4
         ],
         "texto": "No quarto episódio, ficou entre as três melhores com o vestido de baile, e as juradas a chamaram de exemplo de evolução. O saldo ficou em +58, com 204 elogios e 28 críticas em 306 menções. Em 121 comentários, ela é elogiada junto com Talitah, a dupla mais elogiada do episódio, e em 53, junto com Latyffa."
+      },
+      {
+        "episodios": [
+          5
+        ],
+        "texto": "No quinto episódio, o saldo caiu de +58 para +35, mais pelas menções neutras (239 de 549) do que pelas críticas, que foram só 59. A maior parte da conversa sobre ela (255 menções) foi sobre Talitah dizer no lounge que queria a saída dela. Ela foi ao flop com Talitah e se salvou com a foto da garrafa, e parte da torcida achou que ela merecia vencer o flop no lugar de Matthel: o tema sobre a foto teve 75 menções, com 53 elogios. Em 73 comentários, ela e Talitah são elogiadas juntas."
       }
     ],
     "Gabriel Queiroz": [
@@ -4604,6 +6763,12 @@ window.DADOS = {
           4
         ],
         "texto": "No quarto episódio, o saldo caiu de +97 para +34, a maior queda do episódio. Com a vantagem de vencedor, escolheu amarrar Jheny e Talitah, e a crítica mais curtida (906 curtidas) chama a escolha de \"maria vai com as outras\". Mais de um terço das menções (112 de 310) foi neutra, e os elogios vieram mais da briga com Jheny: o mais curtido (550 curtidas) diz que ela o provocou sem ninguém perguntar."
+      },
+      {
+        "episodios": [
+          5
+        ],
+        "texto": "No quinto episódio, teve o maior saldo do episódio (+48), com 195 elogios e 52 críticas em 298 menções. As juradas disseram que ele ficou como convidado na live com Sttefone, e duas cartas do correio deselegante cobraram que ele aparecesse mais. A torcida respondeu defendendo: o comentário mais curtido sobre ele (9,2 mil curtidas) diz que \"o povo confunde educação com falta de personalidade\", e o tema da cobrança para ele acordar teve 54 menções, com 40 elogios. Em 21 comentários, o elogio a ele vem junto de uma crítica a Jheny."
       }
     ],
     "Jheny Albano": [
@@ -4625,6 +6790,12 @@ window.DADOS = {
           4
         ],
         "texto": "No quarto episódio, o saldo foi de −33, com 216 críticas em 373 menções. Ela começou cobrando Gabriel pelo que ele disse no lounge e, depois de passar uma hora amarrada a Talitah, disse ter visto de perto o que o elenco faz com a colega. A mudança dividiu a torcida: o elogio mais curtido (3,1 mil curtidas) é de quem passou a concordar com Jheny sobre a perseguição, e a crítica mais curtida (1,8 mil) lembra que ela também alfinetava Talitah. Em 53 comentários, ela é elogiada junto com Talitah."
+      },
+      {
+        "episodios": [
+          5
+        ],
+        "texto": "No quinto episódio, venceu a primeira prova dela, com Latyffa, mas teve o pior saldo entre quem não foi ao flop (−44), com 168 críticas em 255 menções. A crítica mais curtida (1,6 mil curtidas) é sobre ela ter tirado Talitah do pódio, e o tema de falsidade e mudanças de opinião teve 51 menções, quase todas críticas (46). Na live, parte da torcida achou que ela atrapalhou Latyffa."
       }
     ],
     "Latyffa Romayale": [
@@ -4646,6 +6817,12 @@ window.DADOS = {
           4
         ],
         "texto": "No quarto episódio, ficou entre as três melhores com o corset drapeado e teve saldo de +68, com 394 elogios em 502 menções. O comentário mais curtido sobre ela (11,3 mil curtidas) termina em \"Latyffa te amo\". Em 97 comentários, ela é elogiada junto com Talitah, e em 37 o elogio vem com uma crítica a Breia, que a chamou de sem noção. Parte da torcida achou que ela alfinetou Talitah: em 21 comentários, a crítica a ela vem junto de um elogio a Talitah."
+      },
+      {
+        "episodios": [
+          5
+        ],
+        "texto": "No quinto episódio, venceu a prova com Jheny e teve saldo de +37, abaixo do +68 do episódio anterior, com 191 elogios e 79 críticas em 304 menções. A vitória dividiu a torcida: no tema sobre a live, foram 39 críticas e 27 elogios, com muita gente achando que outra dupla merecia mais. A crítica mais curtida (1,2 mil curtidas) é sobre ela dizer que Talitah \"doma\" Bárbara. Os elogios seguiram vindo do carisma: o mais curtido (1,8 mil) diz que ela é expansiva, mas respeita o espaço do outro."
       }
     ],
     "Matthel": [
@@ -4667,6 +6844,12 @@ window.DADOS = {
           4
         ],
         "texto": "No quarto episódio, o saldo foi de −75, com 930 críticas em 1.122 menções, pouco mais de um ponto acima de Breia. Depois de ser amarrado a Latyffa e dizer que Jheny e Talitah jogaram sujo, não terminou o look e chorou no palco. O comentário mais curtido sobre ele (14,9 mil curtidas) diz que ele \"começa soberbo e SEMPRE termina chorando\". Em 128 comentários, a crítica a ele vem junto de um elogio a Talitah. Foi para o flop pela segunda semana seguida."
+      },
+      {
+        "episodios": [
+          5
+        ],
+        "texto": "No quinto episódio, o saldo subiu de −75 para −37, a maior alta entre quem segue no programa, com 499 críticas e 193 elogios em 824 menções. Ele fez com Aysha a melhor live, foi ao flop pelo erro de briefing e se salvou na prova da garrafa. O elogio mais curtido (9 mil curtidas) é de pena: diz que até quando ele ganha, ele perde. A carta em que chamou o jogo de Talitah de sujo foi o tema mais comentado sobre ele (130 menções). Em 75 comentários, ele e Aysha são elogiados juntos."
       }
     ],
     "Paizinho dos Looks": [
@@ -4739,6 +6922,12 @@ window.DADOS = {
           4
         ],
         "texto": "No quarto episódio, o saldo caiu para −37, com 78 críticas em 121 menções. O look \"rococó street style\" teve elogios isolados, mas a crítica mais curtida (1,3 mil curtidas) é sobre ela dizer a Talitah que \"todo mundo te odeia\", na conversa do elenco sobre idade. Em 27 comentários, a crítica a ela vem junto de um elogio a Talitah."
+      },
+      {
+        "episodios": [
+          5
+        ],
+        "texto": "No quinto episódio, o saldo foi de −25, um pouco melhor que no episódio anterior (−37), com 121 críticas em 221 menções. O comentário mais curtido sobre ela (10,9 mil curtidas) diz que a maior planta da temporada é ela, não Gabriel. As juradas disseram que ela conduziu a live, e em 57 comentários ela e Gabriel são elogiados juntos."
       }
     ],
     "Talitah Sampaio": [
@@ -4760,6 +6949,12 @@ window.DADOS = {
           4
         ],
         "texto": "No quarto episódio, venceu a prova de cola quente mesmo depois de passar a primeira hora amarrada a Jheny, por escolha de Gabriel, e foi o nome mais citado da temporada até aqui: 2.544 menções e saldo de +80, o maior do episódio, com 2.164 elogios e 127 críticas. O comentário mais curtido do episódio (17,6 mil curtidas) lembra que ninguém do elenco apontou o look dela como o melhor. Boa parte dos elogios vem junto de críticas a quem a enfrentou: em 129 comentários a crítica vai para Aysha, em 128 para Matthel e em 57 para Breia. Ela também foi elogiada junto com Bárbara (121 comentários) e Latyffa (97)."
+      },
+      {
+        "episodios": [
+          5
+        ],
+        "texto": "No quinto episódio, continuou sendo o nome mais citado (1.942 menções), mas o saldo caiu de +80 para +33, com 1.096 elogios e 453 críticas. A queda veio da fala no lounge, quando disse que gostaria que Bárbara saísse: o tema teve 234 menções, com 157 críticas e 33 elogios. Ao mesmo tempo, a torcida seguiu defendendo Talitah dos ataques de Aysha: são 298 comentários que criticam Aysha e elogiam Talitah na mesma frase, o par mais frequente da temporada até aqui. Foi para o flop com Bárbara e ficou entre as duas últimas, com Aysha."
       }
     ]
   },
@@ -4767,7 +6962,8 @@ window.DADOS = {
     "1": "A estreia teve 5.888 comentários nas primeiras 48 horas, e Peter Poc foi o nome mais citado, com 725 menções e saldo −75. Os comentários criticaram as queixas dele durante a prova do look rococó, o fato de ter dito que sabia fazer cabelo e depois reclamar da peruca, e a forma como culpou a líder Talitah pelo resultado do grupo. Ele foi eliminado no flop do vídeo de etiqueta. Breia recebeu mais elogios que qualquer outra pessoa (529), e 119 comentários acharam injusto o próprio grupo mandá-la para o flop. Muita gente apontou a contradição de Sttefone, que reclamou da saia de Bárbara a prova inteira e votou em Breia. Aysha Pink também foi defendida, por ter feito a maquiagem mais elogiada do grupo de Talitah e mesmo assim ir para o flop.",
     "2": "O segundo episódio teve 7.481 comentários nas primeiras 48 horas, e um quarto das menções foi para Paizinho dos Looks (853). Ele desistiu no meio da prova do flop, que pedia para recriar a maquiagem da artista Ana Mary B, logo depois de Gabriel e Rhanyane rasparem as sobrancelhas. A desistência rendeu 155 críticas, e o discurso duro de Edu no fim apareceu em 193 menções. Na prova do gloss, Talitah Sampaio e Bárbara Freitas venceram com um produto que prometia aumentar os seios, um dos assuntos mais elogiados do episódio. Talitah também ganhou defesa contra o que a torcida chamou de perseguição do elenco. Matthel caiu para −51, com críticas espalhadas entre a discussão com Talitah sobre idade, a insistência em corrigi-la e a forma como tratou Breia, que sobrou sem dupla. Latyffa Romayale quase não teve críticas, e muita gente pediu que a DiaTV a contratasse como repórter.",
     "3": "O terceiro episódio teve 5.599 comentários nas primeiras 48 horas. Gabriel Queiroz venceu a prova de maquiagem artística mesmo com 50 minutos a menos e recebeu 541 elogios e nenhuma crítica, o maior saldo da temporada (+97). Os comentários sobre essa vitória somam mais de 38 mil curtidas, mais que qualquer outro assunto do episódio, e em 133 comentários do episódio Gabriel é elogiado junto com Bárbara Freitas, outro destaque da prova. O nome mais citado, porém, foi Aysha Pink (592 menções, saldo −71): 245 críticas questionam o destaque positivo que ela recebeu das juradas, e em 76 comentários a crítica a ela vem junto de um elogio a Latyffa Romayale, que a torcida queria no lugar. Breia caiu de +48 para −53 depois de ir direto para o flop com a maquiagem da uva. Talitah Sampaio manteve o saldo positivo (+45), com 130 elogios em defesa contra o que a torcida chama de perseguição do elenco. No flop, ainda sem resultado, 28 comentários criticam Breia e defendem Rhanyane ao mesmo tempo.",
-    "4": "O quarto episódio teve 9.423 comentários nas primeiras 48 horas, o maior volume da temporada até aqui. Talitah venceu a prova de cola quente depois de passar a primeira hora amarrada a Jheny e foi citada 2.544 vezes, mais que qualquer participante em qualquer episódio, com saldo de +80. O comentário mais curtido do episódio (17,6 mil curtidas) lembra que ninguém do elenco apontou o look dela como o melhor. Muitos dos elogios a ela vêm junto de críticas a quem a enfrentou: são 129 comentários com Aysha, 128 com Matthel e 57 com Breia. Os três foram para o flop e terminaram com os piores saldos: Breia (−76), Matthel (−75) e Aysha (−71). Gabriel, vencedor da semana anterior, caiu de +97 para +34 depois de usar a vantagem de vencedor para amarrar Jheny e Talitah uma na outra. Latyffa (+68) e Bárbara (+58), as outras melhores da noite, seguiram bem avaliadas. Aysha venceu o flop, e entre Breia e Matthel, separados por pouco mais de um ponto, a torcida aponta Breia como quem deve sair."
+    "4": "O quarto episódio teve 9.423 comentários nas primeiras 48 horas, o maior volume da temporada até aqui. Talitah venceu a prova de cola quente depois de passar a primeira hora amarrada a Jheny e foi citada 2.544 vezes, mais que qualquer participante em qualquer episódio, com saldo de +80. O comentário mais curtido do episódio (17,6 mil curtidas) lembra que ninguém do elenco apontou o look dela como o melhor. Muitos dos elogios a ela vêm junto de críticas a quem a enfrentou: são 129 comentários com Aysha, 128 com Matthel e 57 com Breia. Os três foram para o flop e terminaram com os piores saldos: Breia (−76), Matthel (−75) e Aysha (−71). Gabriel, vencedor da semana anterior, caiu de +97 para +34 depois de usar a vantagem de vencedor para amarrar Jheny e Talitah uma na outra. Latyffa (+68) e Bárbara (+58), as outras melhores da noite, seguiram bem avaliadas. Aysha venceu o flop, e entre Breia e Matthel, separados por pouco mais de um ponto, a torcida aponta Breia como quem deve sair.",
+    "5": "O quinto episódio teve 7.362 comentários nas primeiras 48 horas. A briga entre Aysha e Talitah dominou a conversa: são 298 comentários que criticam Aysha e elogiam Talitah na mesma frase, mais que qualquer par da temporada. Aysha teve 1.499 menções e saldo de −67, e o tema sobre a \"perseguição obsessiva\" dela a Talitah passou de 50 mil curtidas, o mais curtido do episódio. Talitah continuou a mais citada (1.942 menções), mas caiu de +80 para +33 depois de dizer no lounge que queria a saída de Bárbara. A prova também dividiu a torcida: Aysha e Matthel foram apontados como a melhor dupla, mas esqueceram as datas da promoção e foram ao flop, e a vitória de Latyffa e Jheny teve mais críticas que elogios no tema sobre a live. Gabriel, cobrado no correio deselegante por estar apagado, teve o maior saldo do episódio (+48). Matthel e Bárbara se salvaram no flop, e entre Aysha e Talitah, separadas por 100 pontos, a torcida aponta Aysha como quem deve sair."
   },
   "ganchos": {
     "1": {
@@ -4825,13 +7021,28 @@ window.DADOS = {
       "Rhanyane Garcia": "ser eliminada no flop do episódio 3",
       "Paizinho dos Looks": "já ter desistido",
       "Peter Poc": "já ter sido eliminado"
+    },
+    "5": {
+      "Latyffa Romayale": "vencer a live do TikTok Shop com Jheny",
+      "Jheny Albano": "vencer a live do TikTok Shop com Latyffa",
+      "Gabriel Queiroz": "ser cobrado por estar apagado no correio deselegante",
+      "Sttefone": "conduzir a live com Gabriel",
+      "Matthel": "fazer a melhor live com Aysha, ir ao flop por erro de briefing e se salvar",
+      "Aysha Pink": "fazer a melhor live com Matthel e ir ao flop por esquecer as datas da promoção",
+      "Talitah Sampaio": "dizer no lounge que queria a saída de Bárbara",
+      "Bárbara Freitas": "ir para o flop com Talitah e se salvar",
+      "Breia": "ser eliminada no flop do episódio 4",
+      "Rhanyane Garcia": "já ter sido eliminada",
+      "Paizinho dos Looks": "já ter desistido",
+      "Peter Poc": "já ter sido eliminado"
     }
   },
   "aconteceu": {
     "1": "A estreia teve uma prova em grupos: criar um visual rococó completo, com roupa, cabelo e maquiagem, inspirado em um sabor de Fanta. O grupo liderado por Rhanyane venceu, e o de Talitah foi o pior. Peter, Talitah, Aysha e Breia foram para o flop, a prova de eliminação, que pedia um vídeo sobre etiqueta à mesa. Peter foi eliminado.",
     "2": "A prova foi em duplas: criar um gloss e vender a ideia às juradas e à convidada Camila Coutinho, como se elas fossem investidoras. Talitah e Bárbara venceram. Paizinho, Gabriel, Rhanyane e Jheny foram para o flop, a prova de eliminação, que pedia para reproduzir uma maquiagem de sobrancelhas raspadas. Paizinho desistiu no meio dela.",
     "3": "A prova foi individual: recriar, em até 3 horas, as maquiagens artísticas mais polêmicas de temporadas anteriores. Vencedoras da semana anterior, Talitah e Bárbara escolheram quatro colegas para começar com menos tempo. Gabriel perdeu 50 minutos e mesmo assim venceu. Breia, Talitah, Matthel e Rhanyane foram para o flop, a prova de eliminação, que pedia uma foto elegante sentada em um vaso sanitário. Matthel venceu o flop, e quem sai só é revelado no episódio 4.",
-    "4": "Rhanyane foi a eliminada do flop do episódio 3, revelada logo na abertura. A prova da semana foi um baile de máscaras: criar look e máscara só com cola quente, em 2 horas, nas cores de um sabor sorteado. Como vencedor da semana anterior, Gabriel escolheu duas colegas para passar a primeira hora da prova amarradas uma à outra: Jheny e Talitah. Depois, as duas escolheram Latyffa e Matthel para ficarem amarrados por meia hora. Mesmo assim, Talitah venceu, com Latyffa e Bárbara entre as melhores. Matthel, Aysha e Breia foram para o flop, que pedia um vídeo publicitário em 40 minutos. Aysha venceu o flop, e quem sai entre Breia e Matthel só é revelado no episódio 5."
+    "4": "Rhanyane foi a eliminada do flop do episódio 3, revelada logo na abertura. A prova da semana foi um baile de máscaras: criar look e máscara só com cola quente, em 2 horas, nas cores de um sabor sorteado. Como vencedor da semana anterior, Gabriel escolheu duas colegas para passar a primeira hora da prova amarradas uma à outra: Jheny e Talitah. Depois, as duas escolheram Latyffa e Matthel para ficarem amarrados por meia hora. Mesmo assim, Talitah venceu, com Latyffa e Bárbara entre as melhores. Matthel, Aysha e Breia foram para o flop, que pedia um vídeo publicitário em 40 minutos. Aysha venceu o flop, e quem sai entre Breia e Matthel só é revelado no episódio 5.",
+    "5": "Breia foi a eliminada do flop do episódio 4, revelada na abertura. Antes da prova, cada um escreveu um \"correio deselegante\" para um colega, e Matthel foi quem mais recebeu cartas. A prova principal foi em duplas, escolhidas por Talitah como vencedora da semana anterior: uma live de Black Friday do TikTok Shop, com 5 minutos para vender cinco produtos. Aysha e Matthel fizeram a melhor apresentação, mas esqueceram de dizer as datas da promoção e foram direto para o flop por erro de briefing. Latyffa e Jheny venceram e mandaram Talitah e Bárbara para o flop. No flop, cada um customizou uma garrafa com pedrarias e fez uma foto: Matthel e Bárbara se salvaram, e quem sai entre Aysha e Talitah só é revelado no episódio 6."
   },
   "comentarios_resumo": {
     "1": [
@@ -4982,6 +7193,106 @@ window.DADOS = {
         "texto": "Ahh gente sendo bem sincera a Breia pode ate ser simpática mas não entrega nada nas provas, sera injusto se a Rhani sair, por que a Breia não foi bem em nada",
         "curtidas": 193,
         "sentimento": "positivo"
+      }
+    ],
+    "4": [
+      {
+        "nome": "Talitah Sampaio",
+        "tema": "Talento e look da prova",
+        "mencoes": 442,
+        "texto": "Ãmo que ninguém falou que o look da Talita era o melhor (sendo que claramente era) e ela foi a winner KAKAKAKAKA",
+        "curtidas": 17600,
+        "sentimento": "positivo"
+      },
+      {
+        "nome": "Aysha Pink",
+        "tema": "Obsessão pela Talitah",
+        "mencoes": 155,
+        "texto": "Meu Deus a Thalita alugou um TRIPLEX na cabeça da Aysha",
+        "curtidas": 14661,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Matthel",
+        "tema": "Choro e vitimismo constante",
+        "mencoes": 116,
+        "texto": "Mattel que começa soberbo e SEMPRE termina chorando KKKKKKKKKKKKKKKKKKKKKKKKK",
+        "curtidas": 14925,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Breia",
+        "tema": "Questionamento sobre faculdade de moda",
+        "mencoes": 75,
+        "texto": "Gente eu acho até irônico a Breia entregar esse look sendo que ela faz moda",
+        "curtidas": 1029,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Latyffa Romayale",
+        "tema": "Carisma e alegria",
+        "mencoes": 105,
+        "texto": "Obrigada Latyfa por isso: “esse lugar só vai ser pesado se a gente deixar”",
+        "curtidas": 1627,
+        "sentimento": "positivo"
+      },
+      {
+        "nome": "Jheny Albano",
+        "tema": "Defesa de Talitah",
+        "mencoes": 56,
+        "texto": "thalita nem é minha fav mas fez eu CONCORDAR com a jheny!!? está bizarro essa perseguição, virou uma assassina de bebê por nada",
+        "curtidas": 3070,
+        "sentimento": "positivo"
+      }
+    ],
+    "5": [
+      {
+        "nome": "Talitah Sampaio",
+        "tema": "Declaração sobre Bárbara no lounge",
+        "mencoes": 234,
+        "texto": "A Barbara e a Thalita se atacando foi o auge pra mim. DO NADA",
+        "curtidas": 783,
+        "sentimento": "neutro"
+      },
+      {
+        "nome": "Aysha Pink",
+        "tema": "Perseguição obsessiva a Talitah",
+        "mencoes": 372,
+        "texto": "acho incrível que a aysha na primeira vez que viu a talitah amou ela, e só foi ser mandada pra um flop que ela conseguiu manipular todo mundo pra ter uma visão ruim sobre ela",
+        "curtidas": 14572,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Matthel",
+        "tema": "Erro de briefing na live",
+        "mencoes": 81,
+        "texto": "Gente kkkkkkkkk a Aysha e o Mathel falando que outras duplas esqueceram informações e eles esqueceram a data, foi o tombo do episódio",
+        "curtidas": 13406,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Bárbara Freitas",
+        "tema": "Foto de Bárbara no flop",
+        "mencoes": 75,
+        "texto": "Gente, pra mim a Barbara ia ganhar o flop, o mattel só enfiou um monte de coisa na cara kkkkkkk",
+        "curtidas": 1132,
+        "sentimento": "positivo"
+      },
+      {
+        "nome": "Sttefone",
+        "tema": "Desempenho como planta no jogo",
+        "mencoes": 45,
+        "texto": "O pessoal falando que o Gabriel ta sendo um flop, mas a maior planta dessa temporada é a Sttefone",
+        "curtidas": 10913,
+        "sentimento": "negativo"
+      },
+      {
+        "nome": "Jheny Albano",
+        "tema": "Falsidade e mudanças de opinião",
+        "mencoes": 51,
+        "texto": "A Jheny falou em um dos lounges que a Talitah muda rápido de opinião, mas a Jheny sustenta nada, nossa ela muda O TEMPO INTEIRO",
+        "curtidas": 1326,
+        "sentimento": "negativo"
       }
     ]
   },

@@ -199,7 +199,8 @@ def main():
     caminho_vencedores = os.path.join(PASTA, "dados", "vencedores_flop.csv")
     if os.path.exists(caminho_vencedores):
         for linha in pd.read_csv(caminho_vencedores, dtype=str).fillna("").itertuples():
-            vencedores_flop[int(linha.episodio)] = linha.participante.strip()
+            # Pode haver mais de um por episódio (no 5, Matthel e Bárbara se salvaram no flop).
+            vencedores_flop.setdefault(int(linha.episodio), []).append(linha.participante.strip())
 
     # Só entram os comentários das primeiras 48 horas de cada episódio (ver janela.py).
     tabela_janelas = janelas(todos)
@@ -253,7 +254,7 @@ def main():
             "video_id": do_episodio["video_id"].iat[0],
             "comentarios": int(len(do_episodio)),
             "eliminacao": eliminacoes.get(int(ep)),
-            "venceu_flop": vencedores_flop.get(int(ep)),
+            "venceu_flop": vencedores_flop.get(int(ep), []),
             "janela": {
                 "horas": JANELA_HORAS,
                 "inicio": tabela_janelas.at[ep, "inicio"].strftime("%Y-%m-%dT%H:%M:%SZ"),
