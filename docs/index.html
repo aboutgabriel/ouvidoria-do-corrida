@@ -482,6 +482,7 @@
     .hero { padding-top: 0; min-height: 0; }
     .hero-foto { height: 26rem; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 60%, transparent 97%); mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 60%, transparent 97%); }
   }
+  #t-resultado { scroll-margin-top: 5.5rem; }
   .placar { margin: 1.2rem 0 0; font-size: 1.1rem; color: var(--nevoa); } .placar strong { color: var(--dourado-texto); font: 400 1.35rem var(--display); }
   /* desktop: logo centralizado no topo, com as abas logo abaixo */
   @media (min-width: 761px) {
@@ -1429,7 +1430,7 @@
     const salvos = temAposta && prev.salvos.length ? ` ${listaNomes(prev.salvos)} ${prev.salvos.length > 1 ? "se salvaram no flop e ficam" : "venceu a prova do flop e fica"} de fora.` : "";
     const ultimo = ep.numero === eps[eps.length - 1].numero;
     const base = temAposta ? `<p class="base-aposta">A aposta é quem tem o pior saldo da torcida entre quem ainda podia sair do flop. O saldo é a porcentagem de elogios menos a de críticas nos comentários das primeiras 48 horas, todos escritos antes de a eliminação ser revelada.${salvos}</p>
-      <p class="nota-aposta">${ultimo ? `O resultado sai no começo do episódio ${ep.numero + 1}.` : `O resultado foi revelado no começo do episódio ${ep.numero + 1}: <a href="#t-resultado">veja se a torcida acertou</a>.`}</p>` : `<p class="nota-aposta">${esc(nota)}</p>`;
+      <p class="nota-aposta">${ultimo ? `O resultado sai no começo do episódio ${ep.numero + 1}.` : `O resultado foi revelado no começo do episódio ${ep.numero + 1}. <a href="#t-resultado">Veja mais abaixo se a torcida acertou</a>.`}</p>` : `<p class="nota-aposta">${esc(nota)}</p>`;
     box.innerHTML = `<li class="aposta"><span class="rot">A torcida adivinha quem sai?</span><h3>${esc(titulo)}</h3>
       ${duelo ? `<div class="duelo" style="--n:${lista.length}">${duelo}</div>` : ""}
       ${base}
